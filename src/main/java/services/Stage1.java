@@ -1,25 +1,25 @@
+package services;
+
 import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
-import java.util.Scanner;
 
 public class Stage1 implements Runnable {
-    private static final Scanner scanner = new Scanner(System.in);
+    private final LocalDate birthday;
+
+    public Stage1(LocalDate birthday) {
+        this.birthday = birthday;
+    }
 
     @Override
     public void run() {
-        System.out.println("Enter your birthday [1970-06-07]: ");
-        final var data = scanner.nextLine();
-        final var birthday = data.isBlank()
-                ? LocalDate.of(1970, 06, 07)
-                : LocalDate.parse(data);
 
         final var today = LocalDate.now();
         final var days = ChronoUnit.DAYS.between(birthday, today);
         final var period = Period.between(birthday, today);
 
-        System.out.println("Your birthday is " + birthday);
+        System.out.printf("Your birthday is %tA, %<tB %<td %<tY%n", birthday);
         System.out.println("Today is " + today);
         System.out.println("Days spend from your birthday " + days);
 
