@@ -3,8 +3,11 @@ package services;
 import java.time.LocalDate;
 
 public class Year extends AbstractReport {
-    public Year(final LocalDate birthday) {
+    private final int year;
+
+    public Year(final LocalDate birthday, final int year) {
         super(birthday);
+        this.year = year;
     }
 
     @Override
