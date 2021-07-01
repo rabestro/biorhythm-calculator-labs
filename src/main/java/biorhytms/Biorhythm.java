@@ -23,6 +23,12 @@ public enum Biorhythm {
         this.description = description;
     }
 
+    public static Stream<Biorhythm> primary() {
+        return Arrays.stream(values())
+                .filter(Biorhythm::isPrimary)
+                .sorted(Comparator.comparing(Biorhythm::getPeriod));
+    }
+
     public boolean isPrimary() {
         return primary;
     }
@@ -51,11 +57,5 @@ public enum Biorhythm {
             return Condition.Loose;
         }
         return Condition.Tired;
-    }
-
-    public static Stream<Biorhythm> primary() {
-        return Arrays.stream(values())
-                .filter(Biorhythm::isPrimary)
-                .sorted(Comparator.comparing(Biorhythm::getPeriod));
     }
 }

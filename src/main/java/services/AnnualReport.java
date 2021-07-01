@@ -5,7 +5,6 @@ import biorhytms.Biorhythm;
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.Month;
-import java.time.Year;
 import java.time.format.TextStyle;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
@@ -17,12 +16,10 @@ public class AnnualReport extends AbstractReport {
     final String EMPTY = " ".repeat((int) Biorhythm.primary().count());
 
     private final int year;
-    private final boolean isLeap;
 
     public AnnualReport(final LocalDate birthday, final int year) {
         super(birthday);
         this.year = year;
-        isLeap = Year.isLeap(year);
     }
 
     @Override
