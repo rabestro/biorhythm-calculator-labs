@@ -1,4 +1,4 @@
-package services;
+package biorhytms;
 
 public enum Condition {
     Well('*'),
@@ -11,5 +11,9 @@ public enum Condition {
 
     Condition(final char symbol) {
         this.symbol = symbol;
+    }
+
+    public char getSymbol() {
+        return symbol;
     }
 }

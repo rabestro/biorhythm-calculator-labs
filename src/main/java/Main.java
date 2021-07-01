@@ -1,6 +1,9 @@
+import services.AnnualReport;
 import services.Birthday;
 import services.CLI;
 import services.Today;
+
+import java.time.LocalDate;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -9,5 +12,6 @@ public class Main {
         var birthday = params.getBirthday().orElseGet(new Birthday()::call);
 //        new Stage1(birthday).run();
         new Today(birthday).run();
+        new AnnualReport(birthday, LocalDate.now().getYear()).run();
     }
 }
