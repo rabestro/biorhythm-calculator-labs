@@ -22,6 +22,7 @@ public class Today extends AbstractReport {
         final Function<Biorhythm, String> calculate = biorhythm ->
                 String.format("%12s: %4.0f%%", biorhythm.name(), biorhythm.calculate(days));
 
+        System.out.println();
         System.out.println("Today's Biorhythm Summary:");
 
         System.out.println("\nPrimary Biorhythms\n");

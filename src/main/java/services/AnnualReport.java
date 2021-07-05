@@ -27,20 +27,22 @@ public class AnnualReport extends AbstractReport {
         System.out.println();
         System.out.println("      Birthday: " + birthday + "           Annual report for " + year + " year");
         System.out.println();
-        Function<Month, String> shortName = month -> month.getDisplayName(TextStyle.SHORT, Locale.ENGLISH);
+        Function<Month, String> shortName = month ->
+                String.format("%-6s", month.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
+
         final var headerMonths = "      " + Arrays
                 .stream(Month.values())
                 .map(shortName)
-                .collect(Collectors.joining("  "));
+                .collect(Collectors.joining());
 
-        final var headerPEI = "    " + "  PEI".repeat(Month.values().length);
+        final var headerPEI = "   " + "   PEI".repeat(Month.values().length);
         System.out.println(headerMonths);
         System.out.println(headerPEI);
 
         for (int day = 1; day < 32; day++) {
-            System.out.printf("%3d ", day);
+            System.out.printf("%3d   ", day);
             for (int month = 1; month < 13; month++) {
-                System.out.printf("  %3s", dayConditions(month, day));
+                System.out.printf("%-6s", dayConditions(month, day));
             }
             System.out.println();
         }
