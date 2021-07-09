@@ -1,5 +1,7 @@
 package services;
 
+import biorhytms.ZodiacSign;
+
 import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.time.Period;
@@ -24,11 +26,11 @@ public class Stage1 implements Runnable {
         final var period = Period.between(birthday, today);
 
         System.out
-                .printf("%nBirthday: %s", birthday.format(LONG_DATE))
-                .printf("%n   Today: %s%n", today.format(LONG_DATE))
-                .printf(MessageFormat.format(
-                        "%n     Age: {0} years, {1} months and {2} days",
+                .printf("%n%12s: %s (%s)", "Birthday", birthday.format(LONG_DATE), ZodiacSign.of(birthday))
+                .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
+                .printf("%n%12s: %,d", "Days", days)
+                .printf("%n%12s: %s", "Age", MessageFormat.format("{0} years, {1} months and {2} days",
                         period.getYears(), period.getMonths(), period.getDays()))
-                .printf("%n    Days: %,d%n", days);
+                .println();
     }
 }
