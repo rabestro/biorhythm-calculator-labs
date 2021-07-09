@@ -1,6 +1,6 @@
 package services;
 
-import biorhytms.Biorhythms;
+import biorhytms.Biorhythm;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -19,22 +19,23 @@ public class Today extends AbstractReport {
         final var today = LocalDate.now();
         final var days = ChronoUnit.DAYS.between(birthday, today);
 
-        final Function<Biorhythms, String> calculate = biorhythm ->
+        final Function<Biorhythm, String> calculate = biorhythm ->
                 String.format("%12s: %4.0f%%", biorhythm.name(), biorhythm.calculate(days));
 
+        System.out.println();
         System.out.println("Today's Biorhythm Summary:");
 
         System.out.println("\nPrimary Biorhythms\n");
-        Arrays.stream(Biorhythms.values())
-                .filter(Biorhythms::isPrimary)
-                .sorted(Comparator.comparing(Biorhythms::getPeriod))
+        Arrays.stream(Biorhythm.values())
+                .filter(Biorhythm::isPrimary)
+                .sorted(Comparator.comparing(Biorhythm::getPeriod))
                 .map(calculate)
                 .forEach(System.out::println);
 
         System.out.println("\nSecondary Biorhythms\n");
-        Arrays.stream(Biorhythms.values())
-                .filter(Predicate.not(Biorhythms::isPrimary))
-                .sorted(Comparator.comparing(Biorhythms::getPeriod))
+        Arrays.stream(Biorhythm.values())
+                .filter(Predicate.not(Biorhythm::isPrimary))
+                .sorted(Comparator.comparing(Biorhythm::getPeriod))
                 .map(calculate)
                 .forEach(System.out::println);
 
