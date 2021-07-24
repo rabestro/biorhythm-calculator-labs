@@ -1,5 +1,7 @@
 package biorhytms;
 
+import lombok.val;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.MonthDay;
@@ -35,11 +37,11 @@ public enum ZodiacSign {
     }
 
     public boolean matches(LocalDate date) {
-        final var year = date.getYear();
-        final var one = start.atYear(year);
-        final var two = end.atYear(year);
+        val year = date.getYear();
+        val one = start.atYear(year);
+        val two = end.atYear(year);
         if (this == Capricorn) {
-            return date.isEqual(one) || date.isEqual(two) || date.isAfter(two) || date.isBefore(one);
+            return date.isEqual(one) || date.isEqual(two) || date.isAfter(one) || date.isBefore(two);
         } else {
             return !(date.isBefore(one) || date.isAfter(two));
         }
