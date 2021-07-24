@@ -13,13 +13,13 @@ class ZodiacSignTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/zodiac-sign.csv", numLinesToSkip = 1)
-    void matches(LocalDate birthday, ZodiacSign zodiacSign) {
+    void matches(final LocalDate birthday, final ZodiacSign zodiacSign) {
         assertTrue(zodiacSign.matches(birthday));
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/zodiac-sign.csv", numLinesToSkip = 1)
-    void of(LocalDate birthday, ZodiacSign zodiacSign) {
+    void of(final LocalDate birthday, final ZodiacSign zodiacSign) {
         val actualSign = ZodiacSign.of(birthday);
         assertEquals(zodiacSign, actualSign);
     }
