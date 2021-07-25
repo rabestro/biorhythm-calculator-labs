@@ -37,30 +37,6 @@ public enum Biorhythm {
         return periodInDays;
     }
 
-/*
-    public double calculate(long days) {
-        // sin(2π*cycle length)
-        return 100 * Math.sin(2 * Math.PI / periodInDays * days);
-    }
-
-    public Condition getCondition(long days) {
-        final var value = calculate(days);
-        if (value > 90) {
-            return Condition.Well;
-        }
-        if (value > 10) {
-            return Condition.Usually;
-        }
-        if (value > -10) {
-            return Condition.Danger;
-        }
-        if (value > -90) {
-            return Condition.Loose;
-        }
-        return Condition.Tired;
-    }
-*/
-
     public class Indicator {
         private final long days;
 
@@ -68,13 +44,21 @@ public enum Biorhythm {
             this.days = days;
         }
 
-        public double getPercent() {
+        public double getValue() {
             return 100 * Math.sin(2 * Math.PI / periodInDays * days);
+        }
+
+        public int getPercent() {
+            return (int) Math.round(100 * Math.sin(2 * Math.PI / periodInDays * days));
+        }
+
+        public String getSymbol() {
+            return Condition.of(getValue()).getSymbol();
         }
 
         @Override
         public String toString() {
-            return String.format("%12s: %4.0f%%", name(), getPercent());
+            return String.format("%12s: %4d%%", name(), getPercent());
         }
     }
 }

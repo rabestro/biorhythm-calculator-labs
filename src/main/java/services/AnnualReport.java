@@ -56,9 +56,11 @@ public class AnnualReport extends AbstractReport {
             if (days < 0) {
                 return EMPTY;
             }
-            Function<Biorhythm, String> condition = biorhythm -> biorhythm.getCondition(days).getSymbol();
 
-            return Biorhythm.primary().map(condition).collect(Collectors.joining());
+            return Biorhythm.primary()
+                    .map(biorhythm -> biorhythm.new Indicator(days))
+                    .map(Biorhythm.Indicator::getSymbol)
+                    .collect(Collectors.joining());
 
         } catch (DateTimeException e) {
             return EMPTY;
