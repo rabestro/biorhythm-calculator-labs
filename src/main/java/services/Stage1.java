@@ -1,6 +1,7 @@
 package services;
 
 import biorhytms.ZodiacSign;
+import lombok.val;
 
 import java.text.MessageFormat;
 import java.time.LocalDate;
@@ -29,8 +30,27 @@ public class Stage1 implements Runnable {
                 .printf("%n%12s: %s (%s)", "Birthday", birthday.format(LONG_DATE), ZodiacSign.of(birthday))
                 .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
                 .printf("%n%12s: %,d", "Days", days)
-                .printf("%n%12s: %s", "Age", MessageFormat.format("{0} years, {1} months and {2} days",
-                        period.getYears(), period.getMonths(), period.getDays()))
+                .printf("%n%12s: %s", "Age", getAge(period))
                 .println();
+    }
+
+    static String getAge(Period period) {
+        val years = MessageFormat.format(
+                "{0, choice, 0#|1#one year|2#two years|2<{0} years}", period.getYears());
+        val months = MessageFormat.format(
+                "{0, choice, 0#|1#one month|2#two months|2<{0} months}", period.getMonths());
+        val days = MessageFormat.format(
+                "{0, choice, 0#|1#one day|2#two days|2<{0} days}", period.getDays());
+
+        if ((years + months + days).isBlank()) {
+            return "just born";
+        }
+
+        val one = years.isBlank() || (months.isBlank() && days.isBlank())
+                ? "" : (months.isBlank() || days.isBlank() ? " and " : ", ");
+
+        val two = days.isBlank() || months.isBlank() ? "" : " and ";
+
+        return years + one + months + two + days;
     }
 }

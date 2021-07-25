@@ -45,11 +45,11 @@ public enum Biorhythm {
         }
 
         public double getValue() {
-            return 100 * Math.sin(2 * Math.PI / periodInDays * days);
+            return Math.sin(2 * Math.PI / periodInDays * days);
         }
 
         public int getPercent() {
-            return (int) Math.round(100 * Math.sin(2 * Math.PI / periodInDays * days));
+            return (int) Math.round(100 * getValue());
         }
 
         public String getSymbol() {
