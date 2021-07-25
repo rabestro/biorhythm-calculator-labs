@@ -1,5 +1,7 @@
 package biorhytms;
 
+import lombok.val;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
@@ -24,9 +26,11 @@ public enum Biorhythm {
     }
 
     public static Stream<Biorhythm> primary() {
-        return Arrays.stream(values())
-                .filter(Biorhythm::isPrimary)
-                .sorted(Comparator.comparing(Biorhythm::getPeriod));
+        return stream().filter(Biorhythm::isPrimary);
+    }
+
+    public static Stream<Biorhythm> stream() {
+        return Arrays.stream(values()).sorted(Comparator.comparing(Biorhythm::getPeriod));
     }
 
     public boolean isPrimary() {
@@ -38,18 +42,33 @@ public enum Biorhythm {
     }
 
     public class Indicator {
+        public final int MAX_VALUE = 20;
         private final long days;
         private final long rest;
         private final long stage;
 
-        private final StringBuilder scale = new StringBuilder(
-                "----------+----------"
-        );
+        private final String scale;
+        private final int scaleValue;
 
         public Indicator(final long days) {
             this.days = days;
             rest = days % periodInDays;
-            stage = rest == 0 ? 0 : 1 + rest / ((2 + periodInDays) / 4);
+            scaleValue = (int) Math.round(MAX_VALUE * getValue());
+            stage = scaleValue == 0 ? 0 : 1 + rest / ((1 + periodInDays) / 4);
+            scale = createScale();
+        }
+
+        private String createScale() {
+            if (stage == 0) {
+                return "-".repeat(MAX_VALUE - 1) + "<0>" + "-".repeat(MAX_VALUE - 1);
+            }
+            val symbol = stage == 1 || stage == 4 ? ">" : "<";
+            val isPositive = scaleValue > 0;
+            return "-".repeat(isPositive ? MAX_VALUE : MAX_VALUE + scaleValue)
+                    + symbol.repeat(isPositive ? 0 : -scaleValue)
+                    + "+"
+                    + symbol.repeat(isPositive ? scaleValue : 0)
+                    + "-".repeat(isPositive ? MAX_VALUE - scaleValue : MAX_VALUE);
         }
 
         public double getValue() {
@@ -66,8 +85,8 @@ public enum Biorhythm {
 
         @Override
         public String toString() {
-            return String.format("%12s: %4d%% (%2d/%2d){%d} [%s]",
-                    name(), getPercent(), rest, periodInDays, stage, scale);
+            return String.format("%12s: %4d%% (%2d/%2d){%d} [%s] [%3d]",
+                    name(), getPercent(), rest, periodInDays, stage, scale, scaleValue);
         }
     }
 }
