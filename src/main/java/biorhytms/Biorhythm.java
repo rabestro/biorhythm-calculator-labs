@@ -40,6 +40,8 @@ public enum Biorhythm {
     public class Indicator {
         private final long days;
         private final long rest;
+        private final long stage;
+
         private final StringBuilder scale = new StringBuilder(
                 "----------+----------"
         );
@@ -47,6 +49,7 @@ public enum Biorhythm {
         public Indicator(final long days) {
             this.days = days;
             rest = days % periodInDays;
+            stage = rest == 0 ? 0 : 1 + rest / ((2 + periodInDays) / 4);
         }
 
         public double getValue() {
@@ -63,8 +66,8 @@ public enum Biorhythm {
 
         @Override
         public String toString() {
-            return String.format("%12s: %4d%% (%2d/%2d) [%s]",
-                    name(), getPercent(), rest, periodInDays, scale);
+            return String.format("%12s: %4d%% (%2d/%2d){%d} [%s]",
+                    name(), getPercent(), rest, periodInDays, stage, scale);
         }
     }
 }
