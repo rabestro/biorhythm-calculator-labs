@@ -10,18 +10,17 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.time.temporal.ChronoUnit;
 
-public class Stage1 implements Runnable {
+public class AgeInfo implements Runnable {
     private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
 
     private final LocalDate birthday;
 
-    public Stage1(LocalDate birthday) {
+    public AgeInfo(LocalDate birthday) {
         this.birthday = birthday;
     }
 
     @Override
     public void run() {
-
         final var today = LocalDate.now();
         final var days = ChronoUnit.DAYS.between(birthday, today);
         final var period = Period.between(birthday, today);
@@ -42,14 +41,14 @@ public class Stage1 implements Runnable {
         val days = MessageFormat.format(
                 "{0, choice, 0#|1#one day|2#two days|2<{0} days}", period.getDays());
 
-        if ((years + months + days).isBlank()) {
+        if ((years + months + days).isEmpty()) {
             return "just born";
         }
 
-        val one = years.isBlank() || (months.isBlank() && days.isBlank())
-                ? "" : (months.isBlank() || days.isBlank() ? " and " : ", ");
+        val one = years.isEmpty() || (months.isEmpty() && days.isEmpty())
+                ? "" : months.isEmpty() || days.isEmpty() ? " and " : ", ";
 
-        val two = days.isBlank() || months.isBlank() ? "" : " and ";
+        val two = days.isEmpty() || months.isEmpty() ? "" : " and ";
 
         return years + one + months + two + days;
     }

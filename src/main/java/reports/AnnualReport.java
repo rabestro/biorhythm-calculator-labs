@@ -1,4 +1,4 @@
-package services;
+package reports;
 
 import biorhytms.Biorhythm;
 

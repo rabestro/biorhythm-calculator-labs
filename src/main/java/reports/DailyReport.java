@@ -1,6 +1,7 @@
-package services;
+package reports;
 
 import biorhytms.Biorhythm;
+import lombok.val;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -8,18 +9,23 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Predicate;
 
-public class Today extends AbstractReport {
-    public Today(LocalDate birthday) {
+public class DailyReport extends AbstractReport {
+    private LocalDate day = LocalDate.now();
+
+    public DailyReport(LocalDate birthday) {
         super(birthday);
+    }
+
+    public void setDay(final LocalDate day) {
+        this.day = day;
     }
 
     @Override
     public void run() {
-        final var today = LocalDate.now();
-        final var days = ChronoUnit.DAYS.between(birthday, today);
+        val days = ChronoUnit.DAYS.between(birthday, day);
 
         System.out.println();
-        System.out.println("Today's Biorhythm Summary:");
+        System.out.println("Daily Biorhythm Summary:");
 
         System.out.println("\nPrimary Biorhythms\n");
         Arrays.stream(Biorhythm.values())

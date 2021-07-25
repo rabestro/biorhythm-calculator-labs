@@ -8,12 +8,12 @@ import java.time.Period;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Stage1Test {
+class AgeInfoTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/period-age.csv", delimiter = ';', numLinesToSkip = 1)
     void getAge(final Period period, final String expected) {
-        val actual = Stage1.getAge(period);
+        val actual = AgeInfo.getAge(period);
         assertEquals(expected, actual);
     }
 }
