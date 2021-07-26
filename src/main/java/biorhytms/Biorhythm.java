@@ -1,7 +1,5 @@
 package biorhytms;
 
-import lombok.val;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Stream;
@@ -42,37 +40,29 @@ public enum Biorhythm {
     }
 
     public class Indicator {
-        public final int MAX_VALUE = 20;
+        public final int MAX_VALUE = 10;
+        public final Scale SCALE = new Scale(MAX_VALUE);
         private final long days;
         private final long rest;
-        private final long stage;
+        private final Stage stage;
 
         private final String scale;
-        private final int scaleValue;
+        private final int value;
 
         public Indicator(final long days) {
             this.days = days;
             rest = days % periodInDays;
-            scaleValue = (int) Math.round(MAX_VALUE * getValue());
-            stage = scaleValue == 0 ? 0 : 1 + rest / ((1 + periodInDays) / 4);
-            scale = createScale();
-        }
-
-        private String createScale() {
-            if (stage == 0) {
-                return "-".repeat(MAX_VALUE - 1) + "<0>" + "-".repeat(MAX_VALUE - 1);
-            }
-            val symbol = stage == 1 || stage == 4 ? ">" : "<";
-            val isPositive = scaleValue > 0;
-            return "-".repeat(isPositive ? MAX_VALUE : MAX_VALUE + scaleValue)
-                    + symbol.repeat(isPositive ? 0 : -scaleValue)
-                    + "+"
-                    + symbol.repeat(isPositive ? scaleValue : 0)
-                    + "-".repeat(isPositive ? MAX_VALUE - scaleValue : MAX_VALUE);
+            value = (int) Math.round(MAX_VALUE * getValue());
+            stage = Stage.of((int) (value == 0 ? 0 : 1 + rest * 4 / periodInDays));
+            scale = SCALE.getScale(this);
         }
 
         public double getValue() {
             return Math.sin(2 * Math.PI * days / periodInDays);
+        }
+
+        public Stage getStage() {
+            return stage;
         }
 
         public int getPercent() {
@@ -86,7 +76,7 @@ public enum Biorhythm {
         @Override
         public String toString() {
             return String.format("%12s: %4d%% (%2d/%2d){%d} [%s] [%3d]",
-                    name(), getPercent(), rest, periodInDays, stage, scale, scaleValue);
+                    name(), getPercent(), rest, periodInDays, stage.ordinal(), scale, value);
         }
     }
 }

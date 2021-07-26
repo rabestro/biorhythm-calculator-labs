@@ -6,8 +6,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ZodiacSignTest {
 
@@ -21,6 +20,6 @@ class ZodiacSignTest {
     @CsvFileSource(resources = "/zodiac-sign.csv", numLinesToSkip = 1)
     void of(final LocalDate birthday, final ZodiacSign zodiacSign) {
         val actualSign = ZodiacSign.of(birthday);
-        assertEquals(zodiacSign, actualSign);
+        assertSame(zodiacSign, actualSign);
     }
 }
