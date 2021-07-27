@@ -1,7 +1,6 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import model.ReportData;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;

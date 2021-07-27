@@ -1,4 +1,4 @@
-package model;
+package reports;
 
 import lombok.Getter;
 import lombok.Setter;

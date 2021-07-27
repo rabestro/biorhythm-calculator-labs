@@ -2,7 +2,6 @@ package reports;
 
 import biorhytms.Biorhythm;
 import lombok.val;
-import model.ReportData;
 
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;

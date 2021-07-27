@@ -1,7 +1,7 @@
 package services;
 
 import lombok.val;
-import model.ReportData;
+import reports.ReportData;
 import reports.DailyReport;
 
 import java.time.LocalDate;
