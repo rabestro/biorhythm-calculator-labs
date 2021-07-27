@@ -18,18 +18,10 @@ public enum Condition {
     }
 
     public static Condition of(final double percent) {
-        if (percent > 90) {
-            return Condition.Well;
-        }
-        if (percent > 10) {
-            return Condition.Usually;
-        }
-        if (percent > -10) {
-            return Condition.Danger;
-        }
-        if (percent > -90) {
-            return Condition.Loose;
-        }
-        return Condition.Tired;
+        return percent > 90 ? Condition.Well
+                : percent > 10 ? Condition.Usually
+                : percent > -10 ? Condition.Danger
+                : percent > -90 ? Condition.Loose
+                : Condition.Tired;
     }
 }
