@@ -39,7 +39,7 @@ public enum Biorhythm {
         return periodInDays;
     }
 
-    public class Indicator {
+    public class Fluctuation {
         public final int MAX_VALUE = 14;
         public final Scale SCALE = new Scale(MAX_VALUE);
         private final long days;
@@ -49,7 +49,7 @@ public enum Biorhythm {
         private final String scale;
         private final int value;
 
-        public Indicator(final long days) {
+        public Fluctuation(final long days) {
             this.days = days;
             rest = days % periodInDays;
             value = (int) Math.round(MAX_VALUE * getValue());

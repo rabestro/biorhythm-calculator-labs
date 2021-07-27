@@ -1,10 +1,8 @@
-import biorhytms.Biorhythm;
 import lombok.val;
 import reports.*;
 import services.AgeInfo;
 import services.Birthday;
 import services.CLI;
-import services.TestIndicators;
 
 import java.util.Random;
 

@@ -23,9 +23,9 @@ public class Scale {
 
     }
 
-    public String getScale(final Biorhythm.Indicator indicator) {
-        val value = (int) Math.round(maximum * indicator.getValue());
-        return getScale(indicator.getStage(), value);
+    public String getScale(final Biorhythm.Fluctuation fluctuation) {
+        val value = (int) Math.round(maximum * fluctuation.getValue());
+        return getScale(fluctuation.getStage(), value);
     }
 
 

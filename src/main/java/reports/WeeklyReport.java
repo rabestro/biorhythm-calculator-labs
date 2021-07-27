@@ -20,9 +20,9 @@ public class WeeklyReport implements Runnable {
 
     static String day(ReportData data) {
         return String.format(TEMPLATE,
-                data.getDate().format(FIRST_LINE), Biorhythm.Physical.new Indicator(data.getDays()),
-                data.getDate().format(SECOND_LINE), Biorhythm.Emotional.new Indicator(data.getDays()),
-                data.getDate().format(THIRD_LINE), Biorhythm.Intellectual.new Indicator(data.getDays())
+                data.getDate().format(FIRST_LINE), Biorhythm.Physical.new Fluctuation(data.getDays()),
+                data.getDate().format(SECOND_LINE), Biorhythm.Emotional.new Fluctuation(data.getDays()),
+                data.getDate().format(THIRD_LINE), Biorhythm.Intellectual.new Fluctuation(data.getDays())
         );
     }
 

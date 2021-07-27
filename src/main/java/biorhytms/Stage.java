@@ -3,10 +3,24 @@ package biorhytms;
 import java.util.Set;
 
 public enum Stage {
-    ZERO, POSITIVE_UP, POSITIVE_DOWN, NEGATIVE_DOWN, NEGATIVE_UP;
+    ZERO("0"),
+    POSITIVE_UP(">"),
+    POSITIVE_DOWN("<"),
+    NEGATIVE_DOWN(">"),
+    NEGATIVE_UP("<");
+
+    private final String symbol;
+
+    Stage(final String symbol) {
+        this.symbol = symbol;
+    }
 
     public static Stage of(final int index) {
         return Stage.values()[index];
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 
     public boolean isUp() {

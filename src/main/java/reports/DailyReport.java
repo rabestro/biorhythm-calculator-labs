@@ -26,14 +26,14 @@ public class DailyReport implements Runnable {
         Arrays.stream(Biorhythm.values())
                 .filter(Biorhythm::isPrimary)
                 .sorted(Comparator.comparing(Biorhythm::getPeriod))
-                .map(biorhythm -> biorhythm.new Indicator(days))
+                .map(biorhythm -> biorhythm.new Fluctuation(days))
                 .forEach(System.out::println);
 
         System.out.println("\nSecondary Biorhythms\n");
         Arrays.stream(Biorhythm.values())
                 .filter(Predicate.not(Biorhythm::isPrimary))
                 .sorted(Comparator.comparing(Biorhythm::getPeriod))
-                .map(biorhythm -> biorhythm.new Indicator(days))
+                .map(biorhythm -> biorhythm.new Fluctuation(days))
                 .forEach(System.out::println);
 
     }

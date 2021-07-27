@@ -15,7 +15,7 @@ public class TestIndicators implements Runnable {
     public void run() {
         System.out.println();
         LongStream.rangeClosed(0, biorhythm.getPeriod() * 2L)
-                .mapToObj(days -> biorhythm.new Indicator(days))
+                .mapToObj(days -> biorhythm.new Fluctuation(days))
                 .forEach(System.out::println);
     }
 }
