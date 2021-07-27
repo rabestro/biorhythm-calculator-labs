@@ -1,6 +1,7 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import model.ReportData;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -12,20 +13,19 @@ import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class AnnualReport extends AbstractReport {
+public class AnnualReport implements Runnable {
     final String EMPTY = " ".repeat((int) Biorhythm.primary().count());
 
-    private final int year;
+    private final ReportData reportData;
 
-    public AnnualReport(final LocalDate birthday, final int year) {
-        super(birthday);
-        this.year = year;
+    public AnnualReport(final ReportData reportData) {
+        this.reportData = reportData;
     }
 
     @Override
     public void run() {
         System.out.println();
-        System.out.println("      Birthday: " + birthday + "           Annual report for " + year + " year");
+        System.out.println("      Birthday: " + reportData.getBirthday() + "           Annual report for " + reportData.getYear() + " year");
         System.out.println();
         Function<Month, String> shortName = month ->
                 String.format("%-6s", month.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
@@ -50,8 +50,8 @@ public class AnnualReport extends AbstractReport {
 
     private String dayConditions(int month, int day) {
         try {
-            final var date = LocalDate.of(year, month, day);
-            final var days = ChronoUnit.DAYS.between(birthday, date);
+            final var date = LocalDate.of(reportData.getYear(), month, day);
+            final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
 
             if (days < 0) {
                 return EMPTY;

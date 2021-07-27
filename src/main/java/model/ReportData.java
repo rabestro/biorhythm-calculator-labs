@@ -1,7 +1,12 @@
 package model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Getter
+@Setter
 public class ReportData {
     private final LocalDate birthday;
     private LocalDate date;
@@ -9,18 +14,6 @@ public class ReportData {
     public ReportData(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();
-    }
-
-    public void setDate(final LocalDate date) {
-        this.date = date;
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public LocalDate getDate() {
-        return date;
     }
 
     public int getYear() {
