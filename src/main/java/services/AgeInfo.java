@@ -19,20 +19,6 @@ public class AgeInfo implements Runnable {
         this.birthday = birthday;
     }
 
-    @Override
-    public void run() {
-        final var today = LocalDate.now();
-        final var days = ChronoUnit.DAYS.between(birthday, today);
-        final var period = Period.between(birthday, today);
-
-        System.out
-                .printf("%n%12s: %s (%s)", "Birthday", birthday.format(LONG_DATE), ZodiacSign.of(birthday))
-                .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
-                .printf("%n%12s: %,d", "Days", days)
-                .printf("%n%12s: %s", "Age", getAge(period))
-                .println();
-    }
-
     static String getAge(Period period) {
         val years = MessageFormat.format(
                 "{0, choice, 0#|1#one year|2#two years|2<{0} years}", period.getYears());
@@ -51,5 +37,19 @@ public class AgeInfo implements Runnable {
         val two = days.isEmpty() || months.isEmpty() ? "" : " and ";
 
         return years + one + months + two + days;
+    }
+
+    @Override
+    public void run() {
+        final var today = LocalDate.now();
+        final var days = ChronoUnit.DAYS.between(birthday, today);
+        final var period = Period.between(birthday, today);
+
+        System.out
+                .printf("%n%12s: %s (%s)", "Birthday", birthday.format(LONG_DATE), ZodiacSign.of(birthday))
+                .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
+                .printf("%n%12s: %,d", "Days", days)
+                .printf("%n%12s: %s", "Age", getAge(period))
+                .println();
     }
 }

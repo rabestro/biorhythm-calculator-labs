@@ -36,17 +36,17 @@ public enum ZodiacSign {
         this.luckyDay = luckyDay;
     }
 
-    public boolean matches(final LocalDate birthday) {
-        val date = MonthDay.from(birthday);
-        return this.equals(Capricorn)
-                ? date.isAfter(start) || date.isBefore(end) || date.equals(start) || date.equals(end)
-                : !date.isAfter(end) && !date.isBefore(start);
-    }
-
     public static ZodiacSign of(LocalDate birthday) {
         return Arrays.stream(values())
                 .filter(sign -> sign.matches(birthday))
                 .findFirst()
                 .orElseThrow();
+    }
+
+    public boolean matches(final LocalDate birthday) {
+        val date = MonthDay.from(birthday);
+        return this.equals(Capricorn)
+                ? date.isAfter(start) || date.isBefore(end) || date.equals(start) || date.equals(end)
+                : !date.isAfter(end) && !date.isBefore(start);
     }
 }

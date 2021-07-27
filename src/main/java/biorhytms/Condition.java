@@ -13,15 +13,15 @@ public enum Condition {
         this.symbol = symbol;
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
     public static Condition of(final double percent) {
         return percent > 90 ? Condition.Well
                 : percent > 10 ? Condition.Usually
-                : percent > -10 ? Condition.Danger
-                : percent > -90 ? Condition.Loose
+                : percent > -11 ? Condition.Danger
+                : percent > -91 ? Condition.Loose
                 : Condition.Tired;
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 }

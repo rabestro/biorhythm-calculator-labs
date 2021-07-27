@@ -15,9 +15,9 @@ import java.util.Scanner;
 public class RequestProcessor implements Runnable {
     private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
     private static final Scanner scanner = new Scanner(System.in);
-    private LocalDate day;
     private final DailyReport dailyReport;
     private final ReportData reportData;
+    private LocalDate day;
 
     public RequestProcessor(final LocalDate birthday) {
         reportData = new ReportData(birthday);
