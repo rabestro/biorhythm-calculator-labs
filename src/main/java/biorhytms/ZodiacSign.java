@@ -20,14 +20,20 @@ public enum ZodiacSign {
     Libra("The Scales", MonthDay.of(SEPTEMBER, 23), MonthDay.of(OCTOBER, 22), FRIDAY),
     Scorpio("Scorpion", MonthDay.of(OCTOBER, 23), MonthDay.of(NOVEMBER, 22), TUESDAY),
     Sagittarius("Archer", MonthDay.of(NOVEMBER, 22), MonthDay.of(DECEMBER, 21), THURSDAY),
-    Capricorn("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY),
+    Capricorn("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY) {
+        @Override
+        public boolean matches(final LocalDate birthday) {
+            val date = MonthDay.from(birthday);
+            return date.isAfter(start) || date.isBefore(end) || date.equals(start) || date.equals(end);
+        }
+    },
     Aquarius("The Water-Bearer", MonthDay.of(JANUARY, 20), MonthDay.of(FEBRUARY, 18), SATURDAY),
     Pisces("Two Fish", MonthDay.of(FEBRUARY, 19), MonthDay.of(MARCH, 20), SATURDAY);
 
-    private final String symbol;
-    private final MonthDay start;
-    private final MonthDay end;
+    protected final MonthDay start;
+    protected final MonthDay end;
     private final DayOfWeek luckyDay;
+    private final String symbol;
 
     ZodiacSign(final String symbol, final MonthDay start, final MonthDay end, final DayOfWeek luckyDay) {
         this.symbol = symbol;
@@ -45,8 +51,7 @@ public enum ZodiacSign {
 
     public boolean matches(final LocalDate birthday) {
         val date = MonthDay.from(birthday);
-        return this.equals(Capricorn)
-                ? date.isAfter(start) || date.isBefore(end) || date.equals(start) || date.equals(end)
-                : !date.isAfter(end) && !date.isBefore(start);
+        return !date.isAfter(end) && !date.isBefore(start);
     }
+
 }
