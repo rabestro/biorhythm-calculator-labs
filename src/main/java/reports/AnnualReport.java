@@ -24,7 +24,9 @@ public class AnnualReport implements Runnable {
     @Override
     public void run() {
         System.out.println();
-        System.out.println("      Birthday: " + reportData.getBirthday() + "           Annual report for " + reportData.getYear() + " year");
+        System.out.println("      Birthday: " + reportData.getBirthday()
+                + "           Annual report for "
+                + reportData.getYear() + " year");
         System.out.println();
         Function<Month, String> shortName = month ->
                 String.format("%-6s", month.getDisplayName(TextStyle.SHORT, Locale.getDefault()));

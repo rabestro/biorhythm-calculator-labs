@@ -11,7 +11,7 @@ public class Scale {
 
     private String getScale(final Stage stage, final int value) {
         if (stage == Stage.ZERO) {
-            return "-".repeat(maximum - 1) + "<0>" + "-".repeat(maximum - 1);
+            return "-".repeat(maximum) + "0" + "-".repeat(maximum);
         }
         val symbol = stage.isUp() ? ">" : "<";
         val isPositive = stage.isPositive();
@@ -27,4 +27,6 @@ public class Scale {
         val value = (int) Math.round(maximum * indicator.getValue());
         return getScale(indicator.getStage(), value);
     }
+
+
 }

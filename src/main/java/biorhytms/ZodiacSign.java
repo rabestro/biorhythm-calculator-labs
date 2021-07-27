@@ -46,12 +46,12 @@ public enum ZodiacSign {
                 .orElseThrow();
     }
 
-    public boolean matches(final MonthDay date) {
-        return !date.isAfter(end) && !date.isBefore(start);
-    }
-
     public static ZodiacSign of(LocalDate birthday) {
         return of(MonthDay.from(birthday));
+    }
+
+    public boolean matches(final MonthDay date) {
+        return !date.isAfter(end) && !date.isBefore(start);
     }
 
     public boolean matches(final LocalDate birthday) {

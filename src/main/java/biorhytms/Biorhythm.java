@@ -40,7 +40,7 @@ public enum Biorhythm {
     }
 
     public class Indicator {
-        public final int MAX_VALUE = 10;
+        public final int MAX_VALUE = 14;
         public final Scale SCALE = new Scale(MAX_VALUE);
         private final long days;
         private final long rest;
@@ -70,13 +70,14 @@ public enum Biorhythm {
         }
 
         public String getSymbol() {
-            return Condition.of(getValue()).getSymbol();
+            return Condition.of(getPercent()).getSymbol();
         }
 
+        // "%12s: %4d%% (%2d/%2d){%d} [%s] [%3d]" rest, periodInDays, stage.ordinal(),
         @Override
         public String toString() {
-            return String.format("%12s: %4d%% (%2d/%2d){%d} [%s] [%3d]",
-                    name(), getPercent(), rest, periodInDays, stage.ordinal(), scale, value);
+            return String.format("%12s: %4d%% (%2d/%2d) [%s]",
+                    name(), getPercent(), rest, periodInDays, scale, value);
         }
     }
 }

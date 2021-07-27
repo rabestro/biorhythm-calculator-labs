@@ -1,8 +1,8 @@
 package services;
 
 import lombok.val;
-import reports.ReportData;
 import reports.DailyReport;
+import reports.ReportData;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
