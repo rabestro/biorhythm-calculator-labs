@@ -4,9 +4,6 @@ import biorhytms.Biorhythm;
 import lombok.val;
 
 import java.time.temporal.ChronoUnit;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.function.Predicate;
 
 public class DailyReport implements Runnable {
     private final ReportData reportData;
@@ -23,17 +20,13 @@ public class DailyReport implements Runnable {
         System.out.println("Daily Biorhythm Summary:");
 
         System.out.println("\nPrimary Biorhythms\n");
-        Arrays.stream(Biorhythm.values())
-                .filter(Biorhythm::isPrimary)
-                .sorted(Comparator.comparing(Biorhythm::getPeriod))
-                .map(biorhythm -> biorhythm.new Fluctuation(days))
+        Biorhythm.primary()
+                .map(biorhythm -> biorhythm.new Value(days))
                 .forEach(System.out::println);
 
         System.out.println("\nSecondary Biorhythms\n");
-        Arrays.stream(Biorhythm.values())
-                .filter(Predicate.not(Biorhythm::isPrimary))
-                .sorted(Comparator.comparing(Biorhythm::getPeriod))
-                .map(biorhythm -> biorhythm.new Fluctuation(days))
+        Biorhythm.secondary()
+                .map(biorhythm -> biorhythm.new Value(days))
                 .forEach(System.out::println);
 
     }

@@ -7,10 +7,10 @@ import java.util.Formattable;
 import java.util.Formatter;
 
 public class Thermometer implements Formattable {
-    private final Biorhythm.Fluctuation fluctuation;
+    private final Biorhythm.Value value;
 
-    public Thermometer(final Biorhythm.Fluctuation fluctuation) {
-        this.fluctuation = fluctuation;
+    public Thermometer(final Biorhythm.Value value) {
+        this.value = value;
     }
 
     @SneakyThrows
@@ -18,15 +18,15 @@ public class Thermometer implements Formattable {
     public void formatTo(final Formatter formatter, final int flags, final int width, final int precision) {
         formatter.out().append('[');
         val wingWidth = (width - 3) / 2;
-        val value = (int) Math.round(wingWidth * fluctuation.getValue());
-        if (Stage.ZERO.equals(fluctuation.getStage())) {
+        val value = (int) Math.round(wingWidth * this.value.getValue());
+        if (Stage.ZERO.equals(this.value.getStage())) {
             formatter.out()
                     .append("-".repeat(wingWidth))
                     .append(Stage.ZERO.getSymbol())
                     .append("-".repeat(wingWidth));
         } else {
-            val symbol = fluctuation.getStage().getSymbol();
-            val isPositive = fluctuation.getStage().isPositive();
+            val symbol = this.value.getStage().getSymbol();
+            val isPositive = this.value.getStage().isPositive();
             formatter.out()
                     .append("-".repeat(isPositive ? wingWidth : wingWidth + value))
                     .append(symbol.repeat(isPositive ? 0 : -value))

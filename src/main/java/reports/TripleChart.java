@@ -17,9 +17,9 @@ public class TripleChart implements Runnable {
         System.out.println();
         IntStream.range(0, 30).forEach(i -> {
             System.out.printf("%tF %21s %21s %21s%n", reportData.getDate(),
-                    new Thermometer(Biorhythm.Physical.new Fluctuation(reportData.getDays())),
-                    new Thermometer(Biorhythm.Emotional.new Fluctuation(reportData.getDays())),
-                    new Thermometer(Biorhythm.Intellectual.new Fluctuation(reportData.getDays()))
+                    new Thermometer(Biorhythm.Physical.new Value(reportData.getDays())),
+                    new Thermometer(Biorhythm.Emotional.new Value(reportData.getDays())),
+                    new Thermometer(Biorhythm.Intellectual.new Value(reportData.getDays()))
             );
             reportData.nextDay();
         });

@@ -1,8 +1,10 @@
+import biorhytms.Biorhythm;
 import lombok.val;
 import reports.*;
 import services.AgeInfo;
 import services.Birthday;
 import services.CLI;
+import services.TestIndicators;
 
 import java.util.Random;
 
@@ -23,7 +25,7 @@ public class Main {
 //        new RequestProcessor(birthday).run();
         new WeeklyReport(reportData).run();
         new AnnualReport(reportData).run();
-//        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
+        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
         new TripleChart(reportData).run();
     }
 }

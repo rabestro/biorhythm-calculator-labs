@@ -3,7 +3,7 @@ package biorhytms;
 import java.util.Set;
 
 public enum Stage {
-    ZERO("0"),
+    ZERO("+"),
     POSITIVE_UP(">"),
     POSITIVE_DOWN("<"),
     NEGATIVE_DOWN(">"),

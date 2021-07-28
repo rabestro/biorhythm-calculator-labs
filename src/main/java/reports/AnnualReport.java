@@ -59,8 +59,8 @@ public class AnnualReport implements Runnable {
             }
 
             return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Fluctuation(days))
-                    .map(Biorhythm.Fluctuation::getSymbol)
+                    .map(biorhythm -> biorhythm.new Value(days))
+                    .map(Biorhythm.Value::getSymbol)
                     .collect(Collectors.joining());
 
         } catch (DateTimeException e) {
