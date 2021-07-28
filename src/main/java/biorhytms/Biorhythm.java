@@ -13,11 +13,15 @@ public enum Biorhythm {
 
     public static final Value EMPTY = Physical.new Value(-1);
     private final int periodInDays;
-    private final String description;
+    private final String attributes;
 
-    Biorhythm(final int periodDays, final String description) {
+    Biorhythm(final int periodDays, final String attributes) {
         this.periodInDays = periodDays;
-        this.description = description;
+        this.attributes = attributes.replaceFirst("(.*),", "$1 and");
+    }
+
+    public String getAttributes() {
+        return attributes;
     }
 
     public static Stream<Biorhythm> primary() {

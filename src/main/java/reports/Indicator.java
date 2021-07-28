@@ -5,8 +5,10 @@ import biorhytms.Condition;
 import lombok.SneakyThrows;
 import lombok.val;
 
+import java.text.MessageFormat;
 import java.util.Formattable;
 import java.util.Formatter;
+import java.util.Locale;
 
 import static java.lang.System.Logger.Level.INFO;
 
@@ -36,12 +38,18 @@ public class Indicator implements Formattable {
         }
         val biorhythm = value.getBiorhythm();
 
+        if (precision == 9) {
+            fmt.format("%s:%n%n", biorhythm.name());
+            fmt.format(value.getStage().getTemplate(),
+                    biorhythm.name().toLowerCase(Locale.ROOT),
+                    biorhythm.getAttributes());
+            return;
+        }
         fmt.format("%12s: %4d%%", biorhythm.name(), value.getPercent());
 
         if (precision > 0) {
             fmt.format(" (%2d/%2d)", value.getRest(), biorhythm.getPeriod());
         }
-
     }
 
     @Override

@@ -2,10 +2,9 @@ package reports;
 
 import biorhytms.Biorhythm;
 
-import java.util.function.Function;
+import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
-    private static final Function<Indicator, String> ONE_LINE = indicator -> String.format("%s", indicator);
 
     public SummaryReport(final ReportData reportData) {
         super(reportData);
@@ -17,9 +16,21 @@ public class SummaryReport extends AbstractReport {
         System.out.println("Today's Biorhythm Summary:");
         System.out.println();
 
-        Biorhythm.primary()
+        biorhythms().forEach(System.out::println);
+
+        System.out.println();
+
+        biorhythms().forEach(i -> System.out.printf("%60.9s%n", i));
+    }
+
+    private Stream<Indicator> biorhythms() {
+        return Biorhythm.primary()
                 .map(biorhythm -> biorhythm.new Value(reportData.getDays()))
-                .map(Indicator::new)
-                .forEach(System.out::println);
+                .map(Indicator::new);
+    }
+
+    private void printReport(final Indicator indicator) {
+        System.out.println();
+
     }
 }
