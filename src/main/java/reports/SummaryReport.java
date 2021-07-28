@@ -29,8 +29,4 @@ public class SummaryReport extends AbstractReport {
                 .map(Indicator::new);
     }
 
-    private void printReport(final Indicator indicator) {
-        System.out.println();
-
-    }
 }

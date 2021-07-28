@@ -5,7 +5,6 @@ import biorhytms.Condition;
 import lombok.SneakyThrows;
 import lombok.val;
 
-import java.text.MessageFormat;
 import java.util.Formattable;
 import java.util.Formatter;
 import java.util.Locale;
@@ -13,10 +12,8 @@ import java.util.Locale;
 import static java.lang.System.Logger.Level.INFO;
 
 public class Indicator implements Formattable {
-    private static final System.Logger LOGGER = System.getLogger("");
-
     public static final Indicator EMPTY = new Indicator();
-
+    private static final System.Logger LOGGER = System.getLogger("");
     private final Biorhythm.Value value;
 
     private Indicator() {

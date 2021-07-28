@@ -20,16 +20,16 @@ public enum Biorhythm {
         this.attributes = attributes.replaceFirst("(.*),", "$1 and");
     }
 
-    public String getAttributes() {
-        return attributes;
-    }
-
     public static Stream<Biorhythm> primary() {
         return Stream.of(Physical, Emotional, Intellectual);
     }
 
     public static Stream<Biorhythm> secondary() {
         return Stream.of(Intuition, Aesthetic, Awareness, Spiritual);
+    }
+
+    public String getAttributes() {
+        return attributes;
     }
 
     public int getPeriod() {
