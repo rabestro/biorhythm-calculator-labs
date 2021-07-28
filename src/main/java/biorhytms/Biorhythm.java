@@ -11,6 +11,7 @@ public enum Biorhythm {
     Awareness(48, "cognition, learning, sense"),
     Spiritual(53, "peace, harmony");
 
+    public static final Value EMPTY = Physical.new Value(-1);
     private final int periodInDays;
     private final String description;
 
@@ -30,8 +31,6 @@ public enum Biorhythm {
     public int getPeriod() {
         return periodInDays;
     }
-
-    public static final Value EMPTY = Physical.new Value(-1);
 
     public class Value {
         private final int days;
@@ -64,8 +63,12 @@ public enum Biorhythm {
             return (int) Math.round(100 * getValue());
         }
 
-        public String getSymbol() {
-            return Condition.of(getValue()).getSymbol();
+        public Biorhythm getBiorhythm() {
+            return Biorhythm.this;
+        }
+
+        public int getRest() {
+            return rest;
         }
 
         @Override

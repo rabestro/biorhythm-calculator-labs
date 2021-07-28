@@ -22,11 +22,13 @@ public class DailyReport implements Runnable {
         System.out.println("\nPrimary Biorhythms\n");
         Biorhythm.primary()
                 .map(biorhythm -> biorhythm.new Value(days))
+                .map(Indicator::new)
                 .forEach(System.out::println);
 
         System.out.println("\nSecondary Biorhythms\n");
         Biorhythm.secondary()
                 .map(biorhythm -> biorhythm.new Value(days))
+                .map(Indicator::new)
                 .forEach(System.out::println);
 
     }

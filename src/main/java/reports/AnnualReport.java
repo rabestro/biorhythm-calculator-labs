@@ -13,8 +13,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class AnnualReport implements Runnable {
-    final String EMPTY = " ".repeat((int) Biorhythm.primary().count());
-
     private final ReportData reportData;
 
     public AnnualReport(final ReportData reportData) {
@@ -43,13 +41,13 @@ public class AnnualReport implements Runnable {
         for (int day = 1; day < 32; day++) {
             System.out.printf("%3d   ", day);
             for (int month = 1; month < 13; month++) {
-                System.out.printf("%-6s", dayConditions(month, day));
+                System.out.printf("%1s%1s%1s   ", getIndicators(month, day));
             }
             System.out.println();
         }
     }
 
-    private Indicator[] getIndicators(final int month, final int day) {
+    private Object[] getIndicators(final int month, final int day) {
         try {
             final var date = LocalDate.of(reportData.getYear(), month, day);
             final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
@@ -63,22 +61,4 @@ public class AnnualReport implements Runnable {
         }
     }
 
-    private String dayConditions(int month, int day) {
-        try {
-            final var date = LocalDate.of(reportData.getYear(), month, day);
-            final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
-
-            if (days < 0) {
-                return EMPTY;
-            }
-
-            return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Value(days))
-                    .map(Biorhythm.Value::getSymbol)
-                    .collect(Collectors.joining());
-
-        } catch (DateTimeException e) {
-            return EMPTY;
-        }
-    }
 }

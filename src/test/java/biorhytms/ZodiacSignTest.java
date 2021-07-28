@@ -3,6 +3,7 @@ package biorhytms;
 import lombok.val;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -12,6 +13,7 @@ import java.time.MonthDay;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("ZodiacSigns")
 @DisplayName("ZodiacSign enum should")
 class ZodiacSignTest {
 
