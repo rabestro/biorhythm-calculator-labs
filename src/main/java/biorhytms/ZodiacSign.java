@@ -1,7 +1,5 @@
 package biorhytms;
 
-import lombok.val;
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.MonthDay;
@@ -20,14 +18,19 @@ public enum ZodiacSign {
     Libra("The Scales", MonthDay.of(SEPTEMBER, 23), MonthDay.of(OCTOBER, 22), FRIDAY),
     Scorpio("Scorpion", MonthDay.of(OCTOBER, 23), MonthDay.of(NOVEMBER, 22), TUESDAY),
     Sagittarius("Archer", MonthDay.of(NOVEMBER, 22), MonthDay.of(DECEMBER, 21), THURSDAY),
-    Capricorn("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY),
+    Capricorn("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY) {
+        @Override
+        public boolean matches(final MonthDay date) {
+            return start.isBefore(date) || end.isAfter(date) || end.equals(date) || start.equals(date);
+        }
+    },
     Aquarius("The Water-Bearer", MonthDay.of(JANUARY, 20), MonthDay.of(FEBRUARY, 18), SATURDAY),
     Pisces("Two Fish", MonthDay.of(FEBRUARY, 19), MonthDay.of(MARCH, 20), SATURDAY);
 
-    private final String symbol;
-    private final MonthDay start;
-    private final MonthDay end;
+    protected final MonthDay start;
+    protected final MonthDay end;
     private final DayOfWeek luckyDay;
+    private final String symbol;
 
     ZodiacSign(final String symbol, final MonthDay start, final MonthDay end, final DayOfWeek luckyDay) {
         this.symbol = symbol;
@@ -36,17 +39,23 @@ public enum ZodiacSign {
         this.luckyDay = luckyDay;
     }
 
-    public boolean matches(final LocalDate birthday) {
-        val date = MonthDay.from(birthday);
-        return this.equals(Capricorn)
-                ? date.isAfter(start) || date.isBefore(end) || date.equals(start) || date.equals(end)
-                : !date.isAfter(end) && !date.isBefore(start);
-    }
-
-    public static ZodiacSign of(LocalDate birthday) {
+    public static ZodiacSign of(MonthDay birthday) {
         return Arrays.stream(values())
                 .filter(sign -> sign.matches(birthday))
                 .findFirst()
                 .orElseThrow();
     }
+
+    public static ZodiacSign of(LocalDate birthday) {
+        return of(MonthDay.from(birthday));
+    }
+
+    public boolean matches(final MonthDay date) {
+        return !date.isAfter(end) && !date.isBefore(start);
+    }
+
+    public boolean matches(final LocalDate birthday) {
+        return matches(MonthDay.from(birthday));
+    }
+
 }

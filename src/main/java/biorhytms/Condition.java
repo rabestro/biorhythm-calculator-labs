@@ -1,11 +1,14 @@
 package biorhytms;
 
+import static java.lang.Double.isNaN;
+
 public enum Condition {
     Well("*"),
     Usually("+"),
     Danger("0"),
     Loose("-"),
-    Tired(".");
+    Tired("."),
+    Empty(" ");
 
     private final String symbol;
 
@@ -13,15 +16,16 @@ public enum Condition {
         this.symbol = symbol;
     }
 
-    public String getSymbol() {
-        return symbol;
+    public static Condition of(final double value) {
+        return isNaN(value) ? Empty
+                : value > 0.9 ? Well
+                : value > 0.05 ? Usually
+                : value > -0.05 ? Danger
+                : value > -0.9 ? Loose
+                : Tired;
     }
 
-    public static Condition of(final double percent) {
-        return percent > 90 ? Condition.Well
-                : percent > 10 ? Condition.Usually
-                : percent > -10 ? Condition.Danger
-                : percent > -90 ? Condition.Loose
-                : Condition.Tired;
+    public String getSymbol() {
+        return symbol;
     }
 }

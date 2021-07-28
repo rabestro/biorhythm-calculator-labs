@@ -2,9 +2,9 @@ package services;
 
 import biorhytms.ZodiacSign;
 import lombok.val;
+import reports.ReportData;
 
 import java.text.MessageFormat;
-import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -13,24 +13,10 @@ import java.time.temporal.ChronoUnit;
 public class AgeInfo implements Runnable {
     private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
 
-    private final LocalDate birthday;
+    private final ReportData reportData;
 
-    public AgeInfo(LocalDate birthday) {
-        this.birthday = birthday;
-    }
-
-    @Override
-    public void run() {
-        final var today = LocalDate.now();
-        final var days = ChronoUnit.DAYS.between(birthday, today);
-        final var period = Period.between(birthday, today);
-
-        System.out
-                .printf("%n%12s: %s (%s)", "Birthday", birthday.format(LONG_DATE), ZodiacSign.of(birthday))
-                .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
-                .printf("%n%12s: %,d", "Days", days)
-                .printf("%n%12s: %s", "Age", getAge(period))
-                .println();
+    public AgeInfo(ReportData reportData) {
+        this.reportData = reportData;
     }
 
     static String getAge(Period period) {
@@ -51,5 +37,21 @@ public class AgeInfo implements Runnable {
         val two = days.isEmpty() || months.isEmpty() ? "" : " and ";
 
         return years + one + months + two + days;
+    }
+
+    @Override
+    public void run() {
+        final var today = reportData.getDate();
+        final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), today);
+        final var period = Period.between(reportData.getBirthday(), today);
+
+        System.out
+                .printf("%n%12s: %s (%s)", "Birthday",
+                        reportData.getBirthday().format(LONG_DATE),
+                        ZodiacSign.of(reportData.getBirthday()))
+                .printf("%n%12s: %s", "Today", today.format(LONG_DATE))
+                .printf("%n%12s: %,d", "Days", days)
+                .printf("%n%12s: %s", "Age", getAge(period))
+                .println();
     }
 }

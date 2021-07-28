@@ -1,27 +1,39 @@
 Period; Age
-P0D;just born
-P1D;one day
-P2D;two days
-P3D;3 days
-P7D;7 days
-P12D;12 days
-P1Y;one year
-P2Y;two years
-P3Y;3 years
-P1Y1D;one year and one day
-P1Y1M;one year and one month
-P1Y2D;one year and two days
-P1Y2M3D;one year, two months and 3 days
-P30D;30 days
-P1M;one month
-P2M;two months
-P3M;3 months
-P9M;9 months
-P11M;11 months
-P1M1D;one month and one day
-P1M2D;one month and two days
-P1M14D;one month and 14 days
-P2M1D;two months and one day
-P2M2D;two months and two days
-P2Y1M1D;two years, one month and one day
-P39Y3M7D;39 years, 3 months and 7 days
+P0D; just born
+P1D; one day
+P2D; two days
+P3D; 3 days
+P7D; 7 days
+P12D; 12 days
+P30D; 30 days
+P1M; one month
+P2M; two months
+P3M; 3 months
+P9M; 9 months
+P11M; 11 months
+P1Y; one year
+P2Y; two years
+P3Y; 3 years
+P9Y; 9 years
+P13Y; 13 years
+P42Y; 42 years
+P1M1D; one month and one day
+P1M2D; one month and two days
+P1M14D; one month and 14 days
+P2M1D; two months and one day
+P2M2D; two months and two days
+P3M2D; 3 months and two days
+P7M14D; 7 months and 14 days
+P11M22D; 11 months and 22 days
+P1Y1D; one year and one day
+P1Y2D; one year and two days
+P2Y2D; two years and two days
+P1Y11D; one year and 11 days
+P3Y2D; 3 years and two days
+P31Y2D; 31 years and two days
+P31Y24D; 31 years and 24 days
+P51Y12D; 51 years and 12 days
+P1Y1M; one year and one month
+P1Y2M3D; one year, two months and 3 days
+P2Y1M1D; two years, one month and one day
+P39Y3M7D; 39 years, 3 months and 7 days
