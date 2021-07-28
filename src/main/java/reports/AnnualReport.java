@@ -49,6 +49,20 @@ public class AnnualReport implements Runnable {
         }
     }
 
+    private Indicator[] getIndicators(final int month, final int day) {
+        try {
+            final var date = LocalDate.of(reportData.getYear(), month, day);
+            final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
+            return Biorhythm.primary()
+                    .map(biorhythm -> biorhythm.new Value(days))
+                    .map(Indicator::new)
+                    .toArray(Indicator[]::new);
+
+        } catch (DateTimeException e) {
+            return new Indicator[]{Indicator.EMPTY, Indicator.EMPTY, Indicator.EMPTY};
+        }
+    }
+
     private String dayConditions(int month, int day) {
         try {
             final var date = LocalDate.of(reportData.getYear(), month, day);

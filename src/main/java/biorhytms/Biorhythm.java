@@ -31,25 +31,29 @@ public enum Biorhythm {
         return periodInDays;
     }
 
+    public static final Value EMPTY = Physical.new Value(-1);
+
     public class Value {
-        private final long days;
-        private final long rest;
+        private final int days;
+        private final int rest;
         private final Stage stage;
+        private final double value;
 
         public Value(final long days) {
-            this.days = days;
-            rest = days % periodInDays;
-
+            this.days = (int) days;
+            rest = this.days % periodInDays;
             if (rest == 0 || rest * 2 == periodInDays) {
                 stage = Stage.ZERO;
             } else {
-                stage = Stage.of((int) (1 + rest * 4 / periodInDays));
-
+                stage = Stage.of(1 + rest * 4 / periodInDays);
             }
+            value = days < 0
+                    ? Double.NaN
+                    : Math.sin(2 * Math.PI * days / periodInDays);
         }
 
         public double getValue() {
-            return Math.sin(2 * Math.PI * days / periodInDays);
+            return value;
         }
 
         public Stage getStage() {
@@ -61,7 +65,7 @@ public enum Biorhythm {
         }
 
         public String getSymbol() {
-            return Condition.of(getPercent()).getSymbol();
+            return Condition.of(getValue()).getSymbol();
         }
 
         @Override

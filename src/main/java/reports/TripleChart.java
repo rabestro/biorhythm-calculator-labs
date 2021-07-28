@@ -1,7 +1,6 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import biorhytms.Thermometer;
 
 import java.util.stream.IntStream;
 

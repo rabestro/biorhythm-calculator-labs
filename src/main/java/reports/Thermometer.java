@@ -1,5 +1,7 @@
-package biorhytms;
+package reports;
 
+import biorhytms.Biorhythm;
+import biorhytms.Stage;
 import lombok.SneakyThrows;
 import lombok.val;
 
