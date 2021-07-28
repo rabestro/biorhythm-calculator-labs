@@ -12,11 +12,10 @@ import java.util.Locale;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class AnnualReport implements Runnable {
-    private final ReportData reportData;
+public class AnnualReport extends AbstractReport {
 
     public AnnualReport(final ReportData reportData) {
-        this.reportData = reportData;
+        super(reportData);
     }
 
     @Override

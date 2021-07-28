@@ -5,17 +5,16 @@ import biorhytms.Biorhythm;
 import java.time.format.DateTimeFormatter;
 import java.util.stream.IntStream;
 
-public class WeeklyReport implements Runnable {
+public class WeeklyReport extends AbstractReport {
     private static final String TEMPLATE = "| %-13s | %s%n".repeat(3);
     private static final DateTimeFormatter FIRST_LINE = DateTimeFormatter.ofPattern("EEEE");
     private static final DateTimeFormatter SECOND_LINE = DateTimeFormatter.ofPattern("dd MMMM");
     private static final DateTimeFormatter THIRD_LINE = DateTimeFormatter.ofPattern("yyyy");
     private static final String LINE_SEPARATOR =
             "+---------------+------------------------------------------------------------";
-    private final ReportData reportData;
 
     public WeeklyReport(final ReportData reportData) {
-        this.reportData = reportData;
+        super(reportData);
     }
 
     static String day(ReportData data) {
