@@ -5,16 +5,15 @@ import lombok.val;
 
 import java.time.temporal.ChronoUnit;
 
-public class DailyReport implements Runnable {
-    private final ReportData reportData;
+public class DailyReport extends AbstractReport {
 
     public DailyReport(final ReportData reportData) {
-        this.reportData = reportData;
+        super(reportData);
     }
 
     @Override
     public void run() {
-        val days = ChronoUnit.DAYS.between(reportData.getBirthday(), reportData.getDate());
+        val days = ChronoUnit.DAYS.between(birthday(), date());
 
         System.out.println();
         System.out.println("Daily Biorhythm Summary:");

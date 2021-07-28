@@ -27,26 +27,25 @@ public class Indicator implements Formattable {
 
     @SneakyThrows
     @Override
-    public void formatTo(final Formatter formatter, final int flags, final int width, final int precision) {
+    public void formatTo(final Formatter fmt, final int flags, final int width, final int precision) {
         LOGGER.log(INFO, "flags: {0}, width: {1}, precision: {2}", flags, width, precision);
 
         if (width > -1 && width < 3) {
-            formatter.out().append(Condition.of(value.getValue()).getSymbol());
+            fmt.format(Condition.of(value.getValue()).getSymbol());
             return;
         }
         val biorhythm = value.getBiorhythm();
-        formatter.out()
-                .append(String.format("%12s: %4d%%", biorhythm.name(), value.getPercent()));
+
+        fmt.format("%12s: %4d%%", biorhythm.name(), value.getPercent());
 
         if (precision > 0) {
-            formatter.out()
-                    .append(String.format(" (%2d/%2d)", value.getRest(), biorhythm.getPeriod()));
+            fmt.format(" (%2d/%2d)", value.getRest(), biorhythm.getPeriod());
         }
 
     }
 
     @Override
     public String toString() {
-        return value.getBiorhythm().name() + ": " + value.getPercent() + "%";
+        return String.format("%s", this);
     }
 }

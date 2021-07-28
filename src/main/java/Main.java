@@ -1,7 +1,5 @@
 import lombok.val;
-import reports.AnnualReport;
-import reports.DailyReport;
-import reports.ReportData;
+import reports.*;
 import services.AgeInfo;
 import services.Birthday;
 import services.CLI;
@@ -21,7 +19,9 @@ public class Main {
         reportData.setDate(randomDate);
 
         new AgeInfo(reportData).run();
-        new DailyReport(reportData).run();
+//        new DailyReport(reportData).run();
+        new SummaryReport(reportData).run();
+
 //        new RequestProcessor(birthday).run();
 //        new WeeklyReport(reportData).run();
 //        new AnnualReport(reportData).run();
