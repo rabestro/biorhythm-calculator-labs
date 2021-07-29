@@ -1,6 +1,7 @@
 import lombok.val;
 import reports.ReportData;
 import reports.SummaryReport;
+import reports.WeeklyReport;
 import services.AgeInfo;
 import services.Birthday;
 import services.CLI;
@@ -21,10 +22,10 @@ public class Main {
 
         new AgeInfo(reportData).run();
 //        new DailyReport(reportData).run();
-        new SummaryReport(reportData).run();
+//        new SummaryReport(reportData).run();
 
 //        new RequestProcessor(birthday).run();
-//        new WeeklyReport(reportData).run();
+        new WeeklyReport(reportData).run();
 //        new AnnualReport(reportData).run();
 //        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
 //        new TripleChart(reportData).run();

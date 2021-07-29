@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 public class WeeklyReport extends AbstractReport {
     private static final String TEMPLATE = "| %-13s | %s%n".repeat(3);
     private static final DateTimeFormatter FIRST_LINE = DateTimeFormatter.ofPattern("EEEE");
-    private static final DateTimeFormatter SECOND_LINE = DateTimeFormatter.ofPattern("dd MMMM");
+    private static final DateTimeFormatter SECOND_LINE = DateTimeFormatter.ofPattern("MMMM ");
     private static final DateTimeFormatter THIRD_LINE = DateTimeFormatter.ofPattern("yyyy");
     private static final String LINE_SEPARATOR =
             "+---------------+------------------------------------------------------------";
@@ -20,7 +20,8 @@ public class WeeklyReport extends AbstractReport {
     static String day(ReportData data) {
         return String.format(TEMPLATE,
                 data.getDate().format(FIRST_LINE), Biorhythm.Physical.new Value(data.getDays()),
-                data.getDate().format(SECOND_LINE), Biorhythm.Emotional.new Value(data.getDays()),
+                data.getDate().format(SECOND_LINE) + dayOrdinal(data.getDate().getDayOfMonth()),
+                Biorhythm.Emotional.new Value(data.getDays()),
                 data.getDate().format(THIRD_LINE), Biorhythm.Intellectual.new Value(data.getDays())
         );
     }

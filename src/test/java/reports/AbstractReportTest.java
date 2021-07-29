@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class AbstractReportTest {
 
     @ParameterizedTest(name = "{0} = {1}")
-    @CsvFileSource(resources = "/ordinal-days.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/day-ordinal.csv", numLinesToSkip = 1)
     void dayOrdinal(final int day, final String expected) {
         assertEquals(expected, AbstractReport.dayOrdinal(day));
     }
