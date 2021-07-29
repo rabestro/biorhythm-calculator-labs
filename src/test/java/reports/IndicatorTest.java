@@ -2,11 +2,13 @@ package reports;
 
 import biorhytms.Biorhythm;
 import lombok.val;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class IndicatorTest {
 
     @Test
+    @Disabled
     void Test() {
         val indicator = new Indicator(Biorhythm.Physical.new Value(1));
         System.out.printf("-|%s|-%n", indicator);
