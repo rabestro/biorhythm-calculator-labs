@@ -1,5 +1,7 @@
 package biorhytms;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 public enum Biorhythm {
@@ -41,6 +43,10 @@ public enum Biorhythm {
         private final int rest;
         private final Stage stage;
         private final double value;
+
+        public Value(final LocalDate birthday, final LocalDate date) {
+            this(ChronoUnit.DAYS.between(birthday, date));
+        }
 
         public Value(final long days) {
             this.days = (int) days;
