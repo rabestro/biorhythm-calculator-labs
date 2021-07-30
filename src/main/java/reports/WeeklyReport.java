@@ -2,8 +2,10 @@ package reports;
 
 import biorhytms.Biorhythm;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
 public class WeeklyReport extends AbstractReport {
@@ -29,11 +31,18 @@ public class WeeklyReport extends AbstractReport {
 
     @Override
     public void run() {
+        int weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
         System.out.println();
         System.out.println("|  Weekly Report  |");
-
-        Stream.iterate(reportData.getDate(), d -> d.plusDays(1L)).limit(7).forEach(this::printDay);
+//        int weekOfYear = date.get(WeekFields.of(locale).weekOfYear());
+        weekDays().forEach(this::printDay);
 
         System.out.println(LINE_SEPARATOR);
+    }
+
+    private Stream<LocalDate> weekDays() {
+        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1);
+        return Stream.iterate(startDay, day -> day.plusDays(1L))
+                .limit(DayOfWeek.values().length);
     }
 }
