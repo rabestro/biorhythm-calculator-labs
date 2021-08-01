@@ -20,7 +20,9 @@ public class SummaryReport extends AbstractReport {
 
         System.out.println();
 
-        biorhythms().forEach(i -> System.out.printf("%60.9s%n", i));
+        biorhythms()
+                .map(Indicator::getFull)
+                .forEach(System.out::println);
     }
 
     private Stream<Indicator> biorhythms() {

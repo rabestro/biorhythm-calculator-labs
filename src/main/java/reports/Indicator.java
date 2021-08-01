@@ -5,6 +5,7 @@ import biorhytms.Condition;
 import lombok.SneakyThrows;
 import lombok.val;
 
+import java.text.MessageFormat;
 import java.util.Formattable;
 import java.util.Formatter;
 import java.util.Locale;
@@ -22,6 +23,28 @@ public class Indicator implements Formattable {
 
     public Indicator(final Biorhythm.Value value) {
         this.value = value;
+    }
+
+    public String getFull() {
+        val biorhythm = value.getBiorhythm();
+        val sb = new StringBuilder();
+        val text = MessageFormat.format(
+                value.getStage().getTemplate(),
+                biorhythm.name().toLowerCase(),
+                biorhythm.getAttributes()
+        );
+
+        sb.append(biorhythm.name()).append(':')
+                .append(System.lineSeparator())
+                .append(System.lineSeparator())
+                .append(text.replaceAll("(.{1,40}) ", "$1\n"))
+                .append(System.lineSeparator());
+
+        return sb.toString();
+    }
+
+    public String splitText(final String text, final int width) {
+        return text.replaceAll("(.{1,40}) ", "$#");
     }
 
     @SneakyThrows

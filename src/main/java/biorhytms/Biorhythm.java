@@ -56,9 +56,7 @@ public enum Biorhythm {
             } else {
                 stage = Stage.of(1 + rest * 4 / periodInDays);
             }
-            value = days < 0
-                    ? Double.NaN
-                    : Math.sin(2 * Math.PI * days / periodInDays);
+            value = days < 0 ? Double.NaN : Math.sin(2 * Math.PI * days / periodInDays);
         }
 
         public double getValue() {
