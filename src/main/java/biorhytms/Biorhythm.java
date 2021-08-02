@@ -48,7 +48,7 @@ public enum Biorhythm {
             this(ChronoUnit.DAYS.between(birthday, date));
         }
 
-        public Value(final long days) {
+        private Value(final long days) {
             this.days = (int) days;
             rest = this.days % periodInDays;
             if (rest == 0 || rest * 2 == periodInDays) {
@@ -61,6 +61,11 @@ public enum Biorhythm {
 
         public double getValue() {
             return value;
+        }
+
+        public int changesInDays() {
+            final var halfPeriod = (periodInDays + 1) / 2;
+            return halfPeriod - rest % halfPeriod;
         }
 
         public Stage getStage() {

@@ -27,7 +27,7 @@ public class SummaryReport extends AbstractReport {
 
     private Stream<Indicator> biorhythms() {
         return Biorhythm.primary()
-                .map(biorhythm -> biorhythm.new Value(reportData.getDays()))
+                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
                 .map(Indicator::new);
     }
 

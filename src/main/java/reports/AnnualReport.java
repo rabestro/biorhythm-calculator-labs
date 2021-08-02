@@ -51,7 +51,7 @@ public class AnnualReport extends AbstractReport {
             final var date = LocalDate.of(reportData.getYear(), month, day);
             final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
             return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Value(days))
+                    .map(biorhythm -> biorhythm.new Value(birthday(), date()))
                     .map(Indicator::new)
                     .toArray(Indicator[]::new);
 

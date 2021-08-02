@@ -20,13 +20,13 @@ public class DailyReport extends AbstractReport {
 
         System.out.println("\nPrimary Biorhythms\n");
         Biorhythm.primary()
-                .map(biorhythm -> biorhythm.new Value(days))
+                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
                 .map(Indicator::new)
                 .forEach(System.out::println);
 
         System.out.println("\nSecondary Biorhythms\n");
         Biorhythm.secondary()
-                .map(biorhythm -> biorhythm.new Value(days))
+                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
                 .map(Indicator::new)
                 .forEach(System.out::println);
 
