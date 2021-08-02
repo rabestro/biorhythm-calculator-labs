@@ -31,13 +31,17 @@ public class Indicator implements Formattable {
         val text = MessageFormat.format(
                 value.getStage().getTemplate(),
                 biorhythm.name().toLowerCase(),
-                biorhythm.getAttributes()
+                biorhythm.getAttributes(),
+                value.cycleLastDay().getDayOfWeek(),
+                value.cycleLastDay().getMonth(),
+                value.cycleLastDay().getDayOfMonth(),
+                value.changesInDays()
         );
 
         sb.append(biorhythm.name()).append(':')
                 .append(System.lineSeparator())
                 .append(System.lineSeparator())
-                .append(text.replaceAll("(.{1,40}) ", "$1\n"))
+                .append(text.replaceAll("(.{1,60}) ", "$1\n"))
                 .append(System.lineSeparator());
 
         return sb.toString();

@@ -18,8 +18,7 @@ public class Main {
         val randomDate = reportData
                 .getBirthday()
                 .plusDays(random.nextInt(20_000));
-        reportData.setDate(randomDate);
-
+//        reportData.setDate(randomDate);
         new AgeInfo(reportData).run();
 //        new DailyReport(reportData).run();
         new SummaryReport(reportData).run();
