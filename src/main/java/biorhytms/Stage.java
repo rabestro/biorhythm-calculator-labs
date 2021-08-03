@@ -1,7 +1,7 @@
 package biorhytms;
 
 import biorhytms.format.DaysFormat;
-import biorhytms.format.SummaryDateFormat;
+import biorhytms.format.OrdinalDateFormat;
 import lombok.Getter;
 
 import java.text.Format;
@@ -12,31 +12,32 @@ import java.util.Set;
 public enum Stage {
     ZERO("+",
             "Today is a critical day for your {0} attributes! " +
-                    "That means it is an important day to focus on your {1}."),
+                    "That means it is an important day to focus on your {1}.",
+            new Format[]{null, null}),
     POSITIVE_UP("»",
             "Your are progressing in a positive cycle for your {0} attributes, " +
-                    "and this will last until {2}, {3} {4} ({5}). " +
-                    "Take advantage of your enhanced {1}!"),
+                    "and this will last until {2} ({3}). Take advantage of your enhanced {1}!",
+            new Format[]{null, new OrdinalDateFormat(), new DaysFormat(), null}),
     POSITIVE_DOWN("«",
             "Your are in a positive cycle for your {0} attributes, " +
-                    "which ends on Wednesday, July 21st (tomorrow). " +
-                    "Take advantage of your enhanced {1} while they are at their peak."),
+                    "which ends on {2} ({3}). Take advantage of your enhanced {1} while they are at their peak.",
+            new Format[]{null, new OrdinalDateFormat(), new DaysFormat(), null}),
     NEGATIVE_DOWN("«",
-            "Your are in a negative cycle for your {0} attributes, " +
-                    "which ends on Monday, August 2nd (13 days). " +
-                    "Your {1} may not be at their highest, so it is a good opportunity to work on them!"),
+            "Your are in a negative cycle for your {0} attributes, which ends on {2} ({3}). " +
+                    "Your {1} may not be at their highest, so it is a good opportunity to work on them!",
+            new Format[]{null, new OrdinalDateFormat(), new DaysFormat(), null}),
     NEGATIVE_UP("»",
             "Your are in a negative {0} cycle, but it coming to an end " +
-                    "on Sunday, July 25th (5 days)! " +
-                    "Work on improving your {1} as you near your next positive cycle!");
+                    "on {2} ({3})! Work on improving your {1} as you near your next positive cycle!",
+            new Format[]{null, new OrdinalDateFormat(), new DaysFormat(), null});
 
     private final String symbol;
     private final MessageFormat template;
 
-    Stage(final String symbol, final String template) {
+    Stage(final String symbol, final String template, Format[] formats) {
         this.symbol = symbol;
         this.template = new MessageFormat(template);
-        this.template.setFormats(new Format[]{null, null, new SummaryDateFormat(), new DaysFormat()});
+        this.template.setFormats(formats);
     }
 
     public static Stage of(final int index) {

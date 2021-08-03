@@ -1,14 +1,23 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import biorhytms.format.SummaryFormat;
 
 import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
     private static final SummaryFormat SUMMARY_FORMAT = new SummaryFormat();
 
+    public SummaryReport() {
+        super();
+    }
+
     public SummaryReport(final ReportData reportData) {
         super(reportData);
+    }
+
+    public static void main(String[] args) {
+        new SummaryReport().run();
     }
 
     @Override

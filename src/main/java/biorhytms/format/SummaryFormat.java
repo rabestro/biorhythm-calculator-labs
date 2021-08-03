@@ -6,8 +6,11 @@ import lombok.val;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
+import java.util.regex.Pattern;
 
 public class SummaryFormat extends Format {
+    private static final Pattern FIND_LINE_BRAKE = Pattern.compile("(.{1,60}) ");
+    private static final String INSERT_NEW_LINE = "$1\n";
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
@@ -15,22 +18,20 @@ public class SummaryFormat extends Format {
             throw new IllegalArgumentException("argument should be Biorhythm.Value");
         }
         val value = (Biorhythm.Value) obj;
-        val biorhythm = value.getBiorhythm();
-        val text = value
-                .getStage()
-                .getTemplate()
-                .format(biorhythm.name().toLowerCase(),
-                        biorhythm.getAttributes(),
-                        value.cycleLastDay(),
-                        value.changesInDays())
-                .replaceAll("(.{1,60}) ", "$1\n");
+        val args = new Object[]{
+                value.getBiorhythm().name().toLowerCase(),
+                value.getBiorhythm().getAttributes(),
+                value.cycleLastDay(),
+                value.changesInDays()
+        };
+        val text = value.getStage().getTemplate().format(args);
 
         return toAppendTo
-                .append(biorhythm.name())
+                .append(value.getBiorhythm().name())
                 .append(':')
                 .append(System.lineSeparator())
                 .append(System.lineSeparator())
-                .append(text)
+                .append(FIND_LINE_BRAKE.matcher(text).replaceAll(INSERT_NEW_LINE))
                 .append(System.lineSeparator());
     }
 
