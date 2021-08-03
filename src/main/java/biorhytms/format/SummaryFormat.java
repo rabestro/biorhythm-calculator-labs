@@ -9,7 +9,7 @@ import java.text.ParsePosition;
 import java.util.regex.Pattern;
 
 public class SummaryFormat extends Format {
-    private static final Pattern FIND_LINE_BRAKE = Pattern.compile("(.{1,60}) ");
+    private static final Pattern FIND_LINE_BREAK = Pattern.compile("(.{1,60}) ");
     private static final String INSERT_NEW_LINE = "$1\n";
 
     @Override
@@ -31,7 +31,7 @@ public class SummaryFormat extends Format {
                 .append(':')
                 .append(System.lineSeparator())
                 .append(System.lineSeparator())
-                .append(FIND_LINE_BRAKE.matcher(text).replaceAll(INSERT_NEW_LINE))
+                .append(FIND_LINE_BREAK.matcher(text).replaceAll(INSERT_NEW_LINE))
                 .append(System.lineSeparator());
     }
 
