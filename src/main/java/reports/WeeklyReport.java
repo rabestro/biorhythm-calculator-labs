@@ -16,8 +16,16 @@ public class WeeklyReport extends AbstractReport {
             "+-----------------+------------------------------------------------------------";
     private static final String TEMPLATE = LINE_SEPARATOR + "%n" + "| %-15s | %s%n".repeat(3);
 
+    public WeeklyReport() {
+        super();
+    }
+
     public WeeklyReport(final ReportData reportData) {
         super(reportData);
+    }
+
+    public static void main(String[] args) {
+        new WeeklyReport().run();
     }
 
     void printDay(final LocalDate localDate) {

@@ -1,15 +1,25 @@
 package biorhytms.format;
 
+import java.text.Format;
 import java.time.LocalDate;
 
 public class OrdinalDateFormat extends AbstractFormat {
-    private static final OrdinalDayFormat ORDINAL_DAY_FORMAT = new OrdinalDayFormat();
+
+    public OrdinalDateFormat() {
+        this(new OrdinalDayFormat());
+    }
+
+    public OrdinalDateFormat(final Format ordinalDay) {
+        this.ordinalDay = ordinalDay;
+    }
+
+    private final Format ordinalDay;
 
     @Override
     public String simpleFormat(final Object object) {
         if (object instanceof LocalDate) {
             final var date = (LocalDate) object;
-            final var days = ORDINAL_DAY_FORMAT.format(date.getDayOfMonth());
+            final var days = ordinalDay.format(date.getDayOfMonth());
             return String.format("%tA, %<tb %2$s", date, days);
 
         }
