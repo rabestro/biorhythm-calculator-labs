@@ -6,7 +6,7 @@ import java.util.Random;
 
 import static java.time.LocalDate.EPOCH;
 
-public class AbstractRunner {
+abstract class AbstractRunner {
     private static final System.Logger LOGGER = System.getLogger("");
     private static final Random random = new Random();
     private static final int MAX_DAYS = 20_000;
