@@ -5,6 +5,7 @@ import biorhytms.Biorhythm;
 import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
+    private static final SummaryFormat SUMMARY_FORMAT = new SummaryFormat();
 
     public SummaryReport(final ReportData reportData) {
         super(reportData);
@@ -21,14 +22,12 @@ public class SummaryReport extends AbstractReport {
         System.out.println();
 
         biorhythms()
-                .map(Indicator::getFull)
+                .map(SUMMARY_FORMAT::format)
                 .forEach(System.out::println);
     }
 
-    private Stream<Indicator> biorhythms() {
-        return Biorhythm.primary()
-                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
-                .map(Indicator::new);
+    private Stream<Biorhythm.Value> biorhythms() {
+        return Biorhythm.primary().map(biorhythm -> biorhythm.new Value(birthday(), date()));
     }
 
 }

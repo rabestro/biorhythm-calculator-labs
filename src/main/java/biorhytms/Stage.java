@@ -1,7 +1,14 @@
 package biorhytms;
 
+import biorhytms.format.DaysFormat;
+import biorhytms.format.SummaryDateFormat;
+import lombok.Getter;
+
+import java.text.Format;
+import java.text.MessageFormat;
 import java.util.Set;
 
+@Getter
 public enum Stage {
     ZERO("+",
             "Today is a critical day for your {0} attributes! " +
@@ -24,22 +31,19 @@ public enum Stage {
                     "Work on improving your {1} as you near your next positive cycle!");
 
     private final String symbol;
-    private final String template;
+    private final MessageFormat template;
 
     Stage(final String symbol, final String template) {
         this.symbol = symbol;
-        this.template = template;
+        this.template = new MessageFormat(template);
+        this.template.setFormats(new Format[]{null, null, new SummaryDateFormat(), new DaysFormat()});
     }
 
     public static Stage of(final int index) {
         return Stage.values()[index];
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
-    public String getTemplate() {
+    public MessageFormat getTemplate() {
         return template;
     }
 
