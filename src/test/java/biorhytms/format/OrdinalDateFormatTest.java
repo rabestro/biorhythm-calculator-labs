@@ -38,6 +38,7 @@ public class OrdinalDateFormatTest {
 
         final var actual = ordinalDateFormat.format(LocalDate.EPOCH);
         final var expected = "Thursday, January " + ORDINAL_DATE;
+
         assertEquals(expected, actual);
     }
 
