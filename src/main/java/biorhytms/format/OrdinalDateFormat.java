@@ -20,7 +20,7 @@ public class OrdinalDateFormat extends AbstractFormat {
         if (object instanceof LocalDate) {
             final var date = (LocalDate) object;
             final var days = ordinalDay.format(date.getDayOfMonth());
-            return String.format("%tA, %<tb %2$s", date, days);
+            return String.format("%tA, %<tB %2$s", date, days);
 
         }
         throw new IllegalArgumentException("expected LocalDate, actual is " + object.getClass().getName());

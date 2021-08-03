@@ -1,6 +1,7 @@
 package biorhytms.format;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -8,12 +9,16 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.text.Format;
+import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.doThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
+@DisplayName("Test OrdinalDateFormat class")
 public class OrdinalDateFormatTest {
+    private static final String ORDINAL_DATE = "<#>";
 
     @Mock
     private Format ordinalDayFormat;
@@ -25,11 +30,15 @@ public class OrdinalDateFormatTest {
     void setUp() {
     }
 
-
     @Test
-    void throwWhenNull() {
-        doThrow(new NullPointerException()).when(ordinalDayFormat).format(null);
+    @DisplayName("checks format for month and day of the week")
+    void testFormat() {
+        when(ordinalDayFormat.format(any(), any(), any()))
+                .thenReturn(new StringBuffer(ORDINAL_DATE));
 
-        assertThrows(NullPointerException.class, () -> ordinalDateFormat.format(null));
+        final var actual = ordinalDateFormat.format(LocalDate.EPOCH);
+        final var expected = "Thursday, January " + ORDINAL_DATE;
+        assertEquals(expected, actual);
     }
+
 }
