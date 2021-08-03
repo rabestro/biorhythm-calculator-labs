@@ -15,15 +15,23 @@ import java.util.stream.Collectors;
 
 public class AnnualReport extends AbstractReport {
 
+    public AnnualReport() {
+        super();
+    }
+
     public AnnualReport(final ReportData reportData) {
         super(reportData);
+    }
+
+    public static void main(String[] args) {
+        new AnnualReport().run();
     }
 
     @Override
     public void run() {
         System.out.println();
         System.out.println("      Birthday: " + reportData.getBirthday()
-                + "           Annual report for "
+                + "                     Annual report for "
                 + reportData.getYear() + " year");
         System.out.println();
         Function<Month, String> shortName = month ->
