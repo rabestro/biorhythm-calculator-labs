@@ -2,6 +2,7 @@ package services;
 
 import biorhytms.Biorhythm;
 
+import java.time.LocalDate;
 import java.util.stream.LongStream;
 
 public class TestIndicators implements Runnable {
@@ -11,11 +12,16 @@ public class TestIndicators implements Runnable {
         this.biorhythm = biorhythm;
     }
 
+    public static void main(String[] args) {
+        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
+    }
+
     @Override
     public void run() {
         System.out.println();
+        final var birthday = LocalDate.of(1970,6,7);
         LongStream.rangeClosed(0, biorhythm.getPeriod() * 2L)
-                .mapToObj(days -> biorhythm.new Value(days))
+                .mapToObj(days -> biorhythm.new Value(birthday, birthday.plusDays(days)))
                 .forEach(System.out::println);
     }
 }

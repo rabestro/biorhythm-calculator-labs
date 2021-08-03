@@ -12,6 +12,11 @@ public class ReportData {
     private final LocalDate birthday;
     private LocalDate date;
 
+    public ReportData(final LocalDate birthday, final LocalDate date) {
+        this.birthday = birthday;
+        this.date = date;
+    }
+
     public ReportData(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();

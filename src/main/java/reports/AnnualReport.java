@@ -1,6 +1,7 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import biorhytms.Condition;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -40,23 +41,25 @@ public class AnnualReport extends AbstractReport {
         for (int day = 1; day < 32; day++) {
             System.out.printf("%3d   ", day);
             for (int month = 1; month < 13; month++) {
-                System.out.printf("%1s%1s%1s   ", getIndicators(month, day));
+                System.out.printf("%-6s", getIndicators(month, day));
             }
             System.out.println();
         }
     }
 
-    private Object[] getIndicators(final int month, final int day) {
+    private String getIndicators(final int month, final int day) {
         try {
             final var date = LocalDate.of(reportData.getYear(), month, day);
             final var days = ChronoUnit.DAYS.between(reportData.getBirthday(), date);
             return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Value(days))
-                    .map(Indicator::new)
-                    .toArray(Indicator[]::new);
+                    .map(biorhythm -> biorhythm.new Value(birthday(), date()))
+                    .map(Biorhythm.Value::getValue)
+                    .map(Condition::of)
+                    .map(Condition::getSymbol)
+                    .collect(Collectors.joining());
 
         } catch (DateTimeException e) {
-            return new Indicator[]{Indicator.EMPTY, Indicator.EMPTY, Indicator.EMPTY};
+            return "";
         }
     }
 

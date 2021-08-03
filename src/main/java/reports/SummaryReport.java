@@ -1,13 +1,23 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import biorhytms.format.SummaryFormat;
 
 import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
+    private static final SummaryFormat SUMMARY_FORMAT = new SummaryFormat();
+
+    public SummaryReport() {
+        super();
+    }
 
     public SummaryReport(final ReportData reportData) {
         super(reportData);
+    }
+
+    public static void main(String[] args) {
+        new SummaryReport().run();
     }
 
     @Override
@@ -20,13 +30,13 @@ public class SummaryReport extends AbstractReport {
 
         System.out.println();
 
-        biorhythms().forEach(i -> System.out.printf("%60.9s%n", i));
+        biorhythms()
+                .map(SUMMARY_FORMAT::format)
+                .forEach(System.out::println);
     }
 
-    private Stream<Indicator> biorhythms() {
-        return Biorhythm.primary()
-                .map(biorhythm -> biorhythm.new Value(reportData.getDays()))
-                .map(Indicator::new);
+    private Stream<Biorhythm.Value> biorhythms() {
+        return Biorhythm.primary().map(biorhythm -> biorhythm.new Value(birthday(), date()));
     }
 
 }

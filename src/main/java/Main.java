@@ -18,14 +18,13 @@ public class Main {
         val randomDate = reportData
                 .getBirthday()
                 .plusDays(random.nextInt(20_000));
-        reportData.setDate(randomDate);
-
+//        reportData.setDate(randomDate);
         new AgeInfo(reportData).run();
 //        new DailyReport(reportData).run();
-//        new SummaryReport(reportData).run();
+        new SummaryReport(reportData).run();
 
 //        new RequestProcessor(birthday).run();
-        new WeeklyReport(reportData).run();
+//        new WeeklyReport(reportData).run();
 //        new AnnualReport(reportData).run();
 //        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
 //        new TripleChart(reportData).run();
