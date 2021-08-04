@@ -18,7 +18,7 @@ public class PrettyListFormat extends Format {
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         if (!(obj instanceof Collection)) {
-            throw new IllegalArgumentException("argument should be a Collection");
+            throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
         }
         val collection = (Collection) obj;
         val text = collection.stream()
