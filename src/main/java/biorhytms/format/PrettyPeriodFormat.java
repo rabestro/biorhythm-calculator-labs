@@ -18,10 +18,13 @@ public class PrettyPeriodFormat extends Format {
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
-        if (!(obj instanceof Period)) {
-            throw new IllegalArgumentException("argument should be Period");
+        if (obj instanceof Period)) {
+            format((Period) obj, toAppendTo, pos);
         }
-        val period = (Period) obj;
+        throw new IllegalArgumentException("argument should be Period");
+    }
+    
+    public StringBuffer format(final Period period, final StringBuffer toAppendTo, final FieldPosition pos) {
         val years = YEARS.format(new Object[]{period.getYears()});
         val months = MONTHS.format(new Object[]{period.getMonths()});
         val days = DAYS.format(new Object[]{period.getDays()});
