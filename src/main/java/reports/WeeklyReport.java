@@ -1,7 +1,9 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import biorhytms.format.WeeklyFormat;
 
+import java.text.Format;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -15,6 +17,7 @@ public class WeeklyReport extends AbstractReport {
     private static final String LINE_SEPARATOR =
             "+-----------------+------------------------------------------------------------";
     private static final String TEMPLATE = LINE_SEPARATOR + "%n" + "| %-15s | %s%n".repeat(3);
+    private static final Format DAILY_FORMAT = new WeeklyFormat();
 
     public WeeklyReport() {
         super();
@@ -39,6 +42,16 @@ public class WeeklyReport extends AbstractReport {
 
     @Override
     public void run() {
+        println("report.weekly.top");
+        weekDays().forEach(day -> println("report.weekly.day",
+                LONG_DATE.format(day),
+                DAILY_FORMAT.format(Biorhythm.Physical.new Value(birthday(), day)),
+                DAILY_FORMAT.format(Biorhythm.Emotional.new Value(birthday(), day)),
+                DAILY_FORMAT.format(Biorhythm.Intellectual.new Value(birthday(), day)))
+        );
+    }
+
+    public void old() {
         int weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
         System.out.println();
         System.out.println("|  Weekly Report  |");

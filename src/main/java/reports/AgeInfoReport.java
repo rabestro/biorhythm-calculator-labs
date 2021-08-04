@@ -5,11 +5,8 @@ import biorhytms.format.PrettyPeriodFormat;
 
 import java.text.Format;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 
 public class AgeInfoReport extends AbstractReport {
-    private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
     private final Format AGE_FORMAT = PrettyPeriodFormat.getInstance();
 
     public AgeInfoReport(ReportData reportData) {
