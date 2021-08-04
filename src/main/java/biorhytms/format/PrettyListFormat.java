@@ -31,6 +31,17 @@ public class PrettyListFormat extends Format {
         return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
     }
 
+    public StringBuffer format(final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+        val text = obj.stream()
+                .filter(Objects::nonNull)
+                .map(Objects::toString)
+                .filter(Predicate.not(String::isBlank))
+                .collect(Collectors.joining(", "))
+                .toString();
+
+        return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
+    }
+    
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
         throw new UnsupportedOperationException();
