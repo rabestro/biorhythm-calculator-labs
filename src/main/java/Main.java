@@ -1,8 +1,7 @@
 import lombok.val;
 import reports.ReportData;
 import reports.SummaryReport;
-import reports.WeeklyReport;
-import services.AgeInfo;
+import reports.AgeInfoReport;
 import services.Birthday;
 import services.CLI;
 
@@ -19,7 +18,7 @@ public class Main {
                 .getBirthday()
                 .plusDays(random.nextInt(20_000));
 //        reportData.setDate(randomDate);
-        new AgeInfo(reportData).run();
+        new AgeInfoReport(reportData).run();
 //        new DailyReport(reportData).run();
         new SummaryReport(reportData).run();
 
