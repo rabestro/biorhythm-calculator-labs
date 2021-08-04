@@ -14,4 +14,8 @@ public class LocalTextInterface implements TextInterface {
         final var format = resourceBundle.containsKey(key) ? resourceBundle.getString(key) : key;
         TextInterface.super.print(format, args);
     }
+
+    public void printf(final String key, final Object... args) {
+        System.out.printf(resourceBundle.getString(key), args);
+    }
 }
