@@ -18,7 +18,7 @@ public class PrettyListFormat extends Format {
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         if (obj instanceof Collection) {
-            this.format((Collection) obj, toAppendTo, pos);
+            return format((Collection) obj, toAppendTo, pos);
         }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
     }
