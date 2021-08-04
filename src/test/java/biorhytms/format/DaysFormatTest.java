@@ -1,11 +1,13 @@
 package biorhytms.format;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("Formatter")
 class DaysFormatTest extends FormatTest {
     static final String CSV = "/days-format.csv";
 
