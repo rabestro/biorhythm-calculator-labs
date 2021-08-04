@@ -20,6 +20,6 @@ public class DailyReport extends AbstractReport {
                 .map(DAILY_FORMAT::format)
                 .toArray();
 
-        println("report.daily", daily);
+        printf("format.daily", daily);
     }
 }

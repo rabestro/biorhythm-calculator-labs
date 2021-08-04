@@ -17,7 +17,7 @@ public class WeeklyReport extends AbstractReport {
     private static final String LINE_SEPARATOR =
             "+-----------------+------------------------------------------------------------";
     private static final String TEMPLATE = LINE_SEPARATOR + "%n" + "| %-15s | %s%n".repeat(3);
-    private static final Format DAILY_FORMAT = new WeeklyFormat();
+    private static final Format DAILY_FORMAT = new WeeklyFormat("%-12s %4d %%");
 
     public WeeklyReport() {
         super();

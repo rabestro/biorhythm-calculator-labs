@@ -15,10 +15,10 @@ public class AgeInfoReport extends AbstractReport {
 
     @Override
     public void run() {
-        println("report.ageInfo",
-                LONG_DATE.format(birthday()),
+        printf("format.ageInfo",
+                birthday(),
                 ZodiacSign.of(birthday()),
-                LONG_DATE.format(date()),
+                date(),
                 reportData.getDays(),
                 AGE_FORMAT.format(Period.between(birthday(), date()))
         );
