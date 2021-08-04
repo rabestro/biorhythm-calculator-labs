@@ -23,8 +23,8 @@ public class PrettyPeriodFormat extends Format {
         }
         val period = (Period) obj;
         val years = YEARS.format(new Object[]{period.getYears()});
-        val months = MONTHS.format(new Object[]{period.getYears()});
-        val days = DAYS.format(new Object[]{period.getYears()});
+        val months = MONTHS.format(new Object[]{period.getMonths()});
+        val days = DAYS.format(new Object[]{period.getDays()});
 
         if ((years + months + days).isEmpty()) {
             return toAppendTo.append("just born");
