@@ -17,18 +17,10 @@ public class PrettyListFormat extends Format {
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
-        if (!(obj instanceof Collection)) {
-            throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
+        if (obj instanceof Collection) {
+            this.format((Collection) obj, toAppendTo, pos);
         }
-        val collection = (Collection) obj;
-        val text = collection.stream()
-                .filter(Objects::nonNull)
-                .map(Objects::toString)
-                .filter(Predicate.not(String::isBlank))
-                .collect(Collectors.joining(", "))
-                .toString();
-
-        return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
+        throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
     }
 
     public StringBuffer format(final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
