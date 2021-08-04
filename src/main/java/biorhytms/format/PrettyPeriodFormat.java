@@ -21,7 +21,7 @@ public class PrettyPeriodFormat extends Format {
         if (obj instanceof Period)) {
             format((Period) obj, toAppendTo, pos);
         }
-        throw new IllegalArgumentException("argument should be Period");
+        throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Period");
     }
     
     public StringBuffer format(final Period period, final StringBuffer toAppendTo, final FieldPosition pos) {
