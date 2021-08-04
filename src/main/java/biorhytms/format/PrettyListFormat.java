@@ -33,6 +33,6 @@ public class PrettyListFormat extends Format {
 
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 }
