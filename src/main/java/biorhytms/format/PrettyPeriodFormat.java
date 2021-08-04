@@ -19,7 +19,7 @@ public class PrettyPeriodFormat extends Format {
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         if (obj instanceof Period)) {
-            format((Period) obj, toAppendTo, pos);
+            return format((Period) obj, toAppendTo, pos);
         }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Period");
     }
