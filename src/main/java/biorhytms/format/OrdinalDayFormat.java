@@ -8,15 +8,16 @@ public class OrdinalDayFormat extends AbstractFormat {
             new MessageFormat("{0}{0,choice,1#st|2#nd|3#rd|3<th|21#st|22#nd|23#rd|23<th|31#st}");
 
     @Override
-    public String simpleFormat(final Object object) {
-        if (object instanceof LocalDate) {
-            final var date = (LocalDate) object;
+    public String simpleFormat(final Object obj) {
+        if (obj instanceof LocalDate) {
+            final var date = (LocalDate) obj;
             return ORDINAL_DAY.format(new Object[]{date.getDayOfMonth()});
         }
-        if (object instanceof Number) {
-            return ORDINAL_DAY.format(new Object[]{object});
+        if (obj instanceof Number) {
+            return ORDINAL_DAY.format(new Object[]{obj});
         }
 
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException(
+                "Cannot format given Object (" + obj.getClass().getName() + ") as a LocalDate or Number");
     }
 }

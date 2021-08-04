@@ -2,20 +2,28 @@ package biorhytms.format;
 
 import biorhytms.Biorhythm;
 
+import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 
 public abstract class BiorhythmFormat extends Format {
 
-    protected Biorhythm.Value getBiorhythmValue(final Object obj) {
+    @Override
+    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         if (obj instanceof Biorhythm.Value) {
-            return (Biorhythm.Value) obj;
+            return format((Biorhythm.Value) obj, toAppendTo, pos);
         }
-        throw new IllegalArgumentException("argument should be Biorhythm.Value");
+        throw new IllegalArgumentException(
+                "Cannot format given Object (" + obj.getClass().getName() + ") as a Biorhythm.Value");
     }
 
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
         throw new UnsupportedOperationException();
     }
+
+    public abstract StringBuffer format(
+            final Biorhythm.Value obj,
+            final StringBuffer toAppendTo,
+            final FieldPosition pos);
 }
