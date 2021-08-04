@@ -8,17 +8,17 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
-public class AgeInfo extends AbstractReport {
+public class AgeInfoReport extends AbstractReport {
     private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
     private final Format AGE_FORMAT = PrettyPeriodFormat.getInstance();
 
-    public AgeInfo(ReportData reportData) {
+    public AgeInfoReport(ReportData reportData) {
         super(reportData);
     }
 
     @Override
     public void run() {
-        println("ageInfo",
+        println("report.ageInfo",
                 LONG_DATE.format(birthday()),
                 ZodiacSign.of(birthday()),
                 LONG_DATE.format(date()),

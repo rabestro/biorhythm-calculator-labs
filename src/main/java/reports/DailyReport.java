@@ -1,39 +1,25 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import lombok.val;
+import biorhytms.format.DailyFormat;
 
-import java.time.temporal.ChronoUnit;
+import java.text.Format;
+import java.util.Arrays;
 
 public class DailyReport extends AbstractReport {
-    public DailyReport() {
-        super();
-    }
+    private static final Format DAILY_FORMAT = new DailyFormat();
 
     public DailyReport(final ReportData reportData) {
         super(reportData);
     }
 
-    public static void main(String[] args) {
-        new DailyReport().run();
-    }
-
     @Override
     public void run() {
-        val days = ChronoUnit.DAYS.between(birthday(), date());
-
-        System.out.println();
-        System.out.println("Daily Biorhythm Summary:");
-
-        System.out.println("\nPrimary Biorhythms\n");
-        Biorhythm.primary()
+        final var daily = Arrays.stream(Biorhythm.values())
                 .map(biorhythm -> biorhythm.new Value(birthday(), date()))
-                .forEach(System.out::println);
+                .map(DAILY_FORMAT::format)
+                .toArray();
 
-        System.out.println("\nSecondary Biorhythms\n");
-        Biorhythm.secondary()
-                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
-                .forEach(System.out::println);
-
+        println("report.daily", daily);
     }
 }

@@ -1,9 +1,9 @@
 package runner;
 
-import reports.AgeInfo;
+import reports.AgeInfoReport;
 
 public class AgeInfoRunner extends AbstractRunner {
     public static void main(String[] args) {
-        new AgeInfo(getRandomData()).run();
+        new AgeInfoReport(getRandomData()).run();
     }
 }

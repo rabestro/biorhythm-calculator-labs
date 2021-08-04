@@ -52,7 +52,7 @@ public enum Biorhythm {
         public Value(final LocalDate birthday, final LocalDate date) {
             this.birthday = birthday;
             this.date = date;
-            this.days = (int) (ChronoUnit.DAYS.between(birthday, date));
+            this.days = (int) ChronoUnit.DAYS.between(birthday, date);
             rest = this.days % periodInDays;
             if (rest == 0 || rest * 2 == periodInDays) {
                 stage = Stage.ZERO;

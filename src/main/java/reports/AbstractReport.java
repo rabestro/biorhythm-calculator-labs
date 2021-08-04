@@ -5,11 +5,13 @@ import ui.LocalTextInterface;
 import java.text.MessageFormat;
 import java.time.LocalDate;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import static java.time.LocalDate.EPOCH;
 
 public abstract class AbstractReport extends LocalTextInterface implements Runnable {
     static final System.Logger LOGGER = System.getLogger("");
+
     static final Random random = new Random();
     static final int MAX_DAYS = 20_000;
 
