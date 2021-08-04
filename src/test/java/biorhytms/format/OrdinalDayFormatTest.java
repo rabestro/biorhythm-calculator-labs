@@ -2,6 +2,7 @@ package biorhytms.format;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -9,6 +10,7 @@ import java.text.Format;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("Formatter")
 @DisplayName("Test ordinal days")
 class OrdinalDayFormatTest {
 

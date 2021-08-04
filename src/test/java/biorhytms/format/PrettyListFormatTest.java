@@ -3,6 +3,7 @@ package biorhytms.format;
 import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.text.Format;
@@ -12,6 +13,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@Tag("Formatter")
 class PrettyListFormatTest {
     private Format formatter;
 
@@ -101,6 +103,22 @@ class PrettyListFormatTest {
 
         val actual = formatter.format(list);
         val expected = "a, b and c";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("list with two elements and one empty and one null")
+    void emptyAndNullItemsTest() {
+        val list = new ArrayList<>() {{
+            add("apple");
+            add("banana");
+            add(null);
+            add("");
+        }};
+
+        val actual = formatter.format(list);
+        val expected = "apple and banana";
 
         assertEquals(expected, actual);
     }
