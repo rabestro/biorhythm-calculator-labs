@@ -12,7 +12,7 @@ public abstract class AbstractFormat extends Format {
 
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 
     public abstract String simpleFormat(Object object);

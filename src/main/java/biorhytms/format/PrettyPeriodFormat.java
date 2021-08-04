@@ -16,12 +16,19 @@ public class PrettyPeriodFormat extends Format {
     private static final MessageFormat DAYS =
             new MessageFormat("{0, choice, 0#|1#one day|2#two days|2<{0} days}");
 
+    public static PrettyPeriodFormat getInstance() {
+        return new PrettyPeriodFormat();
+    }
+
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
-        if (!(obj instanceof Period)) {
-            throw new IllegalArgumentException("argument should be Period");
+        if (obj instanceof Period) {
+            return format((Period) obj, toAppendTo, pos);
         }
-        val period = (Period) obj;
+        throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Period");
+    }
+
+    public StringBuffer format(final Period period, final StringBuffer toAppendTo, final FieldPosition pos) {
         val years = YEARS.format(new Object[]{period.getYears()});
         val months = MONTHS.format(new Object[]{period.getMonths()});
         val days = DAYS.format(new Object[]{period.getDays()});
@@ -44,6 +51,6 @@ public class PrettyPeriodFormat extends Format {
 
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

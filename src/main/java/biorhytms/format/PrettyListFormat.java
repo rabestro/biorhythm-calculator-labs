@@ -17,11 +17,14 @@ public class PrettyListFormat extends Format {
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
-        if (!(obj instanceof Collection)) {
-            throw new IllegalArgumentException("argument should be a Collection");
+        if (obj instanceof Collection) {
+            return format((Collection) obj, toAppendTo, pos);
         }
-        val collection = (Collection) obj;
-        val text = collection.stream()
+        throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
+    }
+
+    public StringBuffer format(final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+        val text = obj.stream()
                 .filter(Objects::nonNull)
                 .map(Objects::toString)
                 .filter(Predicate.not(String::isBlank))
@@ -30,9 +33,9 @@ public class PrettyListFormat extends Format {
 
         return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
     }
-
+    
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
-        return null;
+        throw new UnsupportedOperationException();
     }
 }

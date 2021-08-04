@@ -1,5 +1,6 @@
 package biorhytms.format;
 
+import biorhytms.Biorhythm;
 import lombok.val;
 
 import java.text.FieldPosition;
@@ -10,9 +11,8 @@ public class SummaryFormat extends BiorhythmFormat {
     private static final String INSERT_NEW_LINE = "$1\n";
 
     @Override
-    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+    public StringBuffer format(final Biorhythm.Value value, final StringBuffer toAppendTo, final FieldPosition pos) {
 
-        val value = getBiorhythmValue(obj);
         val args = new Object[]{
                 value.getBiorhythm().name().toLowerCase(),
                 value.getBiorhythm().getAttributes(),
