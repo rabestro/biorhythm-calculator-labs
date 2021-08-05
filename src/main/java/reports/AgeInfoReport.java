@@ -1,26 +1,25 @@
 package reports;
 
 import biorhytms.ZodiacSign;
-import biorhytms.format.PrettyPeriodFormat;
+import lombok.val;
+import reports.format.PrettyPeriodFormat;
 
-import java.text.Format;
 import java.time.Period;
 
 public class AgeInfoReport extends AbstractReport {
-    private final Format AGE_FORMAT = PrettyPeriodFormat.getInstance();
-
     public AgeInfoReport(ReportData reportData) {
         super(reportData);
     }
 
     @Override
     public void run() {
-        printf("format.ageInfo",
-                birthday(),
-                ZodiacSign.of(birthday()),
-                date(),
-                reportData.getDays(),
-                AGE_FORMAT.format(Period.between(birthday(), date()))
-        );
+        val zodiacSign = ZodiacSign.of(birthday());
+        val age = PrettyPeriodFormat.getInstance().format(Period.between(birthday(), date()));
+
+        printf("format.ageInfo", birthday(), zodiacSign, date(), reportData.getDays(), age);
+
+        if (zodiacSign.getLuckyDay().equals(date().getDayOfWeek())) {
+            printf("format.luckyDay", zodiacSign.getLuckyDay(), zodiacSign.name());
+        }
     }
 }

@@ -1,7 +1,7 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import biorhytms.format.DailyFormat;
+import reports.format.DailyFormat;
 
 import java.text.Format;
 import java.util.Arrays;

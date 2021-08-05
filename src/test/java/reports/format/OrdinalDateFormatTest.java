@@ -1,4 +1,4 @@
-package biorhytms.format;
+package reports.format;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
