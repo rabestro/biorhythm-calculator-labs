@@ -1,16 +1,15 @@
 package reports;
 
 import biorhytms.Biorhythm;
+import lombok.val;
 import reports.format.WeeklyFormat;
 
-import java.text.Format;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
 public class WeeklyReport extends AbstractReport {
-    private static final Format DAILY_FORMAT = new WeeklyFormat("%-12s %4d %%");
 
     public WeeklyReport() {
         super();
@@ -26,13 +25,14 @@ public class WeeklyReport extends AbstractReport {
 
     @Override
     public void run() {
-        int weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
+        val weeklyFormat = new WeeklyFormat(getString("format.weekly.biorhythm"));
+        val weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
 //        int weekOfYear = date.get(WeekFields.of(locale).weekOfYear());
         printf("format.weekly.top", date().getYear(), weekOfYear);
         weekDays().forEach(day -> printf("format.weekly.day", day,
-                DAILY_FORMAT.format(Biorhythm.Physical.new Value(birthday(), day)),
-                DAILY_FORMAT.format(Biorhythm.Emotional.new Value(birthday(), day)),
-                DAILY_FORMAT.format(Biorhythm.Intellectual.new Value(birthday(), day)))
+                weeklyFormat.format(Biorhythm.Physical.new Value(birthday(), day)),
+                weeklyFormat.format(Biorhythm.Emotional.new Value(birthday(), day)),
+                weeklyFormat.format(Biorhythm.Intellectual.new Value(birthday(), day)))
         );
     }
 
