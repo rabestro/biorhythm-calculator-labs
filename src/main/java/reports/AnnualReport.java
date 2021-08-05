@@ -2,6 +2,7 @@ package reports;
 
 import biorhytms.Biorhythm;
 import biorhytms.Condition;
+import lombok.val;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -14,26 +15,19 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class AnnualReport extends AbstractReport {
-
-    public AnnualReport() {
-        super();
-    }
+    private static final String RESOURCE = "report/annual-report";
 
     public AnnualReport(final ReportData reportData) {
-        super(reportData);
-    }
-
-    public static void main(String[] args) {
-        new AnnualReport().run();
+        super(RESOURCE, reportData);
     }
 
     @Override
     public void run() {
-        System.out.println();
-        System.out.println("      Birthday: " + reportData.getBirthday()
-                + "                     Annual report for "
-                + reportData.getYear() + " year");
-        System.out.println();
+        val leftPart = format("annual.header.left.format", birthday());
+        val rightPart = format("annual.header.right.format", date());
+
+        printf("annual.header.format", leftPart, rightPart);
+
         Function<Month, String> shortName = month ->
                 String.format("%-6s", month.getDisplayName(TextStyle.SHORT, Locale.getDefault()));
 

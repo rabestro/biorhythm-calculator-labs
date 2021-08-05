@@ -22,6 +22,10 @@ public class LocalTextInterface implements TextInterface {
         System.out.printf(getString(key), args);
     }
 
+    public String format(final String key, final Object... args) {
+        return String.format(getString(key), args);
+    }
+
     public String getString(final String key) {
         return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : key;
     }
