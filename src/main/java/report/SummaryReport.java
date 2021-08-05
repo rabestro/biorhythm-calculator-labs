@@ -8,7 +8,7 @@ import java.text.Format;
 import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
-    private static final SummaryFormat SUMMARY_FORMAT = new SummaryFormat();
+    private static final Format SUMMARY_FORMAT = new SummaryFormat();
 
     public SummaryReport(final ReportData reportData) {
         super(reportData);
@@ -18,9 +18,9 @@ public class SummaryReport extends AbstractReport {
     public void run() {
         printf("summary.header.format");
         var formatter = new BiorhythmTemplateFormat(getString("short.biorhythm.format"));
-        biorhythms().map(formatter::format).forEach(System.out::println);
+        biorhythms().map(formatter::format).forEach(this::println);
 
-        System.out.println();
+        println();
 
         biorhythms()
                 .map(SUMMARY_FORMAT::format)
