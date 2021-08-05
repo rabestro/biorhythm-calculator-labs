@@ -36,7 +36,7 @@
 ```
 
 ### Format
-
+```
 format.weekly.top=\
 %n  Weekly Biorhythm Report\
 %n  Year: %d, Week #%d:%n
@@ -47,3 +47,4 @@ format.weekly.day2=\
 %n  %1$-11tY %4$s%n
 
 format.weekly.biorhythm = %-12s %4d %%
+```
