@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DailyRunner" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="runner.DailyRunner" />
+    <module name="Biorhythms.test" />
+    <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging.properties" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="runner.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

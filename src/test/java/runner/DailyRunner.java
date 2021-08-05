@@ -1,6 +1,6 @@
 package runner;
 
-import reports.DailyReport;
+import report.DailyReport;
 
 public class DailyRunner extends AbstractRunner {
     static {

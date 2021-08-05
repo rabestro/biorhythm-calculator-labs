@@ -1,7 +1,7 @@
 package runner;
 
 import lombok.val;
-import reports.ReportData;
+import report.ReportData;
 
 import java.util.Objects;
 import java.util.Random;

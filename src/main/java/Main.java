@@ -1,7 +1,7 @@
 import lombok.val;
-import reports.ReportData;
-import reports.SummaryReport;
-import reports.AgeInfoReport;
+import report.ReportData;
+import report.SummaryReport;
+import report.AgeInfoReport;
 import services.Birthday;
 import services.CLI;
 

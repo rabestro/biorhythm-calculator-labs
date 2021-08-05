@@ -1,6 +1,6 @@
 package runner;
 
-import reports.AgeInfoReport;
+import report.AgeInfoReport;
 
 public class AgeInfoRunner extends AbstractRunner {
     static {

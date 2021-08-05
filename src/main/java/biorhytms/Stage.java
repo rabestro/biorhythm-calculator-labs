@@ -1,7 +1,7 @@
 package biorhytms;
 
-import reports.format.DaysFormat;
-import reports.format.OrdinalDateFormat;
+import report.format.DaysFormat;
+import report.format.OrdinalDateFormat;
 import lombok.Getter;
 
 import java.text.Format;
