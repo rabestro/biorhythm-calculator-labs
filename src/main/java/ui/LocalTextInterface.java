@@ -9,6 +9,10 @@ public class LocalTextInterface implements TextInterface {
         resourceBundle = ResourceBundle.getBundle("messages");
     }
 
+    public LocalTextInterface(final String resourceName) {
+        this.resourceBundle = ResourceBundle.getBundle(resourceName);
+    }
+
     @Override
     public void print(final String key, final Object... args) {
         TextInterface.super.print(getString(key), args);

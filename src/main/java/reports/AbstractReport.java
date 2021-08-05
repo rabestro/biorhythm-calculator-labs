@@ -24,6 +24,11 @@ public abstract class AbstractReport extends LocalTextInterface implements Runna
         this.reportData = reportData;
     }
 
+    public AbstractReport(final String resourceName, final ReportData reportData) {
+        super(resourceName);
+        this.reportData = reportData;
+    }
+
     public AbstractReport() {
         reportData = new ReportData(EPOCH, EPOCH.plusDays(random.nextInt(MAX_DAYS)));
     }
@@ -36,8 +41,4 @@ public abstract class AbstractReport extends LocalTextInterface implements Runna
         return reportData.getDate();
     }
 
-    public static String dayOrdinal(final int day) {
-        return MessageFormat.format(
-                "{0}{0,choice,1#st|2#nd|3#rd|3<th|21#st|22#nd|23#rd|23<th|31#st}", day);
-    }
 }
