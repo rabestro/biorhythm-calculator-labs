@@ -41,7 +41,7 @@ format.weekly.top=\
 %n  Weekly Biorhythm Report\
 %n  Year: %d, Week #%d:%n
 
-format.weekly.day2=\
+format.weekly.day=\
 %n  %1$-11tA %2$s\
 %n  %1$-4tb%1$-7td %3$s\
 %n  %1$-11tY %4$s%n
