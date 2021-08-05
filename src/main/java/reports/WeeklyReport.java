@@ -10,13 +10,14 @@ import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
 public class WeeklyReport extends AbstractReport {
+    private static final String RESOURCE = "report/weekly-report";
 
     public WeeklyReport() {
         super();
     }
 
     public WeeklyReport(final ReportData reportData) {
-        super(reportData);
+        super(RESOURCE, reportData);
     }
 
     public static void main(String[] args) {
@@ -25,11 +26,13 @@ public class WeeklyReport extends AbstractReport {
 
     @Override
     public void run() {
-        val weeklyFormat = new WeeklyFormat(getString("format.weekly.biorhythm"));
+        val weeklyFormat = new WeeklyFormat(getString("report.weekly.biorhythm.format"));
         val weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
 //        int weekOfYear = date.get(WeekFields.of(locale).weekOfYear());
-        printf("format.weekly.top", date().getYear(), weekOfYear);
-        weekDays().forEach(day -> printf("format.weekly.day", day,
+
+        printf("report.weekly.header.format", date().getYear(), weekOfYear);
+        
+        weekDays().forEach(day -> printf("report.weekly.day.format", day,
                 weeklyFormat.format(Biorhythm.Physical.new Value(birthday(), day)),
                 weeklyFormat.format(Biorhythm.Emotional.new Value(birthday(), day)),
                 weeklyFormat.format(Biorhythm.Intellectual.new Value(birthday(), day)))

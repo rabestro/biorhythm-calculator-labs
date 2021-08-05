@@ -9,6 +9,10 @@ public class LocalTextInterface implements TextInterface {
         resourceBundle = ResourceBundle.getBundle("messages");
     }
 
+    public LocalTextInterface(final String resourceName) {
+        this.resourceBundle = ResourceBundle.getBundle(resourceName);
+    }
+
     @Override
     public void print(final String key, final Object... args) {
         TextInterface.super.print(getString(key), args);
@@ -16,6 +20,10 @@ public class LocalTextInterface implements TextInterface {
 
     public void printf(final String key, final Object... args) {
         System.out.printf(getString(key), args);
+    }
+
+    public String format(final String key, final Object... args) {
+        return String.format(getString(key), args);
     }
 
     public String getString(final String key) {
