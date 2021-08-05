@@ -1,7 +1,7 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import biorhytms.format.SummaryFormat;
+import reports.format.SummaryFormat;
 
 import java.util.stream.Stream;
 

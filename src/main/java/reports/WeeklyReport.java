@@ -1,7 +1,7 @@
 package reports;
 
 import biorhytms.Biorhythm;
-import biorhytms.format.WeeklyFormat;
+import reports.format.WeeklyFormat;
 
 import java.text.Format;
 import java.time.DayOfWeek;

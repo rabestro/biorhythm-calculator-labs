@@ -1,5 +1,7 @@
 package biorhytms;
 
+import lombok.Getter;
+
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.MonthDay;
@@ -8,6 +10,7 @@ import java.util.Arrays;
 import static java.time.DayOfWeek.*;
 import static java.time.Month.*;
 
+@Getter
 public enum ZodiacSign {
     Aries("The Ram", MonthDay.of(MARCH, 21), MonthDay.of(APRIL, 19), TUESDAY),
     Taurus("The Bull", MonthDay.of(APRIL, 20), MonthDay.of(MAY, 20), FRIDAY),

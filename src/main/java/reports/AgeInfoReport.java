@@ -1,7 +1,8 @@
 package reports;
 
 import biorhytms.ZodiacSign;
-import biorhytms.format.PrettyPeriodFormat;
+import lombok.val;
+import reports.format.PrettyPeriodFormat;
 
 import java.text.Format;
 import java.time.Period;
@@ -15,12 +16,15 @@ public class AgeInfoReport extends AbstractReport {
 
     @Override
     public void run() {
-        printf("format.ageInfo",
-                birthday(),
-                ZodiacSign.of(birthday()),
+        val zodiacSign = ZodiacSign.of(birthday());
+        printf("format.ageInfo", birthday(), zodiacSign,
                 date(),
                 reportData.getDays(),
                 AGE_FORMAT.format(Period.between(birthday(), date()))
         );
+
+        if (zodiacSign.getLuckyDay().equals(date().getDayOfWeek())) {
+            printf("format.luckyDay", zodiacSign.getLuckyDay(), zodiacSign.name());
+        }
     }
 }

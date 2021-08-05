@@ -1,4 +1,4 @@
-package biorhytms.format;
+package reports.format;
 
 import java.text.MessageFormat;
 
