@@ -48,7 +48,8 @@ public class AnnualReport extends AbstractReport {
                     .map(biorhythm -> biorhythm.new Value(birthday(), date))
                     .map(Biorhythm.Value::getValue)
                     .map(Condition::of)
-                    .map(Condition::getSymbol)
+                    .map(Condition::name)
+                    .map(this::getString)
                     .collect(Collectors.joining());
 
         } catch (DateTimeException e) {
