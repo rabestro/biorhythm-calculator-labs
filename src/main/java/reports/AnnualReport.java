@@ -25,6 +25,7 @@ public class AnnualReport extends AbstractReport {
         val rightPart = format("annual.header.right.format", date());
 
         printf("annual.header.format", leftPart, rightPart);
+
         val months = Arrays.stream(Month.values())
                 .map(m -> m.getDisplayName(TextStyle.SHORT, Locale.getDefault()))
                 .toArray();
