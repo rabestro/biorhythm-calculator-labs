@@ -34,3 +34,16 @@
   Aug 21      Emotional      62 %
   2022        Intellectual   10 %
 ```
+
+### Format
+
+format.weekly.top=\
+%n  Weekly Biorhythm Report\
+%n  Year: %d, Week #%d:%n
+
+format.weekly.day2=\
+%n  %1$-11tA %2$s\
+%n  %1$-4tb%1$-7td %3$s\
+%n  %1$-11tY %4$s%n
+
+format.weekly.biorhythm = %-12s %4d %%
