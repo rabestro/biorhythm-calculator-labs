@@ -3,6 +3,8 @@ package ui;
 import java.text.MessageFormat;
 
 public interface TextInterface {
+    System.Logger LOGGER = System.getLogger("");
+
     default void println() {
         System.out.println();
     }

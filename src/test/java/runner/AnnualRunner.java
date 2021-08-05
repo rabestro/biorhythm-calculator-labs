@@ -1,6 +1,6 @@
 package runner;
 
-import reports.AnnualReport;
+import report.AnnualReport;
 
 public class AnnualRunner extends AbstractRunner {
     static {

@@ -2,11 +2,22 @@ package ui;
 
 import java.util.ResourceBundle;
 
+import static java.lang.System.Logger.Level.TRACE;
+
 public class LocalTextInterface implements TextInterface {
     private final ResourceBundle resourceBundle;
 
     public LocalTextInterface() {
-        resourceBundle = ResourceBundle.getBundle("messages");
+        final var bundleName = this.getClass().getName()
+                .replace('.', '/')
+                .replaceAll("([a-z])([A-Z])", "$1-$2")
+                .toLowerCase();
+
+        resourceBundle = ResourceBundle.getBundle(bundleName);
+
+        LOGGER.log(TRACE, "class \"{0}\" uses resource bundle \"{1}.properties\"",
+                this.getClass().getSimpleName(), bundleName);
+
     }
 
     public LocalTextInterface(final String resourceName) {
