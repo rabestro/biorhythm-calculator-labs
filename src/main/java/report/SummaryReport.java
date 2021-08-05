@@ -1,32 +1,24 @@
 package report;
 
 import biorhytms.Biorhythm;
+import report.format.BiorhythmTemplateFormat;
 import report.format.SummaryFormat;
 
+import java.text.Format;
 import java.util.stream.Stream;
 
 public class SummaryReport extends AbstractReport {
     private static final SummaryFormat SUMMARY_FORMAT = new SummaryFormat();
 
-    public SummaryReport() {
-        super();
-    }
-
     public SummaryReport(final ReportData reportData) {
         super(reportData);
     }
 
-    public static void main(String[] args) {
-        new SummaryReport().run();
-    }
-
     @Override
     public void run() {
-        System.out.println();
-        System.out.println("Today's Biorhythm Summary:");
-        System.out.println();
-
-        biorhythms().forEach(System.out::println);
+        printf("summary.header.format");
+        var formatter = new BiorhythmTemplateFormat(getString("short.biorhythm.format"));
+        biorhythms().map(formatter::format).forEach(System.out::println);
 
         System.out.println();
 
