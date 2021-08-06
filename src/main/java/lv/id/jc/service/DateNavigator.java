@@ -69,6 +69,7 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
                 LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
                 context.setDate(moveOperators.get(sign + unit).apply(context.date(), number));
             }
+            printf("error", command);
         }
     }
 }
