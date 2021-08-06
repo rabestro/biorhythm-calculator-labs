@@ -1,7 +1,7 @@
 package report;
 
 import biorhytms.Biorhythm;
-import report.format.BiorhythmTemplateFormat;
+import report.format.BiorhythmFormat;
 
 import java.text.Format;
 import java.util.Arrays;
@@ -11,7 +11,7 @@ public class DailyReport extends AbstractReport {
 
     public DailyReport(final ReportData reportData) {
         super(reportData);
-        formatter = new BiorhythmTemplateFormat(getString("daily.biorhythm.format"));
+        formatter = new BiorhythmFormat(getString("daily.biorhythm.format"));
     }
 
     @Override

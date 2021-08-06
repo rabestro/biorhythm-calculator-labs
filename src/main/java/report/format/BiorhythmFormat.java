@@ -6,10 +6,10 @@ import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 
-public class BiorhythmTemplateFormat extends Format {
+public class BiorhythmFormat extends Format {
     private final String template;
 
-    public BiorhythmTemplateFormat(final String template) {
+    public BiorhythmFormat(final String template) {
         this.template = template;
     }
 
