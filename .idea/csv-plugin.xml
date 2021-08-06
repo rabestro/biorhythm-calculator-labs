@@ -31,13 +31,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\src\test\resources\period-age.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
       </map>
     </option>
   </component>

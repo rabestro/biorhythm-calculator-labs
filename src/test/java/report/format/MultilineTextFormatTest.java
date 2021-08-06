@@ -22,10 +22,11 @@ class MultilineTextFormatTest {
 
     private static Stream<Arguments> provideWidthAndStrings() {
         return Stream.of(
-                Arguments.of(10, "The quick\nbrown fox\njumps over\nthe lazy\ndog"),
-                Arguments.of(20, "The quick brown fox\njumps over the lazy\ndog"),
-                Arguments.of(50, "The quick brown fox jumps over the lazy dog"),
-                Arguments.of(60, "The quick brown fox jumps over the lazy dog")
+                Arguments.of(10, "The quick\nbrown fox\njumps over\nthe lazy\ndog\n"),
+                Arguments.of(15, "The quick brown\nfox jumps over\nthe lazy dog\n"),
+                Arguments.of(20, "The quick brown fox\njumps over the lazy\ndog\n"),
+                Arguments.of(50, "The quick brown fox jumps over the lazy dog\n"),
+                Arguments.of(60, "The quick brown fox jumps over the lazy dog\n")
         );
     }
 
