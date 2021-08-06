@@ -12,14 +12,15 @@ import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Tag("Formatter")
 class PrettyListFormatTest {
-    private Format formatter;
+    private Format underTest;
 
     @BeforeEach
     void setUp() {
-        formatter = new PrettyListFormat();
+        underTest = new PrettyListFormat();
     }
 
     @Test
@@ -28,7 +29,7 @@ class PrettyListFormatTest {
         val list = List.of();
 
         val expected = "";
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
 
         assertEquals(expected, actual);
     }
@@ -39,7 +40,7 @@ class PrettyListFormatTest {
         val list = Collections.singletonList(null);
 
         val expected = "";
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
 
         assertEquals(expected, actual);
     }
@@ -50,7 +51,7 @@ class PrettyListFormatTest {
         val list = List.of("item");
 
         val expected = "item";
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
 
         assertEquals(expected, actual);
     }
@@ -61,7 +62,7 @@ class PrettyListFormatTest {
         val list = List.of("apple", "banana");
 
         val expected = "apple and banana";
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
 
         assertEquals(expected, actual);
     }
@@ -75,7 +76,7 @@ class PrettyListFormatTest {
         }};
 
         val expected = "apple";
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
 
         assertEquals(expected, actual);
     }
@@ -85,7 +86,7 @@ class PrettyListFormatTest {
     void fourItemsTest() {
         val list = List.of("a", "b", "c", "d");
 
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
         val expected = "a, b, c and d";
 
         assertEquals(expected, actual);
@@ -101,7 +102,7 @@ class PrettyListFormatTest {
             add("c");
         }};
 
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
         val expected = "a, b and c";
 
         assertEquals(expected, actual);
@@ -117,13 +118,15 @@ class PrettyListFormatTest {
             add("");
         }};
 
-        val actual = formatter.format(list);
+        val actual = underTest.format(list);
         val expected = "apple and banana";
 
         assertEquals(expected, actual);
     }
 
     @Test
+    @DisplayName("throws UnsupportedOperationException on parseObject call")
     void parseObject() {
+        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("apple and banana"));
     }
 }

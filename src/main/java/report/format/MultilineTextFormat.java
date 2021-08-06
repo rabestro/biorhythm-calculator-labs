@@ -34,6 +34,6 @@ public class MultilineTextFormat extends Format {
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
         pos.setIndex(pos.getIndex() + source.length());
-        return LINEBREAK.matcher(source).replaceAll(SPACE);
+        return LINEBREAK.matcher(source).replaceAll(SPACE).stripTrailing();
     }
 }
