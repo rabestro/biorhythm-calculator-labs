@@ -1,6 +1,5 @@
 package lv.id.jc.biorhytm;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -9,11 +8,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class BiorhythmTest {
-
-    @BeforeEach
-    void setUp() {
-
-    }
+    private static final double DELTA = 0.01;
 
     @ParameterizedTest(name = "checks {0}.new Value({1}, {2}) ")
     @CsvFileSource(resources = "/biorhythm/biorhythm.csv", numLinesToSkip = 1)
@@ -29,7 +24,7 @@ class BiorhythmTest {
         final var underTest = biorhythm.new Value(birthday, date);
 
         assertAll(
-                () -> assertEquals(value, underTest.getValue(), 0.001),
+                () -> assertEquals(value, underTest.getValue(), DELTA),
                 () -> assertSame(stage, underTest.getStage()),
                 () -> assertEquals(change, underTest.changeInDays(), "changeInDays() fails"),
                 () -> assertEquals(peak, underTest.peakInDays(), "peakInDays() fails"),

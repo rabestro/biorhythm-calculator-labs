@@ -1,3 +1,5 @@
+package lv.id.jc;
+
 import lombok.val;
 import lv.id.jc.report.AgeInfoReport;
 import lv.id.jc.report.ReportData;

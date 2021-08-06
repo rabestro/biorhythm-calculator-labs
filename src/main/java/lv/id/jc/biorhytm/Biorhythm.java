@@ -1,5 +1,8 @@
 package lv.id.jc.biorhytm;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
@@ -25,11 +28,14 @@ public enum Biorhythm {
         this.attributes = attributes.replaceFirst("(.*),", "$1 and");
     }
 
-    public static Stream<Biorhythm> primary() {
+
+    @Contract(pure = true)
+    public static @NotNull Stream<Biorhythm> primary() {
         return Stream.of(Physical, Emotional, Intellectual);
     }
 
-    public static Stream<Biorhythm> secondary() {
+    @Contract(pure = true)
+    public static @NotNull Stream<Biorhythm> secondary() {
         return Stream.of(Intuition, Aesthetic, Awareness, Spiritual);
     }
 
@@ -66,11 +72,14 @@ public enum Biorhythm {
             return value;
         }
 
+
         public int peakInDays() {
+            //TODO implementation
             return 0;
         }
 
         public int lowInDays() {
+            //TODO implementation
             return 0;
         }
 
@@ -81,7 +90,7 @@ public enum Biorhythm {
                     : periodInDays - rest;
         }
 
-        public LocalDate cycleLastDay() {
+        public LocalDate changeDate() {
             return date.plusDays(changeInDays());
         }
 
@@ -104,7 +113,7 @@ public enum Biorhythm {
         @Override
         public String toString() {
             return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} %s",
-                    name(), date, getPercent(), rest, periodInDays, stage.ordinal(), changeInDays(), cycleLastDay());
+                    name(), date, getPercent(), rest, periodInDays, stage.ordinal(), changeInDays(), changeDate());
         }
     }
 }

@@ -1,6 +1,7 @@
 package lv.id.jc.biorhytm;
 
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -53,7 +54,7 @@ public enum ZodiacSign {
         return of(MonthDay.from(birthday));
     }
 
-    public boolean matches(final MonthDay date) {
+    public boolean matches(final @NotNull MonthDay date) {
         return !date.isAfter(end) && !date.isBefore(start);
     }
 

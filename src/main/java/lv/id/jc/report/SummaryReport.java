@@ -35,7 +35,7 @@ public class SummaryReport extends AbstractReport {
         print(multilineFormat.format(format(getString(value.getStage().name()),
                 value.getBiorhythm().name().toLowerCase(),
                 value.getBiorhythm().getAttributes(),
-                ORDINAL_DATE_FORMAT.format(value.cycleLastDay()),
+                ORDINAL_DATE_FORMAT.format(value.changeDate()),
                 DAYS_FORMAT.format(value.changeInDays()))));
     }
 }
