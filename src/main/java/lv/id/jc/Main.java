@@ -17,7 +17,7 @@ public class Main {
         val birthday = params.getBirthday().orElseGet(new Birthday()::call);
         val reportData = new Context(birthday);
         val randomDate = reportData
-                .getBirthday()
+                .birthday()
                 .plusDays(random.nextInt(20_000));
 //        reportData.setDate(randomDate);
         new AgeInfoReport(reportData).run();

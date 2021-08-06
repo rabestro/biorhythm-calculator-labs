@@ -21,11 +21,11 @@ public abstract class AbstractReport extends LocalTextInterface implements Runna
     }
 
     protected LocalDate birthday() {
-        return context.getBirthday();
+        return context.birthday();
     }
 
     protected LocalDate date() {
-        return context.getDate();
+        return context.date();
     }
 
 }
