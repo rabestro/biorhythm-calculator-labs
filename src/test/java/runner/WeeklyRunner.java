@@ -1,6 +1,6 @@
 package runner;
 
-import report.WeeklyReport;
+import lv.id.jc.biorhytm.report.WeeklyReport;
 
 public class WeeklyRunner extends AbstractRunner {
     static {

@@ -67,8 +67,8 @@ learning ability and memory while they are at their peak.
 ```
 ## Notes
 
-The report uses 4 additional formatters
-- [BiorhythmTemplateFormat](/src/main/java/report/format/BiorhythmTemplateFormat.java)
-- [OrdinalDateFormat](/src/main/java/report/format/OrdinalDateFormat.java)
-- [DaysFormat](/src/main/java/report/format/DaysFormat.java)
-- [MultilineTextFormat](/src/main/java/report/format/MultilineTextFormat.java) to split long lines to maximum width for a line in 60 symbols
+The lv.id.jc.biorhytm.report uses 4 additional formatters
+- [BiorhythmTemplateFormat](/src/main/java/lv.id.jc.biorhytm.report/format/BiorhythmTemplateFormat.java)
+- [OrdinalDateFormat](/src/main/java/lv.id.jc.biorhytm.report/format/OrdinalDateFormat.java)
+- [DaysFormat](/src/main/java/lv.id.jc.biorhytm.report/format/DaysFormat.java)
+- [MultilineTextFormat](/src/main/java/lv.id.jc.biorhytm.report/format/MultilineTextFormat.java) to split long lines to maximum width for a line in 60 symbols

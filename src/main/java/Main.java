@@ -1,9 +1,9 @@
 import lombok.val;
-import report.AgeInfoReport;
-import report.ReportData;
-import report.SummaryReport;
-import services.Birthday;
-import services.CLI;
+import lv.id.jc.biorhytm.report.AgeInfoReport;
+import lv.id.jc.biorhytm.report.ReportData;
+import lv.id.jc.biorhytm.report.SummaryReport;
+import lv.id.jc.services.Birthday;
+import lv.id.jc.services.CLI;
 
 import java.util.Random;
 
