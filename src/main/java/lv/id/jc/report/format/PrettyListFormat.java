@@ -1,7 +1,5 @@
 package lv.id.jc.report.format;
 
-import lombok.val;
-
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
@@ -16,6 +14,7 @@ public class PrettyListFormat extends Format {
     private static final String LAST_AND = "$1 and";
 
     @Override
+    @SuppressWarnings("rawtypes")
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         if (obj instanceof Collection) {
             return format((Collection) obj, toAppendTo, pos);
@@ -23,8 +22,9 @@ public class PrettyListFormat extends Format {
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
     }
 
-    public StringBuffer format(final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
-        val text = obj.stream()
+    @SuppressWarnings("unchecked")
+    public StringBuffer format(@SuppressWarnings("rawtypes") final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+        final var text = obj.stream()
                 .filter(Objects::nonNull)
                 .map(Objects::toString)
                 .filter(Predicate.not(String::isBlank))
