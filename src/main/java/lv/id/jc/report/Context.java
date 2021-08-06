@@ -8,16 +8,16 @@ import java.time.temporal.ChronoUnit;
 
 @Getter
 @Setter
-public class ReportData {
-    private final LocalDate birthday;
+public class Context {
+    private LocalDate birthday;
     private LocalDate date;
 
-    public ReportData(final LocalDate birthday, final LocalDate date) {
+    public Context(final LocalDate birthday, final LocalDate date) {
         this.birthday = birthday;
         this.date = date;
     }
 
-    public ReportData(final LocalDate birthday) {
+    public Context(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();
     }
@@ -30,7 +30,7 @@ public class ReportData {
         return ChronoUnit.DAYS.between(birthday, date);
     }
 
-    public ReportData nextDay() {
+    public Context nextDay() {
         date = date.plusDays(1L);
         return this;
     }

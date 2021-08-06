@@ -2,7 +2,7 @@ package lv.id.jc.service;
 
 import lombok.val;
 import lv.id.jc.report.DailyReport;
-import lv.id.jc.report.ReportData;
+import lv.id.jc.report.Context;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -16,12 +16,12 @@ public class RequestProcessor implements Runnable {
     private static final DateTimeFormatter LONG_DATE = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL);
     private static final Scanner scanner = new Scanner(System.in);
     private final DailyReport dailyReport;
-    private final ReportData reportData;
+    private final Context context;
     private LocalDate day;
 
     public RequestProcessor(final LocalDate birthday) {
-        reportData = new ReportData(birthday);
-        dailyReport = new DailyReport(reportData);
+        context = new Context(birthday);
+        dailyReport = new DailyReport(context);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class RequestProcessor implements Runnable {
                 return;
             }
             if ("print".equalsIgnoreCase(cmd)) {
-                reportData.setDate(day);
+                context.setDate(day);
                 dailyReport.run();
                 continue;
             }
@@ -56,19 +56,19 @@ public class RequestProcessor implements Runnable {
             cmd = request.poll();
             switch (cmd) {
                 case "DECADE":
-                    reportData.setDate(day.plus(shift, ChronoUnit.DECADES));
+                    context.setDate(day.plus(shift, ChronoUnit.DECADES));
                     continue;
                 case "YEAR":
-                    reportData.setDate(day.plus(shift, ChronoUnit.YEARS));
+                    context.setDate(day.plus(shift, ChronoUnit.YEARS));
                     continue;
                 case "MONTH":
-                    reportData.setDate(day.plus(shift, ChronoUnit.MONTHS));
+                    context.setDate(day.plus(shift, ChronoUnit.MONTHS));
                     continue;
                 case "WEEK":
-                    reportData.setDate(day.plus(shift, ChronoUnit.WEEKS));
+                    context.setDate(day.plus(shift, ChronoUnit.WEEKS));
                     continue;
                 case "DAY":
-                    reportData.setDate(day.plus(shift, ChronoUnit.DAYS));
+                    context.setDate(day.plus(shift, ChronoUnit.DAYS));
                     continue;
             }
         }

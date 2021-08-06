@@ -7,8 +7,8 @@ import lv.id.jc.report.format.PrettyPeriodFormat;
 import java.time.Period;
 
 public class AgeInfoReport extends AbstractReport {
-    public AgeInfoReport(ReportData reportData) {
-        super(reportData);
+    public AgeInfoReport(Context context) {
+        super(context);
     }
 
     @Override
@@ -16,7 +16,7 @@ public class AgeInfoReport extends AbstractReport {
         val zodiacSign = ZodiacSign.of(birthday());
         val age = PrettyPeriodFormat.getInstance().format(Period.between(birthday(), date()));
 
-        printf("format.ageInfo", birthday(), zodiacSign, date(), reportData.getDays(), age);
+        printf("format.ageInfo", birthday(), zodiacSign, date(), context.getDays(), age);
 
         if (zodiacSign.getLuckyDay().equals(date().getDayOfWeek())) {
             printf("format.luckyDay", zodiacSign.getLuckyDay(), zodiacSign.name());

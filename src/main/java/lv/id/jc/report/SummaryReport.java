@@ -15,8 +15,8 @@ public class SummaryReport extends AbstractReport {
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
     private final Format multilineFormat = new MultilineTextFormat();
 
-    public SummaryReport(final ReportData reportData) {
-        super(reportData);
+    public SummaryReport(final Context context) {
+        super(context);
     }
 
     @Override

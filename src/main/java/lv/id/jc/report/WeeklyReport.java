@@ -13,8 +13,8 @@ import java.util.stream.Stream;
 public class WeeklyReport extends AbstractReport {
     private final Format formatter;
 
-    public WeeklyReport(final ReportData reportData) {
-        super(reportData);
+    public WeeklyReport(final Context context) {
+        super(context);
         formatter = new BiorhythmFormat(getString("daily.biorhythm.format"));
     }
 
