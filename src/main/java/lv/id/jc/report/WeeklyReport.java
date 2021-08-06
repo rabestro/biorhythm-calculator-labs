@@ -15,7 +15,7 @@ public class WeeklyReport extends AbstractReport {
 
     public WeeklyReport(final Context context) {
         super(context);
-        formatter = new BiorhythmFormat(getString("daily.biorhythm.format"));
+        formatter = new BiorhythmFormat(getString("biorhythm.format"));
     }
 
     @Override
@@ -23,9 +23,9 @@ public class WeeklyReport extends AbstractReport {
         val weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
 //        int weekOfYear = date.get(WeekFields.of(locale).weekOfYear());
 
-        printf("report.weekly.header.format", date().getYear(), weekOfYear);
+        printf("weekly.header.format", date().getYear(), weekOfYear);
 
-        weekDays().forEach(day -> printf("report.weekly.day.format", day,
+        weekDays().forEach(day -> printf("weekly.day.format", day,
                 formatter.format(Biorhythm.Physical.new Value(birthday(), day)),
                 formatter.format(Biorhythm.Emotional.new Value(birthday(), day)),
                 formatter.format(Biorhythm.Intellectual.new Value(birthday(), day)))
