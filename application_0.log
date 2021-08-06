@@ -1,2 +1,2 @@
 Aug 05, 2021 9:45:35 PM LocalTextInterface <init>
-FINER: class "DailyReport" uses resource bundle "lv.id.jc.biorhytm.report/daily-lv.id.jc.biorhytm.report.properties"
+FINER: class "DailyReport" uses resource bundle "lv.id.jc.report/daily-lv.id.jc.report.properties"

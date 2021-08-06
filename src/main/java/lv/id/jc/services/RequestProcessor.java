@@ -1,8 +1,8 @@
 package lv.id.jc.services;
 
 import lombok.val;
-import lv.id.jc.biorhytm.report.DailyReport;
-import lv.id.jc.biorhytm.report.ReportData;
+import lv.id.jc.report.DailyReport;
+import lv.id.jc.report.ReportData;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

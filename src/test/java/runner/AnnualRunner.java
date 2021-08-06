@@ -1,6 +1,6 @@
 package runner;
 
-import lv.id.jc.biorhytm.report.AnnualReport;
+import lv.id.jc.report.AnnualReport;
 
 public class AnnualRunner extends AbstractRunner {
     static {

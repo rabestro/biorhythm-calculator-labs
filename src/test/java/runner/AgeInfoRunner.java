@@ -1,6 +1,6 @@
 package runner;
 
-import lv.id.jc.biorhytm.report.AgeInfoReport;
+import lv.id.jc.report.AgeInfoReport;
 
 public class AgeInfoRunner extends AbstractRunner {
     static {
