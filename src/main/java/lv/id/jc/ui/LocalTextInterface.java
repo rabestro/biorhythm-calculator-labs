@@ -1,10 +1,12 @@
 package lv.id.jc.ui;
 
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 import static java.lang.System.Logger.Level.TRACE;
 
 public class LocalTextInterface implements TextInterface {
+    protected static final Scanner scanner = new Scanner(System.in);
     private final ResourceBundle resourceBundle;
 
     public LocalTextInterface() {

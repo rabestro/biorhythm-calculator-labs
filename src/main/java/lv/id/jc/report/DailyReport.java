@@ -9,8 +9,8 @@ import java.util.Arrays;
 public class DailyReport extends AbstractReport {
     private final Format formatter;
 
-    public DailyReport(final ReportData reportData) {
-        super(reportData);
+    public DailyReport(final Context context) {
+        super(context);
         formatter = new BiorhythmFormat(getString("daily.biorhythm.format"));
     }
 

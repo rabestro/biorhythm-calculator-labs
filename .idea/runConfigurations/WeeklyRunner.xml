@@ -1,10 +1,10 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="WeeklyRunner" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="runner.WeeklyRunner" />
+    <option name="MAIN_CLASS_NAME" value="lv.id.jc.runner.WeeklyRunner" />
     <module name="Biorhythms.test" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="runner.*" />
+        <option name="PATTERN" value="lv.id.jc.runner.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

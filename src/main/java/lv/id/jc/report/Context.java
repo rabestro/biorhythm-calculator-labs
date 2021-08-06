@@ -1,23 +1,18 @@
 package lv.id.jc.report;
 
-import lombok.Getter;
+import lombok.AllArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-@Getter
 @Setter
-public class ReportData {
-    private final LocalDate birthday;
+@AllArgsConstructor
+public class Context {
+    private LocalDate birthday;
     private LocalDate date;
 
-    public ReportData(final LocalDate birthday, final LocalDate date) {
-        this.birthday = birthday;
-        this.date = date;
-    }
-
-    public ReportData(final LocalDate birthday) {
+    public Context(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();
     }
@@ -26,11 +21,19 @@ public class ReportData {
         return date.getYear();
     }
 
+    public LocalDate birthday() {
+        return birthday;
+    }
+
+    public LocalDate date() {
+        return date;
+    }
+
     public long getDays() {
         return ChronoUnit.DAYS.between(birthday, date);
     }
 
-    public ReportData nextDay() {
+    public Context nextDay() {
         date = date.plusDays(1L);
         return this;
     }

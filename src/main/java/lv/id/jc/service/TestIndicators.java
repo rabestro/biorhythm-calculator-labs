@@ -1,4 +1,4 @@
-package lv.id.jc.services;
+package lv.id.jc.service;
 
 import lv.id.jc.biorhytm.Biorhythm;
 

@@ -13,8 +13,8 @@ import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class AnnualReport extends AbstractReport {
-    public AnnualReport(final ReportData reportData) {
-        super(reportData);
+    public AnnualReport(final Context context) {
+        super(context);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class AnnualReport extends AbstractReport {
 
     private String getIndicators(final int month, final int day) {
         try {
-            final var date = LocalDate.of(reportData.getYear(), month, day);
+            final var date = LocalDate.of(context.getYear(), month, day);
             return Biorhythm.primary()
                     .map(biorhythm -> biorhythm.new Value(birthday(), date))
                     .map(Biorhythm.Value::getValue)

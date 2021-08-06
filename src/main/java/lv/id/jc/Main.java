@@ -2,10 +2,10 @@ package lv.id.jc;
 
 import lombok.val;
 import lv.id.jc.report.AgeInfoReport;
-import lv.id.jc.report.ReportData;
+import lv.id.jc.report.Context;
 import lv.id.jc.report.SummaryReport;
-import lv.id.jc.services.Birthday;
-import lv.id.jc.services.CLI;
+import lv.id.jc.service.Birthday;
+import lv.id.jc.service.CLI;
 
 import java.util.Random;
 
@@ -15,9 +15,9 @@ public class Main {
     public static void main(String[] args) {
         val params = new CLI().parseArgs(args);
         val birthday = params.getBirthday().orElseGet(new Birthday()::call);
-        val reportData = new ReportData(birthday);
+        val reportData = new Context(birthday);
         val randomDate = reportData
-                .getBirthday()
+                .birthday()
                 .plusDays(random.nextInt(20_000));
 //        reportData.setDate(randomDate);
         new AgeInfoReport(reportData).run();
