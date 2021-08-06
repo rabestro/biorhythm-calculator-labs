@@ -1,4 +1,4 @@
-package runner;
+package lv.id.jc.runner;
 
 import lombok.val;
 import lv.id.jc.report.ReportData;

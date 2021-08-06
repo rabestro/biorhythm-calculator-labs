@@ -1,4 +1,4 @@
-package lv.id.jc.services;
+package lv.id.jc.service;
 
 import lombok.val;
 import lv.id.jc.report.DailyReport;

@@ -5,16 +5,9 @@ import lv.id.jc.biorhytm.Biorhythm;
 import java.util.stream.IntStream;
 
 public class TripleChart extends AbstractReport {
-    public TripleChart() {
-        super();
-    }
 
     public TripleChart(final ReportData reportData) {
         super(reportData);
-    }
-
-    public static void main(String[] args) {
-        new TripleChart().run();
     }
 
     @Override

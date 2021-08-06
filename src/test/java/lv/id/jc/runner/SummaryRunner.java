@@ -1,4 +1,4 @@
-package runner;
+package lv.id.jc.runner;
 
 import lv.id.jc.report.SummaryReport;
 
