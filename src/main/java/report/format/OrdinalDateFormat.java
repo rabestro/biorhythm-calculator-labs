@@ -5,6 +5,8 @@ import java.time.LocalDate;
 
 public class OrdinalDateFormat extends AbstractFormat {
 
+    private final Format ordinalDay;
+
     public OrdinalDateFormat() {
         this(new OrdinalDayFormat());
     }
@@ -12,8 +14,6 @@ public class OrdinalDateFormat extends AbstractFormat {
     public OrdinalDateFormat(final Format ordinalDay) {
         this.ordinalDay = ordinalDay;
     }
-
-    private final Format ordinalDay;
 
     @Override
     public String simpleFormat(final Object object) {

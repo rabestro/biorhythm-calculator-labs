@@ -1,8 +1,8 @@
 package biorhytms;
 
+import lombok.Getter;
 import report.format.DaysFormat;
 import report.format.OrdinalDateFormat;
-import lombok.Getter;
 
 import java.text.Format;
 import java.text.MessageFormat;
