@@ -8,26 +8,19 @@ import java.util.regex.Pattern;
 
 public class MultilineTextFormat extends Format {
     public static final int DEFAULT_WIDTH = 60;
-    public static final int DEFAULT_IDENT = 0;
     public static final int MAXIMUM_WIDTH = 120;
-    public static final int MAXIMUM_IDENT = 50;
 
     private final Pattern pattern;
     private final String template;
 
     public MultilineTextFormat() {
-        this(DEFAULT_WIDTH, DEFAULT_IDENT);
+        this(DEFAULT_WIDTH);
     }
 
     public MultilineTextFormat(final int width) {
-        this(width, DEFAULT_IDENT);
-    }
-
-    public MultilineTextFormat(final int width, final int ident) {
-        Objects.checkIndex(ident, MAXIMUM_IDENT);
         Objects.checkIndex(width, MAXIMUM_WIDTH);
-        pattern = Pattern.compile("(.{2," + (width - ident) + "})\\s");
-        template = " ".repeat(ident) + "$1\n";
+        pattern = Pattern.compile("(.{2," + width + "})\\s");
+        template = "$1\n";
     }
 
     @Override
