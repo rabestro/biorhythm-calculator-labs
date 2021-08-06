@@ -1,7 +1,7 @@
 package report;
 
 import biorhytms.Biorhythm;
-import report.format.BiorhythmTemplateFormat;
+import report.format.BiorhythmFormat;
 import report.format.DaysFormat;
 import report.format.MultilineTextFormat;
 import report.format.OrdinalDateFormat;
@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class SummaryReport extends AbstractReport {
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
     private static final Format DAYS_FORMAT = new DaysFormat();
-    private final Format shortInfoFormat = new BiorhythmTemplateFormat(getString("short.biorhythm.format"));
+    private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
     private final Format multilineFormat = new MultilineTextFormat();
 
     public SummaryReport(final ReportData reportData) {

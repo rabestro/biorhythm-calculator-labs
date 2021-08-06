@@ -6,7 +6,12 @@ import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 
-public abstract class BiorhythmFormat extends Format {
+public class BiorhythmFormat extends Format {
+    private final String template;
+
+    public BiorhythmFormat(final String template) {
+        this.template = template;
+    }
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
@@ -22,8 +27,11 @@ public abstract class BiorhythmFormat extends Format {
         throw new UnsupportedOperationException();
     }
 
-    public abstract StringBuffer format(
-            final Biorhythm.Value obj,
-            final StringBuffer toAppendTo,
-            final FieldPosition pos);
+    public StringBuffer format(final Biorhythm.Value value, final StringBuffer toAppendTo, final FieldPosition pos) {
+        return toAppendTo.append(String.format(
+                template,
+                value.getBiorhythm().name(),
+                value.getPercent()));
+    }
+
 }
