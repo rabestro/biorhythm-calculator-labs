@@ -1,4 +1,4 @@
-package biorhytms;
+package biorhytm;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -64,6 +64,14 @@ public enum Biorhythm {
 
         public double getValue() {
             return value;
+        }
+
+        public int peakInDays() {
+            return 0;
+        }
+
+        public int lowInDays() {
+            return 0;
         }
 
         public int changesInDays() {

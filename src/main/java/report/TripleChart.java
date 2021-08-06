@@ -1,6 +1,6 @@
 package report;
 
-import biorhytms.Biorhythm;
+import biorhytm.Biorhythm;
 
 import java.util.stream.IntStream;
 

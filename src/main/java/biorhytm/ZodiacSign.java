@@ -1,4 +1,4 @@
-package biorhytms;
+package biorhytm;
 
 import lombok.Getter;
 

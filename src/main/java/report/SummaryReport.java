@@ -1,6 +1,6 @@
 package report;
 
-import biorhytms.Biorhythm;
+import biorhytm.Biorhythm;
 import report.format.BiorhythmFormat;
 import report.format.DaysFormat;
 import report.format.MultilineTextFormat;

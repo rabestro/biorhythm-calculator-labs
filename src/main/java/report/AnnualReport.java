@@ -1,7 +1,7 @@
 package report;
 
-import biorhytms.Biorhythm;
-import biorhytms.Condition;
+import biorhytm.Biorhythm;
+import biorhytm.Condition;
 import lombok.val;
 
 import java.time.DateTimeException;

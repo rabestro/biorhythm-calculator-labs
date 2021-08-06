@@ -1,6 +1,6 @@
 package report.format;
 
-import biorhytms.Biorhythm;
+import biorhytm.Biorhythm;
 
 import java.text.FieldPosition;
 import java.text.Format;

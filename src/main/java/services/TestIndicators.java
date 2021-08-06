@@ -1,6 +1,6 @@
 package services;
 
-import biorhytms.Biorhythm;
+import biorhytm.Biorhythm;
 
 import java.time.LocalDate;
 import java.util.stream.LongStream;

@@ -1,6 +1,6 @@
 package report;
 
-import biorhytms.ZodiacSign;
+import biorhytm.ZodiacSign;
 import lombok.val;
 import report.format.PrettyPeriodFormat;
 

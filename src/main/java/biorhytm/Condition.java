@@ -1,4 +1,4 @@
-package biorhytms;
+package biorhytm;
 
 import static java.lang.Double.isNaN;
 
