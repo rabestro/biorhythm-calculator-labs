@@ -22,11 +22,16 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
             "+q", (d, n) -> d.plus(Period.of(0, n.intValue() * 3, 0)),
             "-q", (d, n) -> d.minus(Period.of(0, n.intValue() * 3, 0))
     );
+    private final Map<String, LocalDate> setOperators;
 
     private final Context context;
 
     public DateNavigator(final Context context) {
         this.context = context;
+        setOperators = Map.of("today", LocalDate.now(), "now", LocalDate.now(),
+                "epoch", LocalDate.EPOCH, "birthday", context.birthday(),
+                "tomorrow", LocalDate.now().plusDays(1L), "after tomorrow", LocalDate.now().plusDays(2L),
+                "yesterday", LocalDate.now().minusDays(1L), "before yesterday", LocalDate.now().minusDays(2L));
     }
 
     @Override
@@ -37,6 +42,14 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
             val command = scanner.nextLine().toLowerCase();
             if ("exit".equals(command) || "quit".equals(command)) {
                 return;
+            }
+            if ("help".equals(command)) {
+                printf("help");
+                continue;
+            }
+            if (setOperators.containsKey(command)) {
+                context.setDate(setOperators.get(command));
+                continue;
             }
             val plusMinus = PLUS_MINUS.matcher(command);
             if (plusMinus.matches()) {
