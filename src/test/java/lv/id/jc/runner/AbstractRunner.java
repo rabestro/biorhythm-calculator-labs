@@ -13,11 +13,11 @@ abstract class AbstractRunner {
     private static final Random random = new Random();
     private static final int MAX_DAYS = 15_000;
 
-    static Function<Context, Runnable> reportRunner;
+    static Function<Context, Runnable> runner;
 
     public static void main(String[] args) {
-        Objects.requireNonNull(reportRunner);
-        reportRunner.apply(getRandomData()).run();
+        Objects.requireNonNull(runner);
+        runner.apply(getRandomData()).run();
     }
 
     static Context getRandomData() {
