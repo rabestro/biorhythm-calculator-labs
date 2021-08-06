@@ -14,8 +14,8 @@ public enum Condition {
         return isNaN(value) ? Empty
                 : value > 0.9 ? Well
                 : value > 0.05 ? Usually
-                : value > -0.05 ? Danger
-                : value > -0.9 ? Loose
+                : value >= -0.05 ? Danger
+                : value >= -0.9 ? Loose
                 : Tired;
     }
 

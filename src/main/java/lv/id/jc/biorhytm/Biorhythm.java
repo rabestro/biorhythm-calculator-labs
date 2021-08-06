@@ -74,7 +74,7 @@ public enum Biorhythm {
             return 0;
         }
 
-        public int changesInDays() {
+        public int changeInDays() {
             final var halfPeriod = (periodInDays + 1) / 2;
             return rest < halfPeriod
                     ? halfPeriod - rest % halfPeriod
@@ -82,7 +82,7 @@ public enum Biorhythm {
         }
 
         public LocalDate cycleLastDay() {
-            return date.plusDays(changesInDays());
+            return date.plusDays(changeInDays());
         }
 
         public Stage getStage() {
@@ -104,7 +104,7 @@ public enum Biorhythm {
         @Override
         public String toString() {
             return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} %s",
-                    name(), date, getPercent(), rest, periodInDays, stage.ordinal(), changesInDays(), cycleLastDay());
+                    name(), date, getPercent(), rest, periodInDays, stage.ordinal(), changeInDays(), cycleLastDay());
         }
     }
 }
