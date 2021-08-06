@@ -20,19 +20,6 @@ class MultilineTextFormatTest {
 
     private Format underTest;
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @ParameterizedTest(name = "formats text with maximum width {0} symbols")
-    @MethodSource("provideWidthAndStrings")
-    void formatWidthTen(int width, String expected) {
-        underTest = new MultilineTextFormat(width);
-        val actual = underTest.format(SAMPLE1);
-
-        assertEquals(expected, actual);
-    }
-
     private static Stream<Arguments> provideWidthAndStrings() {
         return Stream.of(
                 Arguments.of(10, "The quick\nbrown fox\njumps over\nthe lazy\ndog"),
@@ -40,6 +27,20 @@ class MultilineTextFormatTest {
                 Arguments.of(50, "The quick brown fox jumps over the lazy dog"),
                 Arguments.of(60, "The quick brown fox jumps over the lazy dog")
         );
+    }
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @MethodSource("provideWidthAndStrings")
+    @ParameterizedTest(name = "formats text with maximum width {0} symbols")
+    void formatWidthTen(int width, String expected) {
+        underTest = new MultilineTextFormat(width);
+
+        val actual = underTest.format(SAMPLE1);
+
+        assertEquals(expected, actual);
     }
 
     @Test

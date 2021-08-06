@@ -19,7 +19,7 @@ public class TestIndicators implements Runnable {
     @Override
     public void run() {
         System.out.println();
-        final var birthday = LocalDate.of(1970,6,7);
+        final var birthday = LocalDate.of(1970, 6, 7);
         LongStream.rangeClosed(0, biorhythm.getPeriod() * 2L)
                 .mapToObj(days -> biorhythm.new Value(birthday, birthday.plusDays(days)))
                 .forEach(System.out::println);

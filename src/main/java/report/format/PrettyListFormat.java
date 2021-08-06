@@ -33,7 +33,7 @@ public class PrettyListFormat extends Format {
 
         return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
     }
-    
+
     @Override
     public Object parseObject(final String source, final ParsePosition pos) {
         throw new UnsupportedOperationException();
