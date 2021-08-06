@@ -1,52 +1,46 @@
 package report.format;
 
-import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.text.Format;
+import java.text.ParseException;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
+@Tag("Formatter")
 @DisplayName("MultilineTextFormat should")
 class MultilineTextFormatTest {
-    private static final String SAMPLE1 = "The quick brown fox jumps over the lazy dog";
+    private static final String SAMPLE_TEXT = "The quick brown fox jumps over the lazy dog";
 
     private Format underTest;
 
-    private static Stream<Arguments> provideWidthAndStrings() {
+    private static Stream<Arguments> provideTestData() {
         return Stream.of(
-                Arguments.of(10, "The quick\nbrown fox\njumps over\nthe lazy\ndog"),
-                Arguments.of(20, "The quick brown fox\njumps over the lazy\ndog"),
-                Arguments.of(50, "The quick brown fox jumps over the lazy dog"),
-                Arguments.of(60, "The quick brown fox jumps over the lazy dog")
+                Arguments.of(10, "The quick\nbrown fox\njumps over\nthe lazy\ndog\n"),
+                Arguments.of(15, "The quick brown\nfox jumps over\nthe lazy dog\n"),
+                Arguments.of(20, "The quick brown fox\njumps over the lazy\ndog\n"),
+                Arguments.of(50, "The quick brown fox jumps over the lazy dog\n"),
+                Arguments.of(60, "The quick brown fox jumps over the lazy dog\n")
         );
     }
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @MethodSource("provideWidthAndStrings")
+    @MethodSource("provideTestData")
     @ParameterizedTest(name = "formats text with maximum width {0} symbols")
     void formatWidthTen(int width, String expected) {
         underTest = new MultilineTextFormat(width);
-
-        val actual = underTest.format(SAMPLE1);
-
-        assertEquals(expected, actual);
+        assertEquals(expected, underTest.format(SAMPLE_TEXT));
     }
 
-    @Test
-    @DisplayName("throws UnsupportedOperationException on parseObject call")
-    void parseObject() {
+    @MethodSource("provideTestData")
+    @ParameterizedTest(name = "parse multiline text with width {0} to the single line text")
+    void parseObject(int width, String source) throws ParseException {
         underTest = new MultilineTextFormat();
-        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject(SAMPLE1));
+        assertEquals(SAMPLE_TEXT, underTest.parseObject(source));
     }
 }

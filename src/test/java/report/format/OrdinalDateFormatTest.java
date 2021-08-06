@@ -13,6 +13,7 @@ import java.text.Format;
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -26,7 +27,7 @@ public class OrdinalDateFormatTest {
     private Format ordinalDayFormat;
 
     @InjectMocks
-    private OrdinalDateFormat ordinalDateFormat;
+    private OrdinalDateFormat underTest;
 
     @BeforeEach
     void setUp() {
@@ -38,10 +39,15 @@ public class OrdinalDateFormatTest {
         when(ordinalDayFormat.format(any(), any(), any()))
                 .thenReturn(new StringBuffer(ORDINAL_DATE));
 
-        final var actual = ordinalDateFormat.format(LocalDate.EPOCH);
+        final var actual = underTest.format(LocalDate.EPOCH);
         final var expected = "Thursday, January " + ORDINAL_DATE;
 
         assertEquals(expected, actual);
     }
 
+    @Test
+    @DisplayName("throws UnsupportedOperationException on parseObject call")
+    void parseObject() {
+        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("Thursday, January 1st"));
+    }
 }

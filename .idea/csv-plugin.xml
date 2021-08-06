@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\src\test\resources\day-ordinal.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\src\test\resources\days-format.csv">
           <value>
             <Attribute>
@@ -31,10 +38,10 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\src\test\resources\period-age.csv">
+        <entry key="\src\test\resources\monthday-zodiac-sign.csv">
           <value>
             <Attribute>
-              <option name="separator" value=";" />
+              <option name="separator" value="," />
             </Attribute>
           </value>
         </entry>
