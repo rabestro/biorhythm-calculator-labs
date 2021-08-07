@@ -15,7 +15,8 @@ public class LocalTextInterface implements TextInterface {
                 .replaceAll("(\\p{Lower})(\\p{Upper})", "$1-$2")
 
                 .toLowerCase();
-        LOGGER.log(TRACE, "class \"{0}\" uses bundle: \"{1}\"", this.getClass().getName(), bundleName);
+        LOGGER.log(TRACE, "class \"{0}\" uses bundle: \"{1}\"",
+                this.getClass().getSimpleName(), bundleName);
         resourceBundle = ResourceBundle.getBundle(bundleName);
     }
 

@@ -1,10 +1,38 @@
-Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "lv.id.jc.biorhythm.service.CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
-Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "lv.id.jc.biorhythm.Application" uses bundle: "lv/id/jc/biorhythm/application"
-Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "lv.id.jc.biorhythm.service.BirthdayRequester" uses bundle: "lv/id/jc/biorhythm/service/birthday-requester"
-Aug 07, 2021 9:57:23 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "lv.id.jc.biorhythm.report.AgeInfoReport" uses bundle: "lv/id/jc/biorhythm/report/age-info-report"
-Aug 07, 2021 9:57:23 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "lv.id.jc.biorhythm.service.DateNavigator" uses bundle: "lv/id/jc/biorhythm/service/date-navigator"
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=-999999999-01-01, date=2021-08-07)
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "Application" uses bundle: "lv/id/jc/biorhythm/application"
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=-999999999-01-01, date=2021-08-07)
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "BirthdayRequester" uses bundle: "lv/id/jc/biorhythm/service/birthday-requester"
+Aug 07, 2021 10:16:27 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=-999999999-01-01, date=2021-08-07)
+Aug 07, 2021 10:16:37 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "AgeInfoReport" uses bundle: "lv/id/jc/biorhythm/report/age-info-report"
+Aug 07, 2021 10:16:37 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=2000-03-09, date=2021-08-07)
+Aug 07, 2021 10:16:37 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "DateNavigator" uses bundle: "lv/id/jc/biorhythm/service/date-navigator"
+Aug 07, 2021 10:17:08 PM lv.id.jc.biorhythm.service.DateNavigator run
+FINER: sign = +, number = 7, unit = w
+Aug 07, 2021 10:17:17 PM lv.id.jc.biorhythm.service.DateNavigator run
+FINER: sign = -, number = 3, unit = d
+Aug 07, 2021 10:17:27 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "WeeklyReport" uses bundle: "lv/id/jc/biorhythm/report/weekly-report"
+Aug 07, 2021 10:17:27 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=2000-03-09, date=2021-09-22)
+Aug 07, 2021 10:17:34 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "DailyReport" uses bundle: "lv/id/jc/biorhythm/report/daily-report"
+Aug 07, 2021 10:17:34 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=2000-03-09, date=2021-09-22)
+Aug 07, 2021 10:17:40 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "SummaryReport" uses bundle: "lv/id/jc/biorhythm/report/summary-report"
+Aug 07, 2021 10:17:40 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=2000-03-09, date=2021-09-22)
+Aug 07, 2021 10:17:45 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "AnnualReport" uses bundle: "lv/id/jc/biorhythm/report/annual-report"
+Aug 07, 2021 10:17:45 PM lv.id.jc.biorhythm.Component <init>
+FINER: initialized with Context(birthday=2000-03-09, date=2021-09-22)
