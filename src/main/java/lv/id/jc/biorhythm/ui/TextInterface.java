@@ -15,7 +15,7 @@ public interface TextInterface {
 
     default void println(final String format, final Object... args) {
         print(format, args);
-        System.out.println();
+        println();
     }
 
 }
