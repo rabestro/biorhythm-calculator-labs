@@ -8,21 +8,23 @@ import java.time.format.DateTimeParseException;
 
 public class BirthdayRequester extends Component {
     private final LocalDate minimumDate;
-
+    private final LocalDate maximumDate;
+    
     public BirthdayRequester(final Context context) {
         super(context);
         minimumDate = LocalDate.parse(getString("birthday.minimumDate"));
+        maximumDate = LocalDate.now();
     }
 
     @Override
     public void run() {
-        printf("biorhythm.welcome", minimumDate, LocalDate.now());
+        printf("biorhythm.welcome", minimumDate, maximumDate);
         while (true) {
             printf("birthday.prompt");
             try {
                 final var date = LocalDate.parse(scanner.nextLine());
-                if (date.isAfter(LocalDate.now())) {
-                    printf("birthday.after.today", date, LocalDate.now());
+                if (date.isAfter(maximumDate)) {
+                    printf("birthday.after.today", date, maximumDate);
                     continue;
                 }
                 if (date().isBefore(minimumDate)) {
