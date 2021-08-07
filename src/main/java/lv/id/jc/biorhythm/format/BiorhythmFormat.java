@@ -23,7 +23,7 @@ public class BiorhythmFormat extends Format {
     }
 
     @Override
-    public Object parseObject(final String source, final ParsePosition pos) {
+    public Biorhythm.Value parseObject(final String source, final ParsePosition pos) {
         throw new UnsupportedOperationException();
     }
 
