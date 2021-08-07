@@ -3,7 +3,7 @@
 ```text
 > Task :AnnualRunner.main()
 
-      Birthday: 2007-09-07                      Annual lv.id.jc.biorhythm.report for 2010 year
+      Birthday: 2007-09-07                      Annual report for 2010 year
 
       Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec  
       POI   POI   POI   POI   POI   POI   POI   POI   POI   POI   POI   POI
