@@ -17,8 +17,6 @@ public enum Biorhythm {
     Awareness(48, "cognition, learning, sense"),
     Spiritual(53, "peace, harmony");
 
-//    public static final Value EMPTY = Physical.new Value(EPOCH, EPOCH.minusDays(1L));
-
     private final int periodInDays;
     private final String attributes;
 
