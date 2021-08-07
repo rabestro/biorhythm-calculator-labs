@@ -1,9 +1,10 @@
 package lv.id.jc.biorhythm.service;
 
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 
 import java.time.LocalDate;
-import java.util.stream.LongStream;
+import java.util.stream.Stream;
 
 public class TestIndicators implements Runnable {
     private final Biorhythm biorhythm;
@@ -19,9 +20,12 @@ public class TestIndicators implements Runnable {
     @Override
     public void run() {
         System.out.println();
-        final var birthday = LocalDate.of(1970, 6, 7);
-        LongStream.rangeClosed(0, biorhythm.getPeriod() * 2L)
-                .mapToObj(days -> biorhythm.new Value(birthday, birthday.plusDays(days)))
+        final var birthday = LocalDate.EPOCH;
+        Stream.iterate(LocalDate.EPOCH, date -> date.plusDays(1L))
+                .limit(biorhythm.getPeriod() * 2L)
+                .map(date -> new Context(birthday, date))
+                .map(context -> biorhythm.new Value(context))
                 .forEach(System.out::println);
+
     }
 }

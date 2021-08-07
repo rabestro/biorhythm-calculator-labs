@@ -19,7 +19,7 @@ public class DailyReport extends Component {
     @Override
     public void run() {
         final var daily = Arrays.stream(Biorhythm.values())
-                .map(biorhythm -> biorhythm.new Value(birthday(), date()))
+                .map(biorhythm -> biorhythm.new Value(context))
                 .map(formatter::format)
                 .toArray();
 

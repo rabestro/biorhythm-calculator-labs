@@ -29,7 +29,7 @@ public class SummaryReport extends Component {
     }
 
     private Stream<Biorhythm.Value> biorhythms() {
-        return Biorhythm.primary().map(biorhythm -> biorhythm.new Value(birthday(), date()));
+        return Biorhythm.primary().map(biorhythm -> biorhythm.new Value(context));
     }
 
     private void printInfo(Biorhythm.Value value) {

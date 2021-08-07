@@ -1,10 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
+import lombok.val;
 import lv.id.jc.biorhythm.Component;
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.model.Biorhythm;
-import lombok.val;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
+import lv.id.jc.biorhythm.model.Biorhythm;
 
 import java.text.Format;
 import java.time.DayOfWeek;
@@ -28,10 +28,9 @@ public class WeeklyReport extends Component {
         printf("weekly.header.format", date().getYear(), weekOfYear);
 
         weekDays().forEach(day -> printf("weekly.day.format", day,
-                formatter.format(Biorhythm.Physical.new Value(birthday(), day)),
-                formatter.format(Biorhythm.Emotional.new Value(birthday(), day)),
-                formatter.format(Biorhythm.Intellectual.new Value(birthday(), day)))
-        );
+                formatter.format(Biorhythm.Physical.new Value(context.withDate(day))),
+                formatter.format(Biorhythm.Emotional.new Value(context.withDate(day))),
+                formatter.format(Biorhythm.Intellectual.new Value(context.withDate(day)))));
     }
 
     private Stream<LocalDate> weekDays() {

@@ -45,7 +45,7 @@ public class AnnualReport extends Component {
         try {
             final var date = LocalDate.of(context.getYear(), month, day);
             return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Value(birthday(), date))
+                    .map(biorhythm -> biorhythm.new Value(context.withDate(date)))
                     .map(Biorhythm.Value::getValue)
                     .map(Condition::of)
                     .map(Condition::name)

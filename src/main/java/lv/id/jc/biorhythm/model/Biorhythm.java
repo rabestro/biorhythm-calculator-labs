@@ -1,5 +1,6 @@
 package lv.id.jc.biorhythm.model;
 
+import lv.id.jc.biorhythm.Context;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -18,7 +19,7 @@ public enum Biorhythm {
     Awareness(48, "cognition, learning, sense"),
     Spiritual(53, "peace, harmony");
 
-    public static final Value EMPTY = Physical.new Value(EPOCH, EPOCH.minusDays(1L));
+//    public static final Value EMPTY = Physical.new Value(EPOCH, EPOCH.minusDays(1L));
 
     private final int periodInDays;
     private final String attributes;
@@ -48,18 +49,16 @@ public enum Biorhythm {
     }
 
     public class Value {
+        private final Context context;
         private final int days;
         private final int rest;
         private final Stage stage;
         private final double value;
-        private final LocalDate birthday;
-        private final LocalDate date;
 
-        public Value(final LocalDate birthday, final LocalDate date) {
-            this.birthday = birthday;
-            this.date = date;
-            this.days = (int) ChronoUnit.DAYS.between(birthday, date);
-            rest = this.days % periodInDays;
+        public Value(final Context context) {
+            this.context = context;
+            days = (int) ChronoUnit.DAYS.between(context.birthday(), context.date());
+            rest = days % periodInDays;
             if (rest == 0 || rest * 2 == periodInDays) {
                 stage = Stage.ZERO;
             } else {
@@ -91,7 +90,7 @@ public enum Biorhythm {
         }
 
         public LocalDate changeDate() {
-            return date.plusDays(changeInDays());
+            return context.date().plusDays(changeInDays());
         }
 
         public Stage getStage() {
@@ -113,7 +112,8 @@ public enum Biorhythm {
         @Override
         public String toString() {
             return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} %s",
-                    name(), date, getPercent(), rest, periodInDays, stage.ordinal(), changeInDays(), changeDate());
+                    name(), context.date(), getPercent(),
+                    rest, periodInDays, stage.ordinal(), changeInDays(), changeDate());
         }
     }
 }

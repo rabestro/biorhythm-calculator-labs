@@ -37,4 +37,8 @@ public class Context {
         date = date.plusDays(1L);
         return this;
     }
+
+    public Context withDate(final LocalDate date) {
+        return new Context(birthday, date);
+    }
 }
