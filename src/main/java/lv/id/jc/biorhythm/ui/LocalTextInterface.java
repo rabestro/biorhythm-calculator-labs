@@ -12,7 +12,7 @@ public class LocalTextInterface implements TextInterface {
     public LocalTextInterface() {
         final var bundleName = this.getClass().getName()
                 .replace('.', '/')
-                .replaceAll("(\\p{Lower})(\p{Upper})", "$1-$2")
+                .replaceAll("(\\p{Lower})(\\p{Upper})", "$1-$2")
                 .toLowerCase();
 
         resourceBundle = ResourceBundle.getBundle(bundleName);
