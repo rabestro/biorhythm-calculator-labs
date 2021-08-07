@@ -1,9 +1,15 @@
 package lv.id.jc.biorhythm;
 
+import lv.id.jc.biorhythm.service.CLIProcessor;
+
 import java.time.LocalDate;
 
 public final class Main {
     public static void main(String[] args) {
-        new Application(new Context(LocalDate.EPOCH)).run();
+        final var context = new Context(LocalDate.EPOCH);
+
+        new CLIProcessor(context, args);
+        new Application(context).run();
     }
+
 }

@@ -1,8 +1,7 @@
 package lv.id.jc.biorhythm.model;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.model.Biorhythm;
-import lv.id.jc.biorhythm.model.Stage;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -13,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BiorhythmTest {
     private static final double DELTA = 0.01;
 
+    @Disabled
     @ParameterizedTest(name = "checks {0}.new Value({1}, {2}) ")
     @CsvFileSource(resources = "/biorhythm/biorhythm.csv", numLinesToSkip = 1)
     void biorhythmValueTest(
