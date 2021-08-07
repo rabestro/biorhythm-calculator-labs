@@ -1,7 +1,7 @@
 package lv.id.jc.runner;
 
 import lombok.val;
-import lv.id.jc.biorhythm.report.Context;
+import lv.id.jc.biorhythm.Context;
 
 import java.util.Objects;
 import java.util.Random;

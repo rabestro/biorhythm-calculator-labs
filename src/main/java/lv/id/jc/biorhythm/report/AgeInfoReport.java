@@ -1,12 +1,14 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.ZodiacSign;
 import lombok.val;
 import lv.id.jc.biorhythm.format.PrettyPeriodFormat;
 
 import java.time.Period;
 
-public class AgeInfoReport extends AbstractReport {
+public class AgeInfoReport extends Component {
     public AgeInfoReport(Context context) {
         super(context);
     }

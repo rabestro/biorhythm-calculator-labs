@@ -1,5 +1,7 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Condition;
 import lombok.val;
@@ -12,7 +14,7 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.stream.Collectors;
 
-public class AnnualReport extends AbstractReport {
+public class AnnualReport extends Component {
     public AnnualReport(final Context context) {
         super(context);
     }

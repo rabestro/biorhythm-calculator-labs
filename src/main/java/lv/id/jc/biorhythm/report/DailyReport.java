@@ -1,12 +1,14 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
 
 import java.text.Format;
 import java.util.Arrays;
 
-public class DailyReport extends AbstractReport {
+public class DailyReport extends Component {
     private final Format formatter;
 
     public DailyReport(final Context context) {

@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.report;
+package lv.id.jc.biorhythm;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;

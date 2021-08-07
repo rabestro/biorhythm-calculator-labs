@@ -1,5 +1,7 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.format.DaysFormat;
@@ -9,7 +11,7 @@ import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import java.text.Format;
 import java.util.stream.Stream;
 
-public class SummaryReport extends AbstractReport {
+public class SummaryReport extends Component {
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
     private static final Format DAYS_FORMAT = new DaysFormat();
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));

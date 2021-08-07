@@ -1,10 +1,12 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 
 import java.util.stream.IntStream;
 
-public class TripleChart extends AbstractReport {
+public class TripleChart extends Component {
 
     public TripleChart(final Context context) {
         super(context);

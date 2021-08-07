@@ -1,5 +1,7 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lombok.val;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
@@ -10,7 +12,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
-public class WeeklyReport extends AbstractReport {
+public class WeeklyReport extends Component {
     private final Format formatter;
 
     public WeeklyReport(final Context context) {

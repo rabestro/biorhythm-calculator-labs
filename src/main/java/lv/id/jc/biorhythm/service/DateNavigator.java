@@ -1,6 +1,7 @@
 package lv.id.jc.biorhythm.service;
 
 import lombok.val;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.ui.LocalTextInterface;
 

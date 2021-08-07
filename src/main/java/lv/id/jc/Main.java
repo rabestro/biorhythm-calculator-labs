@@ -2,7 +2,7 @@ package lv.id.jc;
 
 import lombok.val;
 import lv.id.jc.biorhythm.report.AgeInfoReport;
-import lv.id.jc.biorhythm.report.Context;
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.report.SummaryReport;
 import lv.id.jc.biorhythm.service.Birthday;
 import lv.id.jc.biorhythm.service.CLI;
