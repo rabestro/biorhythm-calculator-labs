@@ -6,7 +6,7 @@
       Birthday: 2007-09-07                      Annual report for 2010 year
 
       Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec  
-      POI   POI   POI   POI   POI   POI   POI   POI   POI   POI   POI   POI
+      PEI   PEI   PEI   PEI   PEI   PEI   PEI   PEI   PEI   PEI   PEI   PEI
   1   -*-   ++-   +++   .++   +-*   +-*   ..+   +.+   +-+   .0-   ++-   +*.   
   2   -*.   *+-   +++   .0+   +-+   +.*   ..*   +-+   +-+   .+-   ++-   +*.   
   3   -*.   *+-   ++-   --+   +-+   +.*   ..*   +-+   +0+   .+0   +*-   +*-   
