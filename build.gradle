@@ -3,7 +3,7 @@ plugins {
     id 'groovy'
 }
 
-group 'lv.id.jc.biorithms'
+group 'lv.id.jc.biorhythm'
 version '1.0-SNAPSHOT'
 
 repositories {
