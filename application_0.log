@@ -1,2 +1,10 @@
-Aug 06, 2021 11:40:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
-FINER: class "DailyReport" uses resource bundle "lv/id/jc/report/daily-report.properties"
+Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "lv.id.jc.biorhythm.service.CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
+Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "lv.id.jc.biorhythm.Application" uses bundle: "lv/id/jc/biorhythm/application"
+Aug 07, 2021 9:56:44 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "lv.id.jc.biorhythm.service.BirthdayRequester" uses bundle: "lv/id/jc/biorhythm/service/birthday-requester"
+Aug 07, 2021 9:57:23 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "lv.id.jc.biorhythm.report.AgeInfoReport" uses bundle: "lv/id/jc/biorhythm/report/age-info-report"
+Aug 07, 2021 9:57:23 PM lv.id.jc.biorhythm.ui.LocalTextInterface <init>
+FINER: class "lv.id.jc.biorhythm.service.DateNavigator" uses bundle: "lv/id/jc/biorhythm/service/date-navigator"
