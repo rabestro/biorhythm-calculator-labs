@@ -8,8 +8,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
-import static java.time.LocalDate.EPOCH;
-
 public enum Biorhythm {
     Physical(23, "endurance, strength, toughness, coordination"),
     Emotional(28, "mood, sensitivity, creativity"),

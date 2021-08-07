@@ -8,6 +8,7 @@ import lv.id.jc.biorhythm.ui.LocalTextInterface;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.regex.Pattern;
@@ -29,6 +30,9 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
             "print weekly", WeeklyReport::new, "print age", AgeInfoReport::new,
             "graph triple", TripleChart::new, "print summary", SummaryReport::new
     );
+    private static final Set<String> information = Set.of("help", "info");
+    private static final Set<String> exit = Set.of("exit", "quit");
+
     private final Map<String, LocalDate> setOperators;
 
     private final Context context;
@@ -47,19 +51,19 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
         while (true) {
             printf("prompt", context.date());
             val command = scanner.nextLine().toLowerCase();
-            if ("exit".equals(command) || "quit".equals(command)) {
+            if (exit.contains(command)) {
                 return;
             }
-            if ("help".equals(command)) {
-                printf("help");
-                continue;
-            }
-            if (setOperators.containsKey(command)) {
-                context.setDate(setOperators.get(command));
+            if (information.contains(command)) {
+                printf(command);
                 continue;
             }
             if (reports.containsKey(command)) {
                 reports.get(command).apply(context).run();
+                continue;
+            }
+            if (setOperators.containsKey(command)) {
+                context.setDate(setOperators.get(command));
                 continue;
             }
             val plusMinus = PLUS_MINUS.matcher(command);
@@ -70,7 +74,7 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
                 LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
                 context.setDate(moveOperators.get(sign + unit).apply(context.date(), number));
             }
-            printf("error", command);
+            printf("unrecognized", command);
         }
     }
 }

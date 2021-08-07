@@ -1,9 +1,9 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.model.Biorhythm;
-import lv.id.jc.biorhythm.model.Stage;
 import lombok.SneakyThrows;
 import lombok.val;
+import lv.id.jc.biorhythm.model.Biorhythm;
+import lv.id.jc.biorhythm.model.Stage;
 
 import java.util.Formattable;
 import java.util.Formatter;

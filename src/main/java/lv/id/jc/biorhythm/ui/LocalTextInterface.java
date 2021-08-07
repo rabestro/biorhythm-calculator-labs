@@ -1,7 +1,5 @@
 package lv.id.jc.biorhythm.ui;
 
-import org.jetbrains.annotations.PropertyKey;
-
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -41,7 +39,7 @@ public class LocalTextInterface implements TextInterface {
         return String.format(getString(key), args);
     }
 
-    public String getString( final String key) {
+    public String getString(final String key) {
         return resourceBundle.containsKey(key) ? resourceBundle.getString(key) : key;
     }
 }

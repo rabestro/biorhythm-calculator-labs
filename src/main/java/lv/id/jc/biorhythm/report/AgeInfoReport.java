@@ -1,10 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
+import lombok.val;
 import lv.id.jc.biorhythm.Component;
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.model.ZodiacSign;
-import lombok.val;
 import lv.id.jc.biorhythm.format.PrettyPeriodFormat;
+import lv.id.jc.biorhythm.model.ZodiacSign;
 
 import java.time.Period;
 
