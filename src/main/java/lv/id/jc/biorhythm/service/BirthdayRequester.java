@@ -16,6 +16,7 @@ public class BirthdayRequester extends Component {
 
     @Override
     public void run() {
+        printf("biorhythm.welcome", minimumDate, LocalDate.now());
         while (true) {
             printf("birthday.prompt");
             try {

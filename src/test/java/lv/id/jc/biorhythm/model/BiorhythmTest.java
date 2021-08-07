@@ -1,5 +1,6 @@
 package lv.id.jc.biorhythm.model;
 
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Stage;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,7 +24,8 @@ class BiorhythmTest {
             final int change,
             final int peak,
             final int low) {
-        final var underTest = biorhythm.new Value(birthday, date);
+
+        final var underTest = biorhythm.new Value(new Context(birthday, date));
 
         assertAll(
                 () -> assertEquals(value, underTest.getValue(), DELTA),
