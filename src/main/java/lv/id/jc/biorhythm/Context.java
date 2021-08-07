@@ -2,12 +2,14 @@ package lv.id.jc.biorhythm;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 @Setter
 @AllArgsConstructor
+@ToString
 public class Context {
     private LocalDate birthday;
     private LocalDate date;
@@ -40,5 +42,9 @@ public class Context {
 
     public Context withDate(final LocalDate date) {
         return new Context(birthday, date);
+    }
+
+    public boolean isValid() {
+        return birthday.isAfter(LocalDate.MIN);
     }
 }

@@ -13,13 +13,11 @@ public class LocalTextInterface implements TextInterface {
         final var bundleName = this.getClass().getName()
                 .replace('.', '/')
                 .replaceAll("(\\p{Lower})(\\p{Upper})", "$1-$2")
+
                 .toLowerCase();
-
-        resourceBundle = ResourceBundle.getBundle(bundleName);
-
-        LOGGER.log(TRACE, "class \"{0}\" uses resource bundle \"{1}.properties\"",
+        LOGGER.log(TRACE, "class \"{0}\" uses bundle: \"{1}\"",
                 this.getClass().getSimpleName(), bundleName);
-
+        resourceBundle = ResourceBundle.getBundle(bundleName);
     }
 
     public LocalTextInterface(final String resourceName) {
