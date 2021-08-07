@@ -13,16 +13,16 @@ public class Main {
     private static final Random random = new Random();
 
     public static void main(String[] args) {
-        val params = new CLI().parseArgs(args);
-        val birthday = params.getBirthday().orElseGet(new Birthday()::call);
-        val reportData = new Context(birthday);
-        val randomDate = reportData
-                .birthday()
-                .plusDays(random.nextInt(20_000));
+//        val params = new CLI().parseArgs(args);
+//        val birthday = params.getBirthday().orElseGet(new Birthday()::call);
+//        val reportData = new Context(birthday);
+//        val randomDate = reportData
+//                .birthday()
+//                .plusDays(random.nextInt(20_000));
 //        reportData.setDate(randomDate);
-        new AgeInfoReport(reportData).run();
+//        new AgeInfoReport(reportData).run();
 //        new DailyReport(reportData).run();
-        new SummaryReport(reportData).run();
+//        new SummaryReport(reportData).run();
 
 //        new RequestProcessor(birthday).run();
 //        new WeeklyReport(reportData).run();
