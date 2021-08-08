@@ -19,7 +19,7 @@ class OrdinalNumberFormatTest {
     }
 
     @ParameterizedTest(name = "{0} = {1}")
-    @CsvFileSource(resources = "/day-ordinal.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/format/ordinal-number-format.csv", numLinesToSkip = 1)
     void dayOrdinal(final int day, final String expected) {
         assertEquals(expected, underTest.format(day));
     }
