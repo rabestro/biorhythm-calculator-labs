@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'groovy'
+    id "org.sonarqube" version "3.3"
 }
 
 group 'lv.id.jc.biorhythm'
@@ -12,7 +13,6 @@ repositories {
 
 dependencies {
     implementation 'org.jetbrains:annotations:21.0.1'
-    implementation 'org.jetbrains:annotations:20.1.0'
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.20'
 
@@ -28,10 +28,6 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-plugins {
-  id "org.sonarqube" version "3.3"
 }
 
 sonarqube {
