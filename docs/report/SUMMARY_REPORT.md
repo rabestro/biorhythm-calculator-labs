@@ -67,7 +67,7 @@ learning ability and memory while they are at their peak.
 ```
 ## Notes
 
-The lv.id.jc.biorhythm.report uses 4 additional formatters
+The Summary Biorhythms Report uses 4 additional formatters
 - [BiorhythmTemplateFormat](/src/main/java/lv/id/jc/biorhythm/report/format/BiorhythmTemplateFormat.java)
 - [OrdinalDateFormat](/src/main/java/lv/id/jc/biorhythm/report/format/OrdinalDateFormat.java)
 - [DaysFormat](/src/main/java/lv/id/jc/biorhythm/report/format/DaysFormat.java)
