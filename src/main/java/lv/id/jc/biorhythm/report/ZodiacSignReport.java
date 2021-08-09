@@ -1,7 +1,6 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.format.OrdinalNumberFormat;
 import lv.id.jc.biorhythm.model.ZodiacSign;
 import lv.id.jc.biorhythm.ui.Component;
 
@@ -41,7 +40,6 @@ public class ZodiacSignReport extends Component {
     @Override
     public void run() {
         final var zodiacSign = ZodiacSign.of(birthday());
-        final var ordinalNumber = new OrdinalNumberFormat();
 
         printf("zodiacSign.report",
                 zodiacSign,
@@ -49,5 +47,9 @@ public class ZodiacSignReport extends Component {
                 formatter.format(zodiacSign.getStart()),
                 formatter.format(zodiacSign.getEnd()),
                 zodiacSign.getLuckyDay());
+
+        if (zodiacSign.getLuckyDay().equals(date().getDayOfWeek())) {
+            printf("zodiacSign.luckyDay", zodiacSign.getLuckyDay(), zodiacSign.name());
+        }
     }
 }
