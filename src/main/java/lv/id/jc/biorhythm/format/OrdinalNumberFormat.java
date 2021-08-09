@@ -5,6 +5,7 @@ import java.text.Format;
 import java.text.ParsePosition;
 
 public class OrdinalNumberFormat extends Format {
+    private static final String[] SUFFIX = new String[]{"th", "st", "nd", "rd"};
 
     @Override
     public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
@@ -19,13 +20,8 @@ public class OrdinalNumberFormat extends Format {
     public StringBuffer format(final Number obj, final StringBuffer toAppendTo, final FieldPosition pos) {
         final var lastTwo = obj.intValue() % 100;
         final var lastOne = lastTwo % 10;
-        final var suffix = lastTwo > 3 && lastTwo < 21 ? "th"
-                : lastOne == 1 ? "st"
-                : lastOne == 2 ? "nd"
-                : lastOne == 3 ? "rd"
-                : "th";
-
-        return toAppendTo.append(obj).append(suffix);
+        final var index = lastTwo > 3 && lastTwo < 21 || lastOne > 3 ? 0 : lastOne;
+        return toAppendTo.append(obj).append(SUFFIX[index]);
     }
 
     @Override
