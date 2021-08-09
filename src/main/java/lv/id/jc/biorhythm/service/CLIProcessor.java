@@ -1,7 +1,7 @@
 package lv.id.jc.biorhythm.service;
 
-import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.LocalDate;
 

@@ -1,9 +1,9 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.text.Format;
 import java.util.Arrays;

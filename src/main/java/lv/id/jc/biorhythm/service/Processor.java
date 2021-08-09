@@ -11,15 +11,15 @@ import java.util.stream.Stream;
 
 import static java.util.function.Predicate.not;
 
-public class CommandProcessor extends Component {
+public class Processor extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
     private final Set<Command> commandSet = new HashSet<>();
 
-    public CommandProcessor(Context context) {
+    public Processor(Context context) {
         super(context);
     }
 
-    public CommandProcessor addCommands(Set<Command> commands) {
+    public Processor addCommands(Set<Command> commands) {
         commandSet.addAll(commands);
         return this;
     }
@@ -27,21 +27,21 @@ public class CommandProcessor extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
-        Stream.generate(this::getCommand)
+        Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
-                .forEach(this::process);
+                .forEach(this::processRequest);
     }
 
-    private void process(String command) {
+    private void processRequest(String request) {
         commandSet.stream()
-                .map(cmd -> cmd.process(command, this))
+                .map(cmd -> cmd.process(request, this))
                 .filter(Optional::isPresent)
                 .map(Optional::get)
                 .findFirst()
-                .ifPresentOrElse(Runnable::run, () -> printf("unrecognized", command));
+                .ifPresentOrElse(Runnable::run, () -> printf("unrecognized", request));
     }
 
-    private String getCommand() {
+    private String askRequest() {
         printf("prompt", context.date());
         return scanner.nextLine().toLowerCase();
     }

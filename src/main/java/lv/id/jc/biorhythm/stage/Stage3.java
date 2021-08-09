@@ -4,7 +4,7 @@ import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.report.AgeInfoReport;
 import lv.id.jc.biorhythm.report.ZodiacSignReport;
 import lv.id.jc.biorhythm.service.BirthdayRequester;
-import lv.id.jc.biorhythm.service.CommandProcessor;
+import lv.id.jc.biorhythm.service.Processor;
 import lv.id.jc.biorhythm.service.command.DateMove;
 import lv.id.jc.biorhythm.service.command.Information;
 
@@ -18,7 +18,7 @@ public class Stage3 {
         new BirthdayRequester(context).run();
         new AgeInfoReport(context).run();
         new ZodiacSignReport(context).run();
-        new CommandProcessor(context)
+        new Processor(context)
                 .addCommands(Set.of(new Information(), new DateMove()))
                 .run();
     }
