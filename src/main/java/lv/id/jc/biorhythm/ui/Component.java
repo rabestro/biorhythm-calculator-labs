@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import static java.lang.System.Logger.Level.TRACE;
 import static java.time.LocalDate.EPOCH;
 
-public abstract class Component extends LocalTextInterface implements Runnable {
+public abstract class Component extends LocalTextInterface implements Command {
     protected final Context context;
 
     protected Component() {
@@ -33,5 +33,25 @@ public abstract class Component extends LocalTextInterface implements Runnable {
 
     public void setDate(LocalDate date) {
         context.setDate(date);
+    }
+
+    /**
+     * Evaluates this predicate on the given argument.
+     *
+     * @param command the input argument
+     * @return {@code true} if the input argument matches the predicate,
+     * otherwise {@code false}
+     */
+    @Override
+    public boolean test(String command) {
+        return CAMEL_CASE
+                .matcher(this.getClass().getSimpleName())
+                .replaceAll("$1 $2")
+                .equalsIgnoreCase(command);
+    }
+
+    @Override
+    public String get() {
+        return getString("help");
     }
 }

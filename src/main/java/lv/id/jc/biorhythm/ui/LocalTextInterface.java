@@ -2,18 +2,22 @@ package lv.id.jc.biorhythm.ui;
 
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
 
 public abstract class LocalTextInterface implements TextInterface {
     protected static final Scanner scanner = new Scanner(System.in);
+    protected static final Pattern CAMEL_CASE = Pattern.compile("(\\p{Lower})(\\p{Upper})");
+
     private final ResourceBundle resourceBundle;
 
     protected LocalTextInterface() {
-        final var bundleName = this.getClass().getName()
-                .replace('.', '/')
-                .replaceAll("(\\p{Lower})(\\p{Upper})", "$1-$2")
+        final var bundleName = CAMEL_CASE
+                .matcher(this.getClass().getName().replace('.', '/'))
+                .replaceAll("$1-$2")
                 .toLowerCase();
+
         LOGGER.log(TRACE, "class \"{0}\" uses bundle: \"{1}\"",
                 this.getClass().getSimpleName(), bundleName);
         resourceBundle = ResourceBundle.getBundle(bundleName);
