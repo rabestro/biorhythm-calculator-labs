@@ -9,7 +9,7 @@ public abstract class LocalTextInterface implements TextInterface {
     protected static final Scanner scanner = new Scanner(System.in);
     private final ResourceBundle resourceBundle;
 
-    public LocalTextInterface() {
+    protected LocalTextInterface() {
         final var bundleName = this.getClass().getName()
                 .replace('.', '/')
                 .replaceAll("(\\p{Lower})(\\p{Upper})", "$1-$2")
@@ -19,7 +19,7 @@ public abstract class LocalTextInterface implements TextInterface {
         resourceBundle = ResourceBundle.getBundle(bundleName);
     }
 
-    public LocalTextInterface(final String resourceName) {
+    protected LocalTextInterface(final String resourceName) {
         this.resourceBundle = ResourceBundle.getBundle(resourceName);
     }
 

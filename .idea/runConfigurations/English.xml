@@ -6,7 +6,7 @@
     <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging-silent.properties" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="lv.id.jc.biorhythm.*" />
+        <option name="PATTERN" value="lv.id.jc.biorhythm.ui.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

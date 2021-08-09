@@ -1,7 +1,7 @@
 package lv.id.jc.biorhythm.report;
 
 import lombok.val;
-import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
@@ -34,7 +34,7 @@ public class WeeklyReport extends Component {
     }
 
     private Stream<LocalDate> weekDays() {
-        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1);
+        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1L);
         return Stream.iterate(startDay, day -> day.plusDays(1L))
                 .limit(DayOfWeek.values().length);
     }

@@ -1,6 +1,5 @@
 package lv.id.jc.runner;
 
-import lombok.val;
 import lv.id.jc.biorhythm.Context;
 
 import java.util.Objects;
@@ -21,8 +20,8 @@ abstract class AbstractRunner {
     }
 
     static Context getRandomData() {
-        val birthday = EPOCH.plusDays(random.nextInt(MAX_DAYS));
-        val selected = birthday.plusDays(random.nextInt(MAX_DAYS));
+        final var birthday = EPOCH.plusDays(random.nextInt(MAX_DAYS));
+        final var selected = birthday.plusDays(random.nextInt(MAX_DAYS));
         return new Context(birthday, selected);
     }
 

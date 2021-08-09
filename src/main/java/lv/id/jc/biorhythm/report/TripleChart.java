@@ -1,6 +1,6 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.Component;
+import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 
