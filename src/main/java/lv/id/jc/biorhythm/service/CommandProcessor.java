@@ -7,8 +7,10 @@ import lv.id.jc.biorhythm.ui.Component;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import static java.lang.System.Logger.Level.TRACE;
 import static java.util.function.Predicate.not;
 
 public class CommandProcessor extends Component {
@@ -17,6 +19,7 @@ public class CommandProcessor extends Component {
 
     public CommandProcessor(Context context) {
         super(context);
+        commandSet.add(new Help());
     }
 
     public CommandProcessor add(Function<Context, Command> component) {
@@ -47,5 +50,13 @@ public class CommandProcessor extends Component {
     @Override
     public boolean test(String command) {
         return false;
+    }
+
+    class Help extends Component {
+        @Override
+        public void run() {
+            LOGGER.log(TRACE, "Total commands {0}", commandSet.size());
+            commandSet.stream().map(Supplier::get).forEach(CommandProcessor.this::printf);
+        }
     }
 }

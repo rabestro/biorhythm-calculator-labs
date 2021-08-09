@@ -25,14 +25,12 @@ public class AskBirthday extends Component {
                 final var date = LocalDate.parse(scanner.nextLine());
                 if (date.isAfter(maximumDate)) {
                     printf("birthday.after.today", date, maximumDate);
-                    continue;
-                }
-                if (date().isBefore(minimumDate)) {
+                } else if (date().isBefore(minimumDate)) {
                     printf("birthday.before.minimum", date, minimumDate);
-                    continue;
+                } else {
+                    context.setBirthday(date);
+                    return;
                 }
-                context.setBirthday(date);
-                return;
             } catch (DateTimeParseException e) {
                 printf("birthday.parse.exception", e.getMessage());
             }
