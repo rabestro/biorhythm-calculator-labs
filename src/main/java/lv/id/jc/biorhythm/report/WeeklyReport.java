@@ -34,7 +34,7 @@ public class WeeklyReport extends Component {
     }
 
     private Stream<LocalDate> weekDays() {
-        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1);
+        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1L);
         return Stream.iterate(startDay, day -> day.plusDays(1L))
                 .limit(DayOfWeek.values().length);
     }
