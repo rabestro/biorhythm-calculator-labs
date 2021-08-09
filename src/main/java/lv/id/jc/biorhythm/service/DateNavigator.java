@@ -3,7 +3,7 @@ package lv.id.jc.biorhythm.service;
 import lombok.val;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.report.*;
-import lv.id.jc.biorhythm.ui.LocalTextInterface;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
 
-public class DateNavigator extends LocalTextInterface implements Runnable {
+public class DateNavigator extends Component implements Runnable {
     private static final Pattern PLUS_MINUS = Pattern.compile("([-+])(\\d+)([dwmyq])");
     private static final Map<String, BiFunction<LocalDate, Long, LocalDate>> moveOperators = Map.of(
             "+d", LocalDate::plusDays, "-d", LocalDate::minusDays,
@@ -35,10 +35,8 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
 
     private final Map<String, LocalDate> setOperators;
 
-    private final Context context;
-
     public DateNavigator(final Context context) {
-        this.context = context;
+        super(context);
         setOperators = Map.of("today", LocalDate.now(), "now", LocalDate.now(),
                 "epoch", LocalDate.EPOCH, "birthday", context.birthday(),
                 "tomorrow", LocalDate.now().plusDays(1L), "after tomorrow", LocalDate.now().plusDays(2L),
@@ -54,6 +52,7 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
             if (exit.contains(command)) {
                 return;
             }
+
             if (information.contains(command)) {
                 printf(command);
                 continue;
@@ -77,4 +76,5 @@ public class DateNavigator extends LocalTextInterface implements Runnable {
             printf("unrecognized", command);
         }
     }
+
 }

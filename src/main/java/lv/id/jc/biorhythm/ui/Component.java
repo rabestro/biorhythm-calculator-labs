@@ -19,12 +19,19 @@ public abstract class Component extends LocalTextInterface implements Runnable {
         LOGGER.log(TRACE, "class {0} initialized with {1}", this.getClass().getSimpleName(), context);
     }
 
+    public Context getContext() {
+        return context;
+    }
+
     protected LocalDate birthday() {
         return context.birthday();
     }
 
-    protected LocalDate date() {
+    public LocalDate date() {
         return context.date();
     }
 
+    public void setDate(LocalDate date) {
+        context.setDate(date);
+    }
 }

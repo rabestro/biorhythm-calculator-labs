@@ -1,10 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
 import lombok.val;
-import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Condition;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;

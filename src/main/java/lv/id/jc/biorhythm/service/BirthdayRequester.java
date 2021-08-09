@@ -1,7 +1,7 @@
 package lv.id.jc.biorhythm.service;
 
-import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.Context;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
@@ -9,7 +9,7 @@ import java.time.format.DateTimeParseException;
 public class BirthdayRequester extends Component {
     private final LocalDate minimumDate;
     private final LocalDate maximumDate;
-    
+
     public BirthdayRequester(final Context context) {
         super(context);
         minimumDate = LocalDate.parse(getString("birthday.minimumDate"));
