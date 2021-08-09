@@ -1,5 +1,6 @@
-package lv.id.jc.biorhythm;
+package lv.id.jc.biorhythm.ui;
 
+import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.ui.LocalTextInterface;
 
 import java.time.LocalDate;
