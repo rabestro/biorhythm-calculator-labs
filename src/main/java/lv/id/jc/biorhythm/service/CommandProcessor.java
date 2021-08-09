@@ -1,26 +1,26 @@
 package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.service.command.Command;
+import lv.id.jc.biorhythm.ui.Command;
 import lv.id.jc.biorhythm.ui.Component;
 
-import java.util.HashSet;
-import java.util.Optional;
+import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import static java.util.function.Predicate.not;
 
-public class Processor extends Component {
+public class CommandProcessor extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
-    private final Set<Command> commandSet = new HashSet<>();
+    private final Set<Command> commandSet = new LinkedHashSet<>();
 
-    public Processor(Context context) {
+    public CommandProcessor(Context context) {
         super(context);
     }
 
-    public Processor addCommands(Set<Command> commands) {
-        commandSet.addAll(commands);
+    public CommandProcessor add(Function<Context, Command> component) {
+        commandSet.add(component.apply(context));
         return this;
     }
 
@@ -32,17 +32,20 @@ public class Processor extends Component {
                 .forEach(this::processRequest);
     }
 
+    private String askRequest() {
+        printf("prompt", context.date());
+        return scanner.nextLine().toLowerCase();
+    }
+
     private void processRequest(String request) {
         commandSet.stream()
-                .map(cmd -> cmd.process(request, this))
-                .filter(Optional::isPresent)
-                .map(Optional::get)
+                .filter(command -> command.test(request))
                 .findFirst()
                 .ifPresentOrElse(Runnable::run, () -> printf("unrecognized", request));
     }
 
-    private String askRequest() {
-        printf("prompt", context.date());
-        return scanner.nextLine().toLowerCase();
+    @Override
+    public boolean test(String command) {
+        return false;
     }
 }

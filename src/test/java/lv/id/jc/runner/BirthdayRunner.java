@@ -1,9 +1,9 @@
 package lv.id.jc.runner;
 
-import lv.id.jc.biorhythm.service.BirthdayRequester;
+import lv.id.jc.biorhythm.service.AskBirthday;
 
 public class BirthdayRunner extends AbstractRunner{
     static {
-        runner = BirthdayRequester::new;
+        runner = AskBirthday::new;
     }
 }

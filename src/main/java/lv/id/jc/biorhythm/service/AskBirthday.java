@@ -6,11 +6,11 @@ import lv.id.jc.biorhythm.ui.Component;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
-public class BirthdayRequester extends Component {
+public class AskBirthday extends Component {
     private final LocalDate minimumDate;
     private final LocalDate maximumDate;
 
-    public BirthdayRequester(final Context context) {
+    public AskBirthday(final Context context) {
         super(context);
         minimumDate = LocalDate.parse(getString("birthday.minimumDate"));
         maximumDate = LocalDate.now();
