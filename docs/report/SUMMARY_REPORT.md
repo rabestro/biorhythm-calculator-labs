@@ -65,6 +65,42 @@ attributes, which ends on Wednesday, December 8th (8 days).
 Take advantage of your enhanced analytical thinking, logic,
 learning ability and memory while they are at their peak.
 ```
+### Sample 3
+```text
+Today's Biorhythm Summary Report
+
+Physical       94%
+Emotional      62%
+Intellectual   69%
+
+Physical
+
+Your are in a positive cycle for your physical attributes,
+which ends on Wednesday, January 22nd (5 days). Take
+advantage of your enhanced endurance, strength, toughness
+and coordination while they are at their peak.
+Your next Physical peak is on Saturday, February 8th (22 days)
+Your next Physical low is on Monday, January 27th (10 days)
+
+Emotional
+
+Your are progressing in a positive cycle for your emotional
+attributes, and this will last until Tuesday, January 28th
+(11 days). Take advantage of your enhanced mood, sensitivity
+and creativity!
+Your next Emotional peak is on Tuesday, January 21st (4 days)
+Your next Emotional low is on Tuesday, February 4th (18 days)
+
+Intellectual
+
+Your are progressing in a positive cycle for your
+intellectual attributes, and this will last until Thursday,
+January 30th (13 days). Take advantage of your enhanced
+analytical thinking, logic, learning ability and memory!
+Your next Intellectual peak is on Tuesday, January 21st (4 days)
+Your next Intellectual low is on Friday, February 7th (21 days)
+```
+
 ## Notes
 
 The Summary Biorhythms Report uses 4 additional formatters

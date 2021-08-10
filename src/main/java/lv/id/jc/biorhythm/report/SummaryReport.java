@@ -9,12 +9,15 @@ import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.text.Format;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class SummaryReport extends Component {
     private static final Format DAYS_FORMAT = new DaysFormat();
+    private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
+    private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat();
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
-    private final Format multilineFormat = new MultilineTextFormat();
+    private final Function<Integer, String> getDate = days -> ORDINAL_DATE_FORMAT.format(date().plusDays(days));
 
     public SummaryReport(final Context context) {
         super(context);
@@ -32,12 +35,20 @@ public class SummaryReport extends Component {
     }
 
     private void printInfo(Biorhythm.Value value) {
-        final var formatter = new OrdinalDateFormat();
-        printf("summary.biorhythm.name.format", value.getBiorhythm());
-        print(multilineFormat.format(format(getString(value.getStage().name()),
-                value.getBiorhythm().name().toLowerCase(),
-                value.getBiorhythm().getAttributes(),
-                formatter.format(value.changeDate()),
-                DAYS_FORMAT.format(value.changeInDays()))));
+        final var rhythm = value.getBiorhythm();
+        final var text = format(getString(value.getStage().name()),
+                rhythm.name().toLowerCase(),
+                rhythm.getAttributes(),
+                ORDINAL_DATE_FORMAT.format(value.changeDate()),
+                DAYS_FORMAT.format(value.changeInDays()));
+
+        printf("summary.biorhythm.name.format", rhythm);
+        print(MULTILINE_TEXT_FORMAT.format(text));
+        printf("summary.next.peak", rhythm,
+                getDate.apply(value.peakInDays()),
+                DAYS_FORMAT.format(value.peakInDays()));
+        printf("summary.next.low", rhythm,
+                getDate.apply(value.lowInDays()),
+                DAYS_FORMAT.format(value.lowInDays()));
     }
 }
