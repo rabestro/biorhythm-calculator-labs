@@ -1,21 +1,19 @@
 package lv.id.jc.biorhythm.model;
 
 import lv.id.jc.biorhythm.Context;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
 public enum Biorhythm {
-    Physical(23, "endurance, strength, toughness, coordination"),
-    Emotional(28, "mood, sensitivity, creativity"),
-    Intellectual(33, "analytical thinking, logic, learning ability, memory"),
-    Intuition(38, "unconscious perception, hunches, instincts"),
-    Aesthetic(43, "creativity, perception of arts"),
-    Awareness(48, "cognition, learning, sense"),
-    Spiritual(53, "peace, harmony");
+    PHYSICAL(23, "endurance, strength, toughness, coordination"),
+    EMOTIONAL(28, "mood, sensitivity, creativity"),
+    INTELLECTUAL(33, "analytical thinking, logic, learning ability, memory"),
+    INTUITION(38, "unconscious perception, hunches, instincts"),
+    AESTHETIC(43, "creativity, perception of arts"),
+    AWARENESS(48, "cognition, learning, sense"),
+    SPIRITUAL(53, "peace, harmony");
 
     private final int periodInDays;
     private final String attributes;
@@ -26,14 +24,12 @@ public enum Biorhythm {
     }
 
 
-    @Contract(pure = true)
-    public static @NotNull Stream<Biorhythm> primary() {
-        return Stream.of(Physical, Emotional, Intellectual);
+    public static Stream<Biorhythm> primary() {
+        return Stream.of(PHYSICAL, EMOTIONAL, INTELLECTUAL);
     }
 
-    @Contract(pure = true)
-    public static @NotNull Stream<Biorhythm> secondary() {
-        return Stream.of(Intuition, Aesthetic, Awareness, Spiritual);
+    public static Stream<Biorhythm> secondary() {
+        return Stream.of(INTUITION, AESTHETIC, AWARENESS, SPIRITUAL);
     }
 
     public String getAttributes() {
@@ -42,6 +38,17 @@ public enum Biorhythm {
 
     public int getPeriod() {
         return periodInDays;
+    }
+
+    /**
+     * Returns the name of this enum constant, as contained in the
+     * declaration formatted in title case.
+     *
+     * @return the name of this enum constant in title case
+     */
+    @Override
+    public String toString() {
+        return name().charAt(0) + name().substring(1).toLowerCase();
     }
 
     public class Value {

@@ -30,7 +30,7 @@ public class BiorhythmFormat extends Format {
     public StringBuffer format(final Biorhythm.Value value, final StringBuffer toAppendTo, final FieldPosition pos) {
         return toAppendTo.append(String.format(
                 template,
-                value.getBiorhythm().name(),
+                value.getBiorhythm(),
                 value.getPercent()));
     }
 

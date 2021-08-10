@@ -17,9 +17,9 @@ public class TripleChart extends Component {
         System.out.println();
         IntStream.range(0, 30).forEach(i -> {
             System.out.printf("%tF %21s %21s %21s%n", date(),
-                    new Thermometer(Biorhythm.Physical.new Value(context)),
-                    new Thermometer(Biorhythm.Emotional.new Value(context)),
-                    new Thermometer(Biorhythm.Intellectual.new Value(context))
+                    new Thermometer(Biorhythm.PHYSICAL.new Value(context)),
+                    new Thermometer(Biorhythm.EMOTIONAL.new Value(context)),
+                    new Thermometer(Biorhythm.INTELLECTUAL.new Value(context))
             );
             context.nextDay();
         });
