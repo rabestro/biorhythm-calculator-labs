@@ -27,7 +27,7 @@ public class DateNavigator extends Component implements Runnable {
     );
     private static final Map<String, Function<Context, Runnable>> reports = Map.of(
             "print daily", DailyReport::new, "print annual", AnnualReport::new,
-            "print weekly", WeeklyReport::new, "print age", AgeInfoReport::new,
+            "print weekly", WeeklyReport::new, "print age", AgeInfo::new,
             "graph triple", TripleChart::new, "print summary", SummaryReport::new
     );
     private static final Set<String> information = Set.of("help", "info");

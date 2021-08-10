@@ -10,10 +10,10 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Given Zodiac Sign Report")
-class ZodiacSignReportTest {
+class ZodiacInfoTest {
 
     @InjectMocks
-    private ZodiacSignReport underTest;
+    private ZodiacInfo underTest;
 
     @BeforeEach
     void setUp() {

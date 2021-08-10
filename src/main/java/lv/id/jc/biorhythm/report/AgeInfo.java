@@ -6,8 +6,8 @@ import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.Period;
 
-public class AgeInfoReport extends Component {
-    public AgeInfoReport(Context context) {
+public class AgeInfo extends Component {
+    public AgeInfo(Context context) {
         super(context);
     }
 
