@@ -18,7 +18,7 @@ import static java.time.temporal.ChronoField.*;
 import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.toMap;
 
-public class MonthOrdinalDay extends Format {
+public class OrdinalDateFormat extends Format {
     private static final Map<Long, String> ORDINAL;
 
     static {
@@ -77,6 +77,7 @@ public class MonthOrdinalDay extends Format {
 
         return toAppendTo.append(formatter.format(obj));
     }
+
     /**
      * Parses text from a string to produce an object.
      * <p>

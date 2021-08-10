@@ -1,7 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.format.*;
+import lv.id.jc.biorhythm.format.BiorhythmFormat;
+import lv.id.jc.biorhythm.format.DaysFormat;
+import lv.id.jc.biorhythm.format.MultilineTextFormat;
+import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.ui.Component;
 
@@ -29,7 +32,7 @@ public class SummaryReport extends Component {
     }
 
     private void printInfo(Biorhythm.Value value) {
-        final var formatter = new MonthOrdinalDay();
+        final var formatter = new OrdinalDateFormat();
         printf("summary.biorhythm.name.format", value.getBiorhythm());
         print(multilineFormat.format(format(getString(value.getStage().name()),
                 value.getBiorhythm().name().toLowerCase(),

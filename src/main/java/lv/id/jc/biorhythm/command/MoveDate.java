@@ -21,12 +21,11 @@ public class MoveDate extends Component {
             "+q", (d, n) -> d.plus(Period.of(0, n.intValue() * 3, 0)),
             "-q", (d, n) -> d.minus(Period.of(0, n.intValue() * 3, 0))
     );
+    private Runnable operation;
 
     public MoveDate(Context context) {
         super(context);
     }
-
-    private Runnable operation;
 
     @Override
     public boolean test(String command) {

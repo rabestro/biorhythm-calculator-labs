@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("Formatter")
 @DisplayName("Given MonthOrdinalDay")
-class MonthOrdinalDayTest {
+class OrdinalDateFormatTest {
     private Format underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new MonthOrdinalDay();
+        underTest = new OrdinalDateFormat();
     }
 
     @ParameterizedTest(name = "when date is {0} then result is {1}")
-    @CsvFileSource(resources = "/format/month-ordinal-day.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/format/ordinal-date-format.csv", numLinesToSkip = 1)
     void dayOrdinal(final LocalDate date, final String expected) {
         assertEquals(expected, underTest.format(date));
     }

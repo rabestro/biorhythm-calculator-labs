@@ -1,19 +1,9 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.format.MonthOrdinalDay;
+import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.ZodiacSign;
 import lv.id.jc.biorhythm.ui.Component;
-
-import java.text.MessageFormat;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.util.function.Function;
-import java.util.stream.LongStream;
-
-import static java.time.temporal.ChronoField.DAY_OF_MONTH;
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.toMap;
 
 public class ZodiacSignReport extends Component {
 
@@ -24,7 +14,7 @@ public class ZodiacSignReport extends Component {
     @Override
     public void run() {
         final var zodiacSign = ZodiacSign.of(birthday());
-        final var formatter = new MonthOrdinalDay();
+        final var formatter = new OrdinalDateFormat();
 
         printf("zodiacSign.report",
                 zodiacSign,

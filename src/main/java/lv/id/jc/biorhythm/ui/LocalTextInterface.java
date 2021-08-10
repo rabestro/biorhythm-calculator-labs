@@ -18,6 +18,10 @@ public abstract class LocalTextInterface implements TextInterface {
         resourceBundle = getResourceBundle();
     }
 
+    protected LocalTextInterface(final String resourceName) {
+        this.resourceBundle = ResourceBundle.getBundle(resourceName);
+    }
+
     private ResourceBundle getResourceBundle() {
         final var className = this.getClass().getSimpleName();
         final var bundleName = CAMEL_CASE
@@ -34,10 +38,6 @@ public abstract class LocalTextInterface implements TextInterface {
             LOGGER.log(INFO, "class {0} uses resource bundle {1}", className, COMMON_BUNDLE);
             return COMMON_BUNDLE;
         }
-    }
-
-    protected LocalTextInterface(final String resourceName) {
-        this.resourceBundle = ResourceBundle.getBundle(resourceName);
     }
 
     @Override

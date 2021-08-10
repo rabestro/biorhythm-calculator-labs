@@ -21,7 +21,7 @@ class ConditionTest {
     }
 
     @ParameterizedTest(name = "when percent is {0}% then condition is {1}")
-    @CsvFileSource(resources = "/conditions.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/model/conditions.csv", numLinesToSkip = 1)
     void of(final double percent, final Condition expected) {
         assertSame(expected, Condition.of(percent));
     }
