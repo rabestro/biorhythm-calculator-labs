@@ -53,14 +53,13 @@ public enum Biorhythm {
 
     public class Value {
         private final Context context;
-        private final int days;
         private final int rest;
         private final Stage stage;
         private final double value;
 
         public Value(final Context context) {
             this.context = context;
-            days = (int) ChronoUnit.DAYS.between(context.birthday(), context.date());
+            final int days = (int) ChronoUnit.DAYS.between(context.birthday(), context.date());
             rest = days % periodInDays;
             if (rest == 0 || rest * 2 == periodInDays) {
                 stage = Stage.ZERO;
@@ -76,13 +75,13 @@ public enum Biorhythm {
 
 
         public int peakInDays() {
-            //TODO implementation
-            return 0;
+            int days = Math.round(periodInDays / 4.0F - rest);
+            return days < 0 ? days + periodInDays : days;
         }
 
         public int lowInDays() {
-            //TODO implementation
-            return 0;
+            int days = Math.round(3 * periodInDays / 4.0F - rest);
+            return days < 0 ? days + periodInDays : days;
         }
 
         public int changeInDays() {

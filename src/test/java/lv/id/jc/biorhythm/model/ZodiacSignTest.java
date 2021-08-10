@@ -1,6 +1,5 @@
 package lv.id.jc.biorhythm.model;
 
-import lombok.val;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
@@ -13,14 +12,14 @@ import java.time.MonthDay;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("ZodiacSigns")
+@Tag("Model")
 @DisplayName("Given ZodiacSign enum")
 class ZodiacSignTest {
 
-    @DisplayName("then it have exactly twelve signs")
+    @DisplayName("then it have exactly twelve constants")
     @Test
     void hasTwelveSigns() {
-        val expectedSigns = 12;
+        final var expectedSigns = 12;
         assertEquals(expectedSigns, ZodiacSign.values().length);
     }
 

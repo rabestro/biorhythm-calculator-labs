@@ -1,7 +1,7 @@
-Biorhythm       ,Birthday   ,Date      ,getValue,getStage,changeInDays,peakInDays,lowInDays
-Physical        ,1970-01-01 ,1970-01-01,0       ,ZERO               ,12           ,0         ,0
-Emotional       ,1970-01-01 ,1970-01-01,0       ,ZERO           ,14           ,0         ,0
-Intellectual    ,1970-01-01 ,1970-01-01,0       ,ZERO               ,17           ,0         ,0
-Physical        ,1970-01-01 ,2021-08-06,0.817       ,POSITIVE_DOWN    ,4           ,21         ,9
-Emotional       ,1970-01-01 ,2021-08-06,0.2225       ,POSITIVE_UP    ,13           ,6         ,20
-Intellectual    ,1970-01-01 ,2021-08-06,0.3717      ,POSITIVE_UP    ,15           ,6         ,23
+Biorhythm       ,Birthday   ,Date      ,getValue,getStage       ,changeInDays,peakInDays ,lowInDays
+PHYSICAL        ,1970-01-01 ,1970-01-01,0       ,ZERO           ,12           ,6         ,17
+EMOTIONAL       ,1970-01-01 ,1970-01-01,0       ,ZERO           ,14           ,7         ,21
+INTELLECTUAL    ,1970-01-01 ,1970-01-01,0       ,ZERO           ,17           ,8         ,25
+PHYSICAL        ,1970-01-01 ,2021-08-06,0.817   ,POSITIVE_DOWN  ,4           ,21         ,9
+EMOTIONAL       ,1970-01-01 ,2021-08-06,0.2225  ,POSITIVE_UP    ,13           ,6         ,20
+INTELLECTUAL    ,1970-01-01 ,2021-08-06,0.3717  ,POSITIVE_UP    ,15           ,6         ,23
