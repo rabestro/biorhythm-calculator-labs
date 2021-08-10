@@ -48,34 +48,32 @@ public class OrdinalDateFormat extends Format {
     @Override
     public StringBuffer format(Object obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
         if (obj instanceof LocalDate) {
-            return format((LocalDate) obj, toAppendTo, pos);
+            return toAppendTo.append(format((LocalDate) obj));
         }
         if (obj instanceof MonthDay) {
-            return format((MonthDay) obj, toAppendTo, pos);
+            return toAppendTo.append(format((MonthDay) obj));
         }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a LocalDate");
     }
 
-    public StringBuffer format(LocalDate obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
-        final var formatter = new DateTimeFormatterBuilder()
+    public String format(LocalDate obj) {
+        return new DateTimeFormatterBuilder()
                 .appendText(DAY_OF_WEEK, FULL)
                 .appendLiteral(", ")
                 .appendText(MONTH_OF_YEAR, FULL)
                 .appendLiteral(' ')
                 .appendText(DAY_OF_MONTH, ORDINAL)
-                .toFormatter();
-
-        return toAppendTo.append(formatter.format(obj));
+                .toFormatter()
+                .format(obj);
     }
 
-    public StringBuffer format(MonthDay obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
-        final var formatter = new DateTimeFormatterBuilder()
+    public String format(MonthDay obj) {
+        return new DateTimeFormatterBuilder()
                 .appendText(MONTH_OF_YEAR, FULL)
                 .appendLiteral(' ')
                 .appendText(DAY_OF_MONTH, ORDINAL)
-                .toFormatter();
-
-        return toAppendTo.append(formatter.format(obj));
+                .toFormatter()
+                .format(obj);
     }
 
     /**
