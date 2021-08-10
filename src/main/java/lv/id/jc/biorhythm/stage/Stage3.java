@@ -15,7 +15,7 @@ public class Stage3 extends Component {
     }
 
     public void welcome() {
-        println("welcome");
+        printf("welcome");
         new AskBirthday(context).run();
         new AgeInfoReport(context).run();
         new ZodiacSignReport(context).run();

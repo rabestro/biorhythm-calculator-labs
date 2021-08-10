@@ -28,9 +28,9 @@ public class WeeklyReport extends Component {
         printf("weekly.header.format", date().getYear(), weekOfYear);
 
         weekDays().forEach(day -> printf("weekly.day.format", day,
-                formatter.format(Biorhythm.Physical.new Value(context.withDate(day))),
-                formatter.format(Biorhythm.Emotional.new Value(context.withDate(day))),
-                formatter.format(Biorhythm.Intellectual.new Value(context.withDate(day)))));
+                formatter.format(Biorhythm.PHYSICAL.new Value(context.withDate(day))),
+                formatter.format(Biorhythm.EMOTIONAL.new Value(context.withDate(day))),
+                formatter.format(Biorhythm.INTELLECTUAL.new Value(context.withDate(day)))));
     }
 
     private Stream<LocalDate> weekDays() {
