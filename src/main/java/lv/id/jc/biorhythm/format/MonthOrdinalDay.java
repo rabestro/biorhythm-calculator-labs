@@ -5,6 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
+import java.time.LocalDate;
+import java.util.Collection;
 
 public class MonthOrdinalDay extends Format {
     /**
@@ -27,6 +29,13 @@ public class MonthOrdinalDay extends Format {
      */
     @Override
     public StringBuffer format(Object obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
+        if (obj instanceof LocalDate) {
+            return format((LocalDate) obj, toAppendTo, pos);
+        }
+        throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a LocalDate");
+    }
+
+    public StringBuffer format(LocalDate obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
         return null;
     }
 
@@ -53,6 +62,7 @@ public class MonthOrdinalDay extends Format {
      */
     @Override
     public Object parseObject(String source, @NotNull ParsePosition pos) {
-        return null;
+        throw new UnsupportedOperationException();
     }
+
 }
