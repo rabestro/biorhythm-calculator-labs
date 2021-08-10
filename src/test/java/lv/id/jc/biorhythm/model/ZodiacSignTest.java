@@ -1,7 +1,6 @@
 package lv.id.jc.biorhythm.model;
 
 import lombok.val;
-import lv.id.jc.biorhythm.model.ZodiacSign;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Tag;
@@ -15,10 +14,10 @@ import java.time.MonthDay;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Tag("ZodiacSigns")
-@DisplayName("ZodiacSign enum should")
+@DisplayName("Given ZodiacSign enum")
 class ZodiacSignTest {
 
-    @DisplayName("have exactly twelve signs")
+    @DisplayName("then it have exactly twelve signs")
     @Test
     void hasTwelveSigns() {
         val expectedSigns = 12;
@@ -26,34 +25,34 @@ class ZodiacSignTest {
     }
 
     @Nested
-    @DisplayName("convert from date to Zodiac Sign")
+    @DisplayName("when convert a date to a Zodiac Sign")
     class DateConvertedToZodiacSign {
 
-        @ParameterizedTest(name = "{0} is {1}")
-        @CsvFileSource(resources = "/monthday-zodiac-sign.csv", numLinesToSkip = 1)
+        @ParameterizedTest(name = "when {0} then sign is {1}")
+        @CsvFileSource(resources = "/model/monthday-zodiac-sign.csv", numLinesToSkip = 1)
         void monthDayToZodiacSign(final MonthDay date, final ZodiacSign zodiacSign) {
             assertSame(zodiacSign, ZodiacSign.of(date));
         }
 
-        @ParameterizedTest(name = "{0} is {1}")
-        @CsvFileSource(resources = "/date-zodiac-sign.csv", numLinesToSkip = 1)
+        @ParameterizedTest(name = "when is {0} then sign is {1}")
+        @CsvFileSource(resources = "/model/date-zodiac-sign.csv", numLinesToSkip = 1)
         void localDateToZodiacSign(final LocalDate date, final ZodiacSign zodiacSign) {
             assertSame(zodiacSign, ZodiacSign.of(date));
         }
     }
 
     @Nested
-    @DisplayName("match the date to Zodiac Sign")
+    @DisplayName("when match the date to Zodiac Sign")
     class DateMatchesZodiacSign {
 
-        @ParameterizedTest(name = "{0} matches {1}")
-        @CsvFileSource(resources = "/monthday-zodiac-sign.csv", numLinesToSkip = 1)
+        @ParameterizedTest(name = "then {0} matches {1}")
+        @CsvFileSource(resources = "/model/monthday-zodiac-sign.csv", numLinesToSkip = 1)
         void monthDayMatchesZodiacSign(final MonthDay date, final ZodiacSign zodiacSign) {
             assertTrue(zodiacSign.matches(date));
         }
 
-        @ParameterizedTest(name = "{0} matches {1}")
-        @CsvFileSource(resources = "/date-zodiac-sign.csv", numLinesToSkip = 1)
+        @ParameterizedTest(name = "then {0} matches {1}")
+        @CsvFileSource(resources = "/model/date-zodiac-sign.csv", numLinesToSkip = 1)
         void localDateMatchesZodiacSign(final LocalDate date, final ZodiacSign zodiacSign) {
             assertTrue(zodiacSign.matches(date));
         }
