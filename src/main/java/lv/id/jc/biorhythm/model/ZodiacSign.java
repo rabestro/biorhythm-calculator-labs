@@ -24,7 +24,7 @@ public enum ZodiacSign {
     Sagittarius("Archer", MonthDay.of(NOVEMBER, 22), MonthDay.of(DECEMBER, 21), THURSDAY),
     Capricorn("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY) {
         @Override
-        public boolean matches(final MonthDay date) {
+        public boolean matches(final @NotNull MonthDay date) {
             return start.isBefore(date) || end.isAfter(date) || end.equals(date) || start.equals(date);
         }
     },
@@ -62,4 +62,14 @@ public enum ZodiacSign {
         return matches(MonthDay.from(birthday));
     }
 
+    /**
+     * Returns the name of this enum constant, as contained in the
+     * declaration formatted in title case.
+     *
+     * @return the name of this enum constant in title case
+     */
+    @Override
+    public String toString() {
+        return name().charAt(0) + name().substring(1).toLowerCase();
+    }
 }
