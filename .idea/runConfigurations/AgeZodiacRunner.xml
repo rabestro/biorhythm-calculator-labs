@@ -1,8 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SummaryRunner" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="lv.id.jc.runner.SummaryRunner" />
+  <configuration default="false" name="AgeZodiacRunner" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="lv.id.jc.runner.AgeZodiacRunner" />
     <module name="Biorhythms.test" />
-    <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging-verbose.properties" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="lv.id.jc.runner.*" />

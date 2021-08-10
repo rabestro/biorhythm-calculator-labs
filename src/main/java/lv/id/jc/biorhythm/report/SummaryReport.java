@@ -12,7 +12,6 @@ import java.text.Format;
 import java.util.stream.Stream;
 
 public class SummaryReport extends Component {
-    private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
     private static final Format DAYS_FORMAT = new DaysFormat();
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
     private final Format multilineFormat = new MultilineTextFormat();
@@ -33,11 +32,12 @@ public class SummaryReport extends Component {
     }
 
     private void printInfo(Biorhythm.Value value) {
+        final var formatter = new OrdinalDateFormat();
         printf("summary.biorhythm.name.format", value.getBiorhythm());
         print(multilineFormat.format(format(getString(value.getStage().name()),
                 value.getBiorhythm().name().toLowerCase(),
                 value.getBiorhythm().getAttributes(),
-                ORDINAL_DATE_FORMAT.format(value.changeDate()),
+                formatter.format(value.changeDate()),
                 DAYS_FORMAT.format(value.changeInDays()))));
     }
 }
