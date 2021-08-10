@@ -12,26 +12,28 @@ import java.text.Format;
 import java.time.Period;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Tag("Formatter")
 @DisplayName("Given PrettyPeriodFormat")
 class PrettyPeriodFormatTest {
-    private Format formatter;
+    private Format underTest;
 
     @BeforeEach
     void setUp() {
-        formatter = new PrettyPeriodFormat();
+        underTest = new PrettyPeriodFormat();
     }
-
 
     @Test
+    @DisplayName("when parseObject then throws UnsupportedOperationException")
     void parseObject() {
+        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("1st"));
     }
 
-    @ParameterizedTest(name = "when period is \"{0}\" then output is \"{1}\"")
+    @ParameterizedTest(name = "when \"{0}\" then \"{1}\"")
     @CsvFileSource(resources = "/format/pretty-period-format.csv", numLinesToSkip = 1)
     void getAge(final Period period, final String expected) {
-        val actual = formatter.format(period);
+        val actual = underTest.format(period);
         assertEquals(expected, actual);
     }
 

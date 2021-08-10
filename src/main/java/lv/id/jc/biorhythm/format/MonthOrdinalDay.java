@@ -4,11 +4,28 @@ import org.jetbrains.annotations.NotNull;
 
 import java.text.FieldPosition;
 import java.text.Format;
+import java.text.MessageFormat;
 import java.text.ParsePosition;
 import java.time.LocalDate;
-import java.util.Collection;
+import java.time.format.DateTimeFormatterBuilder;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.LongStream;
+
+import static java.time.format.TextStyle.FULL;
+import static java.time.temporal.ChronoField.*;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.toMap;
 
 public class MonthOrdinalDay extends Format {
+    private static final Map<Long, String> ORDINAL;
+
+    static {
+        final Function<Long, String> ordinalDay = day -> MessageFormat
+                .format("{0}{0,choice,1#st|2#nd|3#rd|3<th|21#st|22#nd|23#rd|23<th|31#st}", day);
+        ORDINAL = LongStream.rangeClosed(1L, 31L).boxed().collect(toMap(identity(), ordinalDay));
+    }
+
     /**
      * Formats an object and appends the resulting text to a given string
      * buffer.
@@ -36,7 +53,15 @@ public class MonthOrdinalDay extends Format {
     }
 
     public StringBuffer format(LocalDate obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
-        return null;
+        final var formatter = new DateTimeFormatterBuilder()
+                .appendText(DAY_OF_WEEK, FULL)
+                .appendLiteral(", ")
+                .appendText(MONTH_OF_YEAR, FULL)
+                .appendLiteral(' ')
+                .appendText(DAY_OF_MONTH, ORDINAL)
+                .toFormatter();
+
+        return toAppendTo.append(formatter.format(obj));
     }
 
     /**
