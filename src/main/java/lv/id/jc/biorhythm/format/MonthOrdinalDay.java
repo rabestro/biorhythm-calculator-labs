@@ -7,6 +7,7 @@ import java.text.Format;
 import java.text.MessageFormat;
 import java.text.ParsePosition;
 import java.time.LocalDate;
+import java.time.MonthDay;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Map;
 import java.util.function.Function;
@@ -49,6 +50,9 @@ public class MonthOrdinalDay extends Format {
         if (obj instanceof LocalDate) {
             return format((LocalDate) obj, toAppendTo, pos);
         }
+        if (obj instanceof MonthDay) {
+            return format((MonthDay) obj, toAppendTo, pos);
+        }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a LocalDate");
     }
 
@@ -64,6 +68,15 @@ public class MonthOrdinalDay extends Format {
         return toAppendTo.append(formatter.format(obj));
     }
 
+    public StringBuffer format(MonthDay obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
+        final var formatter = new DateTimeFormatterBuilder()
+                .appendText(MONTH_OF_YEAR, FULL)
+                .appendLiteral(' ')
+                .appendText(DAY_OF_MONTH, ORDINAL)
+                .toFormatter();
+
+        return toAppendTo.append(formatter.format(obj));
+    }
     /**
      * Parses text from a string to produce an object.
      * <p>
