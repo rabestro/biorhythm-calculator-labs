@@ -2,6 +2,8 @@ package lv.id.jc.biorhythm.model;
 
 import lv.id.jc.biorhythm.Context;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -9,11 +11,12 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("Model")
+@DisplayName("Given Biorhythm enum")
 class BiorhythmTest {
     private static final double DELTA = 0.01;
 
-    @Disabled
-    @ParameterizedTest(name = "checks {0}.new Value({1}, {2}) ")
+    @ParameterizedTest(name = "when {0} and {1}/{2} then value is {3}, stage is {4} and days are {5}, {6}, {7} ")
     @CsvFileSource(resources = "/biorhythm/biorhythm.csv", numLinesToSkip = 1)
     void biorhythmValueTest(
             final Biorhythm biorhythm,
