@@ -1,4 +1,6 @@
-# Sample 1
+# Weekly Biorhythms Report
+
+## Sample 1
 
 ```
 > Task :WeeklyRunner.main()
@@ -47,4 +49,47 @@ format.weekly.day=\
 %n  %1$-11tY %4$s%n
 
 format.weekly.biorhythm = %-12s %4d %%
+```
+
+## Sample 2
+
+```text
+  Weekly Biorhythm Report
+  Year: 2014, Week #43:
+
+  Monday, October 27, 2014
+      Physical      -52 %
+      Emotional      22 %
+      Intellectual   95 %
+
+  Tuesday, October 28, 2014
+      Physical      -27 %
+      Emotional      43 %
+      Intellectual   87 %
+
+  Wednesday, October 29, 2014
+      Physical        0 %
+      Emotional      62 %
+      Intellectual   76 %
+
+  Thursday, October 30, 2014
+      Physical       27 %
+      Emotional      78 %
+      Intellectual   62 %
+
+  Friday, October 31, 2014
+      Physical       52 %
+      Emotional      90 %
+      Intellectual   46 %
+
+  Saturday, November 01, 2014
+      Physical       73 %
+      Emotional      97 %
+      Intellectual   28 %
+
+  Sunday, November 02, 2014
+      Physical       89 %
+      Emotional     100 %
+      Intellectual   10 %
+
 ```
