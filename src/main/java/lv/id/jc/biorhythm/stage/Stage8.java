@@ -7,7 +7,7 @@ import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.CommandProcessor;
 
-public class Stage5 {
+public class Stage8 {
     public static void main(String[] args) {
         // Stage 1
         var context = new Context();
@@ -29,6 +29,9 @@ public class Stage5 {
                 .add(DailyReport::new)   // Stage 2
                 .add(WeeklyReport::new)  // Stage 4
                 .add(MonthlyReport::new) // Stage 5
+                .add(AnnualReport::new)  // Stage 6
+                .add(SummaryReport::new) // Stage 7
+                .add(TripleChart::new)   // Stage 8
                 .run();
     }
 
