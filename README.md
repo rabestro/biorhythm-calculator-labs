@@ -1,6 +1,8 @@
-# About the project
+# Biorhythms Calculator
 
-Laboratory for creating a training project. The goal is to create a tutorial project on working with dates in Java. The idea is to create a biorhythm calculator that allows you to select dates and print reports for different periods of time.
+## About
+
+This is a laboratory for creating a training project. The goal is to create a tutorial project on working with dates in Java. The idea is to create a biorhythm calculator that allows you to select dates and print reports for different periods of time.
 
 ## Stages
 
