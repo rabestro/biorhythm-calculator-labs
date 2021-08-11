@@ -1,9 +1,9 @@
 package lv.id.jc.runner;
 
-import lv.id.jc.biorhythm.report.ZodiacSignReport;
+import lv.id.jc.biorhythm.report.ZodiacInfo;
 
 public class ZodiacSignRunner extends AbstractRunner {
     static {
-        runner = ZodiacSignReport::new;
+        runner = ZodiacInfo::new;
     }
 }

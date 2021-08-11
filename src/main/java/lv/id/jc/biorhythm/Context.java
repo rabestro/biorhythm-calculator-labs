@@ -14,6 +14,10 @@ public class Context {
     private LocalDate birthday;
     private LocalDate date;
 
+    public Context() {
+        this(LocalDate.MIN);
+    }
+
     public Context(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();

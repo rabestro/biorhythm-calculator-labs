@@ -1,5 +1,7 @@
 package lv.id.jc.biorhythm.format;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
@@ -15,15 +17,15 @@ public class PrettyListFormat extends Format {
 
     @Override
     @SuppressWarnings("rawtypes")
-    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+    public StringBuffer format(final Object obj, final @NotNull StringBuffer toAppendTo, final @NotNull FieldPosition pos) {
         if (obj instanceof Collection) {
-            return format((Collection) obj, toAppendTo, pos);
+            return toAppendTo.append(format((Collection) obj));
         }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Collection");
     }
 
     @SuppressWarnings("unchecked")
-    public StringBuffer format(@SuppressWarnings("rawtypes") final Collection obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+    public String format(@SuppressWarnings("rawtypes") final Collection obj) {
         final var text = obj.stream()
                 .filter(Objects::nonNull)
                 .map(Objects::toString)
@@ -31,11 +33,11 @@ public class PrettyListFormat extends Format {
                 .collect(Collectors.joining(", "))
                 .toString();
 
-        return toAppendTo.append(LAST_COMMA.matcher(text).replaceFirst(LAST_AND));
+        return LAST_COMMA.matcher(text).replaceFirst(LAST_AND);
     }
 
     @Override
-    public Object parseObject(final String source, final ParsePosition pos) {
+    public Object parseObject(final String source, final @NotNull ParsePosition pos) {
         throw new UnsupportedOperationException();
     }
 }

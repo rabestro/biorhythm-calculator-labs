@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Tag("Formatter")
-@DisplayName("MultilineTextFormat should")
+@DisplayName("Given MultilineTextFormat")
 class MultilineTextFormatTest {
     private static final String SAMPLE_TEXT = "The quick brown fox jumps over the lazy dog";
 
@@ -30,14 +30,14 @@ class MultilineTextFormatTest {
     }
 
     @MethodSource("provideTestData")
-    @ParameterizedTest(name = "formats text with maximum width {0} symbols")
+    @ParameterizedTest(name = "when formats text with maximum width {0} symbols")
     void formatWidthTen(int width, String expected) {
         underTest = new MultilineTextFormat(width);
         assertEquals(expected, underTest.format(SAMPLE_TEXT));
     }
 
     @MethodSource("provideTestData")
-    @ParameterizedTest(name = "parse multiline text with width {0} to the single line text")
+    @ParameterizedTest(name = "when parse multiline text with width {0} to the single line text")
     void parseObject(int width, String source) throws ParseException {
         underTest = new MultilineTextFormat();
         assertEquals(SAMPLE_TEXT, underTest.parseObject(source));

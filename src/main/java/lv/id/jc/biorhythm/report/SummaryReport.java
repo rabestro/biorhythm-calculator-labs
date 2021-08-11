@@ -9,15 +9,15 @@ import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.text.Format;
-import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.stream.Stream;
 
 public class SummaryReport extends Component {
     private static final Format DAYS_FORMAT = new DaysFormat();
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
-    private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat();
+    private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat(60);
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
-    private final Function<Integer, String> getDate = days -> ORDINAL_DATE_FORMAT.format(date().plusDays(days));
+    private final IntFunction<String> getDate = days -> ORDINAL_DATE_FORMAT.format(date().plusDays(days));
 
     public SummaryReport(final Context context) {
         super(context);
@@ -28,6 +28,7 @@ public class SummaryReport extends Component {
         printf("summary.header.format");
         biorhythms().map(shortInfoFormat::format).forEach(this::println);
         biorhythms().forEach(this::printInfo);
+        printf("summary.overall");
     }
 
     private Stream<Biorhythm.Value> biorhythms() {
@@ -44,10 +45,12 @@ public class SummaryReport extends Component {
 
         printf("summary.biorhythm.name.format", rhythm);
         print(MULTILINE_TEXT_FORMAT.format(text));
-        printf("summary.next.peak", rhythm,
+        printf("summary.next.peak",
+                rhythm.name().toLowerCase(),
                 getDate.apply(value.peakInDays()),
                 DAYS_FORMAT.format(value.peakInDays()));
-        printf("summary.next.low", rhythm,
+        printf("summary.next.low",
+                rhythm.name().toLowerCase(),
                 getDate.apply(value.lowInDays()),
                 DAYS_FORMAT.format(value.lowInDays()));
     }

@@ -9,7 +9,7 @@ import static java.lang.System.Logger.Level.*;
 
 public abstract class LocalTextInterface implements TextInterface {
     protected static final Scanner scanner = new Scanner(System.in);
-    protected static final Pattern CAMEL_CASE = Pattern.compile("(\\p{Lower})(\\p{Upper})");
+    public static final Pattern CAMEL_CASE = Pattern.compile("(\\p{Lower})(\\p{Upper})");
     private static final ResourceBundle COMMON_BUNDLE = ResourceBundle.getBundle("messages");
 
     private final ResourceBundle resourceBundle;

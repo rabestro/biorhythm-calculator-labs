@@ -3,13 +3,11 @@ package lv.id.jc.biorhythm.stage;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.command.Info;
 import lv.id.jc.biorhythm.command.MoveDate;
-import lv.id.jc.biorhythm.report.AgeInfo;
-import lv.id.jc.biorhythm.report.DailyReport;
-import lv.id.jc.biorhythm.report.ZodiacInfo;
+import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.CommandProcessor;
 
-public class Stage3 {
+public class Stage5 {
     public static void main(String[] args) {
         // Stage 1
         var context = new Context();
@@ -26,9 +24,11 @@ public class Stage3 {
                 .add(AskBirthday::new)  // Stage 1
                 .add(AgeInfo::new)      // Stage 1
                 .add(ZodiacInfo::new)   // Stage 1
-                .add(DailyReport::new)  // Stage 2
                 .add(Info::new)         // Stage 3
                 .add(MoveDate::new)     // Stage 3
+                .add(DailyReport::new)  // Stage 2
+                .add(WeeklyReport::new) // Stage 4
+                .add(AnnualReport::new) // Stage 5
                 .run();
     }
 

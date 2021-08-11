@@ -5,9 +5,9 @@ import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.ZodiacSign;
 import lv.id.jc.biorhythm.ui.Component;
 
-public class ZodiacSignReport extends Component {
+public class ZodiacInfo extends Component {
 
-    public ZodiacSignReport(Context context) {
+    public ZodiacInfo(Context context) {
         super(context);
     }
 

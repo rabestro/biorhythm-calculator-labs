@@ -1,7 +1,6 @@
 package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.ui.Command;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.util.LinkedHashSet;
@@ -10,19 +9,18 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import static java.lang.System.Logger.Level.TRACE;
 import static java.util.function.Predicate.not;
 
 public class CommandProcessor extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
-    private final Set<Command> commandSet = new LinkedHashSet<>();
+    private final Set<Component> commandSet = new LinkedHashSet<>();
 
     public CommandProcessor(Context context) {
         super(context);
         commandSet.add(new Help());
     }
 
-    public CommandProcessor add(Function<Context, Command> component) {
+    public CommandProcessor add(Function<Context, Component> component) {
         commandSet.add(component.apply(context));
         return this;
     }
@@ -53,10 +51,8 @@ public class CommandProcessor extends Component {
     }
 
     class Help extends Component {
-        @Override
-        public void run() {
-            LOGGER.log(TRACE, "Total commands {0}", commandSet.size());
-            commandSet.stream().map(Supplier::get).forEach(CommandProcessor.this::printf);
+        {
+            runnable = () -> commandSet.stream().map(Supplier::get).forEach(this::printf);
         }
     }
 }
