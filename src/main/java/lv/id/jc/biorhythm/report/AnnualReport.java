@@ -1,6 +1,5 @@
 package lv.id.jc.biorhythm.report;
 
-import lombok.val;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Condition;
@@ -21,12 +20,12 @@ public class AnnualReport extends Component {
 
     @Override
     public void run() {
-        val leftPart = format("annual.header.left.format", birthday());
-        val rightPart = format("annual.header.right.format", date());
+        final var leftPart = format("annual.header.left.format", birthday());
+        final var rightPart = format("annual.header.right.format", date());
 
         printf("annual.header.format", leftPart, rightPart);
 
-        val months = Arrays.stream(Month.values())
+        final var months = Arrays.stream(Month.values())
                 .map(m -> m.getDisplayName(TextStyle.SHORT, Locale.getDefault()))
                 .toArray();
         printf("annual.months.format", months);

@@ -13,9 +13,10 @@ import java.util.function.IntFunction;
 import java.util.stream.Stream;
 
 public class SummaryReport extends Component {
+    private static final int LINE_MAXIMUM_WIDTH = 60;
     private static final Format DAYS_FORMAT = new DaysFormat();
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
-    private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat(60);
+    private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat(LINE_MAXIMUM_WIDTH);
     private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
     private final IntFunction<String> getDate = days -> ORDINAL_DATE_FORMAT.format(date().plusDays(days));
 

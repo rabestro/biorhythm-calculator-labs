@@ -21,8 +21,6 @@ public class MoveDate extends Component {
             "+q", (d, n) -> d.plus(Period.of(0, n.intValue() * 3, 0)),
             "-q", (d, n) -> d.minus(Period.of(0, n.intValue() * 3, 0))
     );
-    private Runnable operation;
-
     public MoveDate(Context context) {
         super(context);
     }
@@ -37,14 +35,9 @@ public class MoveDate extends Component {
             final var unit = plusMinus.group(3);
             final var number = Long.parseLong(plusMinus.group(2));
             LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
-            operation = () -> setDate(MOVE_OPERATORS.get(sign + unit).apply(date(), number));
+            runnable = () -> setDate(MOVE_OPERATORS.get(sign + unit).apply(date(), number));
         }
         return isValidCommand;
-    }
-
-    @Override
-    public void run() {
-        operation.run();
     }
 
 }
