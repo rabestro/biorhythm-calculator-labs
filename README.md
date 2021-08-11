@@ -12,4 +12,4 @@ The project is divided into [eight stages](/src/main/java/lv/id/jc/biorhythm/sta
 
 To achieve the goal, the concept of a system component was invented. The entire training project is broken down into many small sub-tasks. Each of these tasks is a separate class in this repository. To make it easier to manipulate different components, a common interface was created.
 
-Each individual component can be [run, tested](/src/test/java/lv/id/jc/runner), and improved separately. You can collect any of the stages of the project from different components and see how it will work.
+Each individual component can be [run, tested](/src/test/java/lv/id/jc/runner), and improved separately. A [special class](/src/test/java/lv/id/jc/runner/AbstractRunner.java) generates a random context for the component and you can see how the module behaves when working with different data. You can then assemble the components into a [working implementation](/src/main/java/lv/id/jc/biorhythm/stage) of each of the steps in the tutorial project.
