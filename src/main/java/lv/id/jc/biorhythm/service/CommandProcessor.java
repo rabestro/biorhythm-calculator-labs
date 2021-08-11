@@ -1,7 +1,6 @@
 package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.Context;
-import lv.id.jc.biorhythm.ui.Command;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.util.LinkedHashSet;
@@ -15,14 +14,14 @@ import static java.util.function.Predicate.not;
 
 public class CommandProcessor extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
-    private final Set<Command> commandSet = new LinkedHashSet<>();
+    private final Set<Component> commandSet = new LinkedHashSet<>();
 
     public CommandProcessor(Context context) {
         super(context);
         commandSet.add(new Help());
     }
 
-    public CommandProcessor add(Function<Context, Command> component) {
+    public CommandProcessor add(Function<Context, Component> component) {
         commandSet.add(component.apply(context));
         return this;
     }
