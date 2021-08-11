@@ -2,7 +2,6 @@ package lv.id.jc.biorhythm.model;
 
 import lv.id.jc.biorhythm.Context;
 
-import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.stream.Stream;
 
@@ -89,10 +88,6 @@ public enum Biorhythm {
             return rest < halfPeriod
                     ? halfPeriod - rest % halfPeriod
                     : periodInDays - rest;
-        }
-
-        public LocalDate changeDate() {
-            return context.date().plusDays(changeInDays());
         }
 
         public Stage getStage() {
