@@ -1,6 +1,6 @@
 package lv.id.jc.biorhythm.format;
 
-import lombok.val;
+import org.jetbrains.annotations.NotNull;
 
 import java.text.FieldPosition;
 import java.text.Format;
@@ -21,25 +21,25 @@ public class PrettyPeriodFormat extends Format {
     }
 
     @Override
-    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+    public StringBuffer format(final Object obj, final @NotNull StringBuffer toAppendTo, final @NotNull FieldPosition pos) {
         if (obj instanceof Period) {
-            return format((Period) obj, toAppendTo, pos);
+            return format((Period) obj, toAppendTo);
         }
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Period");
     }
 
-    public StringBuffer format(final Period period, final StringBuffer toAppendTo, final FieldPosition pos) {
-        val years = YEARS.format(new Object[]{period.getYears()});
-        val months = MONTHS.format(new Object[]{period.getMonths()});
-        val days = DAYS.format(new Object[]{period.getDays()});
+    public StringBuffer format(final Period period, final StringBuffer toAppendTo) {
+        final var years = YEARS.format(new Object[]{period.getYears()});
+        final var months = MONTHS.format(new Object[]{period.getMonths()});
+        final var days = DAYS.format(new Object[]{period.getDays()});
 
         if ((years + months + days).isEmpty()) {
             return toAppendTo.append("just born");
         }
 
-        val one = years.isEmpty() || (months.isEmpty() && days.isEmpty())
+        final var one = years.isEmpty() || (months.isEmpty() && days.isEmpty())
                 ? "" : months.isEmpty() || days.isEmpty() ? " and " : ", ";
-        val two = days.isEmpty() || months.isEmpty() ? "" : " and ";
+        final var two = days.isEmpty() || months.isEmpty() ? "" : " and ";
 
         return toAppendTo
                 .append(years)
@@ -50,7 +50,7 @@ public class PrettyPeriodFormat extends Format {
     }
 
     @Override
-    public Object parseObject(final String source, final ParsePosition pos) {
+    public Object parseObject(final String source, final @NotNull ParsePosition pos) {
         throw new UnsupportedOperationException();
     }
 }

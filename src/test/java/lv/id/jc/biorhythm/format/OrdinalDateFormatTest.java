@@ -22,7 +22,7 @@ class OrdinalDateFormatTest {
         underTest = new OrdinalDateFormat();
     }
 
-    @ParameterizedTest(name = "when date is {0} then result is {1}")
+    @ParameterizedTest(name = "when {0} then {1}")
     @CsvFileSource(resources = "/format/ordinal-date-format.csv", numLinesToSkip = 1)
     void dayOrdinal(final LocalDate date, final String expected) {
         assertEquals(expected, underTest.format(date));

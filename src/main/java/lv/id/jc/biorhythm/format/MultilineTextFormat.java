@@ -1,5 +1,7 @@
 package lv.id.jc.biorhythm.format;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
@@ -27,7 +29,7 @@ public class MultilineTextFormat extends Format {
     }
 
     @Override
-    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final FieldPosition pos) {
+    public StringBuffer format(final Object obj, final StringBuffer toAppendTo, final @NotNull FieldPosition pos) {
         return toAppendTo.append(pattern.matcher(obj.toString()).replaceAll(template));
     }
 
