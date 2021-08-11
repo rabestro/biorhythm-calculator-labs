@@ -9,7 +9,6 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import static java.lang.System.Logger.Level.TRACE;
 import static java.util.function.Predicate.not;
 
 public class CommandProcessor extends Component {
@@ -52,10 +51,8 @@ public class CommandProcessor extends Component {
     }
 
     class Help extends Component {
-        @Override
-        public void run() {
-            LOGGER.log(TRACE, "Total commands {0}", commandSet.size());
-            commandSet.stream().map(Supplier::get).forEach(CommandProcessor.this::printf);
+        {
+            runnable = () -> commandSet.stream().map(Supplier::get).forEach(this::printf);
         }
     }
 }

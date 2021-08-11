@@ -5,17 +5,16 @@ import lv.id.jc.biorhythm.format.PrettyPeriodFormat;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 
 public class AgeInfo extends Component {
     public AgeInfo(Context context) {
         super(context);
+        runnable = () -> printf("format.ageInfo",
+                birthday(),
+                date(),
+                ChronoUnit.DAYS.between(birthday(), date()),
+                PrettyPeriodFormat.getInstance().format(Period.between(birthday(), date())));
     }
 
-    @Override
-    public void run() {
-        final var age = PrettyPeriodFormat.getInstance()
-                .format(Period.between(birthday(), date()));
-
-        printf("format.ageInfo", birthday(), date(), context.getDays(), age);
-    }
 }
