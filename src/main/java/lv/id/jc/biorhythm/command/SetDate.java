@@ -5,14 +5,15 @@ import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.Optional;
 
 public class SetDate extends Component {
-    private final Map<String, LocalDate> setDate;
-    private Runnable runnable;
+
+    private final Map<String, LocalDate> commandsMap;
 
     public SetDate(Context context) {
         super(context);
-        setDate = Map.of(
+        commandsMap = Map.of(
                 "today", LocalDate.now(),
                 "now", LocalDate.now(),
                 "epoch", LocalDate.EPOCH,
@@ -25,16 +26,11 @@ public class SetDate extends Component {
 
     @Override
     public boolean test(String request) {
-        final var isValid = setDate.containsKey(request);
-        if (isValid) {
-            runnable = () -> context.setDate(setDate.get(request));
-        }
-        return isValid;
-    }
+        runnable = Optional.ofNullable(commandsMap.get(request))
+                .map(date -> (Runnable) () -> context.setDate(date))
+                .orElse(unrecognizedCommand);
 
-    @Override
-    public void run() {
-        runnable.run();
+        return !runnable.equals(unrecognizedCommand);
     }
 
     @Override

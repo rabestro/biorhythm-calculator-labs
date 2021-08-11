@@ -10,6 +10,7 @@ import static java.lang.System.Logger.Level.TRACE;
 import static java.time.LocalDate.EPOCH;
 
 public abstract class Component extends LocalTextInterface implements Predicate<String>, Supplier<String>, Runnable {
+    protected final Runnable unrecognizedCommand = () -> println("unrecognized command");
     protected final Context context;
     protected Runnable runnable = () -> printf("component %s is running", this.getClass().getSimpleName());
     protected String command = CAMEL_CASE.matcher(this.getClass().getSimpleName())
