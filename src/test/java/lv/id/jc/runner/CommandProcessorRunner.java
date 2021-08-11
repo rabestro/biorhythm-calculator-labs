@@ -11,9 +11,9 @@ public class CommandProcessorRunner extends AbstractRunner {
     static {
         runner = context -> () ->
                 new CommandProcessor(context)
-                        .add(MoveDate::new)
                         .add(Info::new)
                         .add(SetDate::new)
+                        .add(MoveDate::new)
                         .add(AskBirthday::new)
                         .add(AgeInfo::new)
                         .add(ZodiacInfo::new)

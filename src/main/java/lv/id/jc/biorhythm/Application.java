@@ -6,6 +6,7 @@ import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.DateNavigator;
 import lv.id.jc.biorhythm.ui.Component;
 
+@Deprecated
 public class Application extends Component {
     public Application(final Context context) {
         super(context);
