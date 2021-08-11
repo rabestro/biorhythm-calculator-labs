@@ -6,4 +6,4 @@ This is a laboratory for creating a training project. The goal is to create a tu
 
 ## Stages
 
-The project is divided into eight stages. At each stage, the student will need to implement certain functionality. After completing the last stage, we should get a fully working program.
+The project is divided into [eight stages](/src/main/java/lv/id/jc/biorhythm/stage). At each stage, the student will need to implement certain functionality. After completing the last stage, we should get a fully working program.
