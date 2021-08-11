@@ -1,6 +1,5 @@
 package lv.id.jc.biorhythm.report;
 
-import lombok.val;
 import lv.id.jc.biorhythm.Context;
 import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
@@ -22,7 +21,7 @@ public class WeeklyReport extends Component {
 
     @Override
     public void run() {
-        val weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
+        final var weekOfYear = date().get(ChronoField.ALIGNED_WEEK_OF_YEAR);
 //        int weekOfYear = date.get(WeekFields.of(locale).weekOfYear());
 
         printf("weekly.header.format", date().getYear(), weekOfYear);

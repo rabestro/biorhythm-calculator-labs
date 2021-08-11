@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 import static java.lang.System.Logger.Level.TRACE;
 
 public class MoveDate extends Component {
-    private static final Pattern PLUS_MINUS = Pattern.compile("([-+])(\\d+)([dwmyq])");
+    private static final Pattern COMMAND_PATTERN = Pattern.compile("([-+])(\\d+)([dwmyq])");
     private static final Map<String, BiFunction<LocalDate, Long, LocalDate>> MOVE_OPERATORS = Map.of(
             "+d", LocalDate::plusDays, "-d", LocalDate::minusDays,
             "+w", LocalDate::plusWeeks, "-w", LocalDate::minusWeeks,
@@ -27,7 +27,7 @@ public class MoveDate extends Component {
 
     @Override
     public boolean test(String command) {
-        final var plusMinus = PLUS_MINUS.matcher(command);
+        final var plusMinus = COMMAND_PATTERN.matcher(command);
         final var isValidCommand = plusMinus.matches();
 
         if (isValidCommand) {

@@ -12,7 +12,7 @@ public abstract class LocalTextInterface implements TextInterface {
     public static final Pattern CAMEL_CASE = Pattern.compile("(\\p{Lower})(\\p{Upper})");
     private static final ResourceBundle COMMON_BUNDLE = ResourceBundle.getBundle("messages");
 
-    private final ResourceBundle resourceBundle;
+    protected final ResourceBundle resourceBundle;
 
     protected LocalTextInterface() {
         resourceBundle = getResourceBundle();

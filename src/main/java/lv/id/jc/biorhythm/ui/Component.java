@@ -49,6 +49,9 @@ public abstract class Component extends LocalTextInterface implements Predicate<
 
     @Override
     public String get() {
+        if (resourceBundle.containsKey("help")) {
+            return resourceBundle.getString("help");
+        }
         final var className = this.getClass().getSimpleName();
         return String.format("%-15s - run component \"%s\"%n", getCommand(), className);
     }

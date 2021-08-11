@@ -14,10 +14,11 @@ import static java.util.function.Predicate.not;
 public class CommandProcessor extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
     private final Set<Component> commandSet = new LinkedHashSet<>();
+    private final Component help = new Help();
 
     public CommandProcessor(Context context) {
         super(context);
-        commandSet.add(new Help());
+        commandSet.add(help);
     }
 
     public CommandProcessor add(Function<Context, Component> component) {
@@ -28,6 +29,8 @@ public class CommandProcessor extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
+        help.run();
+
         Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
                 .forEach(this::processRequest);

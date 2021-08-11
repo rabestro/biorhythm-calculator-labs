@@ -6,8 +6,11 @@ import lv.id.jc.biorhythm.ui.Component;
 import java.time.LocalDate;
 import java.util.Map;
 import java.util.Optional;
+import java.util.regex.Pattern;
 
 public class SetDate extends Component {
+    private static final Pattern DATE_PATTERN = Pattern.compile(
+            "(?<MMDD>(0\\d|1[012])(-[01]\\d|-3[01]))|\\d{4}(?<MM>-0\\d|-1[012](?<DD>-[01]\\d|-3[01])?)?");
 
     private final Map<String, LocalDate> commandsMap;
 
@@ -26,6 +29,9 @@ public class SetDate extends Component {
 
     @Override
     public boolean test(String request) {
+        if (DATE_PATTERN.matcher(request).matches()) {
+            return true;
+        }
         runnable = Optional.ofNullable(commandsMap.get(request))
                 .map(date -> (Runnable) () -> context.setDate(date))
                 .orElse(unrecognizedCommand);
@@ -33,8 +39,4 @@ public class SetDate extends Component {
         return !runnable.equals(unrecognizedCommand);
     }
 
-    @Override
-    public String get() {
-        return format("help");
-    }
 }
