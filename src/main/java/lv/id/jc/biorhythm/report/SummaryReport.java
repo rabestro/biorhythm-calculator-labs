@@ -41,7 +41,7 @@ public class SummaryReport extends Component {
         final var text = format(getString(value.getStage().name()),
                 rhythm.name().toLowerCase(),
                 rhythm.getAttributes(),
-                ORDINAL_DATE_FORMAT.format(value.changeDate()),
+                getDate.apply(value.changeInDays()),
                 DAYS_FORMAT.format(value.changeInDays()));
 
         printf("summary.biorhythm.name.format", rhythm);
