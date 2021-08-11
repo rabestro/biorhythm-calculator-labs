@@ -113,9 +113,9 @@ public enum Biorhythm {
 
         @Override
         public String toString() {
-            return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} %s",
+            return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} ",
                     name(), context.date(), getPercent(),
-                    rest, periodInDays, stage.ordinal(), changeInDays(), changeDate());
+                    rest, periodInDays, stage.ordinal(), changeInDays());
         }
     }
 }
