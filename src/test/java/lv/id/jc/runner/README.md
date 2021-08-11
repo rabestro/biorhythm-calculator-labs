@@ -1,9 +1,7 @@
 # Report Runners
 
-This test directory contains biorhythms lv.id.jc.biorhythm.report runners.
+This directory contains biorhythms runners classes to run and test components. 
 
-`AbstractRunner` class contains method to generate random birthday and random following date to test the look of
-different biorhythms lv.id.jc.biorhythm.report. The class has a static variable `reportRunner` that must be set to the tested lv.id.jc.biorhythm.report in
-children classes. 
+`AbstractRunner` class prepare context for the tested component. It generates random birthday and random date. The abstract class has a static variable `runnable` that must be set to the tested component in children xxxRunner classes. 
 
 
