@@ -22,7 +22,13 @@ public class DailyReport extends Component {
                 .map(biorhythm -> biorhythm.new Value(context))
                 .map(formatter::format)
                 .toArray();
-
-        printf("daily.report.format", daily);
+        final var average = Biorhythm.primary()
+                .map(biorhythm -> biorhythm.new Value(context))
+                .mapToDouble(Biorhythm.Value::getValue)
+                .average().orElse(0.0);
+        printf("daily.header", birthday(), date());
+        printf("daily.report", 100 * average,
+                daily[0], daily[1], daily[2],
+                daily[3], daily[4], daily[5], daily[6]);
     }
 }
