@@ -6,6 +6,7 @@ import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
 
+@Deprecated(forRemoval = true)
 public class BiorhythmFormat extends Format {
     private final String template;
 

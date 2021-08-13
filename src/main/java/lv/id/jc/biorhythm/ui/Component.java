@@ -1,6 +1,6 @@
 package lv.id.jc.biorhythm.ui;
 
-import lv.id.jc.biorhythm.Context;
+import lv.id.jc.biorhythm.model.Context;
 
 import java.time.LocalDate;
 import java.util.function.Predicate;

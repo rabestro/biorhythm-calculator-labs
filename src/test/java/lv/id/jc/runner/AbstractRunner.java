@@ -1,6 +1,6 @@
 package lv.id.jc.runner;
 
-import lv.id.jc.biorhythm.Context;
+import lv.id.jc.biorhythm.model.Context;
 
 import java.util.Objects;
 import java.util.Random;

@@ -1,5 +1,6 @@
 package lv.id.jc.biorhythm;
 
+import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.service.CLIProcessor;
 
 public final class Main {

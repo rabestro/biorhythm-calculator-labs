@@ -8,9 +8,8 @@ import java.util.regex.Pattern;
 import static java.lang.System.Logger.Level.*;
 
 public abstract class LocalTextInterface implements TextInterface {
-    protected static final Scanner scanner = new Scanner(System.in);
     public static final Pattern CAMEL_CASE = Pattern.compile("(\\p{Lower})(\\p{Upper})");
-    private static final ResourceBundle COMMON_BUNDLE = ResourceBundle.getBundle("messages");
+    public static final ResourceBundle COMMON_BUNDLE = ResourceBundle.getBundle("messages");
 
     protected final ResourceBundle resourceBundle;
 
