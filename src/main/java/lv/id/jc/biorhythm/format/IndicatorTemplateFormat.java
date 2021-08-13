@@ -26,7 +26,14 @@ public class IndicatorTemplateFormat extends Format {
     public String format(final Indicator indicator) {
         return String.format(template,
                 indicator.getBiorhythm(),
-                indicator.getValue());
+                indicator.getPercent(),
+                indicator.getValue(),
+                indicator.getDayInPeriod(),
+                indicator.changeInDays(),
+                indicator.peakInDays(),
+                indicator.lowInDays(),
+                indicator.getStage()
+        );
     }
 
     @Override

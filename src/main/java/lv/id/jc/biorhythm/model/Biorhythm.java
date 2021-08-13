@@ -20,7 +20,7 @@ public enum Biorhythm {
         this.attributes = attributes.replaceFirst("(.*),", "$1 and");
     }
 
-    public Indicator valueOf(Context context) {
+    public Indicator getIndicatorOf(Context context) {
         return new Indicator(this, context);
     }
 
@@ -52,10 +52,11 @@ public enum Biorhythm {
     }
 
     /**
-     * The new class Indicator holds all the functionality of this subclass.
-     * To create an Indicator use fabric method Biorhythm::valueOf(context)
+     * @deprecated As of release 0.3, replaced by {@link Indicator}
      *
-     * @deprecated
+     * The new class Indicator holds all the functionality of this subclass.
+     * To create an Indicator use fabric method {@link #getIndicatorOf(Context)}
+     *
      */
     @Deprecated(forRemoval = true)
     public class Value {

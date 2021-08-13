@@ -25,6 +25,10 @@ public class Indicator {
                 : Math.sin(2 * Math.PI * days / biorhythm.getPeriod());
     }
 
+    public int getPercent() {
+        return (int) Math.round(100 * getValue());
+    }
+
     public int peakInDays() {
         int days = Math.round(biorhythm.getPeriod() / 4.0F - dayInPeriod);
         return days < 0 ? days + biorhythm.getPeriod() : days;

@@ -23,7 +23,7 @@ public class Context {
         date = LocalDate.now();
     }
 
-    public Indicator valueOf(final Biorhythm biorhythm) {
+    public Indicator getIndicatorOf(final Biorhythm biorhythm) {
         return new Indicator(biorhythm, this);
     }
 
