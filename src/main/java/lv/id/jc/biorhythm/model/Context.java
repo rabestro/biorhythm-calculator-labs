@@ -23,7 +23,7 @@ public class Context {
         date = LocalDate.now();
     }
 
-    public Indicator valueOf(final Biorhythm biorhythm) {
+    public Indicator getIndicatorOf(final Biorhythm biorhythm) {
         return new Indicator(biorhythm, this);
     }
 
@@ -39,8 +39,8 @@ public class Context {
         return date;
     }
 
-    public long getDays() {
-        return ChronoUnit.DAYS.between(birthday, date);
+    public int days() {
+        return (int) ChronoUnit.DAYS.between(birthday, date);
     }
 
     public Context nextDay() {

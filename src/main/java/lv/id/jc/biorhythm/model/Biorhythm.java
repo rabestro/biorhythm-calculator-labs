@@ -1,6 +1,7 @@
 package lv.id.jc.biorhythm.model;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public enum Biorhythm {
@@ -20,10 +21,13 @@ public enum Biorhythm {
         this.attributes = attributes.replaceFirst("(.*),", "$1 and");
     }
 
-    public Indicator valueOf(Context context) {
+    public Indicator getIndicatorOf(Context context) {
         return new Indicator(this, context);
     }
 
+    public static Stream<Biorhythm> stream() {
+        return Arrays.stream(values());
+    }
     public static Stream<Biorhythm> primary() {
         return Stream.of(PHYSICAL, EMOTIONAL, INTELLECTUAL);
     }
@@ -36,7 +40,7 @@ public enum Biorhythm {
         return attributes;
     }
 
-    public int getPeriod() {
+    public int period() {
         return periodInDays;
     }
 
@@ -52,10 +56,11 @@ public enum Biorhythm {
     }
 
     /**
-     * The new class Indicator holds all the functionality of this subclass.
-     * To create an Indicator use fabric method Biorhythm::valueOf(context)
+     * @deprecated As of release 0.3, replaced by {@link Indicator}
      *
-     * @deprecated
+     * The new class Indicator holds all the functionality of this subclass.
+     * To create an Indicator use fabric method {@link #getIndicatorOf(Context)}
+     *
      */
     @Deprecated(forRemoval = true)
     public class Value {

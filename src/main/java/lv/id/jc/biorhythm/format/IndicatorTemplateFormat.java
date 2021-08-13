@@ -10,8 +10,24 @@ import java.text.ParsePosition;
 public class IndicatorTemplateFormat extends Format {
     private final String template;
 
+    public static final Format DAILY = new IndicatorTemplateFormat("%1$-12s %2$4d%%");
+    public static final Format WEEKLY = new IndicatorTemplateFormat("%1$-12s %2$4d %%");
+
     public IndicatorTemplateFormat(String template) {
         this.template = template;
+    }
+
+    public String format(final Indicator indicator) {
+        return String.format(template,
+                indicator.getBiorhythm(),
+                indicator.percent(),
+                indicator.value(),
+                indicator.dayInPeriod(),
+                indicator.changeInDays(),
+                indicator.peakInDays(),
+                indicator.lowInDays(),
+                indicator.stage()
+        );
     }
 
     @Override
@@ -21,12 +37,6 @@ public class IndicatorTemplateFormat extends Format {
         }
         throw new IllegalArgumentException(
                 "Cannot format given Object (" + obj.getClass().getName() + ") as an Indicator");
-    }
-
-    public String format(final Indicator indicator) {
-        return String.format(template,
-                indicator.getBiorhythm(),
-                indicator.getValue());
     }
 
     @Override
