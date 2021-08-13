@@ -39,8 +39,8 @@ public class Context {
         return date;
     }
 
-    public long getDays() {
-        return ChronoUnit.DAYS.between(birthday, date);
+    public int days() {
+        return (int) ChronoUnit.DAYS.between(birthday, date);
     }
 
     public Context nextDay() {

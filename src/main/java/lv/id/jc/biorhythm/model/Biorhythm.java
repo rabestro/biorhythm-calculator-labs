@@ -1,6 +1,7 @@
 package lv.id.jc.biorhythm.model;
 
 import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 public enum Biorhythm {
@@ -24,6 +25,9 @@ public enum Biorhythm {
         return new Indicator(this, context);
     }
 
+    public static Stream<Biorhythm> stream() {
+        return Arrays.stream(values());
+    }
     public static Stream<Biorhythm> primary() {
         return Stream.of(PHYSICAL, EMOTIONAL, INTELLECTUAL);
     }
@@ -36,7 +40,7 @@ public enum Biorhythm {
         return attributes;
     }
 
-    public int getPeriod() {
+    public int period() {
         return periodInDays;
     }
 

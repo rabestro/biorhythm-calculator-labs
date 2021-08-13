@@ -22,7 +22,7 @@ public class TestIndicators implements Runnable {
         System.out.println();
         final var birthday = LocalDate.EPOCH;
         Stream.iterate(LocalDate.EPOCH, date -> date.plusDays(1L))
-                .limit(biorhythm.getPeriod() * 2L)
+                .limit(biorhythm.period() * 2L)
                 .map(date -> new Context(birthday, date))
                 .map(context -> biorhythm.new Value(context))
                 .forEach(System.out::println);
