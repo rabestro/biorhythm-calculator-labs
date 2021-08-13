@@ -1,9 +1,11 @@
 package lv.id.jc.biorhythm.ui;
 
 import java.text.MessageFormat;
+import java.util.Scanner;
 
 public interface TextInterface {
     System.Logger LOGGER = System.getLogger("");
+    Scanner scanner = new Scanner(System.in);
 
     default void println() {
         System.out.println();
