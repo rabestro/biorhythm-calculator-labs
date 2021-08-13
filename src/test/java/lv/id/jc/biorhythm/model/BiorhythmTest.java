@@ -1,7 +1,5 @@
 package lv.id.jc.biorhythm.model;
 
-import lv.id.jc.biorhythm.Context;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;

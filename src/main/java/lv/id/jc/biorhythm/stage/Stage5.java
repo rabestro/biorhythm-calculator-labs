@@ -1,6 +1,6 @@
 package lv.id.jc.biorhythm.stage;
 
-import lv.id.jc.biorhythm.Context;
+import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.command.Info;
 import lv.id.jc.biorhythm.command.MoveDate;
 import lv.id.jc.biorhythm.report.*;

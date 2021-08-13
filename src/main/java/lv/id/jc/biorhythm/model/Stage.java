@@ -18,6 +18,24 @@ public enum Stage {
         this.symbol = symbol;
     }
 
+    public static Stage of(final int period, final int days) {
+        final var rest = days % period;
+        if (rest == 0 || rest * 2 == period) {
+            return ZERO;
+        }
+        if (rest < period / 4) {
+            return POSITIVE_UP;
+        }
+        if (rest < period * 2 / 4) {
+            return POSITIVE_DOWN;
+        }
+        if (rest < period * 3 / 4) {
+            return NEGATIVE_DOWN;
+        }
+        return NEGATIVE_UP;
+    }
+
+    @Deprecated(forRemoval = true)
     public static Stage of(final int index) {
         return Stage.values()[index];
     }

@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm;
+package lv.id.jc.biorhythm.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Setter;
@@ -21,6 +21,10 @@ public class Context {
     public Context(final LocalDate birthday) {
         this.birthday = birthday;
         date = LocalDate.now();
+    }
+
+    public Indicator valueOf(final Biorhythm biorhythm) {
+        return new Indicator(biorhythm, this);
     }
 
     public int getYear() {
