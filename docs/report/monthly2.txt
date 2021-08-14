@@ -1,0 +1,40 @@
+
+_01_Su_
+R + * 0  // Rhythms: Physical, Emotional, Intellectual
+A -100%  // Average for PEI
+
+_01_Su_
+PEI +*0
+A -100%
+
+_01_Su_
+PEI +*0
+A -100%
+
+_01_Mon_
++*0 -90%
+
+01_Mon
++*0 🙂
+
+Birthday: 1985-05-31    Monthly Biorhythm Report      December 2021
+
+week   01_Mon   02_Tue   03_Wed   04_Thu   05_Fri   06_Sat   07_Sun
+ #04   +*0 :)   +*+ :D   +++ :)   -0+ :|   +*0 :(   +*0 X(   +*0 :)
+
+week   01_Mon   02_Tue   03_Wed   04_Thu   05_Fri   06_Sat   07_Sun
+ #05   +*0 :)   +*+ :D   +++ :)   -0+ :|   +*0 :(   +*0 X(   +*0 :)
+
+week   01_Mon   02_Tue   03_Wed   04_Thu   05_Fri   06_Sat   07_Sun
+ #06   +*0 :)   +*+ :D   +++ :)   -0+ :|   +*0 :(   +*0 X(   +*0 :)
+
+
+width = 9 * 7 + 4 = 67
+height = 3 * 6 + 2 = 20
+
+Well    *   :D
+Usually +   :)
+Zero    0   :|
+Loose   -   :(
+Tired   .   X(
+
