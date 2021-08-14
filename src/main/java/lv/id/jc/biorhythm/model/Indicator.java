@@ -45,4 +45,16 @@ public class Indicator {
                 ? halfPeriod - dayInPeriod() % halfPeriod
                 : biorhythm.period() - dayInPeriod();
     }
+
+    @Override
+    public String toString() {
+        return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} ",
+                biorhythm.name(),
+                context.date(),
+                percent(),
+                dayInPeriod(),
+                biorhythm.period(),
+                stage().ordinal(),
+                changeInDays());
+    }
 }

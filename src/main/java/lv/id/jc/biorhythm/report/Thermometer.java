@@ -2,17 +2,17 @@ package lv.id.jc.biorhythm.report;
 
 import lombok.SneakyThrows;
 import lombok.val;
-import lv.id.jc.biorhythm.model.Biorhythm;
+import lv.id.jc.biorhythm.model.Indicator;
 import lv.id.jc.biorhythm.model.Stage;
 
 import java.util.Formattable;
 import java.util.Formatter;
 
 public class Thermometer implements Formattable {
-    private final Biorhythm.Value value;
+    private final Indicator indicator;
 
-    public Thermometer(final Biorhythm.Value value) {
-        this.value = value;
+    public Thermometer(final Indicator indicator) {
+        this.indicator = indicator;
     }
 
     @SneakyThrows
@@ -20,15 +20,15 @@ public class Thermometer implements Formattable {
     public void formatTo(final Formatter formatter, final int flags, final int width, final int precision) {
         formatter.out().append('[');
         val wingWidth = (width - 3) / 2;
-        val value = (int) Math.round(wingWidth * this.value.getValue());
-        if (Stage.ZERO.equals(this.value.getStage())) {
+        val value = (int) Math.round(wingWidth * indicator.value());
+        if (Stage.ZERO.equals(this.indicator.stage())) {
             formatter.out()
                     .append("-".repeat(wingWidth))
                     .append(Stage.ZERO.getSymbol())
                     .append("-".repeat(wingWidth));
         } else {
-            val symbol = this.value.getStage().getSymbol();
-            val isPositive = this.value.getStage().isPositive();
+            val symbol = indicator.stage().getSymbol();
+            val isPositive = indicator.stage().isPositive();
             formatter.out()
                     .append("-".repeat(isPositive ? wingWidth : wingWidth + value))
                     .append(symbol.repeat(isPositive ? 0 : -value))
