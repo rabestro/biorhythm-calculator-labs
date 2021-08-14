@@ -1,10 +1,8 @@
 package lv.id.jc.biorhythm.report.monthly;
 
-import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.ui.Component;
 
-import java.text.Format;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.Month;
@@ -13,11 +11,9 @@ import java.util.Locale;
 import java.util.stream.Stream;
 
 public class MonthlyReport extends Component {
-    private final Format formatter;
 
     public MonthlyReport(Context context) {
         super(context);
-        formatter = new BiorhythmFormat(getString("biorhythm.format"));
     }
 
     @Override
@@ -34,7 +30,7 @@ public class MonthlyReport extends Component {
         LocalDate start = date.withDayOfMonth(1);
         Stream.iterate(start, day -> day.plusDays(7))
                 .limit(6)
-                .filter(day-> {
+                .filter(day -> {
                     LocalDate monday = day.with(DayOfWeek.MONDAY);
                     LocalDate sunday = day.with(DayOfWeek.SUNDAY);
                     return monday.getMonth().equals(month) || sunday.getMonth().equals(month);
