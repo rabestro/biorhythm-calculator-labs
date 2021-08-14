@@ -3,6 +3,7 @@ package lv.id.jc.biorhythm.report;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Condition;
+import lv.id.jc.biorhythm.model.Indicator;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.time.DateTimeException;
@@ -11,7 +12,8 @@ import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Arrays;
 import java.util.Locale;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.joining;
 
 public class AnnualReport extends Component {
     public AnnualReport(final Context context) {
@@ -34,22 +36,26 @@ public class AnnualReport extends Component {
         for (int day = 1; day < 32; day++) {
             System.out.printf("%3d   ", day);
             for (int month = 1; month < 13; month++) {
-                System.out.printf("%-6s", getIndicators(month, day));
+                System.out.printf("%-6s", dayConditions(month, day));
             }
             System.out.println();
         }
     }
 
-    private String getIndicators(final int month, final int day) {
+    private String dayConditions(final int month, final int day) {
         try {
-            final var date = LocalDate.of(context.getYear(), month, day);
+            final var dayDate = LocalDate.of(context.getYear(), month, day);
+            final var dayContext = new Context(birthday(), dayDate);
+
             return Biorhythm.primary()
-                    .map(biorhythm -> biorhythm.new Value(context.withDate(date)))
-                    .map(Biorhythm.Value::getValue)
+                    .map(dayContext::getIndicatorOf)
+                    .map(Indicator::value)
                     .map(Condition::of)
                     .map(Condition::name)
-                    .map(this::getString)
-                    .collect(Collectors.joining());
+                    .map(String::toLowerCase)
+                    .map("condition."::concat)
+                    .map(this::getProperty)
+                    .collect(joining());
 
         } catch (DateTimeException e) {
             return "";

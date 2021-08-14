@@ -2,7 +2,6 @@ package lv.id.jc.biorhythm.ui;
 
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.*;
@@ -50,6 +49,10 @@ public abstract class LocalTextInterface implements TextInterface {
 
     public String format(final String key, final Object... args) {
         return String.format(getString(key), args);
+    }
+
+    public String getProperty(final String key) {
+        return getString(key);
     }
 
     public String getString(final String key) {
