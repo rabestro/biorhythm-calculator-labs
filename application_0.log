@@ -1,4 +1,4 @@
-Aug 14, 2021 11:38:12 AM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 14, 2021 2:58:25 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "SummaryReport" uses bundle: "lv/id/jc/biorhythm/report/summary-report"
-Aug 14, 2021 11:38:12 AM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class SummaryReport initialized with Context(birthday=2008-11-03, date=2020-06-24)
+Aug 14, 2021 2:58:25 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SummaryReport initialized with Context(birthday=1995-09-26, date=2001-10-31)
