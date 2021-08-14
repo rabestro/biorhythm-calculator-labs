@@ -1,23 +1,24 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.format.BiorhythmFormat;
 import lv.id.jc.biorhythm.format.DaysFormat;
 import lv.id.jc.biorhythm.format.MultilineTextFormat;
 import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
+import lv.id.jc.biorhythm.model.Context;
+import lv.id.jc.biorhythm.model.Indicator;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.text.Format;
 import java.util.function.IntFunction;
 import java.util.stream.Stream;
 
+import static lv.id.jc.biorhythm.format.IndicatorTemplateFormat.DAILY;
+
 public class SummaryReport extends Component {
     private static final int LINE_MAXIMUM_WIDTH = 60;
     private static final Format DAYS_FORMAT = new DaysFormat();
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();
     private static final Format MULTILINE_TEXT_FORMAT = new MultilineTextFormat(LINE_MAXIMUM_WIDTH);
-    private final Format shortInfoFormat = new BiorhythmFormat(getString("short.biorhythm.format"));
     private final IntFunction<String> getDate = days -> ORDINAL_DATE_FORMAT.format(date().plusDays(days));
 
     public SummaryReport(final Context context) {
@@ -27,18 +28,18 @@ public class SummaryReport extends Component {
     @Override
     public void run() {
         printf("summary.header.format");
-        biorhythms().map(shortInfoFormat::format).forEach(this::println);
+        biorhythms().map(DAILY::format).forEach(this::println);
         biorhythms().forEach(this::printInfo);
         printf("summary.overall");
     }
 
-    private Stream<Biorhythm.Value> biorhythms() {
-        return Biorhythm.primary().map(biorhythm -> biorhythm.new Value(context));
+    private Stream<Indicator> biorhythms() {
+        return Biorhythm.primary().map(context::getIndicatorOf);
     }
 
-    private void printInfo(Biorhythm.Value value) {
+    private void printInfo(Indicator value) {
         final var rhythm = value.getBiorhythm();
-        final var text = format(getString(value.getStage().name()),
+        final var text = format(getString(value.stage().name()),
                 rhythm.name().toLowerCase(),
                 rhythm.getAttributes(),
                 getDate.apply(value.changeInDays()),
