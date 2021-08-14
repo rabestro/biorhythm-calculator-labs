@@ -1,0 +1,127 @@
+Possible designs for a Monthly Biorhythm Report
+
+<header>
+<body>
+
+
+Birthday: 1985-05-31           Monthly Biorhythm Report              September 2021
+
+week     _01_Mon_   _02_Tue_   _03_Wed_   _04_Thu_   _05_Fri_   _06_Sat_   _07_Sun_
+ #36     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     _08_Mon_   _09_Tue_   _10_Wed_   _11_Thu_   _12_Fri_   _13_Sat_   _14_Sun_
+ #37     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+Technical details:
+Width: 7 + 3 space = 10 * 7 + (6 for week number) = 76 < 80 (OK)
+Height: 4 + 1 space. Maximum rows = 6. Header 2 lines.
+Maximum Height is 32 lines
+
+Sample #2
+
+Birthday: 1985-05-31           Monthly Biorhythm Report                  March 2021
+
+week     _23_Mon_   _24_Tue_   _25_Wed_   _26_Thu_   _27_Fri_   _28_Sat_   _01_Sun_
+ #10                                                                       P:  -90%
+                                                                           E:  +64%
+                                                                           I:  +10%
+
+week     _02_Mon_   _03_Tue_   _04_Wed_   _05_Thu_   _06_Fri_   _07_Sat_   _08_Sun_
+ #11     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     _09_Mon_   _10_Tue_   _11_Wed_   _12_Thu_   _13_Fri_   _14_Sat_   _15_Sun_
+ #12     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     _16_Mon_   _17_Tue_   _18_Wed_   _19_Thu_   _20_Fri_   _21_Sat_   _22_Sun_
+ #13     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     _23_Mon_   _24_Tue_   _25_Wed_   _26_Thu_   _27_Fri_   _28_Sat_   _29_Sun_
+ #14     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     _30_Mon_   _31_Tue_   _01_Wed_   _02_Thu_   _03_Fri_   _04_Sat_   _05_Sun_
+ #15     P: -100%   P:  -90%
+         E:  +56%   E:  +64%
+         I:    0%   I:  +10%
+
+/* Legend: P - Physical, E - Emotional, I - Intellectual */
+
+Sample #3
+
+Birthday: 1985-05-31           Monthly Biorhythm Report                  March 2021
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [01 Sun]
+ #10                                                                       P:  -90%
+                                                                           E:  +64%
+                                                                           I:  +10%
+
+week     [02 Mon]   [03 Tue]   [04 Wed]   [05 Thu]   [06 Fri]   [07 Sat]   [08 Sun]
+ #11     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [09 Mon]   [10 Tue]   [11 Wed]   [12 Thu]   [13 Fri]   [14 Sat]   [15 Sun]
+ #12     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [16 Mon]   [17 Tue]   [18 Wed]   [19 Thu]   [20 Fri]   [21 Sat]   [22 Sun]
+ #13     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [29 Sun]
+ #14     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [30 Mon]   [31 Tue]   [01 Wed]   [02 Thu]   [03 Fri]   [04 Sat]   [05 Sun]
+ #15     P: -100%   P:  -90%
+         E:  +56%   E:  +64%
+         I:    0%   I:  +10%
+
+Sample #4
+
+Birthday: 1985-05-31           Monthly Biorhythm Report                January 2021
+
+week     [26 Mon]   [27 Tue]   [28 Wed]   [29 Thu]   [30 Fri]   [31 Sat]   [01 Sun]
+ #53                                                                       P:  -90%
+2020                                                                       E:  +64%
+                                                                           I:  +10%
+
+week     [02 Mon]   [03 Tue]   [04 Wed]   [05 Thu]   [06 Fri]   [07 Sat]   [08 Sun]
+ #01     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [09 Mon]   [10 Tue]   [11 Wed]   [12 Thu]   [13 Fri]   [14 Sat]   [15 Sun]
+ #02     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [16 Mon]   [17 Tue]   [18 Wed]   [19 Thu]   [20 Fri]   [21 Sat]   [22 Sun]
+ #03     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [29 Sun]
+ #04     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [30 Mon]   [31 Tue]   [01 Wed]   [02 Thu]   [03 Fri]   [04 Sat]   [05 Sun]
+ #05     P: -100%   P:  -90%
+         E:  +56%   E:  +64%
+         I:    0%   I:  +10%
+

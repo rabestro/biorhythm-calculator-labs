@@ -3,20 +3,20 @@ package lv.id.jc.biorhythm.model;
 import static java.lang.Double.isNaN;
 
 public enum Condition {
-    Well(),
-    Usually(),
-    Danger(),
-    Loose(),
-    Tired(),
-    Empty();
+    WELL(),
+    USUALLY(),
+    DANGER(),
+    LOOSE(),
+    TIRED(),
+    EMPTY();
 
     public static Condition of(final double value) {
-        return isNaN(value) ? Empty
-                : value > 0.9 ? Well
-                : value > 0.05 ? Usually
-                : value >= -0.05 ? Danger
-                : value >= -0.9 ? Loose
-                : Tired;
+        return isNaN(value) ? EMPTY
+                : value > 0.95 ? WELL
+                : value > 0.05 ? USUALLY
+                : value >= -0.05 ? DANGER
+                : value >= -0.95 ? LOOSE
+                : TIRED;
     }
 
 }

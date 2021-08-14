@@ -6,15 +6,15 @@ import lv.id.jc.biorhythm.model.Biorhythm;
 import java.time.LocalDate;
 import java.util.stream.Stream;
 
-public class TestIndicators implements Runnable {
+public class TestBiorhythmsValue implements Runnable {
     private final Biorhythm biorhythm;
 
-    public TestIndicators(final Biorhythm biorhythm) {
+    public TestBiorhythmsValue(final Biorhythm biorhythm) {
         this.biorhythm = biorhythm;
     }
 
     public static void main(String[] args) {
-        Biorhythm.primary().map(TestIndicators::new).forEach(TestIndicators::run);
+        Biorhythm.primary().map(TestBiorhythmsValue::new).forEach(TestBiorhythmsValue::run);
     }
 
     @Override
