@@ -57,4 +57,71 @@ week     _30_Mon_   _31_Tue_   _01_Wed_   _02_Thu_   _03_Fri_   _04_Sat_   _05_S
 
 /* Legend: P - Physical, E - Emotional, I - Intellectual */
 
+Sample #3
+
+Birthday: 1985-05-31           Monthly Biorhythm Report                  March 2021
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [01 Sun]
+ #10                                                                       P:  -90%
+                                                                           E:  +64%
+                                                                           I:  +10%
+
+week     [02 Mon]   [03 Tue]   [04 Wed]   [05 Thu]   [06 Fri]   [07 Sat]   [08 Sun]
+ #11     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [09 Mon]   [10 Tue]   [11 Wed]   [12 Thu]   [13 Fri]   [14 Sat]   [15 Sun]
+ #12     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [16 Mon]   [17 Tue]   [18 Wed]   [19 Thu]   [20 Fri]   [21 Sat]   [22 Sun]
+ #13     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [29 Sun]
+ #14     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [30 Mon]   [31 Tue]   [01 Wed]   [02 Thu]   [03 Fri]   [04 Sat]   [05 Sun]
+ #15     P: -100%   P:  -90%
+         E:  +56%   E:  +64%
+         I:    0%   I:  +10%
+
+Sample #4
+
+Birthday: 1985-05-31           Monthly Biorhythm Report                January 2021
+
+week     [26 Mon]   [27 Tue]   [28 Wed]   [29 Thu]   [30 Fri]   [31 Sat]   [01 Sun]
+ #53                                                                       P:  -90%
+2020                                                                       E:  +64%
+                                                                           I:  +10%
+
+week     [02 Mon]   [03 Tue]   [04 Wed]   [05 Thu]   [06 Fri]   [07 Sat]   [08 Sun]
+ #01     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [09 Mon]   [10 Tue]   [11 Wed]   [12 Thu]   [13 Fri]   [14 Sat]   [15 Sun]
+ #02     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [16 Mon]   [17 Tue]   [18 Wed]   [19 Thu]   [20 Fri]   [21 Sat]   [22 Sun]
+ #03     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [23 Mon]   [24 Tue]   [25 Wed]   [26 Thu]   [27 Fri]   [28 Sat]   [29 Sun]
+ #04     P: -100%   P:  -90%   P: -100%   P:  -90%   P: -100%   P:  -90%   P:  -90%
+         E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +56%   E:  +64%   E:  +64%
+         I:    0%   I:  +10%   I:    0%   I:  +10%   I:    0%   I:  +10%   I:  +10%
+
+week     [30 Mon]   [31 Tue]   [01 Wed]   [02 Thu]   [03 Fri]   [04 Sat]   [05 Sun]
+ #05     P: -100%   P:  -90%
+         E:  +56%   E:  +64%
+         I:    0%   I:  +10%
 
