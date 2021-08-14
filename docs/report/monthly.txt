@@ -54,3 +54,7 @@ week     _30_Mon_   _31_Tue_   _01_Wed_   _02_Thu_   _03_Fri_   _04_Sat_   _05_S
  #15     P: -100%   P:  -90%
          E:  +56%   E:  +64%
          I:    0%   I:  +10%
+
+/* Legend: P - Physical, E - Emotional, I - Intellectual */
+
+
