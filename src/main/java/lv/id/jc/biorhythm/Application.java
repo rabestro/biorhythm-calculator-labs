@@ -5,6 +5,7 @@ import lv.id.jc.biorhythm.command.MoveDate;
 import lv.id.jc.biorhythm.command.SetDate;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.*;
+import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.CommandProcessor;
 import lv.id.jc.biorhythm.ui.Component;
