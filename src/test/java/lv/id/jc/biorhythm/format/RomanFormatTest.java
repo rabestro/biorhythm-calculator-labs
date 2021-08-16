@@ -8,31 +8,31 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.text.Format;
-import java.time.Period;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Tag("Formatter")
-@DisplayName("Given PrettyPeriodFormat")
-class PrettyPeriodFormatTest {
+@DisplayName("Given RomanFormat")
+class RomanFormatTest {
+
     private Format underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new PrettyPeriodFormat();
+        underTest = new RomanFormat();
     }
 
     @Test
     @DisplayName("when parseObject then throws UnsupportedOperationException")
     void parseObject() {
-        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("1st"));
+        assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("IV"));
     }
 
     @ParameterizedTest(name = "when \"{0}\" then \"{1}\"")
-    @CsvFileSource(resources = "/format/pretty-period-format.csv", numLinesToSkip = 1)
-    void getAge(final Period period, final String expected) {
-        assertEquals(expected, underTest.format(period));
+    @CsvFileSource(resources = "/format/arabic-roman-format.csv", numLinesToSkip = 1, delimiter = '=')
+    void getAge(final Integer number, final String expected) {
+        assertEquals(expected, underTest.format(number));
     }
 
 }
