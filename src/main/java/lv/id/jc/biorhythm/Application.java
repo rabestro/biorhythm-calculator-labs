@@ -8,6 +8,7 @@ import lv.id.jc.biorhythm.service.Broker;
 import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.ui.command.Info;
 import lv.id.jc.biorhythm.ui.command.MoveDate;
+import lv.id.jc.biorhythm.ui.command.SetDate;
 import lv.id.jc.biorhythm.ui.command.SetDateByName;
 
 public class Application extends Component {
@@ -28,6 +29,7 @@ public class Application extends Component {
                 .add(AgeInfo::new)
                 .add(ZodiacInfo::new)
                 .add(Info::new)
+                .add(SetDate::new)
                 .add(SetDateByName::new)
                 .add(MoveDate::new)
                 .add(DailyReport::new)
