@@ -36,13 +36,13 @@ public enum Stage {
         }
     }
 
-    public String getSymbol() {
-        return symbol;
-    }
-
     @Deprecated(forRemoval = true)
     public static Stage of(final int index) {
         return Stage.values()[index];
+    }
+
+    public String getSymbol() {
+        return symbol;
     }
 
     public boolean isPositive() {

@@ -8,10 +8,9 @@ import java.text.Format;
 import java.text.ParsePosition;
 
 public class IndicatorTemplateFormat extends Format {
-    private final String template;
-
     public static final Format DAILY = new IndicatorTemplateFormat("%1$-12s %2$4d%%");
     public static final Format WEEKLY = new IndicatorTemplateFormat("%1$-12s %2$4d %%");
+    private final String template;
 
     public IndicatorTemplateFormat(String template) {
         this.template = template;

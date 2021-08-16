@@ -1,14 +1,14 @@
 package lv.id.jc.biorhythm;
 
-import lv.id.jc.biorhythm.command.Info;
-import lv.id.jc.biorhythm.command.MoveDate;
-import lv.id.jc.biorhythm.command.SetDate;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
-import lv.id.jc.biorhythm.service.CommandProcessor;
+import lv.id.jc.biorhythm.service.Broker;
 import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.Info;
+import lv.id.jc.biorhythm.ui.command.MoveDate;
+import lv.id.jc.biorhythm.ui.command.SetDateByName;
 
 public class Application extends Component {
     public Application(final Context context) {
@@ -23,12 +23,12 @@ public class Application extends Component {
         new AgeInfo(context).run();
         new ZodiacInfo(context).run();
 
-        new CommandProcessor(context)
+        new Broker(context)
                 .add(AskBirthday::new)
                 .add(AgeInfo::new)
                 .add(ZodiacInfo::new)
                 .add(Info::new)
-                .add(SetDate::new)
+                .add(SetDateByName::new)
                 .add(MoveDate::new)
                 .add(DailyReport::new)
                 .add(WeeklyReport::new)

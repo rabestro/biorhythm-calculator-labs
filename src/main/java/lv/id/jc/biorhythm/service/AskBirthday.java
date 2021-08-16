@@ -1,12 +1,12 @@
 package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
-public class AskBirthday extends Component {
+public class AskBirthday extends AbstractCommand {
     private final LocalDate minimumDate;
     private final LocalDate maximumDate;
 

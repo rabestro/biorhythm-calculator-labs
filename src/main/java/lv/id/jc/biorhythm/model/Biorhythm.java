@@ -20,10 +20,6 @@ public enum Biorhythm {
         this.attributes = attributes.replaceFirst("(.*),", "$1 and");
     }
 
-    public Indicator getIndicatorOf(Context context) {
-        return new Indicator(this, context);
-    }
-
     public static Stream<Biorhythm> stream() {
         return Arrays.stream(values());
     }
@@ -34,6 +30,10 @@ public enum Biorhythm {
 
     public static Stream<Biorhythm> secondary() {
         return Stream.of(INTUITION, AESTHETIC, AWARENESS, SPIRITUAL);
+    }
+
+    public Indicator getIndicatorOf(Context context) {
+        return new Indicator(this, context);
     }
 
     public String getAttributes() {

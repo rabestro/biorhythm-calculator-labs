@@ -3,7 +3,7 @@ package lv.id.jc.biorhythm.report;
 import lv.id.jc.biorhythm.format.IndicatorTemplateFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import java.text.Format;
 import java.time.DayOfWeek;
@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
-public class WeeklyReport extends Component {
+public class WeeklyReport extends AbstractCommand {
     private final Format formatter;
 
     public WeeklyReport(final Context context) {

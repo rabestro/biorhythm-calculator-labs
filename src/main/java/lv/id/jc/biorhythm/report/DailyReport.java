@@ -3,11 +3,11 @@ package lv.id.jc.biorhythm.report;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Indicator;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import static lv.id.jc.biorhythm.format.IndicatorTemplateFormat.DAILY;
 
-public class DailyReport extends Component {
+public class DailyReport extends AbstractCommand {
 
     public DailyReport(final Context context) {
         super(context);

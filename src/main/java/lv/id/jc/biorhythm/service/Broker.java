@@ -2,26 +2,27 @@ package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
+import lv.id.jc.biorhythm.ui.command.Command;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import static java.util.function.Predicate.not;
 
-public class CommandProcessor extends Component {
+public class Broker extends Component {
     private static final Set<String> exit = Set.of("exit", "quit");
-    private final Set<Component> commandSet = new LinkedHashSet<>();
-    private final Component help = new Help();
+    private final Set<Command> commandSet = new LinkedHashSet<>();
+    private final Command help = new Help(context);
 
-    public CommandProcessor(Context context) {
+    public Broker(Context context) {
         super(context);
         commandSet.add(help);
     }
 
-    public CommandProcessor add(Function<Context, Component> component) {
+    public Broker add(Function<Context, Command> component) {
         commandSet.add(component.apply(context));
         return this;
     }
@@ -29,7 +30,7 @@ public class CommandProcessor extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
-        help.run();
+        help.apply("help");
 
         Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
@@ -43,9 +44,10 @@ public class CommandProcessor extends Component {
 
     private void processRequest(String request) {
         commandSet.stream()
-                .filter(command -> command.test(request))
+                .filter(command -> command.apply(request))
                 .findFirst()
-                .ifPresentOrElse(Runnable::run, () -> printf("unrecognized", request));
+                .ifPresentOrElse(command1 -> {
+                }, () -> printf("unrecognized", request));
     }
 
     @Override
@@ -53,9 +55,18 @@ public class CommandProcessor extends Component {
         return false;
     }
 
-    class Help extends Component {
-        {
-            runnable = () -> commandSet.stream().map(Supplier::get).forEach(this::printf);
+    class Help extends AbstractCommand {
+        public Help(Context context) {
+            super(context);
+        }
+
+        @Override
+        public Boolean apply(String s) {
+            if (!"help".equalsIgnoreCase(s)) {
+                return false;
+            }
+            commandSet.stream().map(Command::help).forEach(this::printf);
+            return true;
         }
     }
 }

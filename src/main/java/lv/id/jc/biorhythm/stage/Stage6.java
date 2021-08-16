@@ -1,12 +1,12 @@
 package lv.id.jc.biorhythm.stage;
 
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.command.Info;
-import lv.id.jc.biorhythm.command.MoveDate;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
-import lv.id.jc.biorhythm.service.CommandProcessor;
+import lv.id.jc.biorhythm.service.Broker;
+import lv.id.jc.biorhythm.ui.command.Info;
+import lv.id.jc.biorhythm.ui.command.MoveDate;
 
 public class Stage6 {
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class Stage6 {
         // Daily Report moved to Command Processor
 
         // Stage 3
-        new CommandProcessor(context)
+        new Broker(context)
                 .add(AskBirthday::new)   // Stage 1
                 .add(AgeInfo::new)       // Stage 1
                 .add(ZodiacInfo::new)    // Stage 1
