@@ -1,6 +1,5 @@
 package lv.id.jc.biorhythm.format;
 
-import lombok.val;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -33,8 +32,7 @@ class PrettyPeriodFormatTest {
     @ParameterizedTest(name = "when \"{0}\" then \"{1}\"")
     @CsvFileSource(resources = "/format/pretty-period-format.csv", numLinesToSkip = 1)
     void getAge(final Period period, final String expected) {
-        val actual = underTest.format(period);
-        assertEquals(expected, actual);
+        assertEquals(expected, underTest.format(period));
     }
 
 }
