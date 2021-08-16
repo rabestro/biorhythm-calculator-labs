@@ -6,7 +6,7 @@ import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Indicator;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import java.text.Format;
 import java.util.function.IntFunction;
@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 import static lv.id.jc.biorhythm.format.IndicatorTemplateFormat.DAILY;
 
-public class SummaryReport extends Component {
+public class SummaryReport extends AbstractCommand {
     private static final int LINE_MAXIMUM_WIDTH = 60;
     private static final Format DAYS_FORMAT = new DaysFormat();
     private static final Format ORDINAL_DATE_FORMAT = new OrdinalDateFormat();

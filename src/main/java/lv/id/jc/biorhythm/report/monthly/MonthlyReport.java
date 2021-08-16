@@ -1,7 +1,7 @@
 package lv.id.jc.biorhythm.report.monthly;
 
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 import java.util.stream.Stream;
 
-public class MonthlyReport extends Component {
+public class MonthlyReport extends AbstractCommand {
 
     public MonthlyReport(Context context) {
         super(context);

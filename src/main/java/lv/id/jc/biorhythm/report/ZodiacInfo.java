@@ -1,11 +1,11 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.format.OrdinalDateFormat;
+import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.ZodiacSign;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
-public class ZodiacInfo extends Component {
+public class ZodiacInfo extends AbstractCommand {
 
     public ZodiacInfo(Context context) {
         super(context);
@@ -27,4 +27,5 @@ public class ZodiacInfo extends Component {
             printf("zodiacSign.luckyDay", zodiacSign.getLuckyDay(), zodiacSign);
         }
     }
+
 }

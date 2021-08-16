@@ -1,10 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
-import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Condition;
+import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Indicator;
-import lv.id.jc.biorhythm.ui.Component;
+import lv.id.jc.biorhythm.ui.command.AbstractCommand;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
@@ -15,7 +15,7 @@ import java.util.Locale;
 
 import static java.util.stream.Collectors.joining;
 
-public class AnnualReport extends Component {
+public class AnnualReport extends AbstractCommand {
     public AnnualReport(final Context context) {
         super(context);
     }
