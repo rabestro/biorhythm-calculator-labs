@@ -61,7 +61,7 @@ public abstract class Component extends LocalTextInterface implements Predicate<
         runnable.run();
     }
 
-    private String getCommand() {
+    protected String getCommand() {
         return CAMEL_CASE
                 .matcher(this.getClass().getSimpleName())
                 .replaceAll("$1 $2")
