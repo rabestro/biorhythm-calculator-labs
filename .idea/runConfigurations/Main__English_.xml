@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main (English)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="lv.id.jc.biorhythm.Main" />
+    <module name="Biorhythms.main" />
+    <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging-silent.properties -Duser.language=EN -Duser.country=US" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="lv.id.jc.biorhythm.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

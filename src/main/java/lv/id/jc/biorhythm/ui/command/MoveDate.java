@@ -31,7 +31,7 @@ public class MoveDate extends AbstractCommand {
 
     @Override
     public Boolean apply(String request) {
-        final var matcher = COMMAND_PATTERN.matcher(command);
+        final var matcher = COMMAND_PATTERN.matcher(request);
         if (!matcher.matches()) {
             return false;
         }
