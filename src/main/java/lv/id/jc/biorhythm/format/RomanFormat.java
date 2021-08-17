@@ -27,12 +27,13 @@ public class RomanFormat extends Format {
                 "Cannot format given Object (" + obj.getClass().getName() + ") as a Number");
     }
 
+    @SuppressWarnings("squid:S1149")
     public StringBuffer format(final Number obj, final StringBuffer toAppendTo) {
         int number = obj.intValue();
-        for (var romanNumber : RomanNumerals.values()) {
-            while (romanNumber.value <= number) {
-                number -= romanNumber.value;
-                toAppendTo.append(romanNumber);
+        for (var romanNumeral : RomanNumerals.values()) {
+            while (romanNumeral.value <= number) {
+                number -= romanNumeral.value;
+                toAppendTo.append(romanNumeral);
             }
         }
         return toAppendTo;

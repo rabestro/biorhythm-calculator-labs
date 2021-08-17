@@ -19,6 +19,7 @@ public class OrdinalNumberFormat extends Format {
 
     }
 
+    @SuppressWarnings("squid:S1149")
     public StringBuffer format(final Number obj, final StringBuffer toAppendTo) {
         final var lastTwo = obj.intValue() % 100;
         final var lastOne = lastTwo % 10;
