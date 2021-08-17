@@ -35,4 +35,11 @@ class PrettyPeriodFormatTest {
         assertEquals(expected, underTest.format(period));
     }
 
+
+    @Test
+    @DisplayName("when unsupported type then throws IllegalArgumentException")
+    void IllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> underTest.format("P1D"));
+    }
+
 }

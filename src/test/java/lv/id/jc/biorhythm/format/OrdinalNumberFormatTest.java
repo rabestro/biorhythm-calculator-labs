@@ -32,4 +32,12 @@ class OrdinalNumberFormatTest {
     void parseObject() {
         assertThrows(UnsupportedOperationException.class, () -> underTest.parseObject("1st"));
     }
+
+
+    @Test
+    @DisplayName("when unsupported type then throws IllegalArgumentException")
+    void IllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> underTest.format("1st"));
+    }
+
 }

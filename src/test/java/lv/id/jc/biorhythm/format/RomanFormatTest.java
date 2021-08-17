@@ -35,4 +35,10 @@ class RomanFormatTest {
         assertEquals(expected, underTest.format(number));
     }
 
+    @Test
+    @DisplayName("when unsupported type then throws IllegalArgumentException")
+    void IllegalArgument() {
+        assertThrows(IllegalArgumentException.class, () -> underTest.format("1st"));
+    }
+
 }
