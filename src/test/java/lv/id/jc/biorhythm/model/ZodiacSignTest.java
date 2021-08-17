@@ -23,6 +23,12 @@ class ZodiacSignTest {
         assertEquals(expectedSigns, ZodiacSign.values().length);
     }
 
+    @ParameterizedTest(name = "when {0} then toString() returns {1}")
+    @CsvFileSource(resources = "/model/zodiac-to-string.csv", numLinesToSkip = 1)
+    void testToString(final ZodiacSign zodiacSign, final String expected) {
+        assertEquals(expected, zodiacSign.toString());
+    }
+
     @Nested
     @DisplayName("when convert a date to a Zodiac Sign")
     class DateConvertedToZodiacSign {
@@ -55,12 +61,6 @@ class ZodiacSignTest {
         void localDateMatchesZodiacSign(final LocalDate date, final ZodiacSign zodiacSign) {
             assertTrue(zodiacSign.matches(date));
         }
-    }
-
-    @ParameterizedTest(name = "when {0} then toString() returns {1}")
-    @CsvFileSource(resources = "/model/zodiac-to-string.csv", numLinesToSkip = 1)
-    void testToString(final ZodiacSign zodiacSign, final String expected) {
-        assertEquals(expected, zodiacSign.toString());
     }
 
 }

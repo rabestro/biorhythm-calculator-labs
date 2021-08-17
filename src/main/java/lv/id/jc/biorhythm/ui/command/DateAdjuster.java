@@ -7,12 +7,26 @@ import java.time.Month;
 import java.time.MonthDay;
 import java.time.temporal.TemporalAdjuster;
 import java.util.Optional;
+import java.util.Set;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.stream;
 
 public class DateAdjuster extends AbstractCommand {
-    private static final Pattern MONTH_DAY = Pattern.compile("\\d{2}-\\d{2}");
+    private static final Pattern MONTH_DAY;
+    private static final Set<String> MONTHS;
+    private static final Set<String> DAYS_OF_WEEK;
+
+    static {
+        MONTH_DAY = Pattern.compile("\\d{2}-\\d{2}");
+
+        MONTHS = stream(Month.values()).map(Enum::name)
+                .collect(Collectors.toUnmodifiableSet());
+
+        DAYS_OF_WEEK = stream(DayOfWeek.values()).map(Enum::name)
+                .collect(Collectors.toUnmodifiableSet());
+    }
 
     public DateAdjuster(Context context) {
         super(context);
@@ -34,10 +48,10 @@ public class DateAdjuster extends AbstractCommand {
             return Optional.of(MonthDay.parse("--" + request));
         }
         final var unit = request.toUpperCase();
-        if (stream(Month.values()).map(Enum::name).anyMatch(unit::equals)) {
+        if (MONTHS.contains(unit)) {
             return Optional.of(Month.valueOf(unit));
         }
-        if (stream(DayOfWeek.values()).map(Enum::name).anyMatch(unit::equals)) {
+        if (DAYS_OF_WEEK.contains(unit)) {
             return Optional.of(DayOfWeek.valueOf(unit));
         }
         return Optional.empty();

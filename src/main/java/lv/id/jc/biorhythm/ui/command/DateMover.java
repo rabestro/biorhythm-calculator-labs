@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
 
-public class MoveDate extends AbstractCommand {
+public class DateMover extends AbstractCommand {
     private static final Pattern COMMAND_PATTERN = Pattern.compile("" +
             "(?<sign>[-+])" +   // Plus or Minus
             "(?<number>\\d+)" + // How much
@@ -25,7 +25,7 @@ public class MoveDate extends AbstractCommand {
             "-q", (d, n) -> d.minus(Period.of(0, n.intValue() * 3, 0))
     );
 
-    public MoveDate(Context context) {
+    public DateMover(Context context) {
         super(context);
     }
 

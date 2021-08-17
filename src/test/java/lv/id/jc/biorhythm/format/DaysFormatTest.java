@@ -25,5 +25,5 @@ class DaysFormatTest {
     void dayOrdinal(final int day, final String expected) {
         assertEquals(expected, underTest.format(day));
     }
-    
+
 }

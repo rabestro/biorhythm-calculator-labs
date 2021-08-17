@@ -46,7 +46,7 @@ public class Broker extends Component {
     private void processRequest(String request) {
         LOGGER.log(TRACE, "request: \"{0}\"", request);
         commandSet.stream()
-                .peek(cmd -> LOGGER.log(TRACE, "checking `{0}`", cmd.getClass().getSimpleName()) )
+                .peek(cmd -> LOGGER.log(TRACE, "checking `{0}`", cmd.getClass().getSimpleName()))
                 .filter(command -> command.apply(request))
                 .findFirst()
                 .ifPresentOrElse(

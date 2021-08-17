@@ -24,16 +24,13 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 @DisplayName("Given Age Info component")
 class AgeInfoTest {
+    private static final LocalDate TOADY = LocalDate.of(2021, 8, 16);
+    private static final LocalDate BIRTHDAY = LocalDate.EPOCH;
+    private static final DateTimeFormatter FULL_DATE =
+            DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).localizedBy(Locale.ENGLISH);
     private final InputStream originalIn = System.in;
     private final PrintStream originalOut = System.out;
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-
-    private static final LocalDate TOADY = LocalDate.of(2021, 8, 16);
-    private static final LocalDate BIRTHDAY = LocalDate.EPOCH;
-
-    private static final DateTimeFormatter FULL_DATE =
-            DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).localizedBy(Locale.ENGLISH);
-
     @Mock
     private Context context;
 
