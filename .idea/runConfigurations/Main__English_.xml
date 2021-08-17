@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+  <configuration default="false" name="Main (English)" type="Application" factoryName="Application">
     <option name="MAIN_CLASS_NAME" value="lv.id.jc.biorhythm.Main" />
     <module name="Biorhythms.main" />
-    <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging-silent.properties" />
+    <option name="VM_PARAMETERS" value="-Djava.util.logging.config.file=logging-silent.properties -Duser.language=EN -Duser.country=US" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="lv.id.jc.biorhythm.*" />
