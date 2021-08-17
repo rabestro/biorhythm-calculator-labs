@@ -1,0 +1,23 @@
+> Task :Stage1.main()
+
+Welcome to the Biorhythm Calculator!
+
+Please specify a birthday in ISO format YYYY-MM-DD.
+The date shall not be before 1900-01-01 or after 2021-08-17
+
+Please enter birthday: 1985-08-23
+
+   Birthday: Friday, August 23, 1985
+      Today: Tuesday, August 17, 2021
+       Days: 13,143
+        Age: 35 years, 11 months and 25 days
+
+Zodiac Sign: Virgo
+     Symbol: The Maiden
+      Dates: August 23rd - September 22nd
+  Lucky Day: Wednesday
+
+----
+
+Please specify a date of birth in ISO format YYYY-MM-DD.
+The date shall be in the range of 1900-01-01 to 2021-08-17 inclusive.
