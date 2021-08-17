@@ -10,6 +10,7 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
+import static java.lang.System.Logger.Level.TRACE;
 import static java.util.function.Predicate.not;
 
 public class Broker extends Component {
@@ -43,11 +44,14 @@ public class Broker extends Component {
     }
 
     private void processRequest(String request) {
+        LOGGER.log(TRACE, "request: \"{0}\"", request);
         commandSet.stream()
+                .peek(cmd -> LOGGER.log(TRACE, "checking `{0}`", cmd.getClass().getSimpleName()) )
                 .filter(command -> command.apply(request))
                 .findFirst()
-                .ifPresentOrElse(command1 -> {
-                }, () -> printf("unrecognized", request));
+                .ifPresentOrElse(
+                        $ -> LOGGER.log(TRACE, "command `{0}` executed", request),
+                        () -> printf("unrecognized", request));
     }
 
     @Override
