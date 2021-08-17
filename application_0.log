@@ -1,12 +1,370 @@
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.Component <init>
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.Component <init>
 FINER: class CLIProcessor initialized with Context(birthday=-999999999-01-01, date=2021-08-17)
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "Application" uses bundle: "lv/id/jc/biorhythm/application"
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.Component <init>
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.Component <init>
 FINER: class Application initialized with Context(birthday=-999999999-01-01, date=2021-08-17)
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
-Aug 17, 2021 11:02:59 PM lv.id.jc.biorhythm.ui.Component <init>
+Aug 17, 2021 11:17:46 PM lv.id.jc.biorhythm.ui.Component <init>
 FINER: class AskBirthday initialized with Context(birthday=-999999999-01-01, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Broker" uses bundle: "lv/id/jc/biorhythm/service/broker"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Broker initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Help" uses bundle: "lv/id/jc/biorhythm/service/broker$help"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Help initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AskBirthday initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Info" uses bundle: "lv/id/jc/biorhythm/ui/command/info"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Info initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+WARNING: can't find resource bundle lv/id/jc/biorhythm/ui/command/date-adjuster
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+WARNING: Error: Can't find bundle for base name lv/id/jc/biorhythm/ui/command/date-adjuster, locale en_US
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+INFO: class DateAdjuster uses resource bundle java.util.PropertyResourceBundle@481a15ff
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class DateAdjuster initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "SetDate" uses bundle: "lv/id/jc/biorhythm/ui/command/set-date"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SetDate initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "SetDateByName" uses bundle: "lv/id/jc/biorhythm/ui/command/set-date-by-name"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SetDateByName initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "MoveDate" uses bundle: "lv/id/jc/biorhythm/ui/command/move-date"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class MoveDate initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "DailyReport" uses bundle: "lv/id/jc/biorhythm/report/daily-report"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class DailyReport initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "WeeklyReport" uses bundle: "lv/id/jc/biorhythm/report/weekly-report"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class WeeklyReport initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "MonthlyReport" uses bundle: "lv/id/jc/biorhythm/report/monthly/monthly-report"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class MonthlyReport initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AnnualReport" uses bundle: "lv/id/jc/biorhythm/report/annual-report"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AnnualReport initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "SummaryReport" uses bundle: "lv/id/jc/biorhythm/report/summary-report"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SummaryReport initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "TripleChart" uses bundle: "lv/id/jc/biorhythm/report/triple-chart"
+Aug 17, 2021 11:17:57 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class TripleChart initialized with Context(birthday=1970-06-07, date=2021-08-17)
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "monday"
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:18:11 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `monday` executed
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "sunday"
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:18:33 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `sunday` executed
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "september"
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:18:41 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `september` executed
+Aug 17, 2021 11:19:03 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "help"
+Aug 17, 2021 11:19:03 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:19:03 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `help` executed
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "now"
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:19:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `now` executed
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "yesterday"
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:19:28 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `yesterday` executed
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "january"
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:19:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `january` executed
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+87w"
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.ui.command.DateMover apply
+FINER: sign = +, number = 87, unit = w
+Aug 17, 2021 11:19:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `+87w` executed
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "-56d"
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.ui.command.DateMover apply
+FINER: sign = -, number = 56, unit = d
+Aug 17, 2021 11:20:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `-56d` executed
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "now"
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:20:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `now` executed
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "daily report"
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DailyReport`
+Aug 17, 2021 11:20:40 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `daily report` executed
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+2d"
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.ui.command.DateMover apply
+FINER: sign = +, number = 2, unit = d
+Aug 17, 2021 11:20:54 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `+2d` executed
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "dayly report"
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DailyReport`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `WeeklyReport`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MonthlyReport`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AnnualReport`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SummaryReport`
+Aug 17, 2021 11:21:08 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `TripleChart`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "daily report"
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Help`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AskBirthday`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `AgeInfo`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `ZodiacInfo`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `Info`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DateAdjuster`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDate`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `SetDateByName`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `MoveDate`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
+FINER: checking `DailyReport`
+Aug 17, 2021 11:21:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
+FINER: command `daily report` executed

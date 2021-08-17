@@ -30,7 +30,7 @@ public class SetDate extends AbstractCommand {
     @Override
     public Boolean apply(String request) {
         for (var entry : map.entrySet()) {
-            final var matcher  = entry.getKey().matcher(request);
+            final var matcher = entry.getKey().matcher(request);
             if (matcher.matches()) {
                 final var date = entry.getValue().apply(matcher);
                 setDate(date);

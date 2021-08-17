@@ -29,7 +29,7 @@ public class Application extends Component {
                 .add(DateAdjuster::new)
                 .add(SetDate::new)
                 .add(SetDateByName::new)
-                .add(MoveDate::new)
+                .add(DateMover::new)
                 .add(DailyReport::new)
                 .add(WeeklyReport::new)
                 .add(MonthlyReport::new)

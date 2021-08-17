@@ -8,8 +8,8 @@ import lv.id.jc.biorhythm.report.ZodiacInfo;
 import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
+import lv.id.jc.biorhythm.ui.command.DateMover;
 import lv.id.jc.biorhythm.ui.command.Info;
-import lv.id.jc.biorhythm.ui.command.MoveDate;
 
 public class Stage5 {
     public static void main(String[] args) {
@@ -29,7 +29,7 @@ public class Stage5 {
                 .add(AgeInfo::new)       // Stage 1
                 .add(ZodiacInfo::new)    // Stage 1
                 .add(Info::new)          // Stage 3
-                .add(MoveDate::new)      // Stage 3
+                .add(DateMover::new)      // Stage 3
                 .add(DailyReport::new)   // Stage 2
                 .add(WeeklyReport::new)  // Stage 4
                 .add(MonthlyReport::new) // Stage 5
