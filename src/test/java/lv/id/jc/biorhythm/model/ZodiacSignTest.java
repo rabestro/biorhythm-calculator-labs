@@ -57,4 +57,10 @@ class ZodiacSignTest {
         }
     }
 
+    @ParameterizedTest(name = "when {0} then toString() returns {1}")
+    @CsvFileSource(resources = "/model/zodiac-to-string.csv", numLinesToSkip = 1)
+    void testToString(final ZodiacSign zodiacSign, final String expected) {
+        assertEquals(expected, zodiacSign.toString());
+    }
+
 }
