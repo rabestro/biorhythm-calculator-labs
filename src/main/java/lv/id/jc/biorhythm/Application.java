@@ -6,10 +6,7 @@ import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 import lv.id.jc.biorhythm.ui.Component;
-import lv.id.jc.biorhythm.ui.command.Info;
-import lv.id.jc.biorhythm.ui.command.MoveDate;
-import lv.id.jc.biorhythm.ui.command.SetDate;
-import lv.id.jc.biorhythm.ui.command.SetDateByName;
+import lv.id.jc.biorhythm.ui.command.*;
 
 public class Application extends Component {
     public Application(final Context context) {
@@ -29,6 +26,7 @@ public class Application extends Component {
                 .add(AgeInfo::new)
                 .add(ZodiacInfo::new)
                 .add(Info::new)
+                .add(DateAdjuster::new)
                 .add(SetDate::new)
                 .add(SetDateByName::new)
                 .add(MoveDate::new)
