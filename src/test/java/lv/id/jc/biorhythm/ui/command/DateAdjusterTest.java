@@ -8,10 +8,9 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Given DateAdjuster and Epoch (1970-01-01) date")
+@DisplayName("Given DateAdjuster and date set to 1970-01-01")
 class DateAdjusterTest {
     private static final LocalDate BIRTHDAY = LocalDate.of(1900, 1, 1);
 
@@ -34,4 +33,13 @@ class DateAdjusterTest {
         assertEquals(expected, context.date(), "adjuster shall change the date");
     }
 
+    @ParameterizedTest(name = "when request {0} then returns false")
+    @CsvFileSource(resources = "/command/unrecognized.csv", numLinesToSkip = 1)
+    void unrecognized(final String request) {
+        final var result = underTest.apply(request);
+
+        assertFalse(result, "shall ignore the request: " + request);
+        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
+        assertEquals(LocalDate.EPOCH, context.date(), "date shall be unchanged");
+    }
 }
