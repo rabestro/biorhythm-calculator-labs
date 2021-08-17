@@ -28,6 +28,7 @@ public class PrettyPeriodFormat extends Format {
         throw new IllegalArgumentException("Cannot format given Object (" + obj.getClass().getName() + ") as a Period");
     }
 
+    @SuppressWarnings("squid:S1149")
     public StringBuffer format(final Period period, final StringBuffer toAppendTo) {
         final var years = YEARS.format(new Object[]{period.getYears()});
         final var months = MONTHS.format(new Object[]{period.getMonths()});

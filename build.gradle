@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'groovy'
     id 'jacoco'
     id "org.sonarqube" version "3.3"
 }
@@ -34,7 +33,6 @@ test {
 
 jacoco {
     toolVersion = "0.8.7"
-    reportsDir = file("$buildDir/jacoco")
 }
 
 jacocoTestReport {

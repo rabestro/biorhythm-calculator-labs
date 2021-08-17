@@ -1,13 +1,22 @@
 package lv.id.jc.biorhythm.format;
 
-import java.text.MessageFormat;
+import org.jetbrains.annotations.NotNull;
 
-public class DaysFormat extends AbstractFormat {
-    private static final MessageFormat DAYS_FORMAT =
-            new MessageFormat("{0, choice, 1#tomorrow|1<{0} days}");
+import java.text.FieldPosition;
+import java.text.Format;
+import java.text.MessageFormat;
+import java.text.ParsePosition;
+
+public class DaysFormat extends Format {
+    private static final MessageFormat DAYS_FORMAT = new MessageFormat("{0, choice, 1#tomorrow|1<{0} days}");
 
     @Override
-    public String simpleFormat(final Object object) {
-        return DAYS_FORMAT.format(new Object[]{object});
+    public StringBuffer format(Object obj, @NotNull StringBuffer toAppendTo, @NotNull FieldPosition pos) {
+        return toAppendTo.append(DAYS_FORMAT.format(new Object[]{obj}));
+    }
+
+    @Override
+    public Object parseObject(String source, @NotNull ParsePosition pos) {
+        throw new UnsupportedOperationException();
     }
 }

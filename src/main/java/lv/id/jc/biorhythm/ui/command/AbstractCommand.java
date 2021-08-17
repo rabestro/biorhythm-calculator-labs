@@ -17,13 +17,6 @@ public abstract class AbstractCommand extends Component implements Command {
         return String.format("%-15s - run component \"%s\"%n", getCommand(), className);
     }
 
-    private String getCommand() {
-        return CAMEL_CASE
-                .matcher(this.getClass().getSimpleName())
-                .replaceAll("$1 $2")
-                .toLowerCase();
-    }
-
     @Override
     public Boolean apply(String request) {
         if (getCommand().equalsIgnoreCase(request)) {
