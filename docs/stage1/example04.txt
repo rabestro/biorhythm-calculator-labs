@@ -1,0 +1,32 @@
+> Task :Stage1.main()
+
+Welcome to the Biorhythm Calculator!
+
+Please specify a date of birth in format YYYY-MM-DD.
+The birthday shall be in the range of 1900-01-01 to 2021-08-17 inclusive.
+
+Please enter a birthday >1987-0617
+
+Text '1987-0617' could not be parsed at index 7.
+Please use ISO format YYYY-MM-DD.
+
+Please enter a birthday >1897-06-17
+
+The date 1897-06-17 is before the minimum date 1900-01-01.
+
+Please enter a birthday >2021-08-19
+
+The date 2021-08-19 is after today 2021-08-17.
+
+Please enter a birthday >1970-01-01
+
+   Birthday: Thursday, January 01, 1970
+      Today: Tuesday, August 17, 2021
+       Days: 18,856
+        Age: 51 years, 7 months and 16 days
+
+Zodiac Sign: Capricorn
+     Symbol: The Sea-Goat
+      Dates: December 22nd - January 19th
+  Lucky Day: Saturday
+

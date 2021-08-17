@@ -18,14 +18,14 @@ public class AskBirthday extends AbstractCommand {
 
     @Override
     public void run() {
-        printf("biorhythm.welcome", minimumDate, maximumDate);
+        printf("biorhythm.instruction", minimumDate, maximumDate);
         while (true) {
             printf("birthday.prompt");
             try {
                 final var date = LocalDate.parse(scanner.nextLine());
                 if (date.isAfter(maximumDate)) {
                     printf("birthday.after.today", date, maximumDate);
-                } else if (date().isBefore(minimumDate)) {
+                } else if (date.isBefore(minimumDate)) {
                     printf("birthday.before.minimum", date, minimumDate);
                 } else {
                     context.setBirthday(date);

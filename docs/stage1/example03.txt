@@ -1,0 +1,17 @@
+> Task :Stage1.main()
+
+Welcome to the Biorhythm Calculator!
+
+Please specify a date of birth in format YYYY-MM-DD.
+The birthday shall be in the range of 1900-01-01 to 2021-08-17 inclusive.
+
+Please enter a birthday >1987-0623
+
+Text '1987-0623' could not be parsed at index 7.
+Please use ISO format YYYY-MM-DD.
+
+Please enter a birthday >1897-06-23
+
+The date 1897-06-23 is before the minimum date 1900-01-01.
+
+Please enter a birthday >
