@@ -39,6 +39,6 @@ public class MonthlyReport extends AbstractCommand {
                     sb.append(week.getWeekReport(day));
                     sb.append("\n");
                 });
-        System.out.println(sb);
+        println(sb.toString());
     }
 }

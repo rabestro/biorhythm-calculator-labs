@@ -34,11 +34,11 @@ public class AnnualReport extends AbstractCommand {
 
 
         for (int day = 1; day < 32; day++) {
-            System.out.printf("%3d   ", day);
+            printf("%3d   ", day);
             for (int month = 1; month < 13; month++) {
-                System.out.printf("%-6s", dayConditions(month, day));
+                printf("%-6s", dayConditions(month, day));
             }
-            System.out.println();
+            println();
         }
     }
 

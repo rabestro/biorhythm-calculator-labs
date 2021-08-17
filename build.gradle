@@ -40,9 +40,11 @@ jacocoTestReport {
 }
 
 sonarqube {
-  properties {
-    property "sonar.projectKey", "rabestro_biorhythm-calculator-draft"
-    property "sonar.organization", "rabestro"
-    property "sonar.host.url", "https://sonarcloud.io"
-  }
+    properties {
+        property "sonar.projectKey", "rabestro_biorhythm-calculator-draft"
+        property "sonar.organization", "rabestro"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.jacoco.reportPath", "build/jacoco/test.exec"
+        property "sonar.projectName", "Biorhythms"
+    }
 }
