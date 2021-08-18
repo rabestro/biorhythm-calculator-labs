@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.ui.command;
+package lv.id.jc.biorhythm.command;
 
 import lv.id.jc.biorhythm.model.Context;
 
@@ -7,28 +7,18 @@ import java.time.Month;
 import java.time.MonthDay;
 import java.time.temporal.TemporalAdjuster;
 import java.util.Optional;
-import java.util.Set;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
-import static java.util.Arrays.stream;
-
-public class DateAdjuster extends AbstractCommand {
+public class DateWith extends DateCommand {
     private static final Pattern MONTH_DAY;
-    private static final Set<String> MONTHS;
-    private static final Set<String> DAYS_OF_WEEK;
+    private static final Pattern ADJUSTER;
 
     static {
         MONTH_DAY = Pattern.compile("\\d{2}-\\d{2}");
-
-        MONTHS = stream(Month.values()).map(Enum::name)
-                .collect(Collectors.toUnmodifiableSet());
-
-        DAYS_OF_WEEK = stream(DayOfWeek.values()).map(Enum::name)
-                .collect(Collectors.toUnmodifiableSet());
+        ADJUSTER = Pattern.compile("(?<sign>[-+])?(?<unit>\\w+)");
     }
 
-    public DateAdjuster(Context context) {
+    public DateWith(Context context) {
         super(context);
     }
 
@@ -38,8 +28,8 @@ public class DateAdjuster extends AbstractCommand {
     }
 
     private boolean adjustDate(final TemporalAdjuster adjuster) {
-        final var newDate = date().with(adjuster);
-        setDate(newDate);
+        final var newDate = context.date().with(adjuster);
+        context.setDate(newDate);
         return true;
     }
 
@@ -47,7 +37,13 @@ public class DateAdjuster extends AbstractCommand {
         if (MONTH_DAY.matcher(request).matches()) {
             return Optional.of(MonthDay.parse("--" + request));
         }
-        final var unit = request.toUpperCase();
+        final var matcher = ADJUSTER.matcher(request.toUpperCase());
+        if (!matcher.matches()) {
+            return Optional.empty();
+        }
+        final var sign = matcher.group("sign");
+        final var unit = matcher.group("unit");
+
         if (MONTHS.contains(unit)) {
             return Optional.of(Month.valueOf(unit));
         }

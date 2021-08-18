@@ -1,7 +1,6 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.Component;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

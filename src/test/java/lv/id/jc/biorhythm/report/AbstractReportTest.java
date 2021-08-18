@@ -16,8 +16,6 @@ import java.time.format.FormatStyle;
 import java.util.Locale;
 import java.util.function.Function;
 
-import static org.mockito.Mockito.when;
-
 @Tag("date")
 @DisplayName("Given Abstract Report ")
 abstract class AbstractReportTest {

@@ -1,11 +1,11 @@
 package lv.id.jc.runner;
 
+import lv.id.jc.biorhythm.command.DateMover;
+import lv.id.jc.biorhythm.command.Info;
+import lv.id.jc.biorhythm.command.SetDateByName;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
-import lv.id.jc.biorhythm.ui.command.DateMover;
-import lv.id.jc.biorhythm.ui.command.Info;
-import lv.id.jc.biorhythm.ui.command.SetDateByName;
 
 public class CommandProcessorRunner extends AbstractRunner {
     static {

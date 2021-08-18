@@ -1,9 +1,9 @@
 package lv.id.jc.biorhythm.service;
 
+import lv.id.jc.biorhythm.command.AbstractCommand;
+import lv.id.jc.biorhythm.command.Command;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.ui.Component;
-import lv.id.jc.biorhythm.ui.command.AbstractCommand;
-import lv.id.jc.biorhythm.ui.command.Command;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -31,7 +31,7 @@ public class Broker extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
-        help.apply("help");
+//        help.apply("help");
 
         Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
