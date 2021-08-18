@@ -10,7 +10,7 @@ import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
 
-public class DateMover extends AbstractCommand {
+public class DateMover extends DateCommand {
     private static final Pattern COMMAND_PATTERN = Pattern.compile("" +
             "(?<sign>[-+])" +   // Plus or Minus
             "(?<number>\\d+)" + // How much
@@ -50,7 +50,7 @@ public class DateMover extends AbstractCommand {
         final var unit = matcher.group("unit");
         final var number = Long.parseLong(matcher.group("number"));
         LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
-        setDate(MOVE_OPERATORS.get(sign + unit).apply(date(), number));
+        context.setDate(MOVE_OPERATORS.get(sign + unit).apply(context.date(), number));
         return true;
     }
 }

@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 import static java.util.Arrays.stream;
 
-public class DateWith extends AbstractCommand {
+public class DateWith extends DateCommand {
     private static final Pattern MONTH_DAY;
     private static final Set<String> MONTHS;
     private static final Set<String> DAYS_OF_WEEK;
@@ -40,8 +40,8 @@ public class DateWith extends AbstractCommand {
     }
 
     private boolean adjustDate(final TemporalAdjuster adjuster) {
-        final var newDate = date().with(adjuster);
-        setDate(newDate);
+        final var newDate = context.date().with(adjuster);
+        context.setDate(newDate);
         return true;
     }
 

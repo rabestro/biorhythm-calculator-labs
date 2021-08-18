@@ -28,7 +28,6 @@ class Stage1Test {
         System.setIn(originalIn);
     }
 
-    @Test
     @Disabled
     void main() {
         final var in = new ByteArrayInputStream("1970-06-07\n".getBytes());
