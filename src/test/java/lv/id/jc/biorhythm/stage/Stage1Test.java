@@ -2,6 +2,7 @@ package lv.id.jc.biorhythm.stage;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -28,6 +29,7 @@ class Stage1Test {
     }
 
     @Test
+    @Disabled
     void main() {
         final var in = new ByteArrayInputStream("1970-06-07\n".getBytes());
         System.setIn(in);

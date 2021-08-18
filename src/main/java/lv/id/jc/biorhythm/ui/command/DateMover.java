@@ -21,9 +21,20 @@ public class DateMover extends AbstractCommand {
             "+w", LocalDate::plusWeeks, "-w", LocalDate::minusWeeks,
             "+m", LocalDate::plusMonths, "-m", LocalDate::minusMonths,
             "+y", LocalDate::plusYears, "-y", LocalDate::minusYears,
-            "+q", (d, n) -> d.plus(Period.of(0, n.intValue() * 3, 0)),
-            "-q", (d, n) -> d.minus(Period.of(0, n.intValue() * 3, 0))
+            "+f", DateMover::plusFortnight, "-f", DateMover::minusFortnight
     );
+
+    private static Period fortnight(Number number) {
+        return Period.of(0, 0, 14 * number.intValue());
+    }
+
+    private static LocalDate plusFortnight(LocalDate date, Number number) {
+        return date.plus(fortnight(number));
+    }
+
+    private static LocalDate minusFortnight(LocalDate date, Number number) {
+        return date.minus(fortnight(number));
+    }
 
     public DateMover(Context context) {
         super(context);

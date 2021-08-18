@@ -17,9 +17,11 @@ public class DateAdjuster extends AbstractCommand {
     private static final Pattern MONTH_DAY;
     private static final Set<String> MONTHS;
     private static final Set<String> DAYS_OF_WEEK;
+    private static final Pattern ADJUSTER;
 
     static {
         MONTH_DAY = Pattern.compile("\\d{2}-\\d{2}");
+        ADJUSTER = Pattern.compile("(?<sign>[-+])?(?<unit>\\w+)");
 
         MONTHS = stream(Month.values()).map(Enum::name)
                 .collect(Collectors.toUnmodifiableSet());
@@ -47,7 +49,13 @@ public class DateAdjuster extends AbstractCommand {
         if (MONTH_DAY.matcher(request).matches()) {
             return Optional.of(MonthDay.parse("--" + request));
         }
-        final var unit = request.toUpperCase();
+        final var matcher = ADJUSTER.matcher(request.toUpperCase());
+        if (!matcher.matches()) {
+            return Optional.empty();
+        }
+        final var sign = matcher.group("sign");
+        final var unit = matcher.group("unit");
+
         if (MONTHS.contains(unit)) {
             return Optional.of(Month.valueOf(unit));
         }

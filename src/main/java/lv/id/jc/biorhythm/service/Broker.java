@@ -31,7 +31,7 @@ public class Broker extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
-        help.apply("help");
+//        help.apply("help");
 
         Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
