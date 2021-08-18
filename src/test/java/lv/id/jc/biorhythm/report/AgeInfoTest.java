@@ -1,6 +1,7 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.model.Context;
+import lv.id.jc.biorhythm.ui.Component;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -40,6 +41,9 @@ class AgeInfoTest {
     @BeforeEach
     void setUp() {
         System.setOut(new PrintStream(out));
+
+        when(context.birthday()).thenReturn(BIRTHDAY);
+        when(context.date()).thenReturn(TOADY);
     }
 
     @Test
