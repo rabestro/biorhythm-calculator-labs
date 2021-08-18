@@ -3,17 +3,16 @@
    Birthday: 1998-07-28
 Report date: 2021-08-19
 
-Primary Biorhythms
+     Primary Biorhythms
 
      Physical       98%
      Emotional      97%
      Intellectual  -81%
      Average        ##%
 
-Secondary Biorhythms
+   Secondary Biorhythms
 
      Intuition     -92%
      Aesthetic     -29%
      Awareness      97%
      Spiritual      88%
-

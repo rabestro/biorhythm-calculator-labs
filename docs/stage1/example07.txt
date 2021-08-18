@@ -1,0 +1,18 @@
+Welcome to the Biorhythm Calculator!
+
+Please specify a date of birth in format YYYY-MM-DD.
+It shall be in the range of 1900-01-01 to 2021-08-18.
+
+Please enter a birthday >1970-06-07
+
+   Birthday: Sunday, June 7, 1970
+      Today: Wednesday, August 18, 2021
+       Days: 18,700
+        Age: 51 years, two months and 11 days
+
+Zodiac Sign: Gemini
+     Symbol: The Twin
+      Dates: May 21st - June 20th
+  Lucky Day: Wednesday
+
+  Today is a lucky day for Gemini!
