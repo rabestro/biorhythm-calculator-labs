@@ -7,27 +7,15 @@ import java.time.Month;
 import java.time.MonthDay;
 import java.time.temporal.TemporalAdjuster;
 import java.util.Optional;
-import java.util.Set;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-
-import static java.util.Arrays.stream;
 
 public class DateWith extends DateCommand {
     private static final Pattern MONTH_DAY;
-    private static final Set<String> MONTHS;
-    private static final Set<String> DAYS_OF_WEEK;
     private static final Pattern ADJUSTER;
 
     static {
         MONTH_DAY = Pattern.compile("\\d{2}-\\d{2}");
         ADJUSTER = Pattern.compile("(?<sign>[-+])?(?<unit>\\w+)");
-
-        MONTHS = stream(Month.values()).map(Enum::name)
-                .collect(Collectors.toUnmodifiableSet());
-
-        DAYS_OF_WEEK = stream(DayOfWeek.values()).map(Enum::name)
-                .collect(Collectors.toUnmodifiableSet());
     }
 
     public DateWith(Context context) {

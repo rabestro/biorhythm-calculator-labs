@@ -8,6 +8,7 @@ public abstract class AbstractCommand extends Component implements Command {
         super(context);
     }
 
+    @Override
     public String help() {
         if (resourceBundle.containsKey("help")) {
             return resourceBundle.getString("help");

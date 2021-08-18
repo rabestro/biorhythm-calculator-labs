@@ -27,6 +27,7 @@ public class Application extends Component {
                 .add(ZodiacInfo::new)
                 .add(Info::new)
                 .add(DateWith::new)
+                .add(DateAdjuster::new)
                 .add(DateSetter::new)
                 .add(SetDateByName::new)
                 .add(DateMover::new)
