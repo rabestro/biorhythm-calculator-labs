@@ -10,17 +10,18 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("Given DateMover and date 1970-01-01")
-class DateMoverTest extends AbstractDateCommand {
+@DisplayName("Given DateSetter and date 1970-01-01")
+class DateSetterTest extends AbstractDateCommand {
+    private static final LocalDate BIRTHDAY = LocalDate.of(1900, 1, 1);
 
     @BeforeEach
     void setUp() {
         super.setUp();
-        underTest = new DateMover(context);
+        underTest = new DateSetter(context);
     }
 
     @ParameterizedTest(name = "when request {0} then date adjusted to {1}")
-    @CsvFileSource(resources = "/command/mover-request.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/command/setter-request.csv", numLinesToSkip = 1)
     void recognized(final String request, final LocalDate expected) {
         final var result = underTest.apply(request);
 
