@@ -1,9 +1,9 @@
 package lv.id.jc.biorhythm.service;
 
-import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.Component;
 import lv.id.jc.biorhythm.command.AbstractCommand;
 import lv.id.jc.biorhythm.command.Command;
+import lv.id.jc.biorhythm.model.Context;
+import lv.id.jc.biorhythm.ui.Component;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

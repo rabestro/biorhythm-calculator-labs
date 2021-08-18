@@ -5,7 +5,7 @@ import lv.id.jc.biorhythm.model.Context;
 import java.time.LocalDate;
 import java.util.Map;
 
-public class SetDateByName extends AbstractCommand {
+public class SetDateByName extends DateCommand {
 
     private final Map<String, LocalDate> commandsMap;
 
@@ -15,7 +15,7 @@ public class SetDateByName extends AbstractCommand {
                 "today", LocalDate.now(),
                 "now", LocalDate.now(),
                 "epoch", LocalDate.EPOCH,
-                "birthday", birthday(),
+                "birthday", context.birthday(),
                 "tomorrow", LocalDate.now().plusDays(1L),
                 "after tomorrow", LocalDate.now().plusDays(2L),
                 "yesterday", LocalDate.now().minusDays(1L),

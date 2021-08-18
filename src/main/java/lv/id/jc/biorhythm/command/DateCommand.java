@@ -3,8 +3,8 @@ package lv.id.jc.biorhythm.command;
 import lv.id.jc.biorhythm.model.Context;
 
 abstract class DateCommand implements Command {
-    System.Logger LOGGER = System.getLogger("Date Command");
     final Context context;
+    System.Logger LOGGER = System.getLogger("Date Command");
 
     DateCommand(Context context) {
         this.context = context;

@@ -1,12 +1,12 @@
 package lv.id.jc.biorhythm;
 
+import lv.id.jc.biorhythm.command.*;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 import lv.id.jc.biorhythm.ui.Component;
-import lv.id.jc.biorhythm.command.*;
 
 public class Application extends Component {
     public Application(final Context context) {

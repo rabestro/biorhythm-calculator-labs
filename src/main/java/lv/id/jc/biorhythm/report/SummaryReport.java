@@ -1,12 +1,12 @@
 package lv.id.jc.biorhythm.report;
 
+import lv.id.jc.biorhythm.command.AbstractCommand;
 import lv.id.jc.biorhythm.format.DaysFormat;
 import lv.id.jc.biorhythm.format.MultilineTextFormat;
 import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.Indicator;
-import lv.id.jc.biorhythm.command.AbstractCommand;
 
 import java.text.Format;
 import java.util.function.IntFunction;

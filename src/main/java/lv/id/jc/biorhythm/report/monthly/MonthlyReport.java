@@ -1,7 +1,7 @@
 package lv.id.jc.biorhythm.report.monthly;
 
-import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.command.AbstractCommand;
+import lv.id.jc.biorhythm.model.Context;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

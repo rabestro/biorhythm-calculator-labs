@@ -24,6 +24,10 @@ public class DateMover extends DateCommand {
             "+f", DateMover::plusFortnight, "-f", DateMover::minusFortnight
     );
 
+    public DateMover(Context context) {
+        super(context);
+    }
+
     private static Period fortnight(Number number) {
         return Period.of(0, 0, 14 * number.intValue());
     }
@@ -34,10 +38,6 @@ public class DateMover extends DateCommand {
 
     private static LocalDate minusFortnight(LocalDate date, Number number) {
         return date.minus(fortnight(number));
-    }
-
-    public DateMover(Context context) {
-        super(context);
     }
 
     @Override
