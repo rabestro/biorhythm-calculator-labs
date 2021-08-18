@@ -11,6 +11,8 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.stream.Stream;
 
+import static java.time.DayOfWeek.MONDAY;
+
 public class WeeklyReport extends AbstractCommand {
     private final Format formatter;
 
@@ -31,8 +33,7 @@ public class WeeklyReport extends AbstractCommand {
     }
 
     private Stream<LocalDate> weekDays() {
-        final var startDay = date().minusDays(date().getDayOfWeek().getValue() - 1L);
-        return Stream.iterate(startDay, day -> day.plusDays(1L))
+        return Stream.iterate(date().with(MONDAY), day -> day.plusDays(1L))
                 .limit(DayOfWeek.values().length);
     }
 }
