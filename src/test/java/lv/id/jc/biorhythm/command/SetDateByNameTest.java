@@ -2,6 +2,7 @@ package lv.id.jc.biorhythm.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -10,17 +11,16 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@DisplayName("Given DateAdjuster and date set to 1970-01-01")
-class DateWithTest extends AbstractDateCommand {
+class SetDateByNameTest extends AbstractDateCommand {
 
     @BeforeEach
     void setUp() {
         super.setUp();
-        underTest = new DateWith(context);
+        underTest = new SetDateByName(context);
     }
 
     @ParameterizedTest(name = "when request {0} then date adjusted to {1}")
-    @CsvFileSource(resources = "/command/with-request.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/command/date-by-name-request.csv", numLinesToSkip = 1)
     void recognized(final String request, final LocalDate expected) {
         final var result = underTest.apply(request);
 
@@ -29,4 +29,11 @@ class DateWithTest extends AbstractDateCommand {
         assertEquals(expected, context.date(), "adjuster shall change the date");
     }
 
+    @Test
+    @DisplayName("when request `today` then date set to today")
+    void testToday() {
+        final var result = underTest.apply("today");
+        assertTrue(result);
+        assertEquals(LocalDate.now(), context.date());
+    }
 }
