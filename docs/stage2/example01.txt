@@ -1,0 +1,37 @@
+Welcome to the Biorhythm Calculator!
+
+Please specify a date of birth in format YYYY-MM-DD.
+It shall be in the range of 1900-01-01 to 2021-08-18.
+
+Please enter a birthday >1985-05-31
+
+   Birthday: Friday, May 31, 1985
+      Today: Wednesday, August 18, 2021
+       Days: 13,228
+        Age: 36 years, two months and 18 days
+
+Zodiac Sign: Gemini
+     Symbol: The Twin
+      Dates: May 21st - June 20th
+  Lucky Day: Wednesday
+
+  Today is a lucky day for Gemini!
+
+ Daily Biorhythm Report
+
+   Birthday: 1985-05-31
+Report date: 2021-08-18
+
+  Primary Biorhythms
+
+     Physical       73%
+     Emotional      43%
+     Intellectual  -81%
+     Average        12%
+
+  Secondary Biorhythms
+
+     Intuition      61%
+     Aesthetic     -72%
+     Awareness     -50%
+     Spiritual     -51%
