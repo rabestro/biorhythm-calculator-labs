@@ -7,8 +7,8 @@ import lv.id.jc.biorhythm.report.ZodiacInfo;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 import lv.id.jc.biorhythm.service.Message;
-import lv.id.jc.biorhythm.ui.command.DateMover;
-import lv.id.jc.biorhythm.ui.command.Info;
+import lv.id.jc.biorhythm.command.DateMover;
+import lv.id.jc.biorhythm.command.Info;
 
 public class Stage3 {
     public static void main(String[] args) {

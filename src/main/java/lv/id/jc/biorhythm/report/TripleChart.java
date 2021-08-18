@@ -2,7 +2,7 @@ package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.model.Biorhythm;
 import lv.id.jc.biorhythm.model.Context;
-import lv.id.jc.biorhythm.ui.command.AbstractCommand;
+import lv.id.jc.biorhythm.command.AbstractCommand;
 
 import java.util.stream.IntStream;
 

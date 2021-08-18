@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.ui.command;
+package lv.id.jc.biorhythm.command;
 
 import lv.id.jc.biorhythm.model.Context;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,21 +10,21 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayName("Given DateMover and date set to 1970-01-01")
-class DateMoverTest {
+@DisplayName("Given DateAdjuster and date set to 1970-01-01")
+class DateWithTest {
     private static final LocalDate BIRTHDAY = LocalDate.of(1900, 1, 1);
 
     private Context context;
-    private DateMover underTest;
+    private DateWith underTest;
 
     @BeforeEach
     void setUp() {
         context = new Context(BIRTHDAY, LocalDate.EPOCH);
-        underTest = new DateMover(context);
+        underTest = new DateWith(context);
     }
 
     @ParameterizedTest(name = "when request {0} then date adjusted to {1}")
-    @CsvFileSource(resources = "/command/mover-request.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/command/adjuster-request.csv", numLinesToSkip = 1)
     void adjustMonthDay(final String request, final LocalDate expected) {
         final var result = underTest.apply(request);
 

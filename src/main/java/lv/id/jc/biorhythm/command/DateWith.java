@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.ui.command;
+package lv.id.jc.biorhythm.command;
 
 import lv.id.jc.biorhythm.model.Context;
 
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 import static java.util.Arrays.stream;
 
-public class DateAdjuster extends AbstractCommand {
+public class DateWith extends AbstractCommand {
     private static final Pattern MONTH_DAY;
     private static final Set<String> MONTHS;
     private static final Set<String> DAYS_OF_WEEK;
@@ -30,7 +30,7 @@ public class DateAdjuster extends AbstractCommand {
                 .collect(Collectors.toUnmodifiableSet());
     }
 
-    public DateAdjuster(Context context) {
+    public DateWith(Context context) {
         super(context);
     }
 

@@ -5,8 +5,8 @@ import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
-import lv.id.jc.biorhythm.ui.command.DateMover;
-import lv.id.jc.biorhythm.ui.command.Info;
+import lv.id.jc.biorhythm.command.DateMover;
+import lv.id.jc.biorhythm.command.Info;
 
 public class Stage6 {
     public static void main(String[] args) {

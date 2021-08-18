@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.ui.command;
+package lv.id.jc.biorhythm.command;
 
 import java.util.function.Function;
 

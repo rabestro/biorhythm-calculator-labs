@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.ui.command;
+package lv.id.jc.biorhythm.command;
 
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.ui.Component;
