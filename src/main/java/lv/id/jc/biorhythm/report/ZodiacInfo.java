@@ -1,9 +1,10 @@
 package lv.id.jc.biorhythm.report;
 
 import lv.id.jc.biorhythm.command.AbstractCommand;
-import lv.id.jc.biorhythm.format.OrdinalDateFormat;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.model.ZodiacSign;
+
+import static lv.id.jc.biorhythm.format.DateFormatter.ORDINAL_SHORT_DATE;
 
 public class ZodiacInfo extends AbstractCommand {
 
@@ -14,13 +15,12 @@ public class ZodiacInfo extends AbstractCommand {
     @Override
     public void run() {
         final var zodiacSign = ZodiacSign.of(birthday());
-        final var formatter = new OrdinalDateFormat();
 
         printf("zodiacSign.report",
                 zodiacSign,
                 zodiacSign.getSymbol(),
-                formatter.format(zodiacSign.getStart()),
-                formatter.format(zodiacSign.getEnd()),
+                ORDINAL_SHORT_DATE.format(zodiacSign.getStart()),
+                ORDINAL_SHORT_DATE.format(zodiacSign.getEnd()),
                 zodiacSign.getLuckyDay());
 
         if (zodiacSign.getLuckyDay().equals(date().getDayOfWeek())) {

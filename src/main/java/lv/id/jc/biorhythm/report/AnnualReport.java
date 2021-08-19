@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.Locale;
 
 import static java.util.stream.Collectors.joining;
+import static lv.id.jc.biorhythm.format.DateFormatter.ROMAN_FULL_DATE;
 
 public class AnnualReport extends AbstractCommand {
     public AnnualReport(final Context context) {
@@ -22,7 +23,7 @@ public class AnnualReport extends AbstractCommand {
 
     @Override
     public void run() {
-        final var leftPart = format("annual.header.left.format", birthday());
+        final var leftPart = format("annual.header.left.format", ROMAN_FULL_DATE.format(birthday()));
         final var rightPart = format("annual.header.right.format", date());
 
         printf("annual.header.format", leftPart, rightPart);

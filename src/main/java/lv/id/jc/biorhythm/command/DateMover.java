@@ -9,6 +9,7 @@ import java.util.function.BiFunction;
 import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
+import static lv.id.jc.biorhythm.format.DateFormatter.FORTNIGHT;
 
 public class DateMover extends DateCommand {
     private static final Pattern COMMAND_PATTERN = Pattern.compile("" +
@@ -28,16 +29,12 @@ public class DateMover extends DateCommand {
         super(context);
     }
 
-    private static Period fortnight(Number number) {
-        return Period.of(0, 0, 14 * number.intValue());
-    }
-
     private static LocalDate plusFortnight(LocalDate date, Number number) {
-        return date.plus(fortnight(number));
+        return date.plus(FORTNIGHT.multipliedBy(number.intValue()));
     }
 
     private static LocalDate minusFortnight(LocalDate date, Number number) {
-        return date.minus(fortnight(number));
+        return date.minus(FORTNIGHT.multipliedBy(number.intValue()));
     }
 
     @Override
