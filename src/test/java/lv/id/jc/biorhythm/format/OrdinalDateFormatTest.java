@@ -13,6 +13,10 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+/**
+ * @deprecated in favour to DateFormatterTest
+ */
+@Deprecated
 @Tag("Formatter")
 @DisplayName("Given MonthOrdinalDay")
 class OrdinalDateFormatTest {

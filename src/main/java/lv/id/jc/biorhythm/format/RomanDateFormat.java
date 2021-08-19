@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toMap;
 /**
  * @deprecated in favour to DateFormatter class
  */
-@Deprecated
+@Deprecated(forRemoval = true)
 public class RomanDateFormat extends Format {
     private static final Map<Long, String> ROMAN;
 
