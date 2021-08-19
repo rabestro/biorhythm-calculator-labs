@@ -14,7 +14,7 @@ public class ZodiacInfo extends AbstractCommand {
 
     @Override
     public void run() {
-        final var zodiacSign = ZodiacSign.of(birthday());
+        final var zodiacSign = birthday().query(ZodiacSign::from);
 
         printf("zodiacSign.report",
                 zodiacSign,
