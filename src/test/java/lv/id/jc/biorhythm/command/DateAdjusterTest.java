@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+@DisplayName("Given DateAdjuster and date 1970-01-01")
 class DateAdjusterTest extends AbstractDateCommand {
 
     @BeforeEach
