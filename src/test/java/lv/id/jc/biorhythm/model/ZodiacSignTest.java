@@ -24,7 +24,7 @@ class ZodiacSignTest {
     }
 
     @ParameterizedTest(name = "when {0} then toString() returns {1}")
-    @CsvFileSource(resources = "/model/zodiac-to-string.csv", numLinesToSkip = 1)
+    @CsvFileSource(resources = "/model/zodiac-sign-to-string.csv", numLinesToSkip = 1)
     void testToString(final ZodiacSign zodiacSign, final String expected) {
         assertEquals(expected, zodiacSign.toString());
     }
@@ -34,15 +34,15 @@ class ZodiacSignTest {
     class DateConvertedToZodiacSign {
 
         @ParameterizedTest(name = "when {0} then sign is {1}")
-        @CsvFileSource(resources = "/model/monthday-zodiac-sign.csv", numLinesToSkip = 1)
+        @CsvFileSource(resources = "/model/zodiac-sign-from-monthday.csv", numLinesToSkip = 1)
         void monthDayToZodiacSign(final MonthDay date, final ZodiacSign zodiacSign) {
-            assertSame(zodiacSign, ZodiacSign.of(date));
+            assertSame(zodiacSign, date.query(ZodiacSign::from));
         }
 
         @ParameterizedTest(name = "when is {0} then sign is {1}")
-        @CsvFileSource(resources = "/model/date-zodiac-sign.csv", numLinesToSkip = 1)
+        @CsvFileSource(resources = "/model/zodiac-sign-from-date.csv", numLinesToSkip = 1)
         void localDateToZodiacSign(final LocalDate date, final ZodiacSign zodiacSign) {
-            assertSame(zodiacSign, ZodiacSign.of(date));
+            assertSame(zodiacSign, date.query(ZodiacSign::from));
         }
     }
 
@@ -51,16 +51,23 @@ class ZodiacSignTest {
     class DateMatchesZodiacSign {
 
         @ParameterizedTest(name = "then {0} matches {1}")
-        @CsvFileSource(resources = "/model/monthday-zodiac-sign.csv", numLinesToSkip = 1)
+        @CsvFileSource(resources = "/model/zodiac-sign-from-monthday.csv", numLinesToSkip = 1)
         void monthDayMatchesZodiacSign(final MonthDay date, final ZodiacSign zodiacSign) {
-            assertTrue(zodiacSign.matches(date));
+            assertTrue(date.query(zodiacSign));
         }
 
         @ParameterizedTest(name = "then {0} matches {1}")
-        @CsvFileSource(resources = "/model/date-zodiac-sign.csv", numLinesToSkip = 1)
+        @CsvFileSource(resources = "/model/zodiac-sign-from-date.csv", numLinesToSkip = 1)
         void localDateMatchesZodiacSign(final LocalDate date, final ZodiacSign zodiacSign) {
-            assertTrue(zodiacSign.matches(date));
+            assertTrue(date.query(zodiacSign));
         }
+    }
+
+    @ParameterizedTest(name = "when {0} then {1} - {2}")
+    @CsvFileSource(resources = "/model/zodiac-sign-start-end.csv", numLinesToSkip = 1)
+    void testToString(final ZodiacSign zodiacSign, final MonthDay start, final MonthDay end) {
+        assertEquals(start, zodiacSign.getStart());
+        assertEquals(end, zodiacSign.getEnd());
     }
 
 }
