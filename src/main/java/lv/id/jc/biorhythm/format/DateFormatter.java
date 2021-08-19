@@ -1,6 +1,7 @@
 package lv.id.jc.biorhythm.format;
 
 import java.text.MessageFormat;
+import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
 import java.util.Map;
@@ -14,6 +15,8 @@ import static java.util.function.Function.identity;
 import static java.util.stream.Collectors.toMap;
 
 public abstract class DateFormatter {
+    public static final Period FORTNIGHT = Period.ofWeeks(2);
+
     public static final Map<Long, String> ROMAN_MONTHS = Map.ofEntries(
             entry(1L, "I"), entry(2L, "II"), entry(3L, "III"),
             entry(4L, "IV"), entry(5L, "V"), entry(6L, "VI"),
@@ -60,5 +63,7 @@ public abstract class DateFormatter {
                     .appendText(DAY_OF_MONTH, ORDINAL)
                     .toFormatter();
 
+    private DateFormatter() {
+    }
 
 }
