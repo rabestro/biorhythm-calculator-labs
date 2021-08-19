@@ -20,7 +20,7 @@ public enum ZodiacSign implements TemporalQuery<Boolean> {
     LEO("Lion", MonthDay.of(JULY, 23), MonthDay.of(AUGUST, 22), SUNDAY),
     VIRGO("The Maiden", MonthDay.of(AUGUST, 23), MonthDay.of(SEPTEMBER, 22), WEDNESDAY),
     LIBRA("The Scales", MonthDay.of(SEPTEMBER, 23), MonthDay.of(OCTOBER, 22), FRIDAY),
-    SCORPIO("Scorpion", MonthDay.of(OCTOBER, 23), MonthDay.of(NOVEMBER, 22), TUESDAY),
+    SCORPIO("Scorpion", MonthDay.of(OCTOBER, 23), MonthDay.of(NOVEMBER, 21), TUESDAY),
     SAGITTARIUS("Archer", MonthDay.of(NOVEMBER, 22), MonthDay.of(DECEMBER, 21), THURSDAY),
     CAPRICORN("The Sea-Goat", MonthDay.of(DECEMBER, 22), MonthDay.of(JANUARY, 19), SATURDAY) {
         @Override
