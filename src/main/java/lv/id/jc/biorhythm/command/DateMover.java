@@ -3,7 +3,6 @@ package lv.id.jc.biorhythm.command;
 import lv.id.jc.biorhythm.model.Context;
 
 import java.time.LocalDate;
-import java.time.Period;
 import java.util.Map;
 import java.util.function.BiFunction;
 import java.util.regex.Pattern;

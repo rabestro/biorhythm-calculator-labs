@@ -21,6 +21,7 @@ import java.util.function.Function;
 abstract class AbstractReportTest {
     static final LocalDate TOADY = LocalDate.of(2021, 8, 16);
     static final LocalDate BIRTHDAY = LocalDate.EPOCH;
+
     static final DateTimeFormatter FULL_DATE =
             DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).localizedBy(Locale.ENGLISH);
     final InputStream originalIn = System.in;

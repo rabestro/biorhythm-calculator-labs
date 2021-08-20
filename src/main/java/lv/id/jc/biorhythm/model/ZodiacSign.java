@@ -52,9 +52,15 @@ public enum ZodiacSign implements TemporalQuery<Boolean> {
                 .orElseThrow();
     }
 
+    @Override
     public Boolean queryFrom(TemporalAccessor temporal) {
         final var monthDay = MonthDay.from(temporal);
         return !monthDay.isAfter(end) && !monthDay.isBefore(start);
+    }
+
+    public boolean isLuckyDay(TemporalAccessor temporal) {
+        final var day = temporal.query(DayOfWeek::from);
+        return day.equals(luckyDay);
     }
 
     /**
