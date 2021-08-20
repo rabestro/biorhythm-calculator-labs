@@ -28,7 +28,7 @@ public class DateSetter extends DateCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         for (var entry : map.entrySet()) {
             final var matcher = entry.getKey().matcher(request);
             if (matcher.matches()) {

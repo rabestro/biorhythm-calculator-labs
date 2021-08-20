@@ -3,12 +3,11 @@ package lv.id.jc.biorhythm.ui;
 import lv.id.jc.biorhythm.model.Context;
 
 import java.time.LocalDate;
-import java.util.function.Predicate;
 
 import static java.lang.System.Logger.Level.TRACE;
 import static java.time.LocalDate.EPOCH;
 
-public abstract class Component extends LocalTextInterface implements Predicate<String>, Runnable {
+public abstract class Component extends LocalTextInterface implements Runnable {
     protected final Runnable unrecognizedCommand = () -> println("unrecognized command");
     protected final Context context;
     protected Runnable runnable = () -> printf("component %s is running", this.getClass().getSimpleName());
@@ -39,11 +38,6 @@ public abstract class Component extends LocalTextInterface implements Predicate<
 
     public void setDate(LocalDate date) {
         context.setDate(date);
-    }
-
-    @Override
-    public boolean test(String request) {
-        return getCommand().equalsIgnoreCase(request);
     }
 
     @Override

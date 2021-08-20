@@ -37,7 +37,7 @@ public class DateMover extends DateCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         final var matcher = COMMAND_PATTERN.matcher(request);
         if (!matcher.matches()) {
             return false;

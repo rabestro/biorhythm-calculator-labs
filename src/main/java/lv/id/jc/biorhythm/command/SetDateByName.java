@@ -23,7 +23,7 @@ public class SetDateByName extends DateCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         final var date = commandsMap.get(request);
         if (date == null) {
             return false;
