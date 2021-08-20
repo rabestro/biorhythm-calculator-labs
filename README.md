@@ -2,7 +2,7 @@
 
 ## About
 
-This is a laboratory for creating a training project. The goal is to create a tutorial project on working with dates in Java. The idea is to create a biorhythm calculator that allows you to select dates and print reports for different periods of time. We use the laboratory to come up with what the project will look like, what components it will consist of.
+This is a laboratory for creating a [training project](https://github.com/rabestro/biorhythm-calculator-labs/wiki). The goal is to create a tutorial project on working with dates in Java. The idea is to create a biorhythm calculator that allows you to select dates and print reports for different periods of time. We use the laboratory to come up with what the project will look like, what components it will consist of.
 
 ## Stages
 
