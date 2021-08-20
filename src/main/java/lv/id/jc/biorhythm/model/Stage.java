@@ -36,11 +36,6 @@ public enum Stage {
         }
     }
 
-    @Deprecated(forRemoval = true)
-    public static Stage of(final int index) {
-        return Stage.values()[index];
-    }
-
     public String getSymbol() {
         return symbol;
     }
