@@ -4,12 +4,11 @@ import lv.id.jc.biorhythm.model.Context;
 
 import java.time.LocalDate;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 import static java.lang.System.Logger.Level.TRACE;
 import static java.time.LocalDate.EPOCH;
 
-public abstract class Component extends LocalTextInterface implements Predicate<String>, Supplier<String>, Runnable {
+public abstract class Component extends LocalTextInterface implements Predicate<String>, Runnable {
     protected final Runnable unrecognizedCommand = () -> println("unrecognized command");
     protected final Context context;
     protected Runnable runnable = () -> printf("component %s is running", this.getClass().getSimpleName());
@@ -45,15 +44,6 @@ public abstract class Component extends LocalTextInterface implements Predicate<
     @Override
     public boolean test(String request) {
         return getCommand().equalsIgnoreCase(request);
-    }
-
-    @Override
-    public String get() {
-        if (resourceBundle.containsKey("help")) {
-            return resourceBundle.getString("help");
-        }
-        final var className = this.getClass().getSimpleName();
-        return String.format("%-15s - run component \"%s\"%n", getCommand(), className);
     }
 
     @Override
