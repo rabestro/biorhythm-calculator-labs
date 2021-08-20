@@ -31,8 +31,4 @@ abstract class DateCommand implements Command {
         this.context = context;
     }
 
-    @Override
-    public Boolean apply(String s) {
-        return false;
-    }
 }

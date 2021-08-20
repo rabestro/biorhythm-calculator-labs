@@ -26,7 +26,7 @@ abstract class AbstractDateCommand {
     @ParameterizedTest(name = "when request {0} then returns false")
     @CsvFileSource(resources = "/command/unrecognized.csv", numLinesToSkip = 1)
     void unrecognized(final String request) {
-        final var result = underTest.apply(request);
+        final var result = underTest.test(request);
 
         assertFalse(result, "shall ignore the request: " + request);
         assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");

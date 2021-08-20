@@ -13,7 +13,7 @@ public class Info extends AbstractCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         final var matcher = pattern.matcher(request);
         if (!matcher.matches()) {
             return false;

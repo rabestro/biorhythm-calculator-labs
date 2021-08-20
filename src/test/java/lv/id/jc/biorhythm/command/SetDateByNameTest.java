@@ -22,7 +22,7 @@ class SetDateByNameTest extends AbstractDateCommand {
     @ParameterizedTest(name = "when request {0} then date adjusted to {1}")
     @CsvFileSource(resources = "/command/date-by-name-request.csv", numLinesToSkip = 1)
     void recognized(final String request, final LocalDate expected) {
-        final var result = underTest.apply(request);
+        final var result = underTest.test(request);
 
         assertTrue(result, "shall recognize and execute request: " + request);
         assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
@@ -32,7 +32,7 @@ class SetDateByNameTest extends AbstractDateCommand {
     @Test
     @DisplayName("when request `today` then date set to today")
     void testToday() {
-        final var result = underTest.apply("today");
+        final var result = underTest.test("today");
         assertTrue(result);
         assertEquals(LocalDate.now(), context.date());
     }
