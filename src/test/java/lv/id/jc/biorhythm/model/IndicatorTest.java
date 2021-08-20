@@ -13,14 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class IndicatorTest {
     private static final double DELTA = 0.01;
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @ParameterizedTest(name = "when {0}, {1}, {2} then value is {3}, stage is {4} and days are {5}, {6}, {7} ")
     @CsvFileSource(resources = "/biorhythm/biorhythm.csv", numLinesToSkip = 1)
     void biorhythmValueTest(
@@ -66,39 +58,4 @@ class IndicatorTest {
         );
     }
 
-    @Test
-    void value() {
-    }
-
-    @Test
-    void percent() {
-    }
-
-    @Test
-    void dayInPeriod() {
-    }
-
-    @Test
-    void stage() {
-    }
-
-    @Test
-    void peakInDays() {
-    }
-
-    @Test
-    void lowInDays() {
-    }
-
-    @Test
-    void changeInDays() {
-    }
-
-    @Test
-    void getContext() {
-    }
-
-    @Test
-    void getBiorhythm() {
-    }
 }
