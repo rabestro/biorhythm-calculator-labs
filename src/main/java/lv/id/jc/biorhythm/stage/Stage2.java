@@ -13,6 +13,7 @@ public class Stage2 {
         new Message("welcome").run();
 
         var context = new Context();
+
         new AskBirthday(context).run();
         new AgeInfo(context).run();
         new ZodiacInfo(context).run();

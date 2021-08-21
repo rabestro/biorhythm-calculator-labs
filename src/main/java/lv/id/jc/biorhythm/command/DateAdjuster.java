@@ -6,6 +6,11 @@ import java.time.DayOfWeek;
 import java.time.temporal.TemporalAdjusters;
 import java.util.regex.Pattern;
 
+/**
+ * Commands:
+ *    next {dayOfWeek}
+ *    prev {dayOfWeek}
+ */
 public class DateAdjuster extends DateCommand {
     private static final Pattern NEXT_PREV = Pattern.compile(
             "(?<sign>next|prev) (?<unit>\\w+)", Pattern.CASE_INSENSITIVE);

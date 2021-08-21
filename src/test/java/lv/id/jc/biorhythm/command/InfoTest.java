@@ -1,5 +1,6 @@
 package lv.id.jc.biorhythm.command;
 
+import lv.id.jc.biorhythm.report.Info;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -24,4 +25,5 @@ class InfoTest extends AbstractDateCommand {
         assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
         assertEquals(EPOCH, context.date(), "date shall be unchanged");
     }
+
 }
