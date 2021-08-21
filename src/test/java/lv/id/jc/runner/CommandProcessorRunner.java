@@ -1,7 +1,7 @@
 package lv.id.jc.runner;
 
 import lv.id.jc.biorhythm.command.DateMover;
-import lv.id.jc.biorhythm.command.Info;
+import lv.id.jc.biorhythm.report.Info;
 import lv.id.jc.biorhythm.command.SetDateByName;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.service.AskBirthday;

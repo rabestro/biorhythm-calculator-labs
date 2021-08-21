@@ -1,100 +1,76 @@
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class CLIProcessor initialized with Context(birthday=-999999999-01-01, date=2021-08-20)
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class CLIProcessor initialized with Context(birthday=-999999999-01-01, date=2021-08-21)
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "Application" uses bundle: "lv/id/jc/biorhythm/application"
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class Application initialized with Context(birthday=-999999999-01-01, date=2021-08-20)
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Application initialized with Context(birthday=-999999999-01-01, date=2021-08-21)
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
-Aug 20, 2021 9:45:54 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class AskBirthday initialized with Context(birthday=-999999999-01-01, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:06 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AskBirthday initialized with Context(birthday=-999999999-01-01, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class AgeInfo initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class ZodiacInfo initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "Broker" uses bundle: "lv/id/jc/biorhythm/service/broker"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class Broker initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Broker initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class AskBirthday initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AskBirthday initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class AgeInfo initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class ZodiacInfo initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
-FINER: class "Info" uses bundle: "lv/id/jc/biorhythm/command/info"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class Info initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Info" uses bundle: "lv/id/jc/biorhythm/report/info"
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Info initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "DailyReport" uses bundle: "lv/id/jc/biorhythm/report/daily-report"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class DailyReport initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class DailyReport initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "WeeklyReport" uses bundle: "lv/id/jc/biorhythm/report/weekly-report"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class WeeklyReport initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class WeeklyReport initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "MonthlyReport" uses bundle: "lv/id/jc/biorhythm/report/monthly/monthly-report"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class MonthlyReport initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class MonthlyReport initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "AnnualReport" uses bundle: "lv/id/jc/biorhythm/report/annual-report"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class AnnualReport initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AnnualReport initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "SummaryReport" uses bundle: "lv/id/jc/biorhythm/report/summary-report"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class SummaryReport initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SummaryReport initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "TripleChart" uses bundle: "lv/id/jc/biorhythm/report/triple-chart"
-Aug 20, 2021 9:46:07 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class TripleChart initialized with Context(birthday=1988-04-22, date=2021-08-20)
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker processRequest
-FINER: request: "annual report"
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `Help`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `AskBirthday`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `AgeInfo`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `ZodiacInfo`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `Info`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `DateWith`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `DateAdjuster`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `DateSetter`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `SetDateByName`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `DateMover`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `DailyReport`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `WeeklyReport`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `MonthlyReport`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `AnnualReport`
-Aug 20, 2021 9:46:15 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$2
-FINER: command `annual report` executed
-Aug 20, 2021 9:46:19 PM lv.id.jc.biorhythm.service.Broker processRequest
-FINER: request: "help"
-Aug 20, 2021 9:46:19 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$0
-FINER: checking `Help`
+Aug 21, 2021 9:21:15 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class TripleChart initialized with Context(birthday=1970-06-07, date=2021-08-21)
+Aug 21, 2021 9:21:46 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "info"
+Aug 21, 2021 9:21:46 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `info` executed
+Aug 21, 2021 9:21:52 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "info physical"
+Aug 21, 2021 9:21:52 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `info physical` executed
+Aug 21, 2021 9:22:25 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "weekly report"
+Aug 21, 2021 9:22:25 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `weekly report` executed
