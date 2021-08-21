@@ -12,9 +12,6 @@ import static java.lang.Integer.parseInt;
 import static java.util.regex.Pattern.compile;
 
 public class DateSetter extends DateCommand {
-    private static final Pattern DATE_PATTERN = compile(
-            "(?<MMDD>(0\\d|1[012])(-[01]\\d|-3[01]))|\\d{4}(?<MM>-0\\d|-1[012](?<DD>-[01]\\d|-3[01])?)?");
-
     private final Map<Pattern, Function<Matcher, LocalDate>> map = Map.of(
             compile("(?<date>\\d{4}-\\d{2}-\\d{2})"),
             m -> LocalDate.parse(m.group("date")),
