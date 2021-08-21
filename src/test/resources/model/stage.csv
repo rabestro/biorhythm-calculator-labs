@@ -1,0 +1,6 @@
+Constant      , isPositive
+ZERO          , false
+POSITIVE_UP   , true
+POSITIVE_DOWN , true
+NEGATIVE_DOWN , false
+NEGATIVE_UP   , false

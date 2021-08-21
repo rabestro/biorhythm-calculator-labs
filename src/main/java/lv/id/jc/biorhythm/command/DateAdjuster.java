@@ -15,7 +15,7 @@ public class DateAdjuster extends DateCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         final var matcher = NEXT_PREV.matcher(request.toUpperCase());
         if (!matcher.matches()) {
             return false;

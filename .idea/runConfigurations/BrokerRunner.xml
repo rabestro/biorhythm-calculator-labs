@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="NavigatorRunner" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="lv.id.jc.runner.NavigatorRunner" />
+  <configuration default="false" name="BrokerRunner" type="Application" factoryName="Application" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="lv.id.jc.runner.BrokerRunner" />
     <module name="Biorhythms.test" />
     <extension name="coverage">
       <pattern>

@@ -1,11 +1,11 @@
 package lv.id.jc.biorhythm.service;
 
-import lv.id.jc.biorhythm.command.AbstractCommand;
 import lv.id.jc.biorhythm.command.Command;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.util.LinkedHashSet;
+import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -14,13 +14,15 @@ import static java.lang.System.Logger.Level.TRACE;
 import static java.util.function.Predicate.not;
 
 public class Broker extends Component {
+    private static final String HELP = "help";
+    private static final ResourceBundle helpBundle = ResourceBundle.getBundle(HELP);
     private static final Set<String> exit = Set.of("exit", "quit");
     private final Set<Command> commandSet = new LinkedHashSet<>();
-    private final Command help = new Help(context);
+    private final Command helpCommand = new Help();
 
     public Broker(Context context) {
         super(context);
-        commandSet.add(help);
+        commandSet.add(helpCommand);
     }
 
     public Broker add(Function<Context, Command> component) {
@@ -31,7 +33,7 @@ public class Broker extends Component {
     @Override
     public void run() {
         printf("welcome", birthday(), date());
-//        help.apply("help");
+        helpCommand.test(HELP);
 
         Stream.generate(this::askRequest)
                 .takeWhile(not(exit::contains))
@@ -46,30 +48,26 @@ public class Broker extends Component {
     private void processRequest(String request) {
         LOGGER.log(TRACE, "request: \"{0}\"", request);
         commandSet.stream()
-                .peek(cmd -> LOGGER.log(TRACE, "checking `{0}`", cmd.getClass().getSimpleName()))
-                .filter(command -> command.apply(request))
+                .filter(command -> command.test(request))
                 .findFirst()
                 .ifPresentOrElse(
-                        $ -> LOGGER.log(TRACE, "command `{0}` executed", request),
+                        executed -> LOGGER.log(TRACE, "command `{0}` executed", request),
                         () -> printf("unrecognized", request));
     }
 
-    @Override
-    public boolean test(String command) {
-        return false;
-    }
-
-    class Help extends AbstractCommand {
-        public Help(Context context) {
-            super(context);
-        }
-
+    class Help implements Command {
         @Override
-        public Boolean apply(String s) {
-            if (!"help".equalsIgnoreCase(s)) {
+        public boolean test(String request) {
+            if (!HELP.equalsIgnoreCase(request)) {
                 return false;
             }
-            commandSet.stream().map(Command::help).forEach(this::printf);
+            commandSet.stream()
+                    .map(Command::getClass)
+                    .map(Class::getSimpleName)
+                    .map("help."::concat)
+                    .filter(helpBundle::containsKey)
+                    .map(helpBundle::getString)
+                    .forEach(Broker.this::printf);
             return true;
         }
     }

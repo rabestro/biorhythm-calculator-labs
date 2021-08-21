@@ -15,7 +15,7 @@ class ConditionTest {
 
     @DisplayName("then it have exactly six constants ")
     @Test
-    void hasTwelveSigns() {
+    void hasSixConstants() {
         final var expected = 6;
         assertEquals(expected, Condition.values().length);
     }

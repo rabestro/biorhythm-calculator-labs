@@ -23,7 +23,7 @@ public class DateWith extends DateCommand {
     }
 
     @Override
-    public Boolean apply(String request) {
+    public boolean test(String request) {
         return getAdjuster(request).map(this::adjustDate).orElse(false);
     }
 
