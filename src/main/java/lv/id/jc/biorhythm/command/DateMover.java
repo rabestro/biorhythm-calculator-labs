@@ -14,7 +14,7 @@ public class DateMover extends DateCommand {
     private static final Pattern COMMAND_PATTERN = Pattern.compile("" +
             "(?<sign>[-+])" +   // Plus or Minus
             "(?<number>\\d+)" + // How much
-            "(?<unit>[dwmyq])"  // Days, Weeks, Months, Years and Quarters
+            "(?<unit>[dwmyf])"  // Days, Weeks, Months, Years and Fortnights
     );
     private static final Map<String, BiFunction<LocalDate, Long, LocalDate>> MOVE_OPERATORS = Map.of(
             "+d", LocalDate::plusDays, "-d", LocalDate::minusDays,
