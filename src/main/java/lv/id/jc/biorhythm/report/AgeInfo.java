@@ -4,6 +4,7 @@ import lv.id.jc.biorhythm.command.AbstractCommand;
 import lv.id.jc.biorhythm.format.PrettyPeriodFormat;
 import lv.id.jc.biorhythm.model.Context;
 
+import java.time.LocalDate;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
@@ -14,9 +15,8 @@ public class AgeInfo extends AbstractCommand {
 
     @Override
     public void run() {
-        printf("format.ageInfo",
-                birthday(),
-                date(),
+        final var format = date().equals(LocalDate.now()) ? "ageInfo.today" : "ageInfo.report";
+        printf(format, birthday(), date(),
                 ChronoUnit.DAYS.between(birthday(), date()),
                 PrettyPeriodFormat.getInstance().format(Period.between(birthday(), date())));
     }
