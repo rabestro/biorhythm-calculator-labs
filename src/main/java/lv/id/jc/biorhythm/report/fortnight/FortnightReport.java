@@ -19,7 +19,7 @@ public class FortnightReport extends AbstractCommand {
         final LocalDate date = date();
         final Week week = new Week(resourceBundle, context, null);
         final StringBuilder sb = new StringBuilder(
-                String.format(
+                format(
                         getString("fortnight.header.format"),
                         date.getYear(),
                         date.getMonth().getDisplayName(TextStyle.FULL, Locale.getDefault())));
