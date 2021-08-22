@@ -7,6 +7,7 @@ import lv.id.jc.biorhythm.report.AgeInfo;
 import lv.id.jc.biorhythm.report.DailyReport;
 import lv.id.jc.biorhythm.report.WeeklyReport;
 import lv.id.jc.biorhythm.report.ZodiacInfo;
+import lv.id.jc.biorhythm.report.fortnight.FortnightReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 
@@ -31,6 +32,7 @@ public class Stage4 {
                 .add(DateMover::new)     // Stage 3
                 .add(DailyReport::new)  // Stage 2
                 .add(WeeklyReport::new) // Stage 4
+                .add(FortnightReport::new)
                 .run();
     }
 
