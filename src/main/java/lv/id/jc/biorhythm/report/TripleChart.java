@@ -14,9 +14,9 @@ public class TripleChart extends AbstractCommand {
 
     @Override
     public void run() {
-        System.out.println();
+        println();
         IntStream.range(0, 30).forEach(i -> {
-            System.out.printf("%tF %21s %21s %21s%n", date(),
+            printf("%tF %21s %21s %21s%n", date(),
                     new Thermometer(context.getIndicatorOf(Biorhythm.PHYSICAL)),
                     new Thermometer(context.getIndicatorOf(Biorhythm.EMOTIONAL)),
                     new Thermometer(context.getIndicatorOf(Biorhythm.INTELLECTUAL))

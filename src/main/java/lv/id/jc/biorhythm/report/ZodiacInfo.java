@@ -16,7 +16,7 @@ public class ZodiacInfo extends AbstractCommand implements Supplier<String> {
 
     @Override
     public void run() {
-        println(this.get());
+        print(get());
     }
 
     @Override
