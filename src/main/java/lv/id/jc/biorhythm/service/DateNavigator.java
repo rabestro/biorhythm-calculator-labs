@@ -15,6 +15,9 @@ import java.util.regex.Pattern;
 
 import static java.lang.System.Logger.Level.TRACE;
 
+/**
+ * @deprecated since Broker class introduced.
+ */
 @Deprecated(forRemoval = true)
 public class DateNavigator extends Component implements Runnable {
     private static final Pattern PLUS_MINUS = Pattern.compile("([-+])(\\d+)([dwmyq])");
