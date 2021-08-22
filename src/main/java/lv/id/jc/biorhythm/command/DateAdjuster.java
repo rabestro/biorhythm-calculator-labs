@@ -8,8 +8,8 @@ import java.util.regex.Pattern;
 
 /**
  * Commands:
- *    next {dayOfWeek}
- *    prev {dayOfWeek}
+ * next {dayOfWeek}
+ * prev {dayOfWeek}
  */
 public class DateAdjuster extends DateCommand {
     private static final Pattern NEXT_PREV = Pattern.compile(
