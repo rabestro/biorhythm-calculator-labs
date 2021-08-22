@@ -21,7 +21,7 @@ public class Week {
 
     public Week(ResourceBundle resourceBundle, Context context, Month month) {
         biorhythmFormat = resourceBundle.getString("biorhythm.short.format");
-        valueFormat = resourceBundle.getString("monthly.value.format");
+        valueFormat = resourceBundle.getString("week.value.format");
         this.context = context;
         this.month = month;
     }
@@ -60,7 +60,7 @@ public class Week {
 
     private void getBiorhythms(StringBuilder sb, Stream<LocalDate> stream, Biorhythm biorhythm) {
         stream.map(day -> {
-            if (!day.getMonth().equals(month)) {
+            if (month != null && !day.getMonth().equals(month)) {
                 return "";
             }
             int value = biorhythm.getIndicatorOf(context.withDate(day)).percent();
