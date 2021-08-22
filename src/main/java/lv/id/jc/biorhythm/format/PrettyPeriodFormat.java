@@ -38,8 +38,8 @@ public class PrettyPeriodFormat extends Format {
             return toAppendTo.append("just born");
         }
 
-        final var one = years.isEmpty() || (months.isEmpty() && days.isEmpty())
-                ? "" : months.isEmpty() || days.isEmpty() ? " and " : ", ";
+        final var and = months.isEmpty() || days.isEmpty() ? " and " : ", ";
+        final var one = years.isEmpty() || (months.isEmpty() && days.isEmpty()) ? "" : and;
         final var two = days.isEmpty() || months.isEmpty() ? "" : " and ";
 
         return toAppendTo
