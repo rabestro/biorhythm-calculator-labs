@@ -43,6 +43,7 @@ public abstract class LocalTextInterface implements TextInterface {
         TextInterface.super.print(getString(key), args);
     }
 
+    @SuppressWarnings("squid:S106")
     public void printf(final String key, final Object... args) {
         System.out.printf(getString(key), args);
     }

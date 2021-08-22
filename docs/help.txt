@@ -1,0 +1,25 @@
+2021-08-22> help
+help           - prints information about available commands
+exit           - stops the command processor and exits from the program
+ask birthday     - Requests a new date of birth
+age info         - Calculates and prints age information for the report date
+zodiac info      - Prints Zodiac Sign info for the entered birthday
+
+daily report     - prints daily biorhythms report for selected date
+weekly report    - prints weekly report for week of selected date. Report printed from Monday to Sunday.
+fortnight report - prints fortnight report for date, adjusted to the monday.
+monthly report   - prints monthly report for month of selected date
+annual report    - prints annual report for year of selected date
+summary report   - prints summary report for selected date
+triple chart     - draws triple graphs for primary biorhythms
+
+{+/-}{n}{u}      - moves the report date by number of days, weeks, fortnights, months or years.
+                   examples: +3d (plus 3 days), -7w (minus 7 weeks), +1f (plus one fortnight).
+<keyword>        - now, today, tomorrow, after tomorrow, yesterday, before yesterday, epoch.
+<date>           - set the date in format YYYY-MM-DD, YYYY-MM, MM-DD, YYYY
+<month>          - adjusts date to month. Example: January
+<day of week>    - adjusts date to day of week. Example: Sunday
+next <DoW>       - move date to the next day of week. Example: next sunday
+prev <DoW>       - move date to the previous day of week. Example: prev monday
+<roman date>     - reads and parse date with roman months. Example: 31/XII/2021
+2021-08-22>
