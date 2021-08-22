@@ -32,6 +32,7 @@ public class Stage6 {
                 .add(DateSetter::new)       // Stage 3
                 .add(DateWith::new)
                 .add(DateAdjuster::new)
+                .add(RomanDateSetter::new)  // Stage 6
                 .run();
     }
 
