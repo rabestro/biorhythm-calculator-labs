@@ -1,4 +1,158 @@
-Aug 22, 2021 12:12:48 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "CLIProcessor" uses bundle: "lv/id/jc/biorhythm/service/cliprocessor"
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class CLIProcessor initialized with Context(birthday=-999999999-01-01, date=2021-08-22)
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Application" uses bundle: "lv/id/jc/biorhythm/application"
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Application initialized with Context(birthday=-999999999-01-01, date=2021-08-22)
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
+Aug 22, 2021 10:37:10 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AskBirthday initialized with Context(birthday=-999999999-01-01, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Broker" uses bundle: "lv/id/jc/biorhythm/service/broker"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Broker initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AskBirthday" uses bundle: "lv/id/jc/biorhythm/service/ask-birthday"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AskBirthday initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AgeInfo" uses bundle: "lv/id/jc/biorhythm/report/age-info"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AgeInfo initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "ZodiacInfo" uses bundle: "lv/id/jc/biorhythm/report/zodiac-info"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class ZodiacInfo initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "Info" uses bundle: "lv/id/jc/biorhythm/report/info"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class Info initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "DailyReport" uses bundle: "lv/id/jc/biorhythm/report/daily-report"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class DailyReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "WeeklyReport" uses bundle: "lv/id/jc/biorhythm/report/weekly-report"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class WeeklyReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "FortnightReport" uses bundle: "lv/id/jc/biorhythm/report/fortnight/fortnight-report"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class FortnightReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "MonthlyReport" uses bundle: "lv/id/jc/biorhythm/report/monthly/monthly-report"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class MonthlyReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "AnnualReport" uses bundle: "lv/id/jc/biorhythm/report/annual-report"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class AnnualReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
 FINER: class "SummaryReport" uses bundle: "lv/id/jc/biorhythm/report/summary-report"
-Aug 22, 2021 12:12:48 PM lv.id.jc.biorhythm.ui.Component <init>
-FINER: class SummaryReport initialized with Context(birthday=1979-03-06, date=2019-06-19)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class SummaryReport initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.LocalTextInterface getResourceBundle
+FINER: class "TripleChart" uses bundle: "lv/id/jc/biorhythm/report/triple-chart"
+Aug 22, 2021 10:37:18 PM lv.id.jc.biorhythm.ui.Component <init>
+FINER: class TripleChart initialized with Context(birthday=1970-06-07, date=2021-08-22)
+Aug 22, 2021 10:37:23 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "help"
+Aug 22, 2021 10:37:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `help` executed
+Aug 22, 2021 10:38:21 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "next monday"
+Aug 22, 2021 10:38:21 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `next monday` executed
+Aug 22, 2021 10:38:26 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "next monday"
+Aug 22, 2021 10:38:26 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `next monday` executed
+Aug 22, 2021 10:38:31 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "next monday"
+Aug 22, 2021 10:38:31 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `next monday` executed
+Aug 22, 2021 10:38:38 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "next sunday"
+Aug 22, 2021 10:38:38 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `next sunday` executed
+Aug 22, 2021 10:38:44 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "prev monday"
+Aug 22, 2021 10:38:44 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `prev monday` executed
+Aug 22, 2021 10:38:51 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "prev monday"
+Aug 22, 2021 10:38:51 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `prev monday` executed
+Aug 22, 2021 10:39:01 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "prev friday"
+Aug 22, 2021 10:39:01 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `prev friday` executed
+Aug 22, 2021 10:39:09 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "prev friday"
+Aug 22, 2021 10:39:09 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `prev friday` executed
+Aug 22, 2021 10:39:19 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "january"
+Aug 22, 2021 10:39:19 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `january` executed
+Aug 22, 2021 10:39:23 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "may"
+Aug 22, 2021 10:39:23 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `may` executed
+Aug 22, 2021 10:39:27 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "august"
+Aug 22, 2021 10:39:27 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `august` executed
+Aug 22, 2021 10:39:45 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "sunday"
+Aug 22, 2021 10:39:45 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `sunday` executed
+Aug 22, 2021 10:39:49 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "monday"
+Aug 22, 2021 10:39:49 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `monday` executed
+Aug 22, 2021 10:39:57 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "sunday"
+Aug 22, 2021 10:39:57 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `sunday` executed
+Aug 22, 2021 10:40:43 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+1f"
+Aug 22, 2021 10:40:55 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+3d"
+Aug 22, 2021 10:40:55 PM lv.id.jc.biorhythm.command.DateMover test
+FINER: sign = +, number = 3, unit = d
+Aug 22, 2021 10:40:55 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `+3d` executed
+Aug 22, 2021 10:41:00 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+4w"
+Aug 22, 2021 10:41:00 PM lv.id.jc.biorhythm.command.DateMover test
+FINER: sign = +, number = 4, unit = w
+Aug 22, 2021 10:41:00 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `+4w` executed
+Aug 22, 2021 10:41:04 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "-1m"
+Aug 22, 2021 10:41:04 PM lv.id.jc.biorhythm.command.DateMover test
+FINER: sign = -, number = 1, unit = m
+Aug 22, 2021 10:41:04 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `-1m` executed
+Aug 22, 2021 10:41:09 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "+2y"
+Aug 22, 2021 10:41:09 PM lv.id.jc.biorhythm.command.DateMover test
+FINER: sign = +, number = 2, unit = y
+Aug 22, 2021 10:41:09 PM lv.id.jc.biorhythm.service.Broker lambda$processRequest$1
+FINER: command `+2y` executed
+Aug 22, 2021 10:41:15 PM lv.id.jc.biorhythm.service.Broker processRequest
+FINER: request: "-7q"
+Aug 22, 2021 10:41:15 PM lv.id.jc.biorhythm.command.DateMover test
+FINER: sign = -, number = 7, unit = q

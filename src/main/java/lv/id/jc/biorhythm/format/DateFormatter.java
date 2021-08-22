@@ -18,9 +18,6 @@ public abstract class DateFormatter {
     public static final Period FORTNIGHT = Period.ofWeeks(2);
     public static final LongFunction<String> ordinalDay = day -> MessageFormat
             .format("{0}{0,choice,1#st|2#nd|3#rd|3<th|21#st|22#nd|23#rd|23<th|31#st}", day);
-    private static final Map<Long, String> ORDINAL_DAYS = LongStream.rangeClosed(1L, 31L).boxed()
-            .collect(toUnmodifiableMap(identity(), ordinalDay::apply));
-
     public static final Map<Long, String> ROMAN_MONTHS = Map.ofEntries(
             entry(1L, "I"), entry(2L, "II"), entry(3L, "III"),
             entry(4L, "IV"), entry(5L, "V"), entry(6L, "VI"),
@@ -35,14 +32,14 @@ public abstract class DateFormatter {
                     .appendLiteral('/')
                     .appendText(YEAR)
                     .toFormatter();
-
     public static final DateTimeFormatter ROMAN_SHORT_DATE =
             new DateTimeFormatterBuilder()
                     .appendText(DAY_OF_MONTH)
                     .appendLiteral('/')
                     .appendText(MONTH_OF_YEAR, ROMAN_MONTHS)
                     .toFormatter();
-
+    private static final Map<Long, String> ORDINAL_DAYS = LongStream.rangeClosed(1L, 31L).boxed()
+            .collect(toUnmodifiableMap(identity(), ordinalDay::apply));
     public static final DateTimeFormatter ORDINAL_FULL_DATE =
             new DateTimeFormatterBuilder()
                     .appendText(DAY_OF_WEEK, FULL)
