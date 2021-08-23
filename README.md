@@ -8,6 +8,10 @@ This is a laboratory for creating a [training project](https://github.com/rabest
 
 The project is divided into [eight stages](/src/main/java/lv/id/jc/biorhythm/stage). At each stage, we need to implement certain functionality. After completing the last stage, we should get a fully working program.
 
+## Context
+
+The context of this project is only two fields - date of birth and date of report. The context is created when the program starts and then injected in each component or command.
+
 ## Components 
 
 To achieve the goal, the concept of a system component was invented. The entire training project is broken down into many small sub-tasks. Each of these tasks is a separate class in this repository. To make it easier to manipulate different components, a common interface was created.
