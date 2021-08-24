@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.stage8;
+package lv.id.jc.stage8;
 
 import lv.id.jc.biorhythm.command.DateMover;
 import lv.id.jc.biorhythm.command.DateSetter;
