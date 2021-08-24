@@ -1,9 +1,6 @@
-package lv.id.jc.biorhythm.stage;
+package lv.id.jc.biorhythm.stage6;
 
-import lv.id.jc.biorhythm.command.DateMover;
-import lv.id.jc.biorhythm.command.DateSetter;
-import lv.id.jc.biorhythm.command.DateWith;
-import lv.id.jc.biorhythm.command.SetDateByName;
+import lv.id.jc.biorhythm.command.*;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.*;
 import lv.id.jc.biorhythm.report.fortnight.FortnightReport;
@@ -25,12 +22,12 @@ public class Stage4 {
                 .add(ZodiacInfo::new)       // Stage 1
                 .add(Info::new)             // Stage 3
                 .add(DailyReport::new)      // Stage 2
-                .add(WeeklyReport::new)     // Stage 4
-                .add(FortnightReport::new)  // Stage 4 @Art1985ss
+                .add(AnnualReport::new)     // Stage 4
                 .add(DateMover::new)        // Stage 3
                 .add(SetDateByName::new)    // Stage 3
                 .add(DateSetter::new)       // Stage 3
                 .add(DateWith::new)
+                .add(RomanDateSetter::new)  // Stage 4
                 .run();
     }
 

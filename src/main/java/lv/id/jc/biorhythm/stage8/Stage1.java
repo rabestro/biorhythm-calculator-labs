@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.stage;
+package lv.id.jc.biorhythm.stage8;
 
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.AgeInfo;
