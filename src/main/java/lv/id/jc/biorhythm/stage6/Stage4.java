@@ -3,7 +3,6 @@ package lv.id.jc.biorhythm.stage6;
 import lv.id.jc.biorhythm.command.*;
 import lv.id.jc.biorhythm.model.Context;
 import lv.id.jc.biorhythm.report.*;
-import lv.id.jc.biorhythm.report.fortnight.FortnightReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 
