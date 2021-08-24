@@ -1,4 +1,4 @@
-package lv.id.jc.biorhythm.stage8;
+package lv.id.jc.stage8;
 
 import lv.id.jc.biorhythm.command.*;
 import lv.id.jc.biorhythm.model.Context;
@@ -8,7 +8,7 @@ import lv.id.jc.biorhythm.report.monthly.MonthlyReport;
 import lv.id.jc.biorhythm.service.AskBirthday;
 import lv.id.jc.biorhythm.service.Broker;
 
-public class Stage7 {
+public class Stage6 {
     public static void main(String[] args) {
         // Stage 1
         var context = new Context();
@@ -27,7 +27,6 @@ public class Stage7 {
                 .add(FortnightReport::new)  // Stage 4 @Art1985ss
                 .add(MonthlyReport::new)    // Stage 5 @Art1985ss
                 .add(AnnualReport::new)     // Stage 6
-                .add(SummaryReport::new)    // Stage 7
                 .add(DateMover::new)        // Stage 3
                 .add(SetDateByName::new)    // Stage 3
                 .add(DateSetter::new)       // Stage 3

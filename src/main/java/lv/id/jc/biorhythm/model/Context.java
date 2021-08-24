@@ -48,6 +48,10 @@ public class Context {
         return this;
     }
 
+    public Context nextDate() {
+        return new Context(birthday, date.plusDays(1L));
+    }
+
     public Context withDate(final LocalDate date) {
         return new Context(birthday, date);
     }

@@ -6,7 +6,7 @@ This is a laboratory for creating a [training project](https://github.com/rabest
 
 ## Stages
 
-The project is divided into [eight stages](/src/main/java/lv/id/jc/biorhythm/stage8). At each stage, we need to implement certain functionality. After completing the last stage, we should get a fully working program.
+The project is divided into [eight stages](/src/main/java/lv/id/jc/stage8). At each stage, we need to implement certain functionality. After completing the last stage, we should get a fully working program.
 
 ## Context
 
@@ -16,7 +16,7 @@ The context of this project is only two fields - date of birth and date of repor
 
 To make it easier to invent a project, the concept of a system component was introduced. The entire training project is broken down into many small sub-tasks. Each of these tasks is a separate class in this repository. To make it easier to manipulate different components, a common interface was created.
 
-Each individual component can be [run, tested](/src/test/java/lv/id/jc/runner), and improved separately. A [special class](/src/test/java/lv/id/jc/runner/AbstractRunner.java) generates a random context for the component and you can see how the module behaves when working with different data. You can then assemble the components into a [working implementation](/src/main/java/lv/id/jc/biorhythm/stage8) of each of the steps in the tutorial project.
+Each individual component can be [run, tested](/src/test/java/lv/id/jc/runner), and improved separately. A [special class](/src/test/java/lv/id/jc/runner/AbstractRunner.java) generates a random context for the component and you can see how the module behaves when working with different data. You can then assemble the components into a [working implementation](/src/main/java/lv/id/jc/stage8) of each of the steps in the tutorial project.
 
 ## Command Processor (Broker)
 
