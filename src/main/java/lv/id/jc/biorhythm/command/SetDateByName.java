@@ -15,7 +15,7 @@ public class SetDateByName extends DateCommand {
                 "today", LocalDate.now(),
                 "now", LocalDate.now(),
                 "epoch", LocalDate.EPOCH,
-                "birthday", context.birthday(),
+                "birthday", context.getBirthday(),
                 "tomorrow", LocalDate.now().plusDays(1L),
                 "after tomorrow", LocalDate.now().plusDays(2L),
                 "yesterday", LocalDate.now().minusDays(1L),

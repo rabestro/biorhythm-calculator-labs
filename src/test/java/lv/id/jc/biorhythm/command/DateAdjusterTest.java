@@ -23,8 +23,8 @@ class DateAdjusterTest extends AbstractDateCommand {
         final var result = underTest.test(request);
 
         assertTrue(result, "shall recognize and execute request: " + request);
-        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
-        assertEquals(expected, context.date(), "adjuster shall change the date");
+        assertEquals(BIRTHDAY, context.getBirthday(), "birthday shall be unchanged");
+        assertEquals(expected, context.getDate(), "adjuster shall change the date");
     }
 
 }

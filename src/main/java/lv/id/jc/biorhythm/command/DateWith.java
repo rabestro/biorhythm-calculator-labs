@@ -28,7 +28,7 @@ public class DateWith extends DateCommand {
     }
 
     private boolean adjustDate(final TemporalAdjuster adjuster) {
-        final var newDate = context.date().with(adjuster);
+        final var newDate = context.getDate().with(adjuster);
         context.setDate(newDate);
         return true;
     }

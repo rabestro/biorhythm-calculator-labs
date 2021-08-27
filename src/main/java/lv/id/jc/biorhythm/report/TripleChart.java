@@ -17,10 +17,10 @@ public class TripleChart extends AbstractCommand {
     public void run() {
         println();
         printf("           [%-21s] [%-21s] [%-21s]%n", PHYSICAL, EMOTIONAL, INTELLECTUAL);
-        Stream.iterate(context.date(), date -> date.plusDays(1L))
+        Stream.iterate(context.getDate(), date -> date.plusDays(1L))
                 .map(context::withDate)
                 .limit(30)
-                .forEach(c -> printf("%tF %23s %23s %23s%n", c.date(),
+                .forEach(c -> printf("%tF %23s %23s %23s%n", c.getDate(),
                         new Thermometer(c.getIndicatorOf(PHYSICAL)),
                         new Thermometer(c.getIndicatorOf(EMOTIONAL)),
                         new Thermometer(c.getIndicatorOf(INTELLECTUAL)))
