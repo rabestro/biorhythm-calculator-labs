@@ -29,8 +29,8 @@ abstract class AbstractDateCommand {
         final var result = underTest.test(request);
 
         assertFalse(result, "shall ignore the request: " + request);
-        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
-        assertEquals(LocalDate.EPOCH, context.date(), "date shall be unchanged");
+        assertEquals(BIRTHDAY, context.getBirthday(), "birthday shall be unchanged");
+        assertEquals(LocalDate.EPOCH, context.getDate(), "date shall be unchanged");
     }
 
 }

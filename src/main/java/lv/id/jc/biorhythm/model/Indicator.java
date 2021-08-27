@@ -50,7 +50,7 @@ public class Indicator {
     public String toString() {
         return String.format("%12s: %s %4d%% (%2d/%2d) {%d}-{%2d} ",
                 biorhythm.name(),
-                context.date(),
+                context.getDate(),
                 percent(),
                 dayInPeriod(),
                 biorhythm.period(),

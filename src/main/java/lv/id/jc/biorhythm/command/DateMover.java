@@ -46,7 +46,7 @@ public class DateMover extends DateCommand {
         final var unit = matcher.group("unit");
         final var number = Long.parseLong(matcher.group("number"));
         LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
-        context.setDate(MOVE_OPERATORS.get(sign + unit).apply(context.date(), number));
+        context.setDate(MOVE_OPERATORS.get(sign + unit).apply(context.getDate(), number));
         return true;
     }
 }

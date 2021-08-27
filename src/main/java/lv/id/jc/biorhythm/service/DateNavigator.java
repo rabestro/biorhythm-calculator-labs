@@ -42,16 +42,16 @@ public class DateNavigator extends Component implements Runnable {
     public DateNavigator(final Context context) {
         super(context);
         setOperators = Map.of("today", LocalDate.now(), "now", LocalDate.now(),
-                "epoch", LocalDate.EPOCH, "birthday", context.birthday(),
+                "epoch", LocalDate.EPOCH, "birthday", context.getBirthday(),
                 "tomorrow", LocalDate.now().plusDays(1L), "after tomorrow", LocalDate.now().plusDays(2L),
                 "yesterday", LocalDate.now().minusDays(1L), "before yesterday", LocalDate.now().minusDays(2L));
     }
 
     @Override
     public void run() {
-        printf("welcome", context.birthday(), context.date());
+        printf("welcome", context.getBirthday(), context.getDate());
         while (true) {
-            printf("prompt", context.date());
+            printf("prompt", context.getDate());
             val command = scanner.nextLine().toLowerCase();
             if (exit.contains(command)) {
                 return;
@@ -75,7 +75,7 @@ public class DateNavigator extends Component implements Runnable {
                 val number = Long.parseLong(plusMinus.group(2));
                 val unit = plusMinus.group(3);
                 LOGGER.log(TRACE, "sign = {0}, number = {1}, unit = {2}", sign, number, unit);
-                context.setDate(moveOperators.get(sign + unit).apply(context.date(), number));
+                context.setDate(moveOperators.get(sign + unit).apply(context.getDate(), number));
             }
             printf("unrecognized", command);
         }

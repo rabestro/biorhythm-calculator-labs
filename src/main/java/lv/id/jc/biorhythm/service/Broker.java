@@ -2,6 +2,7 @@ package lv.id.jc.biorhythm.service;
 
 import lv.id.jc.biorhythm.command.Command;
 import lv.id.jc.biorhythm.model.Context;
+import lv.id.jc.biorhythm.model.IllegalContextDate;
 import lv.id.jc.biorhythm.ui.Component;
 
 import java.util.LinkedHashSet;
@@ -40,18 +41,22 @@ public class Broker extends Component {
     }
 
     private String askRequest() {
-        printf("prompt", context.date());
+        printf("prompt", context.getDate());
         return scanner.nextLine().toLowerCase();
     }
 
     private void processRequest(String request) {
         LOGGER.log(TRACE, "request: \"{0}\"", request);
-        commandSet.stream()
-                .filter(command -> command.test(request))
-                .findFirst()
-                .ifPresentOrElse(
-                        executed -> LOGGER.log(TRACE, "command `{0}` executed", request),
-                        () -> printf("unrecognized", request));
+        try {
+            commandSet.stream()
+                    .filter(command -> command.test(request))
+                    .findFirst()
+                    .ifPresentOrElse(
+                            executed -> LOGGER.log(TRACE, "command `{0}` executed", request),
+                            () -> printf("unrecognized", request));
+        } catch (IllegalContextDate ex) {
+            println(ex.getMessage());
+        }
     }
 
     class Help implements Command {

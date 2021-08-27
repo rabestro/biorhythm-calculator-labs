@@ -22,8 +22,8 @@ class InfoTest extends AbstractDateCommand {
         final var result = underTest.test(request);
 
         assertTrue(result);
-        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
-        assertEquals(EPOCH, context.date(), "date shall be unchanged");
+        assertEquals(BIRTHDAY, context.getBirthday(), "birthday shall be unchanged");
+        assertEquals(EPOCH, context.getDate(), "date shall be unchanged");
     }
 
 }

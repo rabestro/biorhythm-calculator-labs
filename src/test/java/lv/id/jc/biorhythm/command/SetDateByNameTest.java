@@ -25,8 +25,8 @@ class SetDateByNameTest extends AbstractDateCommand {
         final var result = underTest.test(request);
 
         assertTrue(result, "shall recognize and execute request: " + request);
-        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
-        assertEquals(expected, context.date(), "adjuster shall change the date");
+        assertEquals(BIRTHDAY, context.getBirthday(), "birthday shall be unchanged");
+        assertEquals(expected, context.getDate(), "adjuster shall change the date");
     }
 
     @Test
@@ -34,6 +34,6 @@ class SetDateByNameTest extends AbstractDateCommand {
     void testToday() {
         final var result = underTest.test("today");
         assertTrue(result);
-        assertEquals(LocalDate.now(), context.date());
+        assertEquals(LocalDate.now(), context.getDate());
     }
 }

@@ -1,16 +1,15 @@
 package lv.id.jc.biorhythm.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-@Setter
 @AllArgsConstructor
 @ToString
 public class Context {
+    public static final LocalDate MAX_REPORT_DATE = LocalDate.of(2099, 12, 31);
     private LocalDate birthday;
     private LocalDate date;
 
@@ -31,11 +30,11 @@ public class Context {
         return date.getYear();
     }
 
-    public LocalDate birthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public LocalDate date() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -50,6 +49,22 @@ public class Context {
 
     public Context nextDate() {
         return new Context(birthday, date.plusDays(1L));
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public void setDate(LocalDate date) throws IllegalContextDate {
+        if (date.isBefore(birthday)) {
+            throw new IllegalContextDate(
+                    "the report date (" + date + ") could not be set before the birthday " + birthday);
+        }
+        if (date.isAfter(MAX_REPORT_DATE)) {
+            throw new IllegalContextDate(
+                    "the date " + date + " exceed the maximum report date " + MAX_REPORT_DATE);
+        }
+        this.date = date;
     }
 
     public Context withDate(final LocalDate date) {

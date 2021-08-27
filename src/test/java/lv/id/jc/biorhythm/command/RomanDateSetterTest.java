@@ -2,7 +2,6 @@ package lv.id.jc.biorhythm.command;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
@@ -25,8 +24,8 @@ class RomanDateSetterTest extends AbstractDateCommand {
         final var result = underTest.test(request);
 
         assertTrue(result, "shall recognize and execute request: " + request);
-        assertEquals(BIRTHDAY, context.birthday(), "birthday shall be unchanged");
-        assertEquals(expected, context.date(), "adjuster shall change the date");
+        assertEquals(BIRTHDAY, context.getBirthday(), "birthday shall be unchanged");
+        assertEquals(expected, context.getDate(), "adjuster shall change the date");
     }
 
 }

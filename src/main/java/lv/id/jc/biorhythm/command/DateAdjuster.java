@@ -32,7 +32,7 @@ public class DateAdjuster extends DateCommand {
             final var adjuster = sign.equals("NEXT")
                     ? TemporalAdjusters.next(DayOfWeek.valueOf(unit))
                     : TemporalAdjusters.previous(DayOfWeek.valueOf(unit));
-            context.setDate(context.date().with(adjuster));
+            context.setDate(context.getDate().with(adjuster));
             return true;
         }
         return false;

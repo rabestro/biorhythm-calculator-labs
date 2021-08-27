@@ -28,11 +28,11 @@ public abstract class Component extends LocalTextInterface implements Runnable {
     }
 
     protected LocalDate birthday() {
-        return context.birthday();
+        return context.getBirthday();
     }
 
     public LocalDate date() {
-        return context.date();
+        return context.getDate();
     }
 
     public void setDate(LocalDate date) {

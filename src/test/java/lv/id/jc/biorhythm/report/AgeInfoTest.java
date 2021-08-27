@@ -41,15 +41,15 @@ class AgeInfoTest {
     void setUp() {
         System.setOut(new PrintStream(out));
 
-        when(context.birthday()).thenReturn(BIRTHDAY);
-        when(context.date()).thenReturn(TOADY);
+        when(context.getBirthday()).thenReturn(BIRTHDAY);
+        when(context.getDate()).thenReturn(TOADY);
     }
 
     @Test
     @DisplayName("when run() print correct information")
     void run() {
-        when(context.birthday()).thenReturn(BIRTHDAY);
-        when(context.date()).thenReturn(TOADY);
+        when(context.getBirthday()).thenReturn(BIRTHDAY);
+        when(context.getDate()).thenReturn(TOADY);
 
         underTest.run();
 
